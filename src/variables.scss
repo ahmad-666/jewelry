@@ -1,0 +1,24 @@
+$dist1: .5em ;
+$dist2: 1em ;
+$dist3: 2em ;
+$dist4: 4em ;
+$font-s: .6em ;
+$font-m: .8em ;
+$font-l: 1em ;
+$font-xl: 1.2em ;
+$font-xxl: 2em ;
+$font-special: 1.6em ;
+$sectionsDist: 4em ;
+:export{
+    dist1: $dist1 ;
+    dist2: $dist2 ;
+    dist3: $dist3 ;
+    dist4: $dist4 ;
+    font-s: $font-s ;
+    font-m: $font-m ;
+    font-l: $font-l ;
+    font-xl: $font-xl ;
+    font-xxl: $font-xxl ;
+    font-special: $font-special ;
+    sectionsDist: $sectionsDist ;
+}

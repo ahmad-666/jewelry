@@ -1,0 +1,58 @@
+{
+  "name": "jewelry",
+  "version": "1.0.0",
+  "description": "jewelry store template",
+  "main": "./src/index/index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [
+    "jewelry",
+    "store",
+    "online shop",
+    "template"
+  ],
+  "author": "ahmad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmad-666/jewelry/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmad-666/jewelry.git"
+  },
+  "homepage": "https://ahmad-666.github.io/jewelry",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@fullhuman/postcss-purgecss": "^1.2.0",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.2.0",
+    "cssnano": "^4.1.10",
+    "file-loader": "^4.2.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "postcss": "^7.0.17",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.2.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.1",
+    "animejs": "^3.1.0",
+    "core-js": "^3.2.1",
+    "gh-pages": "^2.1.1",
+    "path-browserify": "^1.0.0",
+    "regenerator-runtime": "^0.13.3"
+  }
+}
