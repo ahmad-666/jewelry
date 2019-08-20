@@ -1,0 +1,52 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+#why_us{
+    width: 90vw ;
+    height: auto;
+    display: flex ;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    margin: $sectionsDist auto 0 auto ;
+    h4{
+        font-size: $font-special ;
+        font-weight: 700 ;
+        color: $darkColor ;
+    }
+    .features{
+        width: 100% ;
+        height: auto;
+        margin-top: $dist1 ;
+        display: flex; 
+        @include flex(row,flex-start,center,wrap,flex-start) ;
+        .feature{
+            width: calc((90vw - (4 * 2.2em)) / 4) ;
+            height: 10em ;
+            margin: 1em ;
+            display: flex ;
+            @include flex(column,space-around,center,nowrap,"") ;
+            transform: perspective(1000px) translateZ(0) ;
+            transition: all .4s ease-in-out ;
+            img{
+                width: 6em ;
+                height: 6em;
+            }
+            p{
+                font-size: $font-l ;
+                color: $greyColor2 ;
+                font-weight: 700 ;
+            }
+        }
+        .feature.blur{
+            filter: blur(1px) ;
+            transform: perspective(1000px) translateZ(-6em) ;
+        }
+        .feature.active{
+            box-shadow: 0 0 .5em .1em $shadowColor ;
+            transform: perspective(1000px) translateZ(6em) ;
+        }
+        
+    }
+}
+.empty{
+    height: 1000px;
+}

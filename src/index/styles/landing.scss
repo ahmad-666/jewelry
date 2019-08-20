@@ -2,15 +2,16 @@
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
 nav{
-    width: auto ;
+    width: 100% ;
     height: $nav-height;
     background-color: $whiteColor2 ;
     box-shadow: 0 0 .5em .05em $shadowColor ;
-    position: relative ;
+    position: fixed ;
     top: 0 ;
     right: 0 ;
     display: flex ;
     @include flex(row,flex-start,center,nowrap,"") ;
+    z-index: 2;
     .helpers,.categories{
         display: flex ;
         @include flex(row,space-around,center,nowrap,"") ;
@@ -77,60 +78,53 @@ nav{
             .products{
                 width: auto ;
                 height: auto;
-                background-color: $whiteColor2 ;
+                display: flex ;
+                @include flex(row,space-around,center,nowrap,"") ;
                 z-index: 5;
-                box-shadow: 0 .1em .5em .05em $shadowColor ;        
+                background-color: $whiteColor2 ;
+                box-shadow: 0 .1em .5em .1em $shadowColor ;
                 position: absolute ;
                 right: 0 ;
                 top: 100% ;
                 visibility: hidden ;
                 opacity: 0;
                 transition: all .5s ease-in-out ;
-                display: flex ;
-                @include flex(row,space-around,center,nowrap,"");
-                cursor: auto;
                 img{
                     width: 12em ;
                     height: 12em;
-                    margin-left: $dist2 ;
+                    margin-left: $dist2  ;
                 }
                 .links{
-                   width: auto ;
-                   height: 15em;
-                   border: 1px solid blue ;
-                   display: flex ;
-                   @include flex(column,flex-start,flex-start,wrap,flex-start);
-                   
-                   margin: $dist2 ;                
-                   a{
-                       display: inline-block ;
-                       width: 10em ;
-                       height: 2em;
-                       margin-top: $dist1 ;
-                       margin-right: $dist1 ;
-                       padding: 0 ;
-                       display: flex ;
-                       @include flex(row,flex-start,center,nowrap,"");
-                       font-size: $font-m ;
-                       color: darken($greyColor2,10%);
-                       transition: all .5s ease-in-out ;
-                       i{transform: translate(100%,0);}
-                    //    &:hover{
-                    //        color: darken($greyColor2,50%) ;
-                    //        font-size: $font-l ;
-                    //    }
-                   }
+                    width: auto ;
+                    max-height: 15em ;
+                    margin: $dist2 0 $dist2 $dist2 ;
+                    display: flex ;
+                    @include flex(column,flex-start,flex-start,wrap,flex-start) ;
+                    a{
+                        min-width: 8em ;
+                        height: 2em;
+                        line-break: 2em ;
+                        margin-top: $dist1 ;
+                        margin-right: $dist3 ;
+                        display: flex ;
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        font-size: $font-m ;
+                        color: darken($greyColor2,10%);
+                        transition: all .3s ease-in-out ;
+                        i{
+                            transform: translate(100%,0%) ;
+                            font-size: $font-l ;
+                        }
+                    }
                 }
-
             }
             &:hover{
-                p{}
-                i{}
                 .products{
-                    opacity: 1;
                     visibility: visible ;
+                    opacity: 1;
                 }
             }
+            
         }
     }
     .logo{
