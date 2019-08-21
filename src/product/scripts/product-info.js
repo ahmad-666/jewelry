@@ -9,20 +9,31 @@ function Slider(elm){
     this.firstSlide = this.slides[0] ;
     this.lastSlide = this.slides[this.slidesNum - 1] ;  
     this.currIndex = 0 ;
-    this.viewportSlides = null ;//how many slides are visible inside viewport
+    this.viewportSlides = this.getViewportSlides() ;//how many slides are visible inside viewport
     this.prevBtn = this.curr.querySelector('.fa-chevron-right') ;
     this.nextBtn = this.curr.querySelector('.fa-chevron-left') ;
     this.prevBtn.addEventListener('click',this.prevSlide.bind(this));
     this.nextBtn.addEventListener('click',this.nextSlide.bind(this));
     this.initSlider() ;
+    this.threshold = {
+        min:null ,
+        max:null
+    };
+    this.setThresholds() ;
 };
 Slider.prototype.initSlider = function(){
-    //let firstImg = getStyle(this.slides[0],'background-image');
-    //this.currImgs[0].style.backgroundImage = firstImg ;
     this.currImgs[0].classList.add('show') ;
     this.currImgs.forEach(img => {
         img.style.transition = `all 1s ease-in-out` ;
-    }) 
+    }) ;
+}
+Slider.prototype.setThresholds = function(){
+    this.threshold.min = 0 ;
+    let slideWidth = this.slides[0].clientWidth ;
+    let slideMargin = parseFloat(getStyle(this.slides[0],'margin-right')) + parseFloat(getStyle(this.slides[0],'margin-left')) ;
+    let slideBorder = parseFloat(getStyle(this.slides[0],'border-right')) + parseFloat(getStyle(this.slides[0],'border-left')) ;
+    let offset = (this.slidesNum-this.viewportSlides)*(slideWidth+slideMargin+slideBorder) ;
+    this.threshold.max = offset ;
 }
 Slider.prototype.getViewportSlides = function(){
     let wrapperWidth = this.slidesWrapper.clientWidth ;
@@ -36,21 +47,38 @@ Slider.prototype.getViewportSlides = function(){
 Slider.prototype.prevSlide = function(e){
     this.viewportSlides = this.getViewportSlides();
     let currSlide = null ;
-    let prevSlideIndex = null ;
+    let currSlideIndex = null ;
     let prevSlide = null ;
+    let prevSlideIndex = null ;
     for(let i=0 ; i<this.slides.length ; i++){
         let slide = this.slides[i] ;
         if(slide.classList.contains('active')){
+            currSlideIndex = i ;
             currSlide = slide ;
-            prevSlideIndex = (i-1 >= 0) ? i-1 : this.slidesNum-1 ;
-            this.currIndex = prevSlideIndex ;
+            prevSlideIndex = (i-1>=0)?i-1:this.slidesNum-1 ;
+            this.currIndex = prevSlideIndex
             prevSlide = this.slides[prevSlideIndex];     
             currSlide.classList.remove('active') ;
             prevSlide.classList.add('active') ;     
-            break ;  
+            break ;
         }
     }
-    this.curr.style.backgroundImage = `` ;
+    if(prevSlideIndex == this.slidesNum-1) {
+        let slideWidth = this.slides[0].clientWidth ;
+        let slideMargin = parseFloat(getStyle(this.slides[0],'margin-right')) + parseFloat(getStyle(this.slides[0],'margin-left')) ;
+        let slideBorder = parseFloat(getStyle(this.slides[0],'border-right')) + parseFloat(getStyle(this.slides[0],'border-left')) ;
+        let offset = (this.slidesNum-this.viewportSlides)*(slideWidth + slideMargin + slideBorder) ;
+        this.slidesWrapper.style.right = `-${offset}px` ;
+    }
+    else{ 
+        let slideWidth = this.slides[0].clientWidth ;
+        let slideMargin = parseFloat(getStyle(this.slides[0],'margin-right')) + parseFloat(getStyle(this.slides[0],'margin-left')) ;
+        let slideBorder = parseFloat(getStyle(this.slides[0],'border-right')) + parseFloat(getStyle(this.slides[0],'border-left')) ;
+        let offset = slideWidth + slideMargin + slideBorder ;
+        let currPos = parseFloat(getStyle(this.slidesWrapper,'right'));
+        if(currPos+offset<=this.threshold.min) this.slidesWrapper.style.right = `${currPos+offset}px` ;
+    }
+    this.changeSlide(currSlideIndex,prevSlideIndex);
 };
 Slider.prototype.nextSlide = function(e){
     this.viewportSlides = this.getViewportSlides();
@@ -76,8 +104,8 @@ Slider.prototype.nextSlide = function(e){
         let slideMargin = parseFloat(getStyle(this.slides[0],'margin-right')) + parseFloat(getStyle(this.slides[0],'margin-left')) ;
         let slideBorder = parseFloat(getStyle(this.slides[0],'border-right')) + parseFloat(getStyle(this.slides[0],'border-left')) ;
         let offset = slideWidth + slideMargin + slideBorder ;
-        let currPos = Math.abs(parseFloat(getStyle(this.slidesWrapper,'right'))) ;
-        this.slidesWrapper.style.right = `-${currPos+offset}px` ;
+        let currPos = Math.abs(parseFloat(getStyle(this.slidesWrapper,'right'))) ;        
+        if(currPos+offset<=this.threshold.max) this.slidesWrapper.style.right = `-${currPos+offset}px` ;
     }
     else if(nextSlideIndex == 0) this.slidesWrapper.style.right = `0px` ;
     this.changeSlide(currSlideIndex,nextSlideIndex);
