@@ -1,15 +1,23 @@
 @import '../../variables.scss' ;
 @import '../../colors.scss' ;
 @import '../../mixins.scss' ;
+body{
+    background-color: $whiteColor1 ;
+}
 #tabs{
     width: 90vw ;
     height: auto;
     display: flex ;
     @include flex(column,flex-start,flex-start,nowrap,"") ;
     margin: $sectionsDist auto 0 auto ;
+    padding-bottom: $dist3 ;
+    border: 1.2px solid lighten($greyColor2,30%) ;
+    background-color: white ;
+    padding-top: $dist3 ;
     .tabs_wrapper{
-        width: 100% ;
+        width: 90% ;
         height: auto;
+        margin: 0 auto ;
         display: flex ;
         @include flex(row,flex-start,center,nowrap,"") ;
         .tab{
@@ -29,7 +37,8 @@
         }
     } 
     .content{
-        width: 100% ;
+        width: 90% ;
+        margin: 0 auto ;
         height: auto;
         position: relative ;
         margin-top: $dist2; 
@@ -42,6 +51,43 @@
             visibility: hidden ;    
             opacity: 0;
             transition: all .3s ease-in-out ;    
+            table{
+                width: auto ;
+                height: auto;
+                margin-top: $dist2 ;
+                display: flex ;
+                @include flex(column,flex-start,flex-start,nowrap,"");
+                tbody{
+                    width: auto ;
+                    height: auto;
+                    display: flex ;
+                    @include flex(column,flex-start,flex-start,nowrap,"");
+                    tr{
+                        width: auto ;
+                        height: 3em ;
+                        line-height: 3em ;
+                        display: flex ;
+                        @include flex(row,flex-start,center,nowrap,"");
+                        &:nth-child(odd){background-color: $paleColor ;}
+                        th{
+                            width: auto ;
+                            height: 100% ;
+                            font-size: $font-m + .1em ;
+                            font-weight: 700 ;
+                            color: $darkColor ;
+                            padding: 0 $dist3 * 2 ;
+                        }
+                        td{
+                            width: auto ;
+                            height: 100%;
+                            font-size: $font-m ;
+                            color: $greyColor2 ;
+                            padding: 0 $dist4 * 2 ;
+                        }
+                    }
+
+                }
+            }
         }
         .tab_content.show{
             visibility: visible ;

@@ -1,3 +1,4 @@
+let content = document.querySelector('#tabs .content') ;
 let wrapper = document.querySelector('#comment_section') ;
 //Show #user_comment
 //-----------------------------------------------------------
@@ -10,8 +11,14 @@ addCommentBtn.addEventListener('click',toggleAddComment) ;
 function toggleAddComment(e){
     addComment.classList.add('addTransition') ;
     addComment.classList.toggle('show');
-    if(addComment.classList.contains('show')) addComment.style.height = `${addCommentHeight}px` ;
-    else addComment.style.height = `${0}px` ;  
+    if(addComment.classList.contains('show')) {
+        content.style.height = `${addCommentHeight+content.clientHeight}px` ;
+        addComment.style.height = `${addCommentHeight}px` ;
+    }
+    else {
+        content.style.height = `${content.clientHeight-addCommentHeight}px` ;
+        addComment.style.height = `${0}px` ;  
+    }
 }
 //likes
 //----------------------------------------------------------
@@ -45,8 +52,14 @@ function toggleReply(e){
     let target = wrapper.querySelector(targetID) ;
     target.classList.add('addTransition') ;
     target.classList.toggle('show') ;
-    if(target.classList.contains('show')) target.style.height = `${replyHeight}px` ;
-    else target.style.height = `${0}px` ;
+    if(target.classList.contains('show')) {
+        content.style.height = `${content.clientHeight+replyHeight}px` ;
+        target.style.height = `${replyHeight}px` ;
+    }
+    else {
+        content.style.height = `${content.clientHeight-replyHeight}px` ;
+        target.style.height = `${0}px` ;
+    }
 }
 //add comment form validation
 //----------------------------------------------------------

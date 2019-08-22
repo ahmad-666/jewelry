@@ -11,7 +11,7 @@ nav{
     right: 0 ;
     display: flex ;
     @include flex(row,flex-start,center,nowrap,"") ;
-    z-index: 2;
+    z-index: 5;
     .helpers,.categories{
         display: flex ;
         @include flex(row,space-around,center,nowrap,"") ;
@@ -25,6 +25,10 @@ nav{
             height: 100%;
             display: flex ;
             @include flex(column,space-around,center,nowrap,"");
+            transition: all .3s ease-in-out ;
+            &:hover{
+                transform: scale(1.1) ;
+            }
             i{
                 font-size: $font-l ;
                 color: lighten($darkColor,5%) ;
@@ -111,6 +115,10 @@ nav{
                         font-size: $font-m ;
                         color: darken($greyColor2,10%);
                         transition: all .3s ease-in-out ;
+                        &:hover{
+                            color: $primaryColor ;
+                            // transform: scale(1.1) ;
+                        }
                         i{
                             transform: translate(100%,0%) ;
                             font-size: $font-l ;

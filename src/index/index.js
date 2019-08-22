@@ -2,6 +2,7 @@
 import '../../node_modules/@fortawesome/fontawesome-free/css/all.css' ;
 import '../init.scss' ;
 import './styles/landing.scss' ;
+import './styles/search.scss' ;
 import './styles/header.scss' ;
 import './styles/grid.scss' ;
 import './styles/slider.scss' ;
@@ -11,6 +12,7 @@ import './styles/footer.scss' ;
 import './styles/copyright.scss' ;
 //load scripts
 import './scripts/landing' ;
+import './scripts/search' ;
 import './scripts/header' ;
 import './scripts/grid' ;
 import './scripts/slider' ;

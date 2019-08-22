@@ -7,7 +7,7 @@
     display: flex;
     @include flex(column, flex-start, flex-start, nowrap, "");
     padding: 0 1em 1em 1em;
-    margin-top: $dist3;
+    margin-top: $dist1;
     .add_comment,
     #user_comment,
     .comment {

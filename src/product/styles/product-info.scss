@@ -96,6 +96,9 @@
         margin-right: $dist3 ;
         display: flex ;
         @include flex(column,flex-start,flex-start,nowrap,"") ;
+        background-color: white ;
+        border: 1.2px solid lighten($greyColor2,30%) ;
+        padding: $dist2 ;
         .check_stock,.stars,.desc,.price,#buy{
             margin-top: $dist2 ;
         }
