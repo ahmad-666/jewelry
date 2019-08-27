@@ -75,6 +75,7 @@
                     .price{
                         color: $greyColor2 ;
                         position: relative;
+                        font-size: $font-m ;
                         &::before{
                             content: '' ;
                             width: 110% ;
