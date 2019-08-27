@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="filters_wrapper">
+            <div id="curr_filters">
+                <div class="title">
+                    <h4>فیلتر های انتخابی</h4>
+                    <button class="clear_filters">پاک کردن همه</button>
+                </div>
+                <div class="currs">
+                    <div class="curr">
+                        <i class="fas fa-times"></i>
+                        <p>نام فیلتر</p>
+                    </div>
+                    <div class="curr">
+                        <i class="fas fa-times"></i>
+                        <p>نام فیلتر</p>
+                    </div>
+                    <div class="curr">
+                        <i class="fas fa-times"></i>
+                        <p>نام فیلتر</p>
+                    </div>
+                    <div class="curr">
+                        <i class="fas fa-times"></i>
+                        <p>نام فیلتر</p>
+                    </div>
+                    <div class="curr">
+                        <i class="fas fa-times"></i>
+                        <p>نام فیلتر</p>
+                    </div>
+                    <div class="curr">
+                        <i class="fas fa-times"></i>
+                        <p>نام فیلتر</p>
+                    </div>
+                    <div class="curr">
+                        <i class="fas fa-times"></i>
+                        <p>نام فیلتر</p>
+                    </div>
+                    <div class="curr">
+                        <i class="fas fa-times"></i>
+                        <p>نام فیلتر</p>
+                    </div>
+                </div>
+            </div>
+            <div id="filters">
+                <div class="filter" id="price">
+                    <div class="title">
+                        <input type="hidden" id="min_price" name="min_price">
+                        <input type="hidden" id="max_price" name="max_price">
+                        <h4>قیمت</h4>
+                        <i class="fas fa-angle-down"></i>                   
+                    </div>
+                    <div class="content">
+                        <div id="range"></div>
+                        <p>شروع قیمت - پایان قیمت</p>
+                    </div>
+                </div>
+                <div class="filter" id="bracelet">
+                    <div class="title">
+                       <label for="bracelet_all">
+                           <input type="checkbox" id="bracelet_all" name="bracelet_all" value="bracelet_all">
+                           <span class="rect"></span>
+                           <h4>دستبند</h4>
+                       </label>
+                       <i class="fas fa-angle-down"></i>
+                    </div>
+                    <div class="content">
+                        <label for="bracelet_1">
+                            <input type="checkbox" id="bracelet_1" name="bracelet_1" value="bracelet_1">
+                            <span class="rect"></span>
+                            <p>دستبند 1</p>
+                        </label>
+                        <label for="bracelet_2">
+                            <input type="checkbox" id="bracelet_2" name="bracelet_2" value="bracelet_2">
+                            <span class="rect"></span>
+                            <p>دستبند 2</p>
+                        </label>
+                        <label for="bracelet_3">
+                            <input type="checkbox" id="bracelet_3" name="bracelet_3" value="bracelet_3">
+                            <span class="rect"></span>
+                            <p>دستبند 3</p>
+                        </label>
+                        <label for="bracelet_4">
+                            <input type="checkbox" id="bracelet_4" name="bracelet_4" value="bracelet_4">
+                            <span class="rect"></span>
+                            <p>دستبند 4</p>
+                        </label>
+                        <label for="bracelet_5">
+                            <input type="checkbox" id="bracelet_5" name="bracelet_5" value="bracelet_5">
+                            <span class="rect"></span>
+                            <p>دستبند 5</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="filter" id="necklace">
+                    <div class="title">
+                       <label for="necklace_all">
+                           <input type="checkbox" id="necklace_all" name="necklace_all" value="necklace_all">
+                           <span class="rect"></span>
+                           <h4>گردنبند ها</h4>
+                       </label>
+                       <i class="fas fa-angle-down"></i>
+                    </div>
+                    <div class="content">
+                        <label for="necklace_1">
+                            <input type="checkbox" id="necklace_1" name="necklace_1" value="necklace_1">
+                            <span class="rect"></span>
+                            <p>گردنبند 1</p>
+                        </label>
+                        <label for="necklace_2">
+                            <input type="checkbox" id="necklace_2" name="necklace_2" value="necklace_2">
+                            <span class="rect"></span>
+                            <p>گردنبند 2</p>
+                        </label>
+                        <label for="necklace_3">
+                            <input type="checkbox" id="necklace_3" name="necklace_3" value="necklace_3">
+                            <span class="rect"></span>
+                            <p>گردنبند 3</p>
+                        </label>
+                        <label for="necklace_4">
+                            <input type="checkbox" id="necklace_4" name="necklace_4" value="necklace_4">
+                            <span class="rect"></span>
+                            <p>گردنبند 4</p>
+                        </label>
+                        <label for="necklace_5">
+                            <input type="checkbox" id="necklace_5" name="necklace_5" value="necklace_5">
+                            <span class="rect"></span>
+                            <p>گردنبند 5</p>
+                        </label>
+                        
+                    </div>
+                </div>             
+            </div>
+        </div>
+        <div id="products_wrapper">
+            <div id="order">
+                <div class="sort">
+                    <p>مرتب سازی بر اساس</p>
+                    <div class="input_wrapper select">
+                        <input type="text" id="order_by" name="order_by" value="جدیدترین" required readonly>
+                        <i class="fas fa-angle-down"></i>
+                        <ul>
+                            <li>جدیدترین</li>
+                            <li>بیشترین تخفیف</li>
+                            <li>ارزان ترین</li>
+                            <li>گرانترین</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="show">
+                    <p> نمایش</p>
+                    <div class="input_wrapper select">
+                        <input type="number" id="show_num" name="show_num" value="20" required readonly>
+                        <i class="fas fa-angle-down"></i>
+                        <ul>
+                            <li>10</li>
+                            <li>20</li>
+                            <li>30</li>
+                            <li>40</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="products">
+                <a href="#!" class="product">
+                    <img src="../assets/imgs/necklase1.png" alt="product_img">
+                    <div class="content">
+                        <p class="name">نام محصول</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>(۱۰نظر)</p>
+                        </div>
+                        <p class="price">1.000.000 تومان</p>
+                    </div>         
+                </a>
+                <a href="#!" class="product has_discount">
+                    <p class="discount">15%</p>
+                    <img src="../assets/imgs/necklase1.png" alt="product_img">
+                    <div class="content">
+                        <p class="name">نام محصول</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>(۱۰نظر)</p>
+                        </div>
+                        <p class="price">1.000.000 تومان</p>
+                        <p class="after_discount">850.000 تومان</p>
+                    </div>         
+                </a>
+                <a href="#!" class="product not_available">
+                    <span class="not_available">ناموجود</span>
+                    <img src="../assets/imgs/necklase1.png" alt="product_img">
+                    <div class="content">
+                        <p class="name">نام محصول</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>(۱۰نظر)</p>
+                        </div>
+                        <p class="price">1.000.000 تومان</p>
+                    </div>         
+                </a>
+                <a href="#!" class="product">
+                    <img src="../assets/imgs/necklase1.png" alt="product_img">
+                    <div class="content">
+                        <p class="name">نام محصول</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>(۱۰نظر)</p>
+                        </div>
+                        <p class="price">1.000.000 تومان</p>
+                    </div>         
+                </a>
+                <a href="#!" class="product has_discount">
+                    <p class="discount">15%</p>
+                    <img src="../assets/imgs/necklase1.png" alt="product_img">
+                    <div class="content">
+                        <p class="name">نام محصول</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>(۱۰نظر)</p>
+                        </div>
+                        <p class="price">1.000.000 تومان</p>
+                        <p class="after_discount">850.000 تومان</p>
+                    </div>         
+                </a>
+                <a href="#!" class="product not_available">
+                    <span class="not_available">ناموجود</span>
+                    <img src="../assets/imgs/necklase1.png" alt="product_img">
+                    <div class="content">
+                        <p class="name">نام محصول</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>(۱۰نظر)</p>
+                        </div>
+                        <p class="price">1.000.000 تومان</p>
+                    </div>         
+                </a>
+                <a href="#!" class="product">
+                    <img src="../assets/imgs/necklase1.png" alt="product_img">
+                    <div class="content">
+                        <p class="name">نام محصول</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>(۱۰نظر)</p>
+                        </div>
+                        <p class="price">1.000.000 تومان</p>
+                    </div>         
+                </a>
+                <a href="#!" class="product has_discount">
+                    <p class="discount">15%</p>
+                    <img src="../assets/imgs/necklase1.png" alt="product_img">
+                    <div class="content">
+                        <p class="name">نام محصول</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>(۱۰نظر)</p>
+                        </div>
+                        <p class="price">1.000.000 تومان</p>
+                        <p class="after_discount">850.000 تومان</p>
+                    </div>         
+                </a>
+                <a href="#!" class="product not_available">
+                    <span class="not_available">ناموجود</span>
+                    <img src="../assets/imgs/necklase1.png" alt="product_img">
+                    <div class="content">
+                        <p class="name">نام محصول</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>(۱۰نظر)</p>
+                        </div>
+                        <p class="price">1.000.000 تومان</p>
+                    </div>         
+                </a>
+                <a href="#!" class="product">
+                    <img src="../assets/imgs/necklase1.png" alt="product_img">
+                    <div class="content">
+                        <p class="name">نام محصول</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>(۱۰نظر)</p>
+                        </div>
+                        <p class="price">1.000.000 تومان</p>
+                    </div>         
+                </a>
+                <a href="#!" class="product has_discount">
+                    <p class="discount">15%</p>
+                    <img src="../assets/imgs/necklase1.png" alt="product_img">
+                    <div class="content">
+                        <p class="name">نام محصول</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>(۱۰نظر)</p>
+                        </div>
+                        <p class="price">1.000.000 تومان</p>
+                        <p class="after_discount">850.000 تومان</p>
+                    </div>         
+                </a>
+                <a href="#!" class="product not_available">
+                    <span class="not_available">ناموجود</span>
+                    <img src="../assets/imgs/necklase1.png" alt="product_img">
+                    <div class="content">
+                        <p class="name">نام محصول</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>(۱۰نظر)</p>
+                        </div>
+                        <p class="price">1.000.000 تومان</p>
+                    </div>         
+                </a>
+                <div id="pagination">
+                    <button class="page first">صفحه اول</button>
+                    <button class="page">1</button>
+                    <button class="page">2</button>
+                    <button class="page">3</button>
+                    <button class="page last">صفحه آخر</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

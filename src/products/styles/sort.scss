@@ -1,0 +1,92 @@
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+.wrapper{
+    #products_wrapper{
+        #order{
+            width: 100% ;
+            height: auto;
+            display: flex ;
+            @include flex(row,space-between,center,nowrap,"") ;
+            background-color: white ;
+            box-shadow: 0 0 .3em .05em $shadowColor;
+            padding: $dist1 ;
+            .sort,.show{
+                width: auto ;
+                height: auto;
+                display: flex ;
+                @include flex(row,flex-start,center,nowrap,"") ;  
+                p{
+                    font-size: $font-m ;
+                    font-weight: 700 ;
+                    color: $darkColor ;
+                }          
+                .input_wrapper{
+                    height: 2em;
+                    position: relative ;
+                    margin-right: $dist2 ;
+                    input{
+                        width: 100% ;
+                        height: 100%;
+                        padding: $dist1 ;
+                        color: $darkColor ;
+                        font-size: $font-m ;
+                        border: 1px solid $greyColor2 ;
+                        cursor: pointer;
+                        &::placeholder{
+                            font-size: $font-m ;
+                            color: $greyColor2 ;
+                        }
+                    }
+                    i{
+                        position: absolute ;
+                        top: 50% ;
+                        transform: translateY(-40%) ;
+                        left: $dist1;
+                        color: $darkColor ;
+                        font-size: $font-l ;
+                        
+                    }
+                    ul{
+                        width: 100% ;
+                        height: auto;
+                        position: absolute ;
+                        right: 0 ;
+                        top: 105% ;
+                        box-shadow: 0 .2em .5em -.1em $shadowColor ;
+                        display: flex ;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        visibility: hidden ;
+                        opacity: 0;
+                        z-index: 6;
+                        transition: all .3s ease-in-out ;
+                        li{
+                            width: 100% ;
+                            height: 2.5em ;
+                            line-height: 2.5em ;
+                            padding-right: $dist1 ;
+                            color: $darkColor ;
+                            font-size: $font-m ;
+                            background-color: $whiteColor2 ;
+                            transition: all .3s ease-in-out ;
+                            cursor: pointer;
+                            &:hover{
+                                background-color: darken($whiteColor2,15%) ;
+                            }
+                        }
+                    }
+                    ul.show{
+                        visibility: visible ;
+                        opacity: 1;
+                    }
+                }
+            }
+            .sort{
+                .input_wrapper{width: 10em ;}
+            }
+            .show{
+                .input_wrapper{width: 3em ;}
+            }
+        }
+    }
+}

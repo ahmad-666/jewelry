@@ -1,0 +1,27 @@
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+body{
+    background: lighten($paleColor,2%) ;
+}
+.wrapper{
+    width: 90% ;
+    height: auto;
+    margin: $sectionsDist auto 0 auto ;
+    display: flex ;
+    @include flex(row,flex-start,flex-start,nowrap,"") ;
+    #filters_wrapper{
+        flex-shrink: 0 ;
+        width: 15em ;
+        height: auto;
+        display: flex ;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+    }
+    #products_wrapper{
+        width: 100% ;
+        height: auto;
+        display: flex ;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        margin-right: $dist2 ;
+    }
+}
