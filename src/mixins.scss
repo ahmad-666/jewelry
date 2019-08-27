@@ -19,8 +19,8 @@
     overflow: hidden;
     line-height: $lineHeight;
     max-height: $lineNum * $lineHeight ;
-    text-align: justify;  
-    padding-left: 1.2em;
+    text-align: justify; //we should not use text-align:center here  
+    padding-left: 1em;
     padding-right: 0 ;
     .ellipse{
         color: $ellipseColor ; 
@@ -29,12 +29,17 @@
         bottom: 0 ;
         display: none ;
     }
-	//let ellipses = document.querySelectorAll('.ellipse') ;
-	//ellipses.forEach(ellipse => {
-	//	let parent = ellipse.parentElement ;
-	//	let threshold = parseInt(window.getComputedStyle(parent,null).getPropertyValue('max-height'));
-	//	if(parent.scrollHeight > threshold) ellipse.style.display = 'block' ;
-	//})
+	// let ellipses = document.querySelectorAll('.ellipse') ;
+    // ellipses.forEach(ellipse => {
+    //     let parent = ellipse.parentElement ;
+    //     let threshold = parseInt(window.getComputedStyle(parent,null).getPropertyValue('max-height'));
+    //     if(parent.scrollHeight > threshold) {
+    //         ellipse.style.display = 'block' ;
+    //     }
+    //     else{
+    //         parent.style.textAlign = 'center' ;
+    //     }
+    // })
 }
 @mixin fullSize{
     width: 100% ;

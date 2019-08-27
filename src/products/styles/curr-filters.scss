@@ -28,7 +28,7 @@
                     height: auto;
                     padding: $dist1 $dist2 ;
                     color: $whiteColor2 ;
-                    background-color: $purpleColor1 ;
+                    background-color: $primaryColor ;
                     font-size: $font-m - .1em ;
                     border-radius: $dist3 ;
                     cursor: pointer;
@@ -47,7 +47,7 @@
                     @include flex(row,flex-start,center,nowrap,"") ;
                     border-radius: $dist3 ;
                     padding: .1em $dist1 + .2em ;
-                    background-color: $purpleColor1 ;
+                    background-color: $primaryColor ;
                     cursor: pointer;
                     margin: $dist1 ;
                     i{

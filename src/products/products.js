@@ -1,5 +1,6 @@
 //load styles
 import '../../node_modules/@fortawesome/fontawesome-free/css/all.css' ;
+import '../../node_modules/nouislider/distribute/nouislider.min.css'
 import '../init.scss' ;
 // import '../index/styles/landing.scss' ;
 // import '../index/styles/search.scss' ;
