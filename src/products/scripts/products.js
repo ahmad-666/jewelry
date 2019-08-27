@@ -1,4 +1,6 @@
 //ellipses on each product name
+//-----------------------------------------------------------
+//-----------------------------------------------------------
 let ellipses = document.querySelectorAll('.ellipse') ;
 ellipses.forEach(ellipse => {
     let parent = ellipse.parentElement ;
@@ -11,6 +13,8 @@ ellipses.forEach(ellipse => {
     }
 })
 //set width of each product 
+//-----------------------------------------------------------
+//-----------------------------------------------------------
 let getStyle = (elm,prop) => window.getComputedStyle(elm,null).getPropertyValue(prop) ;
 let productsWrapper = document.querySelector('#products') ;
 let products = productsWrapper.querySelectorAll('.product') ;
