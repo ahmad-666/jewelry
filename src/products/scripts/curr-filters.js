@@ -30,12 +30,14 @@ function createFilterTag(checkbox){
     currFilter.appendChild(closeIcon) ;
     currFilter.appendChild(text) ;
     currFiltersWrapper.appendChild(currFilter) ;
+    closeIcon.addEventListener('click',closeCurrFilter) ;
 }
 function removeFilterTag(checkbox){
     let currFilters = currFiltersWrapper.querySelectorAll('.curr') ;
     for(let i=0 ; i<currFilters.length ; i++){
         let currFilter = currFilters[i] ;
         if(currFilter.querySelector('p').textContent == checkbox.parentElement.querySelector('p').textContent) {
+            currFilter.querySelector('i').removeEventListener('click',closeCurrFilter)
             currFilter.parentElement.removeChild(currFilter) ;
             break ;
         }
@@ -49,4 +51,29 @@ function clearAllHandler(e){
         curr.parentElement.removeChild(curr) ;
     });
     checkboxes.forEach(checkbox => checkbox.checked = false)
+}
+function closeCurrFilter(e){   
+    let currFilter = this.parentElement ;
+    let currCheckbox = null ;
+    for(let i=0 ; i<checkboxes.length ; i++){
+        let checkbox = checkboxes[i] ;
+        if(checkbox.parentElement.querySelector('p').textContent == currFilter.querySelector('p').textContent){
+            currCheckbox = checkbox ;
+            break;
+        }
+    } 
+    if(currCheckbox.classList.contains('sub_category')){
+        currCheckbox.checked = false ;
+        let content = currCheckbox.parentElement.parentElement ;
+        let mainCategory = content.parentElement.querySelector('.title .main_category') ;
+        if(content.querySelectorAll('.sub_category:checked').length == 0) mainCategory.checked = false ;
+        else mainCategory.checked = true ;
+    }
+    // else if(currCheckbox.classList.contains('main_category')){
+    //     currCheckbox.checked = false ;
+    //     let subCategories = currCheckbox.parentElement.parentElement.parentElement.querySelectorAll('.content .sub_category') ;
+    //     subCategories.forEach(subCategory => subCategory.checked = false )
+    // }
+    currFilter.parentElement.removeChild(currFilter) ;
+
 }

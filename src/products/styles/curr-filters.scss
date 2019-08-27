@@ -48,12 +48,13 @@
                     border-radius: $dist3 ;
                     padding: .1em $dist1 + .2em ;
                     background-color: $primaryColor ;
-                    cursor: pointer;
+                    // cursor: pointer;
                     margin: $dist1 ;
                     i{
                         font-size: $font-m ;
                         color: $whiteColor2 ;
                         transform: translate(0,5%) ;
+                        cursor: pointer;
                     }
                     p{
                         color: $whiteColor2 ;
