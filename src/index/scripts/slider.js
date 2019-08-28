@@ -54,7 +54,7 @@ Slider.prototype.animation = function(val,time){
     })
 }
 let sliders = [] ;
-document.querySelectorAll('.slider-wrapper').forEach(slider => {
+document.querySelectorAll('.slider_wrapper').forEach(slider => {
     sliders.push(new Slider(slider))
 })
 

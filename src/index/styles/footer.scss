@@ -1,123 +1,171 @@
 @import '../../colors.scss' ;
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
-#footer{
+footer{
     width: 100% ;
-    height: 28em;
-    background: url('../../assets/svgs/footer.svg') 80% -5%  no-repeat ;
-    background-size: 116% 142% ;
-    position: relative ;
-    margin-top: $sectionsDist ;
-    .content{
-        width: 75% ;
+    height: auto;
+    display: flex ;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    margin: $sectionsDist auto 0 auto ;
+    background-color: $paleColor ;
+    #why_us,#links,#contact{
+        width: 80% ;
         height: auto;
-        @include center-x; 
-        top: 55% ;
+        padding: $dist1 ;
         display: flex ;
-        @include flex(row,space-around,flex-start,wrap,flex-start);
-        padding: 0 .5em ; 
-        .about_us,.training,.articles,.contact_us{
+        border-bottom: 1px solid lighten($greyColor2,20%) ;
+    }
+    #why_us{       
+        @include flex(row,flex-start,center,wrap,flex-start) ;
+        .item{
+            width: calc((100% - (5 * 1.2em)) / 5);
+            height: 6em;
+            margin: $dist1 ;
+            display: flex ;
+            @include flex(column,space-around,center,nowrap,"") ;
+            img{
+                width: 6em ;
+                height: 4em;
+            }
+            p{
+                font-size: $font-m ;
+                color: $darkColor ;
+            }
+        }
 
+
+    }
+    #links{     
+        @include flex(row,space-around,flex-start,wrap,flex-start) ;
+        .guide,.services,.more_info{
             width: auto ;
             height: auto;
-            margin: 0 .5em ;
+            display: flex ;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            margin: 0 $dist1 ;
+            &:first-child{margin-right: 0 ;}
+            h4{
+                font-size: $font-m ;
+                font-weight: 700 ;
+                color: $darkColor ;
+            }
+            a{
+                color: $greyColor2 ;
+                font-size: $font-m - .1em ;
+                margin: $dist1 0 ;
+                transition: all .2s ease-in-out ;
+                &:hover{
+                    font-weight: 700 ;
+                    color: $darkColor ;
+                }
+            }
+
+        }
+        form#rss{
+            width: auto ;
+            height: auto;
+            margin: 0 $dist1 ;
+            margin-left: 0 ;
             display: flex ;
             @include flex(column,flex-start,flex-start,nowrap,"") ;
             h4{
-                font-size: $font-l ;
-                color: $whiteColor2 ;
                 font-weight: 700 ;
-            }
-            a{
                 font-size: $font-m ;
-                color: $greyColor2 ;
-                cursor: pointer;
-                margin-top: 1em ;
-                transition: all .3s ease-in-out ;
-                &:hover{
+                color: $darkColor ;
+                margin: $dist1 0 ;
+                &:first-child{margin-top: 0 ;}
+            }
+            .input-wrapper{
+                width: 18em ;
+                height: 2.5em;
+                position: relative ;
+                margin: $dist1 0 ;
+                input{
+                    width: 100% ;
+                    height: 100%;
+                    border-radius: $dist1 ;
+                    background-color: white ;
+                    color: $darkColor ;
+                    font-size: $font-m ;
+                    padding: $dist1 ;
+                    border: 1px solid lighten($greyColor2,20%) ;
+                    &::placeholder{
+                        font-size: $font-m ;
+                        color: $greyColor2 ;
+                    }
+                }
+                button[type="submit"]{
+                    @include center-y ;
+                    left: 0;
+                    width: auto ;
+                    height: 100%;
+                    padding: 0 $dist2 + .2em ;
                     color: $whiteColor2 ;
-                    transform: scale(1.1) ;
+                    background-color: darken($blueColor1,7%) ;
+                    font-size: $font-m ;
+                    border-top-left-radius: $dist1 ;
+                    border-bottom-left-radius: $dist1 ;
+                    cursor: pointer;                   
                 }
             }
-        }
-        .contact_us{
-            p{  
-                width: 100% ;
+            .socials{
+                width: auto ;
                 height: auto;
-                font-size: $font-m;
-                color: $greyColor2 ;
-                display: flex ;
-                @include flex(row,flex-start,center,nowrap,"") ;
-                margin-top: 1em; 
-                i{
-                    font-size: $font-l;
-                    transform: translateX(.5em) ;
-                }
-            }
-            #socials{
-                width: 100% ;
-                height: auto;
-                margin-top: 1em ;
+                margin: $dist1 0 ;
+                margin-bottom: 0 ;
                 display: flex ;
                 @include flex(row,flex-start,center,wrap,flex-start) ;
                 a{
-                    font-size: $font-xl + .2em ;
-                    cursor: pointer;
-                    margin-top: 0 ;
-                    margin-left: $dist2 ;
+                    width: 2.5em ;
+                    height: 2.5em;
+                    border-radius: 50% ;
+                    color: darken($blueColor1,7%) ; ;
+                    background-color: $whiteColor2 ;
+                    text-align: center ;
+                    line-height: 2.5em ;
+                    font-size: $font-l ;
+                    margin: $dist1 $dist2 ;
+                    transition: all .3s ease-in-out ;
+                    &:hover{
+                        color: $whiteColor2 ;
+                        background-color: darken($blueColor1,10%) ;
+                    }
                 }
             }
         }
     }
-}
-#about_modal,#rules_modal{
-    visibility: hidden ;
-    opacity: 0;
-    transition: all .4s ease-in-out ;
-    height: auto;
-    background-color: $whiteColor2 ;
-    z-index: 5;
-    box-shadow: 0 0 .3em .1em $shadowColor ;
-    position: fixed ;
-    top: 50% ;
-    right: 50% ;
-    transform: translate(50%,-50%) ;
-    padding: $dist2 ;
-    display: flex ;
-    @include flex(column,flex-start,flex-start,nowrap,"") ;
-    h4,p{margin: $dist1 0 ;}
-    h4{
-        width: 100% ;
-        font-size: $font-xl + .3em; 
-        color: $darkColor ;
-        font-weight: 700 ;
+    #contact{
+       border-bottom: none ;
+       @include flex(column,flex-start,flex-start,nowrap,"") ;
+        h4{
+            font-size: $font-m ;
+            color: $darkColor ;
+            font-weight: 700 ;
+        }
+        .infos{
+            margin: $dist1 0 ;
+            width: auto ;
+            height: auto;
+            display: flex ;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            div{
+                width: auto ;
+                height: auto;
+                display: flex ;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                margin: $dist1 0 ;
+                &:first-child{margin-top: 0 ;}
+                i{
+                    font-size: $font-l ;
+                    color: $greyColor2 ;
+                    transform: translateY(6%) ;
+                }
+                p{
+                    font-size: $font-m - .1em ;
+                    color: $greyColor2 ;
+                    transform: translateX(-.3em) ;
+                }
+            }
+        }
     }
-    p{
-        width: 100% ;
-        max-height: 30em ;
-        overflow: auto;
-        color: $greyColor2 ;
-        font-size: $font-m ;
-        line-height: $dist3 + .5em;
-    }   
-}
-#about_modal{
-    width: 40em ;
-    p{
-        max-height: 20em ;
-    }
-}
-#rules_modal{
-    width: 60em ;
-    p{
-        max-height: 35em ;
-    }
-}
-#about_modal.show{
-    visibility: visible ;
-    opacity: 1;
-}
-#rules_modal.show{
-    visibility: visible ;
-    opacity: 1;
 }

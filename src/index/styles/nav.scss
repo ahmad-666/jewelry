@@ -3,89 +3,105 @@
 @import '../../mixins.scss' ;
 nav{
     width: 100% ;
-    height: $nav-height ;
-    margin: 0 auto 0 auto ;
-    background-color: lighten($darkColor,8%) ;
+    height: $nav-height;
     padding: $dist1 $dist2 ;
+    background-color: lighten($darkColor,10%) ;
+    margin: 0 auto 0 auto ;
     ul{
         width: 100% ;
-        height: 100%;
+        height: 100% ;
         display: flex ;
         @include flex(row,flex-start,center,nowrap,"") ;
-        li.main_category{
+        position: relative ;
+        li{
             width: auto ;
             height: 100%;
             display: flex ;
             @include flex(row,flex-start,center,nowrap,"") ;
             cursor: pointer;
-            position: relative ;
             margin: 0 $dist2 ;
             p{
                 font-size: $font-m ;
-                color: $whiteColor2 ;        
+                color: $whiteColor2 ;
+                transition: all .3s ease-in-out ;
             }
-            i.fa-angle-down{
+            i{
                 font-size: $font-l ;
                 color: $whiteColor2 ;
-                transform: translate(-.3em,12%) ;
+                transform: translate(-.3em,15%) ;
             }
-            .wrapper{
-                width: auto ;
-                height: 15em;
-                position: absolute ;
-                top: calc(100% + .5em) ;
-                right: 0 ;
-                background-color: $paleColor ;
-                box-shadow: 0 0 .3em .05em $shadowColor ;
-                transition: all .3s ease-in-out ;
+            .products{
                 opacity: 0;
                 visibility: hidden ;
+                transition: all .3s ease-in-out ;
+                min-width: 30em ;
+                height: 17em;
                 padding: $dist2 ;
-                display: flex ;
-                @include flex(row,flex-start,center,nowrap,"") ;
-                img{
-                    width: 16em ;
-                    height: 16em;
-                    margin-right: $dist2 ;
+                display: flex ;          
+                @include flex(row,space-between,center,nowrap,"") ;
+                position: absolute ;
+                right: 0 ;
+                top: calc(100% + .5em) ;
+                box-shadow: 0 0 .3em .05em $shadowColor ;
+                background-color: $paleColor ;
+                z-index: 6;
+                img,.cols{
+                    margin: 0 $dist1 ;
                 }
-                .sub_categories{
-                    border: 1px solid red ;
+                img{
+                    width: 15em ;
+                    height: 15em;               
+                }  
+                .cols{
                     width: auto ;
-                    height: 100%;
+                    height: auto;
                     display: flex ;
-                    @include flex(column,flex-start,flex-start,wrap,flex-start);
-                    .sub_category{
-                        border: 1px solid blue ;
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    .col{
+                        //in each .col we have max number of 6 links and each link has 2.5em height 
+                        //2.5em * 6 = 15em 
+                        //also .product has padding:$dist2 so height of .products should be 17em  
                         width: auto ;
-                        // @include ellipse ;
-                        height: 2.5em;
-                        line-height: 2.5em ;
+                        height: auto;
                         display: flex ;
-                        @include flex(row,flex-start,center,nowrap,"") ;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
                         margin: 0 $dist2 ;
-                        i{
-                            font-size: $font-l ;
-                            color: $darkColor ;
-                            transition: all .3s ease-in-out ;
-                        }
-                        p{
+                        &:first-child{margin-right: 0 ;}
+                        a{
                             width: auto ;
-                            font-size: $font-m ;
-                            color: $darkColor ;
-                            transition: all .3s ease-in-out ;
-                        }
-                        &:hover{
-                            i,p{color: $primaryColor; }
+                            height: 2.5em;
+                            line-height: 2.5em ;
+                            display: flex ;
+                            @include flex(row,flex-start,center,nowrap,"") ;
+                            i{
+                                font-size: $font-m ;
+                                color: $greyColor2 ;
+                                transition: all .3s ease-in-out ;
+                                transform: translateY(25%) ;
+                            }
+                            p{
+                                font-size: $font-m ;
+                                color: $greyColor2 ;
+                                transform: translateX(-.3em) ;
+                                transition: all .3s ease-in-out ;
+                            }
+                            &:hover{
+                                p,i{
+                                    font-weight: 700 ;
+                                    color: lighten($darkColor,10%) ;
+                                }
+                               
+                            }
                         }
                     }
-                } 
+                }
             }
             &:hover{
-                .wrapper{
-                    visibility: visible ;
+                .products{
                     opacity: 1;
+                    visibility: visible ;
                 }
             }
         }
-    }
+    }    
 }

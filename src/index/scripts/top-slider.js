@@ -1,5 +1,5 @@
 import anime from 'animejs' ;
-let wrapper = document.querySelector('header') ;
+let wrapper = document.querySelector('#top_slider') ;
 let btns = wrapper.querySelectorAll('.btn-wrapper button') ;
 let slides = wrapper.querySelectorAll('.slides .slide') ;
 btns.forEach(btn => {
