@@ -1,101 +1,148 @@
 @import '../../colors.scss' ;
-@import '../../mixins.scss' ;
 @import '../../variables.scss' ;
+@import '../../mixins.scss' ;
 header{
     width: 100% ;
-    height: 100vh;
-    margin-top: $nav-height ;
+    height: $nav-height ;
     display: flex ;
-    @include flex(row,space-between,center,nowrap,"") ;
-    .btn-wrapper,.socials{
-        width: 10% ;
-        height: auto;
+    @include flex(row,flex-start,center,nowrap,"") ;
+    position: relative ;
+    background-color: $whiteColor2 ;
+    box-shadow: 0 .2em .2em -.2em $shadowColor ;
+    padding: $dist1 $dist2 ;
+    .helpers{
+        width: auto ;
+        height: 100%;
         display: flex ;
-        @include flex(column,flex-start,center,nowrap,"") ;
-    }
-    .btn-wrapper{     
-        margin-right: 2% ; 
-        button{
-            width: 2.5em ;
-            height: 2.5em;
-            border-radius: 50% ;
-            background-color: lighten($darkColor,15%) ;
-            transition: all .4s ease-in-out ;
-            margin: $dist3 0 ;
-            &:not(.active){cursor: pointer;}
-        }
-        button.active{
-            transform: scale(1.5) ;
-            background-color: $primaryColor ;
-        }
-    }
-    .socials{
-        margin-left: 2% ; 
+        @include flex(row,flex-start,center,nowrap,"") ;
         a{
-            width: 2em ;
-            height: 2em;
-            border-radius: 50% ;
-            background-color: lighten($darkColor,15%) ;
-            text-align: center ;
-            line-height: 2em ;
-            margin: $dist2 0 ;
-            cursor: pointer;
-            transition: all .4s ease-in-out ;
-            &::before{
-                color: $whiteColor2 ;
-                font-size: $font-l ;
-            }
-            &:hover{
-                transform: scale(1.3) ;
-                background-color: $primaryColor ;
-            }
-        }
-    }
-    .slides{
-        width: 50% ;
-        height: 75%;
-        position: relative ;
-        .slide{
-            @include fullSize-abs ;
-            display: flex ;
-            @include flex(column,flex-start,center,nowrap,"") ;
-            span.border{
-                display: inline-block ;
-                width: 100% ;
-                border: ($dist1 - .1em) solid darken($greyColor2,15%) ;               
-            }
-            span.border.top{
-                border-bottom: 0 solid transparent ;
-                height: 25%;
-            }
-            span.border.bottom{
-                border-top: 0 solid transparent ;
-                position: relative ;
-                top: 15% ;
-                height: 60% ;
-            }
-            p{
-                width: 100% ;
-                text-align: center ;
-                font-size: $font-xxl ;
-                color: $greyColor2 ;
-                position: absolute ;
-                right: 0 ;
-                top: 5% ;
-            }
-            img{
-                width: 75% ;
-                height: 75%;
-                @include center-x ;
-            }
-            &:not(:first-child){
-                span.border,p,img{opacity: 0;}
-                img{top: 55% ;}
-            }
+          width: auto ;
+          height: 100% ;
+          display: flex ;
+          @include flex(column,space-around,center,nowrap,"") ;
+          transition: all .3s ease-in-out ;
+          margin: 0 $dist1 ;
+          &:hover{
+              transform: scale(1.1) ;
+          }
+          i{
+              font-size: $font-l ;
+              color: $primaryColor ;
+          }
+          p{
+              color: $primaryColor ;
+              font-size: $font-m - .1em ;
+          }
             
         }
-        .slide.active{
-            opacity: 1;
+        a.basket{
+            position: relative ;
+            .badge{
+                position: absolute ;
+                top: -25% ;
+                right: -15% ;
+                width: 1.5em ;
+                height: 1.5em;
+                border-radius: 50% ;
+                background-color: $primaryColor ;
+                color: $whiteColor2 ;
+                line-height: 1.5em;
+                text-align: center ;
+                font-size: $font-m  ;
+            }
+        }
+    }
+    form#search{
+        width: 25em ;
+        height: 100%;
+        position: relative ;
+        margin-right: $dist3 ;
+        input{
+            width: 100% ;
+            height: 100% ;
+            font-size: $font-m ;
+            color: $darkColor ;
+            border: 1px solid lighten($greyColor2,20%) ;
+            border-radius: $dist1 ;
+            padding: $dist1 ;
+            &::placeholder{
+                font-size: $font-m ;
+                color: $greyColor2 ;
+            }
+        }
+        button[type="submit"]{
+            width:auto ;
+            height: 100% ;
+            color: $whiteColor2 ;
+            background-color: lighten($redColor2,5%) ;
+            cursor: pointer;
+            padding: 0 $dist3 - .3em ;
+            position: absolute ;
+            left: 0 ;
+            top: 0 ;
+            border-top-left-radius: $dist1 ;
+            border-bottom-left-radius: $dist1 ;
+            i{
+                font-size: $font-xl ;
+                color: $whiteColor2 ;
+                @include center-xy ;
+            }
+        }
+        ul#result{
+            opacity: 0;
+            visibility: hidden ;
+            transition: all .3s ease-in-out ;
+            width: 100% ;
+            height: auto;
+            z-index: 6;
+            position: absolute ;
+            right: 0 ;
+            top: 108% ;
+            display: flex ;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            box-shadow: 0 .2em .3em -.05em $shadowColor ;
+            li{
+                width: 100% ;
+                height: 2.5em;                  
+                a{
+                    width: 100% ;
+                    height: 100% ;
+                    line-height: 2.5em ;
+                    padding: 0 $dist1 ;
+                    display: flex ;
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    background-color: $whiteColor2 ;
+                    transition: all .3s ease-in-out ;
+                    &:hover{
+                        background-color: darken($whiteColor2,5%) ;
+                    }
+                    i{
+                        color: $greyColor2 ;
+                        font-size: $font-l ;
+                        transform: translateY(8%) ;
+                    }
+                    p{
+                        font-size: $font-m ;
+                        transform: translate(-.3em,0) ;
+                        color: $greyColor2 ;
+                    }
+                }
+            }
+        }
+        ul#result.show{
+            visibility: visible ;
+            opacity:1 ;
+        }
+
+    }
+    a.logo{
+        @include center-y ;
+        left: $dist2 ;
+        width: auto ;
+        height: 80% ;
+        img{
+            width: 12em ;
+            height: 100%;
         }
     }
 }

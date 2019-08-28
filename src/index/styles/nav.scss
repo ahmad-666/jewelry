@@ -1,0 +1,91 @@
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+nav{
+    width: 100% ;
+    height: $nav-height ;
+    margin: 0 auto 0 auto ;
+    background-color: lighten($darkColor,8%) ;
+    padding: $dist1 $dist2 ;
+    ul{
+        width: 100% ;
+        height: 100%;
+        display: flex ;
+        @include flex(row,flex-start,center,nowrap,"") ;
+        li.main_category{
+            width: auto ;
+            height: 100%;
+            display: flex ;
+            @include flex(row,flex-start,center,nowrap,"") ;
+            cursor: pointer;
+            position: relative ;
+            margin: 0 $dist2 ;
+            p{
+                font-size: $font-m ;
+                color: $whiteColor2 ;        
+            }
+            i.fa-angle-down{
+                font-size: $font-l ;
+                color: $whiteColor2 ;
+                transform: translate(-.3em,12%) ;
+            }
+            .wrapper{
+                width: auto ;
+                height: 15em;
+                position: absolute ;
+                top: calc(100% + .5em) ;
+                right: 0 ;
+                background-color: $paleColor ;
+                box-shadow: 0 0 .3em .05em $shadowColor ;
+                transition: all .3s ease-in-out ;
+                opacity: 0;
+                visibility: hidden ;
+                padding: $dist2 ;
+                display: flex ;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                img{
+                    width: 16em ;
+                    height: 16em;
+                    margin-right: $dist2 ;
+                }
+                .sub_categories{
+                    border: 1px solid red ;
+                    width: auto ;
+                    height: 100%;
+                    display: flex ;
+                    @include flex(column,flex-start,flex-start,wrap,flex-start);
+                    .sub_category{
+                        border: 1px solid blue ;
+                        width: auto ;
+                        // @include ellipse ;
+                        height: 2.5em;
+                        line-height: 2.5em ;
+                        display: flex ;
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        margin: 0 $dist2 ;
+                        i{
+                            font-size: $font-l ;
+                            color: $darkColor ;
+                            transition: all .3s ease-in-out ;
+                        }
+                        p{
+                            width: auto ;
+                            font-size: $font-m ;
+                            color: $darkColor ;
+                            transition: all .3s ease-in-out ;
+                        }
+                        &:hover{
+                            i,p{color: $primaryColor; }
+                        }
+                    }
+                } 
+            }
+            &:hover{
+                .wrapper{
+                    visibility: visible ;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

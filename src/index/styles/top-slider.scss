@@ -1,0 +1,101 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+header{
+    width: 100% ;
+    height: 100vh;
+    margin-top: $nav-height ;
+    display: flex ;
+    @include flex(row,space-between,center,nowrap,"") ;
+    .btn-wrapper,.socials{
+        width: 10% ;
+        height: auto;
+        display: flex ;
+        @include flex(column,flex-start,center,nowrap,"") ;
+    }
+    .btn-wrapper{     
+        margin-right: 2% ; 
+        button{
+            width: 2.5em ;
+            height: 2.5em;
+            border-radius: 50% ;
+            background-color: lighten($darkColor,15%) ;
+            transition: all .4s ease-in-out ;
+            margin: $dist3 0 ;
+            &:not(.active){cursor: pointer;}
+        }
+        button.active{
+            transform: scale(1.5) ;
+            background-color: $primaryColor ;
+        }
+    }
+    .socials{
+        margin-left: 2% ; 
+        a{
+            width: 2em ;
+            height: 2em;
+            border-radius: 50% ;
+            background-color: lighten($darkColor,15%) ;
+            text-align: center ;
+            line-height: 2em ;
+            margin: $dist2 0 ;
+            cursor: pointer;
+            transition: all .4s ease-in-out ;
+            &::before{
+                color: $whiteColor2 ;
+                font-size: $font-l ;
+            }
+            &:hover{
+                transform: scale(1.3) ;
+                background-color: $primaryColor ;
+            }
+        }
+    }
+    .slides{
+        width: 50% ;
+        height: 75%;
+        position: relative ;
+        .slide{
+            @include fullSize-abs ;
+            display: flex ;
+            @include flex(column,flex-start,center,nowrap,"") ;
+            span.border{
+                display: inline-block ;
+                width: 100% ;
+                border: ($dist1 - .1em) solid darken($greyColor2,15%) ;               
+            }
+            span.border.top{
+                border-bottom: 0 solid transparent ;
+                height: 25%;
+            }
+            span.border.bottom{
+                border-top: 0 solid transparent ;
+                position: relative ;
+                top: 15% ;
+                height: 60% ;
+            }
+            p{
+                width: 100% ;
+                text-align: center ;
+                font-size: $font-xxl ;
+                color: $greyColor2 ;
+                position: absolute ;
+                right: 0 ;
+                top: 5% ;
+            }
+            img{
+                width: 75% ;
+                height: 75%;
+                @include center-x ;
+            }
+            &:not(:first-child){
+                span.border,p,img{opacity: 0;}
+                img{top: 55% ;}
+            }
+            
+        }
+        .slide.active{
+            opacity: 1;
+        }
+    }
+}
