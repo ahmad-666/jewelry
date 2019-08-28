@@ -2,7 +2,7 @@
 @import '../../variables.scss';
 @import '../../mixins.scss';
 
-.slider_wrapper#new_product {
+.slider_wrapper#new_product,.slider_wrapper#suggestions {
     width: 100%;
     height: auto;
     overflow: hidden;
