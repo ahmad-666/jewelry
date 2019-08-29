@@ -33,3 +33,14 @@ video{
 ul{
     list-style: none ;
 }
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}

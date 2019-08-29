@@ -22,6 +22,7 @@ module.exports = {
         'about' : './src/about/about.js' ,    
         'article' : './src/article/article.js' ,    
         'articles' : './src/articles/articles.js' ,    
+        'manualCheckout' : './src/manual-checkout/manual-checkout.js' ,    
         // 'track' : './src/track/track.js' ,    
         // 'withTabacharm' : './src/with-tabacharm/with-tabacharm.js' ,    
         // 'contact' : './src/contact/contact.js' ,      
@@ -219,6 +220,12 @@ module.exports = {
             inject: true,
             chunks: ['articles'],
             template: './src/articles/articles.html' //should point to target html file that we want to add <script>,<link>
+        }),
+        new HtmlWebpackPlugin({ //for each .html file we need new instance of 'HtmlWebpackPlugin'
+            filename: 'manual-checkout.html' , //name of file inside ./dist folder
+            inject: true,
+            chunks: ['manualCheckout'],
+            template: './src/manual-checkout/manual-checkout.html' //should point to target html file that we want to add <script>,<link>
         }),
         new CleanWebpackPlugin()
     ]
