@@ -1,117 +1,83 @@
-let getStyle = (elm,prop) => window.getComputedStyle(elm,null).getPropertyValue(prop) ;
-function Slider(elm){
+import util from '../../utilities/utilities' ;
+function ProductSlider(elm){
     this.elm = elm ;
-    this.curr = this.elm.querySelector('.curr') ;
+    this.bgs = this.elm.querySelectorAll('.bg .img') ;
     this.slidesWrapper = this.elm.querySelector('.slides') ;
-    this.slides = this.elm.querySelectorAll('.slide') ; //small images on bottom
-    this.currImgs = this.curr.querySelectorAll('.img') ; //big images on top
+    this.slides = this.slidesWrapper.querySelectorAll('.slide') ;
+    this.currSlideIndex = null ; //slide that has active class
+    this.prevSlideIndex = null ;
     this.slidesNum = this.slides.length ;
-    this.firstSlide = this.slides[0] ;
-    this.lastSlide = this.slides[this.slidesNum - 1] ;  
-    this.currIndex = 0 ;
-    this.viewportSlides = this.getViewportSlides() ;//how many slides are visible inside viewport
-    this.prevBtn = this.curr.querySelector('.fa-chevron-right') ;
-    this.nextBtn = this.curr.querySelector('.fa-chevron-left') ;
-    this.prevBtn.addEventListener('click',this.prevSlide.bind(this));
-    this.nextBtn.addEventListener('click',this.nextSlide.bind(this));
-    this.initSlider() ;
+    this.slideOffset = null ; //width+padding+margin-left+margin-right of each slide
+    this.viewportSlides = null ;
+    this.prevBtn = this.elm.querySelector('i.fa-chevron-right') ;
+    this.nextBtn = this.elm.querySelector('i.fa-chevron-left') ;
+    this.prevBtn.addEventListener('click',this.moveSlider.bind(this)) ;
+    this.nextBtn.addEventListener('click',this.moveSlider.bind(this)) ;
     this.threshold = {
-        min:null ,
+        min: null,
         max:null
-    };
-    this.setThresholds() ;
-};
-Slider.prototype.initSlider = function(){
-    this.currImgs[0].classList.add('show') ;
-    this.currImgs.forEach(img => {
-        img.style.transition = `all 1s ease-in-out` ;
-    }) ;
+    }
+    this.init() ;
 }
-Slider.prototype.setThresholds = function(){
+ProductSlider.prototype.init = function(){
+    this.currSlideIndex = util.getActiveIndex(this.slidesWrapper) ;
+    this.slideOffset = this.slides[0].offsetWidth + parseFloat(util.getStyle(this.slides[0],'margin-right')) + parseFloat(util.getStyle(this.slides[0],'margin-left'));
+    this.viewportSlides = Math.floor(this.slidesWrapper.offsetWidth/this.slideOffset);
     this.threshold.min = 0 ;
-    let slideWidth = this.slides[0].clientWidth ;
-    let slideMargin = parseFloat(getStyle(this.slides[0],'margin-right')) + parseFloat(getStyle(this.slides[0],'margin-left')) ;
-    let slideBorder = parseFloat(getStyle(this.slides[0],'border-right')) + parseFloat(getStyle(this.slides[0],'border-left')) ;
-    let offset = (this.slidesNum-this.viewportSlides)*(slideWidth+slideMargin+slideBorder) ;
-    this.threshold.max = offset ;
+    let totalWidth = 0 ;
+    this.slides.forEach(slide => totalWidth+=this.slideOffset) ;
+    this.threshold.max = totalWidth - this.slidesWrapper.offsetWidth;    
 }
-Slider.prototype.getViewportSlides = function(){
-    let wrapperWidth = this.slidesWrapper.clientWidth ;
-    let wrapperPadding = parseFloat(getStyle(this.slidesWrapper,'padding-right')) +  parseFloat(getStyle(this.slidesWrapper,'padding-left')) ; 
-    let wrapperBorder = parseFloat(getStyle(this.slidesWrapper,'border-right')) +  parseFloat(getStyle(this.slidesWrapper,'border-left')) ; 
-    let slideWidth = this.slides[0].clientWidth ;
-    let slideMargin = parseFloat(getStyle(this.slides[0],'margin-right')) +  parseFloat(getStyle(this.slides[0],'margin-left')) ;  
-    let slideBorder = parseFloat(getStyle(this.slides[0],'border-right')) +  parseFloat(getStyle(this.slides[0],'border-left')) ;  
-    return Math.floor((wrapperWidth - wrapperPadding - wrapperBorder)/(slideWidth + slideMargin + slideBorder)) ; 
+ProductSlider.prototype.moveSlider = function(e){
+    if(e.currentTarget == this.nextBtn){//nextSlide
+        this.setActiveSlide(this.currSlideIndex+1,'next') ;
+        this.nextSlide() ;
+        this.setActiveBg() ;
+    }
+    else if(e.currentTarget == this.prevBtn){//prevSlide
+        this.setActiveSlide(this.currSlideIndex-1,'prev') ;
+        this.prevSlide() ;
+        this.setActiveBg() ;
+    }
 }
-Slider.prototype.prevSlide = function(e){
-    this.viewportSlides = this.getViewportSlides();
-    let currSlide = null ;
-    let currSlideIndex = null ;
-    let prevSlide = null ;
-    let prevSlideIndex = null ;
-    for(let i=0 ; i<this.slides.length ; i++){
+ProductSlider.prototype.setActiveSlide = function(newIndex,dir){
+    for(let i=0 ; i<this.slides.length ; i++){//remove prev active class
         let slide = this.slides[i] ;
         if(slide.classList.contains('active')){
-            currSlideIndex = i ;
-            currSlide = slide ;
-            prevSlideIndex = (i-1>=0)?i-1:this.slidesNum-1 ;
-            this.currIndex = prevSlideIndex
-            prevSlide = this.slides[prevSlideIndex];     
-            currSlide.classList.remove('active') ;
-            prevSlide.classList.add('active') ;     
+            slide.classList.remove('active') ;
+            this.prevSlideIndex = i ;
             break ;
         }
     }
-    if(prevSlideIndex == this.slidesNum-1) {
-        let slideWidth = this.slides[0].clientWidth ;
-        let slideMargin = parseFloat(getStyle(this.slides[0],'margin-right')) + parseFloat(getStyle(this.slides[0],'margin-left')) ;
-        let slideBorder = parseFloat(getStyle(this.slides[0],'border-right')) + parseFloat(getStyle(this.slides[0],'border-left')) ;
-        let offset = (this.slidesNum-this.viewportSlides)*(slideWidth + slideMargin + slideBorder) ;
-        this.slidesWrapper.style.right = `-${offset}px` ;
-    }
-    else{ 
-        let slideWidth = this.slides[0].clientWidth ;
-        let slideMargin = parseFloat(getStyle(this.slides[0],'margin-right')) + parseFloat(getStyle(this.slides[0],'margin-left')) ;
-        let slideBorder = parseFloat(getStyle(this.slides[0],'border-right')) + parseFloat(getStyle(this.slides[0],'border-left')) ;
-        let offset = slideWidth + slideMargin + slideBorder ;
-        let currPos = parseFloat(getStyle(this.slidesWrapper,'right'));
-        if(currPos+offset<=this.threshold.min) this.slidesWrapper.style.right = `${currPos+offset}px` ;
-    }
-    this.changeSlide(currSlideIndex,prevSlideIndex);
-};
-Slider.prototype.nextSlide = function(e){
-    this.viewportSlides = this.getViewportSlides();
-    let currSlide = null ;
-    let currSlideIndex = null ;
-    let nextSlide = null ;
-    let nextSlideIndex = null ;
-    for(let i=0 ; i<this.slides.length ; i++){
-        let slide = this.slides[i] ;
-        if(slide.classList.contains('active')){
-            currSlideIndex = i ;
-            currSlide = slide ;
-            nextSlideIndex = (i+1)%(this.slidesNum) ;
-            this.currIndex = nextSlideIndex
-            nextSlide = this.slides[nextSlideIndex];     
-            currSlide.classList.remove('active') ;
-            nextSlide.classList.add('active') ;     
+    //calc new slideIndex
+    if(dir == 'next') this.currSlideIndex = newIndex%this.slidesNum!=0 ? newIndex : 0 ; 
+    else if(dir=='prev') this.currSlideIndex = newIndex>=0 ? newIndex : this.slidesNum-1 ; 
+    this.slides[this.currSlideIndex].classList.add('active') ;//give new slide active class
+}
+ProductSlider.prototype.nextSlide = function(){
+    let currPos = parseFloat(util.getStyle(this.slidesWrapper,'right')) ;//current pos of slidesWrapper
+    let move = currPos-this.slideOffset;
+    if(Math.abs(move)<=this.threshold.max) this.slidesWrapper.style.right = `${move}px`; 
+    else if(Math.abs(move)>this.threshold.max && this.currSlideIndex>=this.slidesNum-this.viewportSlides) ; 
+    else this.slidesWrapper.style.right = `${0}px`;
+}
+ProductSlider.prototype.prevSlide = function(){
+    let currPos = parseFloat(util.getStyle(this.slidesWrapper,'right')) ;//current pos of slidesWrapper
+    let move = currPos+this.slideOffset;
+    if(move<=this.threshold.min) this.slidesWrapper.style.right = `${move}px`; 
+    else if(move>this.threshold.min && this.currSlideIndex<=this.viewportSlides-1) ;
+    else this.slidesWrapper.style.right = `${-this.threshold.max}px`;
+}
+ProductSlider.prototype.setActiveBg = function(){
+    //remove active class from prev bg
+    for(let i=0 ; i<this.bgs.length ; i++){
+        let bg = this.bgs[i] ;
+        if(bg.classList.contains('active')){
+            bg.classList.remove('active') ;
             break ;
         }
     }
-    if(nextSlideIndex>=this.viewportSlides){ 
-        let slideWidth = this.slides[0].clientWidth ;
-        let slideMargin = parseFloat(getStyle(this.slides[0],'margin-right')) + parseFloat(getStyle(this.slides[0],'margin-left')) ;
-        let slideBorder = parseFloat(getStyle(this.slides[0],'border-right')) + parseFloat(getStyle(this.slides[0],'border-left')) ;
-        let offset = slideWidth + slideMargin + slideBorder ;
-        let currPos = Math.abs(parseFloat(getStyle(this.slidesWrapper,'right'))) ;        
-        if(currPos+offset<=this.threshold.max) this.slidesWrapper.style.right = `-${currPos+offset}px` ;
-    }
-    else if(nextSlideIndex == 0) this.slidesWrapper.style.right = `0px` ;
-    this.changeSlide(currSlideIndex,nextSlideIndex);
-};
-Slider.prototype.changeSlide = function(currSlideIndex,nextSlideIndex){
-    this.currImgs[currSlideIndex].classList.remove('show');
-    this.currImgs[nextSlideIndex].classList.add('show');
+    //add active class to new bg 
+    this.bgs[this.currSlideIndex].classList.add('active') ;
 }
-new Slider(document.querySelector('#product_info .slider')) ;
+new ProductSlider(document.querySelector('#product_info .slider '))

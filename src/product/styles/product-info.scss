@@ -6,15 +6,15 @@
     height: auto;
     margin: $sectionsDist auto 0 auto ;
     display: flex ;
-    @include flex(row,space-around,flex-start,nowrap,"") ;
+    @include flex(row,flex-start,flex-start,nowrap,"") ;
     .slider{
-        width: 30% ;
+        width: 19.5em ;
         height: auto;
         flex-shrink: 0 ;
         display: flex ;
         @include flex(column,flex-start,center,nowrap,"") ;
         overflow: hidden;
-        .curr{
+        .bg{
             width: 100% ;
             height: 15em;
             position: relative;
@@ -24,6 +24,7 @@
                 @include bg('',center center,no-repeat,100% 100%) ;
                 opacity: 0;
                 visibility: hidden ;
+                transition: all .3s ease-in-out ;
                 &:nth-child(3){background-image: url('../../assets/imgs/slide1.jpg');}              
                 &:nth-child(4){background-image: url('../../assets/imgs/slide2.jpg');}              
                 &:nth-child(5){background-image: url('../../assets/imgs/slide3.jpg');}              
@@ -33,7 +34,7 @@
                 &:nth-child(9){background-image: url('../../assets/imgs/slide3.jpg');}              
                 &:nth-child(10){background-image: url('../../assets/imgs/slide4.jpg');}                 
             }          
-            .img.show{
+            .img.active{
                 opacity: 1;
                 visibility: visible;
             }
@@ -68,15 +69,15 @@
             transition: all .3s ease-in-out ;
             .slide{
                 flex-shrink: 0 ;
-                width: 22% ;
+                width: 6em ;
                 height: 5em;
                 border-radius: $dist2 ;
                 position: relative ;
                 cursor: pointer;
                 @include bg("",center center,no-repeat,100% 100%) ;
                 border: 3px solid transparent ;
-                transition: all .15s ease-in-out ;
-                margin-right: 2.5%;
+                transition: all .3s ease-in-out ;
+                margin-right: $dist1;
                 &:nth-child(1){background-image: url('../../assets/imgs/slide1.jpg');}
                 &:nth-child(2){background-image: url('../../assets/imgs/slide2.jpg');}
                 &:nth-child(3){background-image: url('../../assets/imgs/slide3.jpg');}
@@ -91,7 +92,7 @@
 
     }
     .infos{
-        width: 70% ;
+        width: 100% ;
         height: auto;
         margin-right: $dist3 ;
         display: flex ;
