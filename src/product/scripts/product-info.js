@@ -55,14 +55,14 @@ ProductSlider.prototype.setActiveSlide = function(newIndex,dir){
     this.slides[this.currSlideIndex].classList.add('active') ;//give new slide active class
 }
 ProductSlider.prototype.nextSlide = function(){
-    let currPos = parseFloat(util.getStyle(this.slidesWrapper,'right')) ;//current pos of slidesWrapper
+    let currPos = parseFloat(this.slidesWrapper.style.right) ;//current pos of slidesWrapper
     let move = currPos-this.slideOffset;
     if(Math.abs(move)<=this.threshold.max) this.slidesWrapper.style.right = `${move}px`; 
     else if(Math.abs(move)>this.threshold.max && this.currSlideIndex>=this.slidesNum-this.viewportSlides) ; 
     else this.slidesWrapper.style.right = `${0}px`;
 }
 ProductSlider.prototype.prevSlide = function(){
-    let currPos = parseFloat(util.getStyle(this.slidesWrapper,'right')) ;//current pos of slidesWrapper
+    let currPos = parseFloat(this.slidesWrapper.style.right) ;//current pos of slidesWrapper
     let move = currPos+this.slideOffset;
     if(move<=this.threshold.min) this.slidesWrapper.style.right = `${move}px`; 
     else if(move>this.threshold.min && this.currSlideIndex<=this.viewportSlides-1) ;
