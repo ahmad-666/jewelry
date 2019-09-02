@@ -3,191 +3,362 @@
 @import '../../mixins.scss' ;
 #grid{
     width: 80vw ;
-    height: 120vh;
-    position: relative ;
-    margin: $sectionsDist auto 0 auto ;
-    padding-top: $dist4 ;
+    height: auto;
     display: flex ;
-    @include flex(row,flex-start,flex-start,nowrap,"") ;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    margin: $dist3 auto 0 auto ;
     h4{
         font-size: $font-special ;
-        font-weight: 700 ;
         color: $darkColor ;
-        width: 100% ;
-        text-align: center ;
-        position: absolute ;
-        top: 0 ;
-        right: 0 ;
+        font-weight: 700 ;
     }
     .col{
-        width: 50% ;
-        height: 100%;
+        width: 100% ;
         display: flex ;
-        @include flex(column,flex-start,flex-start,nowrap,"") ;
-        .row{           
-            width: 100% ;
-            display: flex ;
-            @include flex(row,flex-start,flex-start,nowrap,"") ;
-            .item{
+        overflow: hidden;
+        .box{
+            @include bg("",center center,no-repeat,cover) ;
+            position: relative ;    
+            overflow: hidden;
+            &::before{
+                content: '';
+                width: 100% ;
                 height: 100%;
-                position: relative ;
-                overflow: hidden;
-                background-position: center center; 
-                background-size: 50% 75% ;
-                background-repeat: no-repeat ;
-                .content{
-                    visibility: hidden ;
-                    opacity: 0;
-                    transition: all .5s ease-in-out ;
+                border-radius: 50% ;
+                position: absolute ;
+                top: 50% ;
+                right: 50% ;   
+                transform: translate(50%,-50%) scale(0) ;             
+                background-color: $blackFilter;
+                transition: all .6s ease-in-out ;
+            }
+            .content{
+                width: 100% ;
+                height: auto;
+                @include center-y ;
+                display: flex ;
+                @include flex(column,flex-start,center,nowrap,"") ;
+                opacity: 0;
+                visibility: hidden ;
+                transition: all .5s ease-in-out ;
+                .name,.price,a{
+                    margin: $dist1 / 2 auto ;
+                }
+                .name,.price{
                     width: 100% ;
+                    text-align: center ;
+                    @include ellipse ;
                     height: auto;
-                    display: flex ;
-                    @include flex(column,flex-start,center,nowrap,"") ;
-                    @include center-xy ;
-                    .name,.price,.info{
-                        margin: $dist1 0 ;
-                    }
-                    .name,.price{
-                        font-size: $font-l ;
-                        color: $whiteColor2 ;
-                        width: 100% ;
-                        text-align: center ;
-                        @include ellipse ;
-                    }
-                    .info{
-                        width: auto ;
-                        display: flex ;
-                        @include flex(row,space-around,center,nowrap,"") ;
-                        button,a{
-                            margin-left: $dist2;
-                            margin-right: $dist2 ;
-                        }
-                        button{
-                            width: auto ;
-                            height: 3em;
-                            line-height: 3em ;
-                            padding: 0 1em ;
-                            font-size: $font-l ;
-                            color: $whiteColor2 ;
-                            background-color: $greenColor2 ; 
-                            cursor: pointer;
-                        }
-                        a{
-                            width: auto ;
-                            height: 3em;
-                            line-height: 3em ;
-                            padding: 0 $dist2 ;
-                            font-size: $font-m - .1em ;
-                            color: $greenColor2 ;
-                            background-color: $whiteColor2 ;
-                            border-radius: $dist2 ;
-                        }
-                    }
+                    font-size: $font-l ;
+                    color: $whiteColor2 ;
                 }
+                a{
+                    padding: $dist1 - .2em $dist3  ;
+                    color: $greenColor2 ;
+                    font-size: $font-l - .1em ;
+                    background-color: $whiteColor2 ;
+                    border-radius: $dist3 ;
+                }
+            }
+            &:hover{
                 &::before{
-                    content: '' ;
-                    width: 100% ;
-                    height: 100%;
-                    border-radius: 50% ;
-                    background-color: $blackFilter ;
-                    position: absolute ;
-                    top: 50% ;
-                    right: 50% ;
-                    transform: translate(50%,-50%) scale(0);
-                    transition: all .5s ease-in-out ;
+                    transform: translate(50%,-50%) scale(2) ;             
                 }
-                &:hover{
-                    &::before{
-                        transform: translate(50%,-50%) scale(2);
-                    }
-                    .content{
-                        visibility: visible ;
-                        opacity: 1;
-                    }
+                .content{
+                    opacity: 1;
+                    visibility: visible ;
                 }
             }
         }
     }
     .col.num1{
-        .row.num1{
-            height: 25%;        
-            .item{
-                &:nth-child(1){
-                    width: 50% ;
-                    background-color: darken(#e1f5fe,2%)        ;
-                    background-image: url('../../assets/imgs/braclet1.png') ;
-                }
-                &:nth-child(2){
-                    width: 50% ;
-                    margin-right: $dist1 ; 
-                    background-color: darken(#e1f5fe,2%) ;
-                    background-image: url('../../assets/imgs/necklase1.png') ;
-                }
+        margin-top: $dist2 ;
+        height: 20em;
+        @include flex(column,space-between,flex-start,wrap,flex-start) ;
+        .box{
+            &:nth-child(1){
+                width: 25% ;
+                height: calc(50% - .25em);
+                background-image: url('../../assets/imgs/mahdi2.jpg');
             }
-        }
-        .row.num2{
-            height: 25%;     
-            margin-top: $dist1 ; 
-            .item{
-                &:nth-child(1){
-                    width: 100% ;
-                    background-color: darken(#fff3e0,1%) ;
-                    background-image: url('../../assets/imgs/keychain1.png');
-                }
+            &:nth-child(2){
+                width: 25% ;
+                height: calc(50% - .25em);
+                background-image: url('../../assets/imgs/ehsan.jpg') ;
             }
-        }
-        .row.num3{
-            height: 50%;
-            margin-top: $dist1 ; 
-            .item{
-                &:nth-child(1){
-                    width: 100%;
-                    background-color: lighten(#ffcdd2,2%) ;
-                    background-image: url('../../assets/imgs/purse1.png') ;                 
-                }
+            &:nth-child(3){
+                width: 25% ;
+                height: calc(50% - .25em);
+                background-image: url('../../assets/imgs/atefeh.jpg') ;
+                margin-right: $dist1 ;
+            }
+            &:nth-child(4){
+                width: 25% ;
+                height: calc(50% - .25em);
+                background-image: url('../../assets/imgs/mohammad1.jpg') ;
+                margin-right: $dist1 ;
+            }
+            &:nth-child(5){
+                width: 50% ;
+                height: 100%;
+                background-image: url('../../assets/imgs/amirhossein.jpg') ;
+                margin-right: $dist1 ;
             }
         }
     }
     .col.num2{
-        margin-right: .5em ;
-        .row.num1{
-            height: 50%;
-            .item{
-                &:nth-child(1){
-                    width: 100% ;
-                    background-color: lighten(#ffcdd2,2%) ;
-                    background-image: url('../../assets/imgs/purse1.png') ;
-                }
+        margin-top: $dist1 ;
+        width: 100% ;
+        height: 10em;
+        @include flex(row,space-between,center,nowrap,"") ;
+        .box{
+            &:nth-child(1){
+                width: 33.3% ;
+                height: 100%;
+                background-image: url('../../assets/imgs/mozhde.jpg');
             }
-        }
-        .row.num2{
-            height: 25%;
-            margin-top: $dist1 ; 
-            .item{
-                &:nth-child(1){
-                    width: 50% ;
-                    background-color: darken(#e1f5fe,2%)  ;
-                    background-image: url('../../assets/imgs/braclet1.png') ;
-                }
-                &:nth-child(2){
-                    width: 50% ;
-                    margin-right: $dist1 ; 
-                    background-color: darken(#e1f5fe,2%)  ;
-                    background-image: url('../../assets/imgs/necklase1.png') ;
-                }
+            &:nth-child(2){
+                width: 33.3% ;
+                height: 100%;
+                background-image: url('../../assets/imgs/tarikh1.jpg') ;
+                margin-right: $dist1 ;
             }
-        }
-        .row.num3{
-            height: 25%;
-            margin-top: $dist1 ; 
-            .item{
-                &:nth-child(1){
-                    width: 100% ;
-                    background-color: darken(#fff3e0,1%) ;
-                    background-image: url('../../assets/imgs/keychain1.png');
-                }
+            &:nth-child(3){
+                width: 33.3% ;
+                height: 100%;
+                background-image: url('../../assets/imgs/kifsafa.jpg') ;
+                margin-right: $dist1 ;
             }
         }
     }
-    
 }
+
+
+
+// <div id="grid">
+//     <h4>پیشنهادهای تاباچرم</h4>
+//     <div class="col num1">
+//         <div class="inner_col num1">
+//             <div class="box">
+//                 <div class="content">
+//                     <p class="name">نام محصول</p>
+//                     <p class="price">1.000.000 تومان</p>
+//                     <a href="./product.html">اطلاعات بیشتر</a>
+//                 </div>
+//             </div>
+//             <div class="box">
+//                 <div class="content">
+//                     <p class="name">نام محصول</p>
+//                     <p class="price">1.000.000 تومان</p>
+//                     <a href="./product.html">اطلاعات بیشتر</a>
+//                 </div>
+//             </div>
+//         </div>
+//         <div class="inner_col num2">
+//             <div class="box">
+//                 <div class="content">
+//                     <p class="name">نام محصول</p>
+//                     <p class="price">1.000.000 تومان</p>
+//                     <a href="./product.html">اطلاعات بیشتر</a>
+//                 </div>
+//             </div>
+//             <div class="box">
+//                 <div class="content">
+//                     <p class="name">نام محصول</p>
+//                     <p class="price">1.000.000 تومان</p>
+//                     <a href="./product.html">اطلاعات بیشتر</a>
+//                 </div>
+//             </div>
+//         </div>
+//         <div class="inner_col num3">
+//             <div class="box">
+//                 <div class="content">
+//                     <p class="name">نام محصول</p>
+//                     <p class="price">1.000.000 تومان</p>
+//                     <a href="./product.html">اطلاعات بیشتر</a>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col num2">
+//         <div class="box">
+//             <div class="content">
+//                 <p class="name">نام محصول</p>
+//                 <p class="price">1.000.000 تومان</p>
+//                 <a href="./product.html">اطلاعات بیشتر</a>
+//             </div>
+//         </div>
+//         <div class="box">
+//             <div class="content">
+//                 <p class="name">نام محصول</p>
+//                 <p class="price">1.000.000 تومان</p>
+//                 <a href="./product.html">اطلاعات بیشتر</a>
+//             </div>
+//         </div>
+//         <div class="box">
+//             <div class="content">
+//                 <p class="name">نام محصول</p>
+//                 <p class="price">1.000.000 تومان</p>
+//                 <a href="./product.html">اطلاعات بیشتر</a>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+
+// @import '../../colors.scss' ;
+// @import '../../variables.scss' ;
+// @import '../../mixins.scss' ;
+// #grid{
+//     width: 80vw ;
+//     height: auto;
+//     display: flex ;
+//     @include flex(column,flex-start,center,nowrap,"") ;
+//     margin: $dist3 auto 0 auto ;
+//     h4{
+//         font-size: $font-special ;
+//         color: $darkColor ;
+//         font-weight: 700 ;
+//     }
+//     .col{
+//         width: 100% ;
+//         display: flex ;
+//         overflow: hidden;
+//         .box{
+//             @include bg("",center center,no-repeat,cover) ;
+//             position: relative ;    
+//             overflow: hidden;
+//             &::before{
+//                 content: '';
+//                 width: 100% ;
+//                 height: 100%;
+//                 border-radius: 50% ;
+//                 position: absolute ;
+//                 top: 50% ;
+//                 right: 50% ;   
+//                 transform: translate(50%,-50%) scale(0) ;             
+//                 background-color: $blackFilter;
+//                 transition: all .6s ease-in-out ;
+//             }
+//             .content{
+//                 width: 100% ;
+//                 height: auto;
+//                 @include center-y ;
+//                 display: flex ;
+//                 @include flex(column,flex-start,center,nowrap,"") ;
+//                 opacity: 0;
+//                 visibility: hidden ;
+//                 transition: all .5s ease-in-out ;
+//                 .name,.price,a{
+//                     margin: $dist1 / 2 auto ;
+//                 }
+//                 .name,.price{
+//                     width: 100% ;
+//                     text-align: center ;
+//                     @include ellipse ;
+//                     height: auto;
+//                     font-size: $font-l ;
+//                     color: $whiteColor2 ;
+//                 }
+//                 a{
+//                     padding: $dist1 - .2em $dist3  ;
+//                     color: $greenColor2 ;
+//                     font-size: $font-l - .1em ;
+//                     background-color: $whiteColor2 ;
+//                     border-radius: $dist3 ;
+//                 }
+//             }
+//             &:hover{
+//                 &::before{
+//                     transform: translate(50%,-50%) scale(2) ;             
+//                 }
+//                 .content{
+//                     opacity: 1;
+//                     visibility: visible ;
+//                 }
+//             }
+//         }
+//         .inner_col{
+//             display: flex ;
+//             @include flex(column,space-between,center,nowrap,"") ;
+//         }
+//     }
+//     .col.num1{
+//         margin-top: $dist2 ;
+//         height: 20em;
+//         @include flex(row,space-between,center,nowrap,"") ;
+//         .inner_col.num1{
+//             width: 25% ;
+//             height: 100%;
+//             .box{
+//                 &:nth-child(1){
+//                     width: 100% ;
+//                     height: 50%;
+//                     background-image: url('../../assets/imgs/mahdi2.jpg');
+//                 }
+//                 &:nth-child(2){
+//                     width: 100% ;
+//                     height: 50%;
+//                     background-image: url('../../assets/imgs/ehsan.jpg') ;
+//                     margin-top: $dist1 ;
+//                 }
+//             }
+//         }
+//         .inner_col.num2{
+//             width: 25% ;
+//             height: 100%;
+//             margin-right: $dist1 ;
+//             .box{
+//                 &:nth-child(1){
+//                     width: 100% ;
+//                     height: 50%;
+//                     background-image: url('../../assets/imgs/atefeh.jpg') ;
+//                 }
+//                 &:nth-child(2){
+//                     width: 100% ;
+//                     height: 50%;
+//                     background-size: 100% 100% ;
+//                     background-image: url('../../assets/imgs/mohammad1.jpg') ;
+//                     margin-top: $dist1 ;
+//                 }
+//             }
+//         }
+//         .inner_col.num3{
+//             width: 50% ;
+//             height: 100%;
+//             margin-right: $dist1 ;
+//             .box{
+//                 &:nth-child(1){
+//                     width: 100% ;
+//                     height: 100%;
+//                     background-image: url('../../assets/imgs/amirhossein.jpg') ;
+//                     margin-right: $dist1 ;
+//                 }
+//             }            
+//         }
+//     }
+//     .col.num2{
+//         margin-top: $dist1 ;
+//         width: 100% ;
+//         height: 10em;
+//         @include flex(row,space-between,center,nowrap,"") ;
+//         .box{
+//             &:nth-child(1){
+//                 width: 33.3% ;
+//                 height: 100%;
+//                 background-image: url('../../assets/imgs/mozhde.jpg');
+//             }
+//             &:nth-child(2){
+//                 width: 33.3% ;
+//                 height: 100%;
+//                 background-image: url('../../assets/imgs/tarikh1.jpg') ;
+//                 margin-right: $dist1 ;
+//             }
+//             &:nth-child(3){
+//                 width: 33.3% ;
+//                 height: 100%;
+//                 background-image: url('../../assets/imgs/kifsafa.jpg') ;
+//                 margin-right: $dist1 ;
+//             }
+//         }
+//     }
+// }

@@ -1,44 +1,54 @@
-import anime from 'animejs' ;
-let wrapper = document.querySelector('#top_slider') ;
-let btns = wrapper.querySelectorAll('.btn-wrapper button') ;
-let slides = wrapper.querySelectorAll('.slides .slide') ;
-btns.forEach(btn => {
-    btn.addEventListener('click',changeSlide) ;
-})
-function changeSlide(e){
-    let prevSlide = null ;
-    let currSlide = null ;
-    btns.forEach(btn => {
-        if(btn != this) {
-            if(btn.classList.contains('active')) prevSlide = slides[btn.getAttribute('data-target')] ;
-            btn.classList.remove('active') ;
-        }
-        else {
-            currSlide = slides[btn.getAttribute('data-target')] ;     
-            btn.classList.add('active') ;       
-        }
-    }) ;
-    slideAnimation(prevSlide,currSlide) ;
+import util from '../../utilities/utilities' ;
+function TopSlider(elm){//with fade effect
+    this.elm = elm ;
+    this.slidesWrapper = this.elm.querySelector('.slides') ;
+    this.slides = this.slidesWrapper.querySelectorAll('.slide') ;
+    this.prevBtn = this.elm.querySelector('.btn_wrapper .prev') ;
+    this.nextBtn = this.elm.querySelector('.btn_wrapper .next') ;
+    this.circlesWrapper = this.elm.querySelector('.circles') ;
+    this.circles = this.circlesWrapper.querySelectorAll('.circle') ;
+    this.currIndex = 0 ; //index of current .slide
+    this.slidesNum = this.slides.length ;
+    this.prevBtn.addEventListener('click',this.changSlide.bind(this)) ;
+    this.nextBtn.addEventListener('click',this.changSlide.bind(this)) ;
+    this.circles.forEach(circle => {
+        circle.addEventListener('click',this.changSlide.bind(this)) ;
+    })
+    this.autoTimer = 4000 ;
+    this.clearAutoSlider = null ;
+    this.autoSlider(this.autoTimer) ;
 }
-function slideAnimation(prevSlide,currSlide){
-    let tl = anime.timeline({
-        direction: 'normal',
-        loop: 1
-    });
-    tl.add({
-        targets: [prevSlide.querySelectorAll('span.border'),prevSlide.querySelector('p'),prevSlide.querySelector('img')],
-        easing: 'linear' ,
-        duration: 350 ,
-        delay: anime.stagger(200),
-        opacity: 0 ,
-        top: (elm,i,total)=>{if(elm == prevSlide.querySelector('img')) return '55%' ;}
-    },0)
-    tl.add({
-        targets: [currSlide.querySelector('img'),currSlide.querySelector('p'),currSlide.querySelectorAll('span.border')],
-        easing: 'linear' ,
-        duration: 300 ,
-        delay: anime.stagger(150),
-        opacity: 1 ,
-        top: (elm,i,total)=>{if(elm == currSlide.querySelector('img')) return '20%' ;}
-    },950)
+TopSlider.prototype.autoSlider = function(time){
+    this.clearAutoSlider = setInterval(()=>{
+        this.nextBtn.click() ;
+    },time)
 }
+TopSlider.prototype.changSlide = function(e){
+    clearInterval(this.clearAutoSlider) ;
+    this.autoSlider(this.autoTimer) ;
+    if(e.currentTarget == this.prevBtn) this.updateCurrIndex(this.currIndex-1,'prev') ; //prevBtn 
+    else if(e.currentTarget == this.nextBtn) this.updateCurrIndex(this.currIndex+1,'next') ;//nextBtn
+    else this.updateCurrIndex(util.getChildIndex(this.circlesWrapper,e.target),"") //click on circles   
+    this.updateCircles() ;
+    this.updateSlides() ;
+}
+TopSlider.prototype.updateSlides = function(){
+    for(let i=0 ; i<this.slides.length ; i++){//remove current active class 
+        let slide = this.slides[i] ;
+        if(slide.classList.contains('active')) slide.classList.remove('active') ;
+    }  
+    this.slides[this.currIndex].classList.add('active') ;
+}
+TopSlider.prototype.updateCircles = function(){
+    for(let i=0 ; i<this.circles.length ; i++){//remove current active class 
+        let circle = this.circles[i] ;
+        if(circle.classList.contains('active')) circle.classList.remove('active') ;
+    }  
+    this.circles[this.currIndex].classList.add('active') ;
+}
+TopSlider.prototype.updateCurrIndex = function(newIndex,dir){
+    if(dir=='next') this.currIndex = newIndex%this.slidesNum!=0 ? newIndex : 0 ;  //nextButton
+    else if(dir=='prev') this.currIndex = newIndex>=0 ? newIndex : this.slidesNum-1 ; //prevButton
+    else this.currIndex = newIndex ; //manually click on cirlce
+}
+new TopSlider(document.querySelector('#top_slider')) ;

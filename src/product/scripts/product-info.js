@@ -2,8 +2,14 @@ import util from '../../utilities/utilities' ;
 function ProductSlider(elm){
     this.elm = elm ;
     this.bgs = this.elm.querySelectorAll('.bg .img') ;
+    this.bgs.forEach(bg => {
+        bg.addEventListener('click',this.bgHandler.bind(this));
+    })
     this.slidesWrapper = this.elm.querySelector('.slides') ;
     this.slides = this.slidesWrapper.querySelectorAll('.slide') ;
+    this.slides.forEach(slide => {
+        slide.addEventListener('click',this.slideHandler.bind(this)) ;
+    })
     this.currSlideIndex = null ; //slide that has active class
     this.prevSlideIndex = null ;
     this.slidesNum = this.slides.length ;
@@ -52,6 +58,7 @@ ProductSlider.prototype.setActiveSlide = function(newIndex,dir){
     //calc new slideIndex
     if(dir == 'next') this.currSlideIndex = newIndex%this.slidesNum!=0 ? newIndex : 0 ; 
     else if(dir=='prev') this.currSlideIndex = newIndex>=0 ? newIndex : this.slidesNum-1 ; 
+    else if(dir=='none') this.currSlideIndex = newIndex ;
     this.slides[this.currSlideIndex].classList.add('active') ;//give new slide active class
 }
 ProductSlider.prototype.nextSlide = function(){
@@ -80,4 +87,25 @@ ProductSlider.prototype.setActiveBg = function(){
     //add active class to new bg 
     this.bgs[this.currSlideIndex].classList.add('active') ;
 }
+ProductSlider.prototype.slideHandler = function(e){
+    let targetSlideIndex = util.getChildIndex(this.slidesWrapper,e.currentTarget) ;
+    this.setActiveSlide(targetSlideIndex,'none') ;
+    this.setActiveBg() ;
+}
+ProductSlider.prototype.bgHandler = function(e){
+    e.stopPropagation();
+    let imgPath = util.getStyle(e.currentTarget,'background-image') ;
+    fixImg.style.backgroundImage = `${imgPath}` ;
+    blackFilter.classList.add('show');
+    fixImgWrapper.classList.add('show') ;
+    util.docHandler(fixImgWrapper,blackFilter);
+}
+let blackFilter = document.querySelector('#black_filter') ;
+let fixImgWrapper = document.querySelector('#fix_product_img') ;
+let fixImg = fixImgWrapper.querySelector('.img');
+let fixClose = fixImgWrapper.querySelector('span.close') ;
+fixClose.addEventListener('click',e=>{
+    blackFilter.classList.remove('show') ;
+    fixImgWrapper.classList.remove('show');
+})
 new ProductSlider(document.querySelector('#product_info .slider '))

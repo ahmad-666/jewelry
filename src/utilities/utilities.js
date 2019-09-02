@@ -25,8 +25,25 @@ let getActiveIndex = parent => {
     }
     return activeIndex ;
 }
+function docHandler(container,blackFilter){
+    document.container = container ;
+    document.blackFilter = blackFilter ;
+    document.addEventListener('click',docClick);
+}
+function docClick(e){
+    e.stopPropagation();  
+    let container = this.container ;
+    let blackFilter = this.blackFilter ;
+    let clickedElm = e.target ;
+    if(!container.contains(clickedElm)){
+        container.classList.remove('show') ;
+        if(blackFilter) blackFilter.classList.remove('show') ;
+        document.removeEventListener('click',docClick);
+    }
+}
 export default{
     getStyle,
     getChildIndex,
     getActiveIndex,
+    docHandler,
 }

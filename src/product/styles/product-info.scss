@@ -19,6 +19,7 @@
             height: 15em;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
             .img{
                 @include fullSize-abs ;
                 @include bg('',center center,no-repeat,100% 100%) ;
@@ -184,4 +185,55 @@
             }
         }
     }
+}
+#black_filter{
+    width: 100% ;
+    height: 100vh;
+    position: fixed ;
+    top: 0;
+    right: 0;
+    background-color: $blackFilter2;
+    opacity: 0;
+    visibility: hidden ;
+    transition: all .3s linear ;
+    z-index: 6;
+}
+#black_filter.show{
+    opacity: 1;
+    visibility: visible ;
+}
+#fix_product_img{
+    width: 80% ;
+    height: 80vh;
+    position: fixed ;
+    top: 50% ;
+    right: 50%;
+    transform: translate(50%,-50%);
+    display: flex ;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s linear ;
+    z-index: 7;
+    span.close{
+        width: 100% ;
+        height: 3em;
+        background-color: $whiteColor2 ;
+        color: $darkColor ;
+        text-align: center ;
+        padding: $dist1 0 ;
+        box-shadow: 0 -.1em .2em .1em $shadowColor ;
+        cursor: pointer;
+    }
+    .img{
+        width: 100% ;
+        height: calc(100% - 3em);
+        background-size: 100% 100% ;
+        background-repeat: no-repeat ;
+        background-position: center center ;
+    }
+}
+#fix_product_img.show{
+    opacity: 1;
+    visibility: visible ;
 }
