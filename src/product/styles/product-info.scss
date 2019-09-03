@@ -4,7 +4,7 @@
 #product_info{
     width: 90vw ;
     height: auto;
-    margin: $sectionsDist auto 0 auto ;
+    margin: $dist3 auto 0 auto ;
     display: flex ;
     @include flex(row,flex-start,flex-start,nowrap,"") ;
     .slider{
@@ -93,14 +93,15 @@
 
     }
     .infos{
+        @include containerStyle ;
         width: 100% ;
         height: auto;
         margin-right: $dist3 ;
+        margin-top: 0 ;
         display: flex ;
         @include flex(column,flex-start,flex-start,nowrap,"") ;
         background-color: white ;
         border: 1.2px solid lighten($greyColor2,30%) ;
-        padding: $dist2 ;
         .check_stock,.stars,.desc,.price,#buy{
             margin-top: $dist2 ;
         }

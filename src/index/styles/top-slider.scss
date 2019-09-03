@@ -1,7 +1,11 @@
 @import '../../colors.scss' ;
 @import '../../mixins.scss' ;
 @import '../../variables.scss' ;
+body{
+    background-color: darken($whiteColor1,5%) ;
+}
 #top_slider{
+    // @include containerStyle ;
     width: 80% ;
     height: 20em ;
     margin: $dist3 auto 0 auto ;

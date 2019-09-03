@@ -25,7 +25,7 @@ Slider.prototype.prevSlide = function(e){
     }
     else{
         this.currSlideIndex = this.slidesNum  ;   
-        this.movement = ((this.slidesNum*this.offset)-window.innerWidth>0) ? ((this.slidesNum*this.offset)-window.innerWidth) : (0) ; 
+        this.movement = ((this.slidesNum*this.offset)-this.slider.clientWidth>0) ? ((this.slidesNum*this.offset)-this.slider.clientWidth) : (0) ; 
         this.animation(-this.movement,1000) ;
     }   
 }

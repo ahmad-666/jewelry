@@ -5,17 +5,18 @@ body{
     background-color: $whiteColor1 ;
 }
 #tabs{
+    @include containerStyle ;
     width: 90vw ;
     height: auto;
     display: flex ;
     @include flex(column,flex-start,flex-start,nowrap,"") ;
-    margin: $sectionsDist auto 0 auto ;
+    margin: $dist3 auto 0 auto ;
     padding-bottom: $dist3 ;
     border: 1.2px solid lighten($greyColor2,30%) ;
     background-color: white ;
-    padding-top: $dist3 ;
+    padding-top: $dist2 ;
     .tabs_wrapper{
-        width: 90% ;
+        width: 100% ;
         height: auto;
         margin: 0 auto ;
         display: flex ;
@@ -37,7 +38,7 @@ body{
         }
     } 
     .content{
-        width: 90% ;
+        width: 100% ;
         margin: 0 auto ;
         height: auto;
         position: relative ;
