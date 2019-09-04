@@ -155,7 +155,7 @@
                         transform: translateX(-50%) ;
                         margin-top: $dist2 ;
                         cursor: pointer;
-                        .noUi-connect{background-color: lighten($primaryColor,35%);}
+                        .noUi-connect{background-color: $primaryColor;}
                         .noUi-handle.circle{
                             width: 1.2em ;
                             height: 1.2em;

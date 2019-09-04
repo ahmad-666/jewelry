@@ -548,89 +548,131 @@
             </li>
         </ul>
     </nav>
-    <div id="top_slider">
-        <div class="btn_wrapper">
-            <i class="prev fas fa-angle-right"></i></button>
-            <i class="next fas fa-angle-left"></i></button>
+    <div id="black_filter"></div>
+    <aside>
+        <div class="top">
+            <form id="change_img" name="change_img" method="GET" action="#!" enctype="text/plain">
+                <input id="profile_img" name="profile_img" type="file" accept="img/*">    
+                <label for="profile_img">
+                    <img src="../assets/imgs/profile.png" alt="profile_img">
+                </label>
+            </form>
+            <p class="name">نام کاربر </p>
+            <div class="password_signout">
+                <a href="./change-password.html">
+                    <i class="fas fa-lock"></i>
+                    <p>تغییر رمز</p>
+                </a>
+                <a href="./index.html">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <p>خروج از حساب</p>
+                </a>
+            </div>
         </div>
-        <div class="circles">
-            <span class="circle active"></span>
-            <span class="circle"></span>
-            <span class="circle"></span>
-            <span class="circle"></span>
+        <div class="bottom">
+            <a href="./profile.html">
+                <i class="fas fa-user"></i>
+                <p>حساب کاربری</p>
+            </a>
+            <a href="./edit-profile.html">
+                <i class="fas fa-edit"></i>
+                <p>ویرایش اطلاعات</p>
+            </a>
+            <a href="./basket.html">
+                <i class="fas fa-shopping-cart"></i>
+                <p>سبد خرید</p>
+            </a>
+            <a class="active" href="./orders.html">
+                <i class="fas fa-shopping-basket"></i>
+                <p>سفارشات من</p>
+            </a>
+            <a href="./return-request.html">
+                <i class="fas fa-undo-alt"></i>
+                <p>درخواست برگشت کالا</p>
+            </a>
         </div>
-       <div class="slides">
-           <div class="slide active"></div>
-           <div class="slide"></div>
-           <div class="slide"></div>
-           <div class="slide"></div>
-       </div>
+    </aside>
+    <i class="fas fa-bars main_menu"></i>
+    <div id="orders">
+        <h4>سفارش های من</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th class="num">#</th>
+                    <th class="products">محصولات خریداری شده</th>
+                    <th class="price">قیمت کل</th>
+                    <th class="date">تاریخ ثبت</th>
+                    <th class="state">وضعیت</th>
+                    <th class="details">جزییات</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="num">1</td>
+                    <td class="products">
+                        <ul>
+                            <li> 
+                                <i class="fas fa-circle"></i>
+                                <a href="./product.html">نام محصول(۱عدد)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-circle"></i>
+                                <a href="./product.html">نام محصول(۲عدد)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-circle"></i>
+                                <a href="./product.html">نام محصول(۳عدد)</a>
+                            </li>                       
+                        </ul>
+                    </td>
+                    <td class="price">1.000.000تومان</td>
+                    <td class="date">۱۳۹۸/۱۲/۲۵</td>
+                    <td class="state process">در حال پردازش</td>
+                    <td class="details"> <a href="./order-details.html">جزییات بیشتر</a> </td>
+                </tr>
+                <tr>
+                    <td class="num">۲</td>
+                    <td class="products">
+                        <ul>
+                            <li>
+                                <i class="fas fa-circle"></i>
+                                <a href="./product.html">نام محصول(۱عدد)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-circle"></i>
+                                <a href="./product.html">نام محصول(۲عدد)</a>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="price">1.000.000تومان</td>
+                    <td class="date">۱۳۹۸/۱۲/۲۵</td>
+                    <td class="state ready">آماده ارسال</td>
+                    <td class="details">
+                        <a href="./order-details.html">جزییات بیشتر</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="num">۳</td>
+                    <td class="products">
+                        <ul>
+                            <li>
+                                <i class="fas fa-circle"></i>
+                                <a href="./product.html">نام محصول(۱عدد)</a>
+                            </li>                       
+                        </ul>
+                    </td>
+                    <td class="price">1.000.000تومان</td>
+                    <td class="date">۱۳۹۸/۱۲/۲۵</td>
+                    <td class="state send">ارسال شده</td>
+                    <td class="details">
+                        <a href="./order-details.html">جزییات بیشتر</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <div id="grid">
-        <h4>پیشنهادهای تاباچرم</h4>
-        <div class="col num1">
-            <div class="box">
-                <div class="content">
-                    <p class="name">نام محصول</p>
-                    <p class="price">1.000.000 تومان</p>
-                    <a href="./product.html">اطلاعات بیشتر</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="content">
-                    <p class="name">نام محصول</p>
-                    <p class="price">1.000.000 تومان</p>
-                    <a href="./product.html">اطلاعات بیشتر</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="content">
-                    <p class="name">نام محصول</p>
-                    <p class="price">1.000.000 تومان</p>
-                    <a href="./product.html">اطلاعات بیشتر</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="content">
-                    <p class="name">نام محصول</p>
-                    <p class="price">1.000.000 تومان</p>
-                    <a href="./product.html">اطلاعات بیشتر</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="content">
-                    <p class="name">نام محصول</p>
-                    <p class="price">1.000.000 تومان</p>
-                    <a href="./product.html">اطلاعات بیشتر</a>
-                </div>
-            </div>
-        </div>
-        <div class="col num2">
-            <div class="box">
-                <div class="content">
-                    <p class="name">نام محصول</p>
-                    <p class="price">1.000.000 تومان</p>
-                    <a href="./product.html">اطلاعات بیشتر</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="content">
-                    <p class="name">نام محصول</p>
-                    <p class="price">1.000.000 تومان</p>
-                    <a href="./product.html">اطلاعات بیشتر</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="content">
-                    <p class="name">نام محصول</p>
-                    <p class="price">1.000.000 تومان</p>
-                    <a href="./product.html">اطلاعات بیشتر</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="slider_wrapper" id="new_product">
-        <h4>جدیدترین محصولات</h4>
+    <div class="slider_wrapper" id="suggestions">
+        <h4>محصولات پیشنهادی</h4>
         <button class="prev"><i class="fas fa-arrow-right"></i></button>
         <button class="next"><i class="fas fa-arrow-left"></i></button>
         <a href="./products.html" class="show-all">
@@ -817,88 +859,6 @@
             </a>
         </div>
     </div>
-    <div class="slider_wrapper" id="latest_articles">
-        <h4>آخرین مقالات</h4>
-        <button class="prev"><i class="fas fa-arrow-right"></i></button>
-        <button class="next"><i class="fas fa-arrow-left"></i></button>
-        <a href="./articles.html" class="show-all">
-            نمایش همه
-            <i class="fas fa-angle-double-left"></i>
-        </a>
-        <div class="slider">
-            <div class="slide">
-                <img src="../assets/imgs/purse.jpg" alt="article-img">
-                <div class="content">
-                    <h5>عنوان مقاله</h5>
-                    <a href="./article.html">مشاهده مقاله</a>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="../assets/imgs/esmjasoeichi.jpg" alt="article-img">
-                <div class="content">
-                    <h5>عنوان مقاله</h5>
-                    <a href="./article.html">مشاهده مقاله</a>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="../assets/imgs/havapeyma.jpg" alt="article-img">
-                <div class="content">
-                    <h5>عنوان مقاله</h5>
-                    <a href="./article.html">مشاهده مقاله</a>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="../assets/imgs/amirhossein.jpg" alt="article-img">
-                <div class="content">
-                    <h5>عنوان مقاله</h5>
-                    <a href="./article.html">مشاهده مقاله</a>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="../assets/imgs/sher.jpg" alt="article-img">
-                <div class="content">
-                    <h5>عنوان مقاله</h5>
-                    <a href="./article.html">مشاهده مقاله</a>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="../assets/imgs/purse.jpg" alt="article-img">
-                <div class="content">
-                    <h5>عنوان مقاله</h5>
-                    <a href="./article.html">مشاهده مقاله</a>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="../assets/imgs/esmjasoeichi.jpg" alt="article-img">
-                <div class="content">
-                    <h5>عنوان مقاله</h5>
-                    <a href="./article.html">مشاهده مقاله</a>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="../assets/imgs/havapeyma.jpg" alt="article-img">
-                <div class="content">
-                    <h5>عنوان مقاله</h5>
-                    <a href="./article.html">مشاهده مقاله</a>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="../assets/imgs/amirhossein.jpg" alt="article-img">
-                <div class="content">
-                    <h5>عنوان مقاله</h5>
-                    <a href="./article.html">مشاهده مقاله</a>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="../assets/imgs/sher.jpg" alt="article-img">
-                <div class="content">
-                    <h5>عنوان مقاله</h5>
-                    <a href="./article.html">مشاهده مقاله</a>
-                </div>
-            </div>
-            
-        </div>
-    </div>
     <footer>
         <div id="why_us">
             <div class="item">
@@ -983,7 +943,5 @@
             طراحی سایت توسط ittoos
         </a>
     </div>
-
 </body>
-
 </html>

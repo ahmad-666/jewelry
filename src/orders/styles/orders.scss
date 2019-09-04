@@ -1,0 +1,111 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+#orders{
+    @include containerStyle ;
+    width: 90% ;
+    height: auto;
+    margin: $dist3 auto 0 auto ;
+    display: flex ;
+    @include flex(column,flex-start,flex-start,nowrap,"") ;
+    h4{
+        font-size: $font-l;
+        font-weight: 700;
+        color: $darkColor ;
+    }
+    table{
+        width: 100% ;
+        height: auto;
+        display: flex ;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        margin-top: $dist2 ;
+        th.num,td.num{width: 10%;}
+        th.products,td.products{width: 30%;}
+        th.price,td.price{width: 15%;}
+        th.date,td.date{width: 15%;}
+        th.state,td.state{width: 15%;}
+        th.details,td.details{width: 15%;}
+        thead{
+            width: 100% ;
+            height: auto;
+            background-color: $primaryColor ;
+            tr{
+                width: 100% ;
+                height: auto;
+                display: flex ;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                th{
+                    color: $whiteColor2 ;
+                    font-size: $font-m ;
+                    height: $dist3;
+                    text-align: center ;
+                    line-height: $dist3 ;
+                }
+            }
+        }
+        tbody{
+            width: 100% ;
+            height: auto;
+            display: flex ;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            tr{
+                width: 100% ;
+                height: auto;
+                display: flex ;
+                @include flex(row,flex-start,flex-start,nowrap,"") ;
+                td{
+                    height: auto;
+                    color: $darkColor ;
+                    font-size: $font-m ;
+                    text-align: center ;
+                    padding: $dist1 0 ;
+                }
+                td.products{
+                    ul{
+                        width: 100% ;
+                        height: auto;
+                        display: flex ;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        li{
+                            width: 100% ;
+                            height: auto;
+                            display: flex ;
+                            @include flex(row,flex-start,flex-start,nowrap,"") ;
+                            margin-top: $dist1 ;
+                            i{
+                                font-size: $font-l ;
+                                color: $primaryColor ;
+                                transform: translateY(15%) ;
+                            }
+                            a{
+                                color: $darkColor ;
+                                font-size: $font-m ;
+                                transform: translateX(-.3em) ;
+                            }
+                        }
+                    }
+                }
+                td.state{
+                    width: auto ;
+                    height: auto;
+                    padding: dist1 $dist3 ;
+                    border-radius: $dist3 ;
+                    color: $whiteColor2 ;
+                    font-size: $font-m ;
+                }
+                td.state.process{background-color: orangered;}
+                td.state.ready{background-color: darken($blueColor1,25%);}
+                td.state.send{background-color: $greenColor2;}
+                td.details{
+                    width: auto ;
+                    height: auto;
+                    border-radius: $dist3 ;
+                    font-size: $font-m ;
+                    color: $whiteColor2 ;
+                    padding: $dist1 $dist3 ;
+                    background-color: $primaryColor ;
+                }
+            }
+        }
+    }
+}
