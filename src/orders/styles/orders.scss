@@ -14,17 +14,17 @@
         color: $darkColor ;
     }
     table{
-        width: 100% ;
+        width: 90% ;
         height: auto;
         display: flex ;
         @include flex(column,flex-start,flex-start,nowrap,"") ;
-        margin-top: $dist2 ;
-        th.num,td.num{width: 10%;}
-        th.products,td.products{width: 30%;}
-        th.price,td.price{width: 15%;}
-        th.date,td.date{width: 15%;}
-        th.state,td.state{width: 15%;}
-        th.details,td.details{width: 15%;}
+        margin: $dist2 auto 0 auto ;
+        th.num,td.num{width: 6em;  ; flex-shrink: 0;}
+        th.products,td.products{width: 30em; flex-shrink: 2 ;}
+        th.price,td.price{width: 15em; flex-shrink: 1;}
+        th.date,td.date{width: 15em; flex-shrink: 1;}
+        th.state,td.state{width: 15em; flex-shrink: 1;}
+        th.details,td.details{width: 15em; flex-shrink: 1;}
         thead{
             width: 100% ;
             height: auto;
@@ -33,14 +33,18 @@
                 width: 100% ;
                 height: auto;
                 display: flex ;
-                @include flex(row,flex-start,center,nowrap,"") ;
+                @include flex(row,space-between,center,nowrap,"") ;
                 th{
                     color: $whiteColor2 ;
                     font-size: $font-m ;
-                    height: $dist3;
+                    height: $dist3 + 1em;
                     text-align: center ;
-                    line-height: $dist3 ;
+                    line-height:$dist3 + 1em;
                 }
+                th.products{
+                    text-align: right ;
+                }
+                // th.num{font-size: $font-special ;}
             }
         }
         tbody{
@@ -52,7 +56,9 @@
                 width: 100% ;
                 height: auto;
                 display: flex ;
-                @include flex(row,flex-start,flex-start,nowrap,"") ;
+                @include flex(row,space-between,flex-start,nowrap,"") ;
+                padding: $dist1 0 ;
+                border-bottom: 1px solid lighten($greyColor2,25%) ;
                 td{
                     height: auto;
                     color: $darkColor ;
@@ -73,37 +79,49 @@
                             @include flex(row,flex-start,flex-start,nowrap,"") ;
                             margin-top: $dist1 ;
                             i{
-                                font-size: $font-l ;
+                                font-size: $font-m  ;
                                 color: $primaryColor ;
-                                transform: translateY(15%) ;
                             }
                             a{
                                 color: $darkColor ;
                                 font-size: $font-m ;
-                                transform: translateX(-.3em) ;
+                                transform: translate(-.5em,-.5em) ;
                             }
                         }
                     }
                 }
                 td.state{
-                    width: auto ;
-                    height: auto;
-                    padding: dist1 $dist3 ;
-                    border-radius: $dist3 ;
-                    color: $whiteColor2 ;
-                    font-size: $font-m ;
+                    p{
+                        display: inline-block ;
+                        width: auto ;
+                        height: auto;
+                        padding: $dist1 $dist3 ;
+                        border-radius: $dist3 ;
+                        color: $whiteColor2 ;
+                        font-size: $font-m ;
+                    }
                 }
-                td.state.process{background-color: orangered;}
-                td.state.ready{background-color: darken($blueColor1,25%);}
-                td.state.send{background-color: $greenColor2;}
+                td.state.process{
+                    p{background-color: orangered;}             
+                }
+                td.state.ready{
+                    p{background-color: darken($blueColor1,25%);}
+                    
+                }
+                td.state.send{
+                    p{background-color: $greenColor2;}                  
+                }
                 td.details{
-                    width: auto ;
-                    height: auto;
-                    border-radius: $dist3 ;
-                    font-size: $font-m ;
-                    color: $whiteColor2 ;
-                    padding: $dist1 $dist3 ;
-                    background-color: $primaryColor ;
+                    a{
+                        display: inline-block ;
+                        width: auto ;
+                        height: auto;
+                        border-radius: $dist3 ;
+                        font-size: $font-m ;
+                        color: $whiteColor2 ;
+                        padding: $dist1 $dist3 ;
+                        background-color: $primaryColor ;
+                    }                  
                 }
             }
         }
