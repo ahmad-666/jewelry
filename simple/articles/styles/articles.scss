@@ -1,0 +1,166 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+main{
+
+    .articles{
+        display: flex ;
+        @include flex(row,flex-start,flex-start,wrap,flex-start);
+        padding: $dist2 ;
+        position: relative ;
+        background-color: $whiteColor2 ;
+        box-shadow: 0 0 .5em .1em $shadowColor ;
+        padding-bottom: $dist4 + 1em;
+        h4{
+            font-size: $font-special ;
+            color: $darkColor ;
+            font-weight: 700 ;
+            width: 100% ;
+
+        }
+        .article{
+            width: calc((63vw - (3 * 2.7em)) / 3) ;
+            height: auto ;
+            margin: $dist2 ;
+            border-radius: $dist2 ;
+            display: flex ;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            transition: all .4s ease-in-out ;
+            cursor: pointer;
+            &:hover{
+                transform: translateY(-5%) ;
+                .img{
+                    &::before{opacity: 0.5;}
+                }
+            }
+            .img{
+                width: 100% ;
+                height: 10em ;
+                position: relative ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+                background-size: 100% 100% ;
+                border-radius: $dist2 ;
+                &::before{
+                    content: '' ;
+                    border-radius: $dist2 ;
+                    @include fullSize-abs ;
+                    background-color: $blackFilter ;
+                    opacity: 1;
+                    transition: all .4s ease-in-out ;
+                }
+                .content{
+                    position: absolute ;
+                    width: 100% ;
+                    height: auto;
+                    right: 0;
+                    bottom: 5%;
+                    display: flex ;
+                    @include flex(row,space-between,center,nowrap,"") ;
+                    padding: 0 $dist1 ;
+                    .writer{
+                        font-size: $font-m - .1em ;
+                        color: $whiteColor2 ;
+                    }
+                    .comments{
+                        width: 2.2em ;
+                        height: 2.2em;
+                        border-radius: 50% ;
+                        background-color: $blackFilter2 ;
+                        border: 1.2px solid $whiteColor2 ;
+                        display: flex ;
+                        @include flex(column,space-around,center,nowrap,"");
+                        i{
+                            font-size: $font-m ;
+                            color: $whiteColor2 ;
+                        }
+                        span{
+                            font-size: $font-m - .2em ;
+                            color: $whiteColor2 ;
+                        }
+                    }
+    
+                }
+            }
+            h4{
+                margin-top: $dist1 ;
+                width: 100% ;
+                @include multiEllipse(3,$dist2 + .5em,$darkColor) ;
+                font-size: $font-m + .1em;
+                color: $darkColor ;
+            }
+            .date{
+                color: $greyColor2 ;
+                font-size: $font-m ;
+                margin-top: $dist1 ;
+            }
+            &:nth-child(1){
+                .img{background-image: url('../../assets/imgs/a.jpg');}
+            }
+            &:nth-child(2){
+                .img{background-image: url('../../assets/imgs/amirhossein.jpg');}
+            }
+            &:nth-child(3){
+                .img{background-image: url('../../assets/imgs/havapeyma.jpg');}
+            }
+            &:nth-child(4){
+                .img{background-image: url('../../assets/imgs/esmjasoeichi.jpg');}
+            }
+            &:nth-child(5){
+                .img{background-image: url('../../assets/imgs/a.jpg');}
+            }
+            &:nth-child(6){
+                .img{background-image: url('../../assets/imgs/amirhossein.jpg');}
+            }
+            &:nth-child(7){
+                .img{background-image: url('../../assets/imgs/havapeyma.jpg');}
+            }
+            &:nth-child(8){
+                .img{background-image: url('../../assets/imgs/esmjasoeichi.jpg');}
+            }
+            &:nth-child(9){
+                .img{background-image: url('../../assets/imgs/a.jpg');}
+            }
+            &:nth-child(10){
+                .img{background-image: url('../../assets/imgs/amirhossein.jpg');}
+            }
+           
+        }
+        .pagination{
+            width: 100% ;
+            height: auto;
+            position: absolute ;
+            right: 0 ;
+            bottom: $dist1 ;
+            text-align: center ;
+            .links{
+                width: auto ;
+                height: auto;
+                display: inline-flex ;
+                @include flex(row,flex-start,center,wrap,flex-start) ;
+            }
+            a,.dots{
+                position: relative ;
+                width: auto ;
+                height: 2.5em;
+                padding: 0 $dist2 ;
+                font-size: $font-l ;
+                border-radius: $dist1 ;
+                color: $primaryColor ;
+                background-color: $paleColor ;
+                margin: $dist1 ;
+                transition: all .3s ease-in-out ;
+                &:first-child{line-height: 2.4em ;}
+                &:last-child{line-height: 2.4em ;}
+                &:not(:first-child):not(:last-child){line-height: 2.8em;}
+                &:hover{
+                    color: $whiteColor2 ;
+                    background-color: $primaryColor ;
+                }
+            }
+            .dots{
+                line-height: 2.2em !important ;
+            }
+        }
+    }
+}

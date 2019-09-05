@@ -1,0 +1,76 @@
+@font-face {
+  font-family: iranSans;
+  src: url("./assets/fonts/iransans.ttf");
+}
+
+@font-face {
+  font-family: byekan;
+  src: url("./assets/fonts/Yekan.ttf");
+}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+  font-family: byekan;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  font-size: 20px !important;
+}
+
+body {
+  background-color: #ebebeb;
+}
+
+a {
+  border: none;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+video:focus {
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/*# sourceMappingURL=init.css.map */

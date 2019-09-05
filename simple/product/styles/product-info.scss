@@ -1,0 +1,240 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+#product_info{
+    width: 90vw ;
+    height: auto;
+    margin: $dist3 auto 0 auto ;
+    display: flex ;
+    @include flex(row,flex-start,flex-start,nowrap,"") ;
+    .slider{
+        width: 19.5em ;
+        height: auto;
+        flex-shrink: 0 ;
+        display: flex ;
+        @include flex(column,flex-start,center,nowrap,"") ;
+        overflow: hidden;
+        .bg{
+            width: 100% ;
+            height: 15em;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            .img{
+                @include fullSize-abs ;
+                @include bg('',center center,no-repeat,100% 100%) ;
+                opacity: 0;
+                visibility: hidden ;
+                transition: all .3s ease-in-out ;
+                &:nth-child(3){background-image: url('../../assets/imgs/slide1.jpg');}              
+                &:nth-child(4){background-image: url('../../assets/imgs/slide2.jpg');}              
+                &:nth-child(5){background-image: url('../../assets/imgs/slide3.jpg');}              
+                &:nth-child(6){background-image: url('../../assets/imgs/slide4.jpg');}              
+                &:nth-child(7){background-image: url('../../assets/imgs/slide1.jpg');}              
+                &:nth-child(8){background-image: url('../../assets/imgs/slide2.jpg');}              
+                &:nth-child(9){background-image: url('../../assets/imgs/slide3.jpg');}              
+                &:nth-child(10){background-image: url('../../assets/imgs/slide4.jpg');}                 
+            }          
+            .img.active{
+                opacity: 1;
+                visibility: visible;
+            }
+            i{
+                width: auto ;
+                height: auto;
+                padding: $dist1 $dist2;
+                color: $darkColor ;
+                background-color: transparent ;
+                font-size: $font-l ;
+                @include center-y ;
+                transition: all .3s ease-in-out ;
+                cursor: pointer;
+                z-index: 2;
+                &:nth-child(1){right: 0%;}
+                &:nth-child(2){left: 0% ;}
+                &:hover{
+                    color: $whiteColor2 ;
+                    background-color: $primaryColor ;
+                }
+            }
+        }
+        .slides{
+            width: 100% ;
+            height: auto;
+            margin-top: $dist2 ;
+            padding: $dist1 0 ;
+            display: flex ;
+            @include flex(row,flex-start,center,nowrap,"") ;
+            position: relative ;
+            right: 0 ;
+            transition: all .3s ease-in-out ;
+            .slide{
+                flex-shrink: 0 ;
+                width: 6em ;
+                height: 5em;
+                border-radius: $dist2 ;
+                position: relative ;
+                cursor: pointer;
+                @include bg("",center center,no-repeat,100% 100%) ;
+                border: 3px solid transparent ;
+                transition: all .3s ease-in-out ;
+                margin-right: $dist1;
+                &:nth-child(1){background-image: url('../../assets/imgs/slide1.jpg');}
+                &:nth-child(2){background-image: url('../../assets/imgs/slide2.jpg');}
+                &:nth-child(3){background-image: url('../../assets/imgs/slide3.jpg');}
+                &:nth-child(4){background-image: url('../../assets/imgs/slide4.jpg');}
+                &:nth-child(5){background-image: url('../../assets/imgs/slide1.jpg');}
+                &:nth-child(6){background-image: url('../../assets/imgs/slide2.jpg');}
+                &:nth-child(7){background-image: url('../../assets/imgs/slide3.jpg');}
+                &:nth-child(8){background-image: url('../../assets/imgs/slide4.jpg');}
+            }
+            .slide.active{border: 3px solid $primaryColor ;}
+        }
+
+    }
+    .infos{
+        @include containerStyle ;
+        width: 100% ;
+        height: auto;
+        margin-right: $dist3 ;
+        margin-top: 0 ;
+        display: flex ;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        background-color: white ;
+        border: 1.2px solid lighten($greyColor2,30%) ;
+        .check_stock,.stars,.desc,.price,#buy{
+            margin-top: $dist2 ;
+        }
+        h4{
+            color: $darkColor ;
+            font-weight: 700; 
+            font-size: $font-l ;
+        }
+        .check_stock{
+            width: auto ;
+            height: auto;
+            border-radius: $dist3 ;
+            color: $whiteColor2 ;
+            padding: $dist1 $dist3 ;
+            font-size: $font-m ;
+        }
+        .check_stock.available{
+            background-color: $greenColor2 ;
+        }
+        .check_stock.not_available{
+            background-color: $redColor2 ;
+        }
+        .stars{
+            width: auto ;
+            height: auto;
+            display: flex ;
+            @include flex(row,flex-start,center,nowrap,"");
+            i{
+                font-size: $font-m ;
+                color: $primaryColor ;
+                margin: 0 .2em;
+            }
+        }
+        .desc{
+            width: auto ;
+            height: auto;
+            font-size: $font-m ;
+            color: darken($greyColor2,20%) ;
+            line-height: $dist3 ;
+        }
+        .price{
+            font-size: $font-l ;
+            color: $darkColor ;
+        }
+        #buy{
+            width: auto ;
+            height: auto;
+            display: flex ;
+            @include flex(row,flex-start,center,nowrap,"");
+            p{
+                font-size: $darkColor ;
+                font-size: $font-m ;
+            }
+            input#quantity{
+                width: 3em ;
+                height: 3em;
+                text-align: center ;
+                border: 1px solid $greyColor2 ;
+                padding: .2em ;
+                color: $darkColor ;
+                font-size: $font-m ;
+                cursor: pointer;
+                background-color: $whiteColor2 ;
+                transform: perspective(1000px) translateZ(0) ;
+                transition: all .3s ease-in-out ;
+                margin-right: $dist3 ;
+                &:focus{
+                    box-shadow: 0 0 .3em .05em $shadowColor ;
+                    transform: perspective(1000px) translateZ(7em) ;
+                }
+            }
+            .add_to_basket{
+                margin-right: $dist3 ;
+                width: auto ;
+                height: auto;
+                padding: $dist1 $dist3 ;
+                font-size: $font-m ;
+                color: $whiteColor2 ;
+                background-color: $greenColor2 ;
+                border-radius: $dist3 ;
+                cursor: pointer;
+            }
+        }
+    }
+}
+#black_filter{
+    width: 100% ;
+    height: 100vh;
+    position: fixed ;
+    top: 0;
+    right: 0;
+    background-color: $blackFilter2;
+    opacity: 0;
+    visibility: hidden ;
+    transition: all .3s linear ;
+    z-index: 6;
+}
+#black_filter.show{
+    opacity: 1;
+    visibility: visible ;
+}
+#fix_product_img{
+    width: 80% ;
+    height: 80vh;
+    position: fixed ;
+    top: 50% ;
+    right: 50%;
+    transform: translate(50%,-50%);
+    display: flex ;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s linear ;
+    z-index: 7;
+    span.close{
+        width: 100% ;
+        height: 3em;
+        background-color: $whiteColor2 ;
+        color: $darkColor ;
+        text-align: center ;
+        padding: $dist1 0 ;
+        box-shadow: 0 -.1em .2em .1em $shadowColor ;
+        cursor: pointer;
+    }
+    .img{
+        width: 100% ;
+        height: calc(100% - 3em);
+        background-size: 100% 100% ;
+        background-repeat: no-repeat ;
+        background-position: center center ;
+    }
+}
+#fix_product_img.show{
+    opacity: 1;
+    visibility: visible ;
+}

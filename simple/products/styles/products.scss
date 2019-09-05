@@ -1,0 +1,158 @@
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+.wrapper{
+    #products_wrapper{
+        #products{
+            border-radius: $dist1 ;
+
+            margin-top: $dist2 ;
+            width: 100% ;
+            height: auto;
+            background-color: white ;
+            box-shadow: 0 0 .3em .05em $shadowColor ;
+            display: flex ;
+            @include flex(row,flex-start,flex-start,wrap,flex-start);
+            padding-bottom: $dist4 ;
+            position: relative;
+            .product{
+                // width: 12em ;
+                border-radius: $dist1 ;
+                height: 15em;
+                border: 1px solid lighten($greyColor2,25%) ;
+                margin: $dist2 $dist1;
+                position: relative ;
+                display: flex ;
+                @include flex(column,flex-start,center,nowrap,"") ;
+                transition: all .4s ease-in-out ;
+                cursor: pointer;
+                &:hover{
+                    transform: translateY(-$dist1) ;
+                    box-shadow: 0 0 .3em .05em $shadowColor ;
+                    z-index: 2;
+                }
+                img{
+                    width: 100% ;
+                    height: 65%;
+                    border-top-left-radius: $dist1 ;
+                    border-top-right-radius: $dist1 ;
+                }
+                .content{
+                    width: 100% ;
+                    height: 45%;
+                    display: flex ;
+                    @include flex(column,flex-start,center,nowrap,"");
+                    .name{
+                        flex-shrink: 0 ;
+                        @include multiEllipse(2,1.8em,$darkColor) ;
+                        width: 100% ;
+                        font-size: $font-m - .1em ;
+                        color: $greyColor2 ;
+                    }
+                    .stars{
+                        width: auto ;
+                        height: auto;
+                        display: flex ;
+                        @include flex(row,flex-start,center,wrap,flex-start) ;
+                        i{
+                            font-size: $font-m - .2em ;
+                            color: $primaryColor ;
+                            margin-right: .15em ;
+                        }
+                        p{
+                            font-size: $font-m ;
+                            color: $greyColor2 ;
+                            margin-right: $dist1 ;
+                        }
+                    }
+                    .price{
+                        width: auto ;
+                        height: auto;
+                        text-align: center ;
+                        font-size: $font-l ;
+                        color: $darkColor ;
+                    }
+                }
+            }
+            .product.has_discount{
+                position: relative ;
+                .content{
+                    .price{
+                        color: $greyColor2 ;
+                        position: relative;
+                        font-size: $font-m ;
+                        &::before{
+                            content: '' ;
+                            width: 110% ;
+                            height: .1em;
+                            background-color: $primaryColor ;
+                            @include center-xy ;
+                        }
+                    }
+                    .after_discount{
+                        width: auto ;
+                        height: auto;
+                        font-size: $font-l ;
+                        color: $darkColor ;
+                    }
+                }        
+                .discount{
+                    width: auto ;
+                    height: auto;
+                    position: absolute ;
+                    right: 0 ;
+                    top: 5% ;
+                    color: $whiteColor2 ;
+                    background-color: $primaryColor ;
+                    padding: .1em $dist2 ;
+                    border-top-left-radius: $dist3 ;
+                    border-bottom-left-radius: $dist3 ;
+                    font-size: $font-m  ;
+                }
+                
+            }
+            .product.not_available{
+                span.not_available{
+                    width: auto ;
+                    height: auto;
+                    position: absolute ;
+                    left: 0 ;
+                    top: 5% ;
+                    color: $whiteColor2 ;
+                    background-color: lighten($redColor2,5%) ;
+                    padding: .1em $dist2 ;
+                    border-top-right-radius: $dist3 ;
+                    border-bottom-right-radius: $dist3 ;
+                    font-size: $font-m  ;
+                    
+                }
+            }
+            #pagination{
+                width: auto ;
+                height: auto;
+                @include center-x ;
+                bottom: $dist1 ;
+                display: flex ;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                .page{
+                    width: auto ;
+                    height: 2.5em;
+                    border-radius: $dist1 ;
+                    padding: 0 $dist2 ;
+                    transition: all .3s ease-in-out ;
+                    cursor: pointer;
+                    font-size: $font-m ;
+                    color: black ;
+                    background-color: $whiteColor2 ;
+                    border: 1px solid $greyColor2 ;
+                    margin-right: $dist1 ;
+                    &:hover{
+                        color: black ;
+                        background-color: $primaryColor ;
+                        border: 1px solid transparent ;
+                    }
+                }
+            }
+        }
+    }
+}

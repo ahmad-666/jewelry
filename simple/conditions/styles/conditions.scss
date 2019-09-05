@@ -1,0 +1,29 @@
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+body{
+    background-color: darken($whiteColor1,5%) ;
+}
+#conditions{
+    width: 80vw ;
+    height: auto;
+    margin: $dist3 auto ;
+    padding: $dist2 ;
+    display: flex ;
+    @include flex(column,flex-start,flex-start,nowrap,"") ;
+    box-shadow: 0 0 .5em .1em $shadowColor ;
+    border: 2px solid lighten($greyColor2,20%) ;
+    background-color: white ;
+    h4{
+        font-size: $font-special ;
+        color: $darkColor ;
+        font-weight: 700 ;
+    }
+    p{
+        width: 100% ;
+        height: auto;
+        font-size: $font-m ;
+        color: $greyColor2 ;
+        line-height: $dist3 ;
+    }
+}

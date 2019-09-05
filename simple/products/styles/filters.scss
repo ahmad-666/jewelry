@@ -1,0 +1,212 @@
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+.wrapper{
+    #filters_wrapper{
+        #filters{
+            border-radius: $dist1 ;
+
+            width: 100% ;
+            height: auto;
+            margin-top: $dist2 ;
+            display: flex ;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            background-color: white ;
+            box-shadow: 0 0 .3em .05em $shadowColor ;
+            padding: $dist1 ;
+            .filter{
+                width: 100% ;
+                height: auto;
+                display: flex ;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                &:not(:first-child){margin-top: $dist1 ;}
+                &:not(:last-child){
+                    border-bottom: 1px solid lighten($greyColor2,25%);
+                    padding-bottom: $dist1 ;
+                } 
+                .title{
+                    width: 100% ;
+                    height: auto;
+                    display: flex ;
+                    @include flex(row,space-between,center,nowrap,"") ;
+                    i{
+                        width: auto ;
+                        height: auto;
+                        padding: 0 $dist3 0 0 ;
+                        font-size: $font-l ;
+                        color: $darkColor ;
+                        cursor: pointer;
+                        transform: translate(0,-10%) ;
+                    }
+                    p{
+                        font-size: $font-m ;
+                        color: $darkColor ;
+                        font-weight: 700 ;
+                        transform: translate(-.3em,-5%) ;
+                    }
+                    label{
+                        width: auto ;
+                        height: auto;
+                        cursor: pointer;
+                        display: flex ;
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        input[type="checkbox"]{
+                            width: 0 ;
+                            height: 0;
+                            display: none ;
+                            &:checked{
+                                ~.rect{
+                                    border-radius: 0 ;
+                                    border-top: 1.2px solid transparent ;
+                                    border-right: 1.2px solid transparent ;
+                                    border-left: 1.4px solid $greenColor2 ;
+                                    border-bottom: 1.4px solid $greenColor2 ;
+                                    width: 1.5em ;
+                                    height: .6em;
+                                    transform: translate(0,-35%) rotate(-45deg) ;
+                                }
+                            }
+                        }
+                        h4{
+                            transform: translate(-.3em,-5%) ;
+                        }
+                        .rect{
+                            width: 1.2em ;
+                            height: 1.2em;
+                            border-radius: .3em ;
+                            border: 1.2px solid $darkColor ;
+                            transition: all .2s linear ;
+                        }
+                        // .rect.checked{
+                        //     border-radius: 0 ;
+                        //     border-top: 1.2px solid transparent ;
+                        //     border-right: 1.2px solid transparent ;
+                        //     border-left: 1.4px solid $greenColor2 ;
+                        //     border-bottom: 1.4px solid $greenColor2 ;
+                        //     width: 1.5em ;
+                        //     height: .6em;
+                        //     transform: translate(0,-35%) rotate(-45deg) ;
+                        // }
+                    }
+                }
+                .content{
+                   width: 100% ;
+                   height: auto;
+                   margin-top: $dist1 ;
+                   display: flex ;
+                   @include flex(column,flex-start,flex-start,nowrap,"") ;
+                   label{
+                       width: 100% ;
+                       height: 2em;
+                       line-height: 2em ;
+                       display: flex ;
+                       @include flex(row,flex-start,center,nowrap,"") ;
+                       cursor: pointer;
+                       input[type="checkbox"]{
+                           width: 0 ;
+                           height: 0;
+                           display: none ;
+                           &:checked{
+                               ~.rect{
+                                border-radius: 0 ;
+                                border-top: 1.2px solid transparent ;
+                                border-right: 1.2px solid transparent ;
+                                border-left: 1.4px solid $greenColor2 ;
+                                border-bottom: 1.4px solid $greenColor2 ;
+                                width: 1.5em ;
+                                height: .6em;
+                                transform: translate(0,-35%) rotate(-45deg) ;
+                               }
+                              
+                           }
+                       }
+                       .rect{
+                           width: 1.2em ;
+                           height: 1.2em ;
+                           border-radius: .3em ;
+                           border: 1.2px solid $darkColor ;
+                           transition: all .2s linear ;
+                       }
+                       p{
+                           font-size: $font-m ;
+                           color: $darkColor ;
+                           margin-right: $dist1 ;
+                           transform: translate(0,-6%) ;
+                       }
+                   } 
+                }
+                .content.hide{
+                    height: 0;
+                    visibility: hidden ;
+                    opacity: 0;
+                }
+                .content.fade_in{transition: all .6s ease-in-out, height .3s ease-in-out;}
+                .content.fade_out{transition: all .2s ease-in-out, height .4s ease-in-out;}
+            }
+            .filter#price{
+                .content{
+                    width: 100% ;
+                    height: auto;
+                    display: flex ;
+                    @include flex(column,flex-start,center,nowrap,"") ;
+                    #range{
+                        width: 100% ;
+                        height: .25em;
+                        position: relative ;
+                        left: 50%;
+                        transform: translateX(-50%) ;
+                        margin-top: $dist2 ;
+                        cursor: pointer;
+                        .noUi-connect{background-color: $primaryColor;}
+                        .noUi-handle.circle{
+                            width: 1.2em ;
+                            height: 1.2em;
+                            border-radius: 50% ;
+                            background-color: $primaryColor ;
+                            border: none ;
+                            box-shadow: none ;
+                            cursor: pointer;
+                            &::before{display: none ;}
+                            &::after{display: none ;}
+                            &:focus{
+                                outline: none ;
+                                .noUi-tooltip{outline: none ;}
+                            }
+                        }               
+                        .noUi-handle.right{
+                            right: 0 ;
+                            transform: translate(0%,-40%) ;
+                            top: 0% ;
+                        }   
+                        .noUi-handle.left{
+                            left: 0 ;
+                            top: 0% ;
+                            transform: translate(0%,-40%) ;
+                        }   
+                        .noUi-tooltip{
+                            display: none ;
+                        }
+                        .noUi-tooltip.newStyle{
+                            font-size: .8em ;
+                        }
+                        .noUi-tooltip.right{
+                            transform: translate(-90%,0) ;
+                        }
+                        .noUi-tooltip.left{
+                            transform: translate(0%,0) ;
+                        }
+                    }
+                    p{
+                        margin-top: $dist2 ;
+                        width: 100% ;
+                        height: auto;
+                        text-align: center ;
+                        color: $greyColor2 ;
+                        font-size: $font-m ;
+                    }
+                }
+            }
+        }
+    }
+
+}

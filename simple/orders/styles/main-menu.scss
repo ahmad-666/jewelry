@@ -1,0 +1,167 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+body.disableScroll{overflow: hidden ;}
+#black_filter{
+    @include blackFilter ;
+}
+#black_filter.show{
+    opacity: 1;
+    visibility: visible ;
+}
+aside{
+    width: $menu-width ;
+    height: 100vh ;
+    overflow-y: auto ;
+    display: flex ;
+    @include flex(column,flex-start,flex-start,nowrap,"") ;
+    background-color: white ;
+    z-index: 11;
+    position: fixed ;
+    top: 0 ;
+    right: -$menu-width * 1.5 ;
+    box-shadow: -.2em 0 .4em -.2em $shadowColor ;
+    transition: all .4s ease-in-out ;
+    .top{
+        width: 100% ;
+        height: auto;
+        display: flex ;
+        @include flex(column,flex-start,center,nowrap,"") ;
+        padding: $dist1 ;
+        border-bottom: 1px solid lighten($greyColor2,30%) ;
+        #change_img{
+            width: auto ;
+            height: auto;
+            padding: 0 ;
+            margin: 0 ;
+            input[type="file"]{
+                width: 0 ;
+                height: 0;
+                display: none ;
+            }
+            label{
+                width: auto ;
+                height: auto;
+                cursor: pointer;
+                img{
+                    width: $menu-width / 2.5 ;
+                    height: $menu-width / 2.5 ;
+                    border-radius: 50% ;
+                }
+            }
+        }
+        .name{
+            font-size: $font-m - .1em ;
+            color: $darkColor ;
+            margin-top: -$dist1 ;
+        }
+        .password_signout{
+            width: 100% ;
+            height: auto;
+            display: flex ;
+            margin-top: $dist1 ;
+            @include flex(row,space-between,center,nowrap,"") ;
+            a{
+                width: auto ;
+                height: auto;
+                display: flex ;
+                @include flex(column,flex-start,center,nowrap,"") ;
+                i{
+                    font-size: $font-l ;
+                    color: $greyColor2 ;
+                }
+                i.fa-sign-in-alt{
+                    transform: rotate(180deg) ;
+                }
+                p{
+                    font-size: $font-m - .1em ;
+                    color: $greyColor2 ;
+                }
+                &:hover{
+                    i,p{color: $primaryColor;}
+                }
+            }
+        }
+
+    }
+    .bottom{
+        width: 100% ;
+        height: auto;
+        padding: $dist2 0 ;
+        display: flex ;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        a{
+            width: 100% ;
+            height: auto;
+            display: flex ;
+            @include flex(row,flex-start,center,wrap,flex-start) ;
+            margin: $dist1 0 ;
+            padding: 0 $dist2 0 $dist1 ;
+            position: relative ;
+            &:first-child{
+                margin-top: 0 ;
+            }
+            &::before{
+                content: '' ;
+                width: 5px ;
+                height: 100% ;
+                position: absolute ;
+                top: 0 ;
+                right: 0 ;
+                background-color: $primaryColor ;
+                opacity: 0;
+                visibility: hidden ;
+                transition: all .3s linear  ;
+            }
+            &:hover{
+                &::before{
+                    opacity: 1;
+                    visibility: visible ;
+                }
+                i,p{color: $primaryColor ;}       
+            }
+            i,p{         
+                color: $greyColor2 ;
+                transition: all .3s linear ;
+            }
+            i{font-size: $font-l ;}
+            p{
+                font-size: $font-m ;
+                margin-right: $dist1 ;
+                transform: translateY(-4%) ;
+            }
+        }
+        a.active{
+            &::before{
+                opacity: 1;
+                visibility: visible ;
+            }
+            i,p{
+                color: $primaryColor ;
+            }
+        }
+    }
+}
+aside.show{
+    right: 0 ;
+}
+body>i.fa-bars.main_menu{
+    width: $dist3 ;
+    height: $dist3;
+    border-radius: 50% ;
+    background-color: $primaryColor ;
+    color: white ;
+    text-align: center ;
+    line-height: $dist3 ;
+    cursor: pointer;
+    position: fixed ;
+    right: 2.5% ;
+    top: 50% ;
+    transform: translate(50%,-50%) ;
+    font-size: $font-xl + .2em ;
+    z-index: 12;
+    transition: all .3s linear ;
+}
+body>i.fa-bars.main_menu.show{
+    right: calc(2% + 9em) ;    
+}

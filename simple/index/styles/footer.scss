@@ -1,0 +1,171 @@
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+footer{
+    width: 100% ;
+    height: auto;
+    display: flex ;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    margin: $sectionsDist auto 0 auto ;
+    background-color: $paleColor ;
+    #why_us,#links,#contact{
+        width: 80% ;
+        height: auto;
+        padding: $dist1 ;
+        display: flex ;
+        border-bottom: 1px solid lighten($greyColor2,20%) ;
+    }
+    #why_us{       
+        @include flex(row,flex-start,center,wrap,flex-start) ;
+        .item{
+            width: calc((100% - (5 * 1.2em)) / 5);
+            height: 6em;
+            margin: $dist1 ;
+            display: flex ;
+            @include flex(column,space-around,center,nowrap,"") ;
+            img{
+                width: 6em ;
+                height: 4em;
+            }
+            p{
+                font-size: $font-m ;
+                color: $darkColor ;
+            }
+        }
+
+
+    }
+    #links{     
+        @include flex(row,space-around,flex-start,wrap,flex-start) ;
+        .guide,.services,.more_info{
+            width: auto ;
+            height: auto;
+            display: flex ;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            margin: 0 $dist1 ;
+            &:first-child{margin-right: 0 ;}
+            h4{
+                font-size: $font-m ;
+                font-weight: 700 ;
+                color: $darkColor ;
+            }
+            a{
+                color: $greyColor2 ;
+                font-size: $font-m - .1em ;
+                margin: $dist1 0 ;
+                transition: all .2s ease-in-out ;
+                &:hover{
+                    font-weight: 700 ;
+                    color: $darkColor ;
+                }
+            }
+
+        }
+        form#rss{
+            width: auto ;
+            height: auto;
+            margin: 0 $dist1 ;
+            margin-left: 0 ;
+            display: flex ;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            h4{
+                font-weight: 700 ;
+                font-size: $font-m ;
+                color: $darkColor ;
+                margin: $dist1 0 ;
+                &:first-child{margin-top: 0 ;}
+            }
+            .input-wrapper{
+                width: 18em ;
+                height: 2.5em;
+                position: relative ;
+                margin: $dist1 0 ;
+                input{
+                    width: 100% ;
+                    height: 100%;
+                    border-radius: $dist1 ;
+                    background-color: white ;
+                    color: $darkColor ;
+                    font-size: $font-m ;
+                    padding: $dist1 ;
+                    border: 1px solid lighten($greyColor2,20%) ;
+                    &::placeholder{
+                        font-size: $font-m ;
+                        color: $greyColor2 ;
+                    }
+                }
+                button[type="submit"]{
+                    @include center-y ;
+                    left: 0;
+                    width: auto ;
+                    height: 100%;
+                    padding: 0 $dist2 + .2em ;
+                    color: black ;
+                    background-color: $primaryColor ;
+                    font-size: $font-m ;
+                    border-top-left-radius: $dist1 ;
+                    border-bottom-left-radius: $dist1 ;
+                    cursor: pointer;                   
+                }
+            }
+            .socials{
+                width: auto ;
+                height: auto;
+                margin: $dist1 0 ;
+                margin-bottom: 0 ;
+                display: flex ;
+                @include flex(row,flex-start,center,wrap,flex-start) ;
+                a{
+                    width: 2.5em ;
+                    height: 2.5em;
+                    border-radius: 50% ;
+                    color: $primaryColor  ;
+                    background-color: $whiteColor2 ;
+                    text-align: center ;
+                    line-height: 2.5em ;
+                    font-size: $font-l ;
+                    margin: $dist1 $dist2 ;
+                    transition: all .3s ease-in-out ;
+                    &:hover{
+                        color: $darkColor ;
+                        background-color: $primaryColor ;
+                    }
+                }
+            }
+        }
+    }
+    #contact{
+       border-bottom: none ;
+       @include flex(column,flex-start,flex-start,nowrap,"") ;
+        h4{
+            font-size: $font-m ;
+            color: $redColor2 ;
+            font-weight: 700 ;
+        }
+        .infos{
+            margin: $dist1 0 ;
+            width: auto ;
+            height: auto;
+            display: flex ;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            div{
+                width: auto ;
+                height: auto;
+                display: flex ;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                margin: $dist1 0 ;
+                &:first-child{margin-top: 0 ;}
+                i{
+                    font-size: $font-l ;
+                    color: $greyColor2 ;
+                    transform: translateY(6%) ;
+                }
+                p{
+                    font-size: $font-m - .1em ;
+                    color: $greyColor2 ;
+                    transform: translateX(-.3em) ;
+                }
+            }
+        }
+    }
+}

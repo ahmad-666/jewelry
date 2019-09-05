@@ -1,0 +1,36 @@
+#copyright {
+  width: 100%;
+  padding: .5em;
+  color: #3c3c3c;
+  font-size: 1em;
+  text-align: center;
+  background-color: white;
+  border: 1.5px solid #e6e6e6;
+  position: relative;
+  z-index: 2;
+}
+
+#copyright i {
+  -webkit-transform: translateY(20%);
+     -moz-transform: translateY(20%);
+      -ms-transform: translateY(20%);
+          transform: translateY(20%);
+}
+
+#copyright a {
+  text-decoration: none;
+  color: #2d2d31;
+}
+
+@media screen and (max-width: 840px) {
+  #copyright {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  #copyright {
+    font-size: 12px;
+  }
+}
+/*# sourceMappingURL=copyright.css.map */

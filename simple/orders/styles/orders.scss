@@ -1,0 +1,129 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+#orders{
+    @include containerStyle ;
+    width: 90% ;
+    height: auto;
+    margin: $dist3 auto 0 auto ;
+    display: flex ;
+    @include flex(column,flex-start,flex-start,nowrap,"") ;
+    h4{
+        font-size: $font-l;
+        font-weight: 700;
+        color: $darkColor ;
+    }
+    table{
+        width: 90% ;
+        height: auto;
+        display: flex ;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        margin: $dist2 auto 0 auto ;
+        th.num,td.num{width: 6em;  ; flex-shrink: 0;}
+        th.products,td.products{width: 30em; flex-shrink: 2 ;}
+        th.price,td.price{width: 15em; flex-shrink: 1;}
+        th.date,td.date{width: 15em; flex-shrink: 1;}
+        th.state,td.state{width: 15em; flex-shrink: 1;}
+        th.details,td.details{width: 15em; flex-shrink: 1;}
+        thead{
+            width: 100% ;
+            height: auto;
+            background-color: $primaryColor ;
+            tr{
+                width: 100% ;
+                height: auto;
+                display: flex ;
+                @include flex(row,space-between,center,nowrap,"") ;
+                th{
+                    color: black ;
+                    font-size: $font-m ;
+                    height: $dist3 + 1em;
+                    text-align: center ;
+                    line-height:$dist3 + 1em;
+                }
+                th.products{
+                    text-align: right ;
+                }
+                // th.num{font-size: $font-special ;}
+            }
+        }
+        tbody{
+            width: 100% ;
+            height: auto;
+            display: flex ;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            tr{
+                width: 100% ;
+                height: auto;
+                display: flex ;
+                @include flex(row,space-between,flex-start,nowrap,"") ;
+                padding: $dist1 0 ;
+                border-bottom: 1px solid lighten($greyColor2,25%) ;
+                td{
+                    height: auto;
+                    color: $darkColor ;
+                    font-size: $font-m ;
+                    text-align: center ;
+                    padding: $dist1 0 ;
+                }
+                td.products{
+                    ul{
+                        width: 100% ;
+                        height: auto;
+                        display: flex ;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        li{
+                            width: 100% ;
+                            height: auto;
+                            display: flex ;
+                            @include flex(row,flex-start,flex-start,nowrap,"") ;
+                            margin-top: $dist1 ;
+                            i{
+                                font-size: $font-m  ;
+                                color: $primaryColor ;
+                            }
+                            a{
+                                color: $darkColor ;
+                                font-size: $font-m ;
+                                transform: translate(-.5em,-.5em) ;
+                            }
+                        }
+                    }
+                }
+                td.state{
+                    p{
+                        display: inline-block ;
+                        width: auto ;
+                        height: auto;
+                        padding: $dist1 $dist3 ;
+                        border-radius: $dist3 ;
+                        color: $whiteColor2 ;
+                        font-size: $font-m ;
+                    }
+                }
+                td.state.process{
+                    p{background-color: orangered;}             
+                }
+                td.state.ready{
+                    p{background-color: darken($blueColor1,25%);}
+                    
+                }
+                td.state.send{
+                    p{background-color: $greenColor2;}                  
+                }
+                td.details{
+                    a{
+                        display: inline-block ;
+                        width: auto ;
+                        height: auto;
+                        border-radius: $dist3 ;
+                        font-size: $font-m ;
+                        color: black ;
+                        padding: $dist1 $dist3 ;
+                        background-color: $primaryColor ;
+                    }                  
+                }
+            }
+        }
+    }
+}
