@@ -146,7 +146,7 @@ main{
                 padding: 0 $dist2 ;
                 font-size: $font-l ;
                 border-radius: $dist1 ;
-                color: lighten($blueColor2,10%) ;
+                color: $primaryColor ;
                 background-color: $paleColor ;
                 margin: $dist1 ;
                 transition: all .3s ease-in-out ;
@@ -155,7 +155,7 @@ main{
                 &:not(:first-child):not(:last-child){line-height: 2.8em;}
                 &:hover{
                     color: $whiteColor2 ;
-                    background-color: lighten($blueColor2,22%) ;
+                    background-color: $primaryColor ;
                 }
             }
             .dots{

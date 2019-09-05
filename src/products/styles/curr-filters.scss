@@ -4,6 +4,7 @@
 .wrapper{
     #filters_wrapper{
         #curr_filters{
+            border-radius: $dist1 ;
             width: 100% ;
             height: auto;
             display: flex ;
@@ -27,7 +28,7 @@
                     width: auto;
                     height: auto;
                     padding: $dist1 $dist2 ;
-                    color: $whiteColor2 ;
+                    color: black ;
                     background-color: $primaryColor ;
                     font-size: $font-m - .1em ;
                     border-radius: $dist3 ;
@@ -52,12 +53,12 @@
                     margin: $dist1 ;
                     i{
                         font-size: $font-m ;
-                        color: $whiteColor2 ;
+                        color: black ;
                         transform: translate(0,5%) ;
                         cursor: pointer;
                     }
                     p{
-                        color: $whiteColor2 ;
+                        color: black ;
                         font-size: $font-m - .1em;
                         margin-right: $dist1 ;
                     }

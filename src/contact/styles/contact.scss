@@ -43,6 +43,7 @@
         height: 15em;
         color: $darkColor ;
         font-size: $font-m ;
+        border-radius: $dist2 ;
         // border-radius: $dist3 ;
         padding: $dist1 ;
         line-height: $dist3 ;
@@ -57,10 +58,10 @@
         width: auto ;
         height: auto;
         border-radius: $dist3 ;
-        color: $whiteColor2 ;
+        color: black ;
         background-color: $primaryColor ;
-        padding: $dist1 $dist3 + .8em ;
-        font-size: $font-l ;
+        padding: $dist1 $dist3 + .2em ;
+        font-size: $font-m ;
         cursor: pointer;
     }
 }
@@ -77,13 +78,13 @@
         display: flex ;
         @include flex(column,flex-start,center,nowrap,"") ;
         i{
-            width: 2.5em ;
-            height: 2.5em;
-            border-radius: 50% ;
+            width: 2em ;
+            height: 2em;
+            border-radius: $dist1 ;
             color: $whiteColor2 ;
-            font-size: $font-special ;
+            font-size: $font-xl ;
             text-align: center ;
-            line-height: 2.5em ;
+            line-height: 2em ;
         }
         i.fa-phone{background-color: lighten($greyColor2,10%);}
         i.fa-envelope{background-color: lighten($redColor2,5%);}
@@ -91,7 +92,7 @@
         i.fa-whatsapp{background-color: $greenColor2 ;}
         p{
             font-size: $font-m ;
-            color: $greyColor2 ;
+            color: black ;
             margin-top: $dist1 ;
         }
     }

@@ -30,7 +30,7 @@ header{
               color: $primaryColor ;
           }
           p{
-              color: $primaryColor ;
+              color: $darkColor ;
               font-size: $font-m - .1em ;
           }
             
@@ -74,7 +74,7 @@ header{
             width:auto ;
             height: 100% ;
             color: $whiteColor2 ;
-            background-color: lighten($redColor2,5%) ;
+            background-color: $primaryColor ;
             cursor: pointer;
             padding: 0 $dist3 - .3em ;
             position: absolute ;
@@ -84,7 +84,7 @@ header{
             border-bottom-left-radius: $dist1 ;
             i{
                 font-size: $font-xl ;
-                color: $whiteColor2 ;
+                color: black ;
                 @include center-xy ;
             }
         }

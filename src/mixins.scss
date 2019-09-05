@@ -76,6 +76,7 @@
     padding: $dist1 $dist2 ;
     background-color: white ;
     box-shadow: 0 0 .6em .05em $shadowColor ;
+    border-radius: $dist1 ;
 }
 @mixin blackFilter{
     width: 100% ;

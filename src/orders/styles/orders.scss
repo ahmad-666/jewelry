@@ -35,7 +35,7 @@
                 display: flex ;
                 @include flex(row,space-between,center,nowrap,"") ;
                 th{
-                    color: $whiteColor2 ;
+                    color: black ;
                     font-size: $font-m ;
                     height: $dist3 + 1em;
                     text-align: center ;
@@ -118,7 +118,7 @@
                         height: auto;
                         border-radius: $dist3 ;
                         font-size: $font-m ;
-                        color: $whiteColor2 ;
+                        color: black ;
                         padding: $dist1 $dist3 ;
                         background-color: $primaryColor ;
                     }                  

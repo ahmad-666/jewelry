@@ -17,11 +17,11 @@
     .add_comment {
         width: auto;
         height: auto;
-        padding: ($dist1 + .2em) ($dist3 + .2em);
+        padding: ($dist1) ($dist3);
         font-size: $font-l - .1em;
         border-radius: $dist3;
         cursor: pointer;
-        color: $whiteColor2;
+        color: black;
         background-color: lighten($primaryColor, 5%);
     }
     #user_comment {

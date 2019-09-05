@@ -33,15 +33,20 @@ nav{
             .products{
                 opacity: 0;
                 visibility: hidden ;
-                transition: all .3s ease-in-out ;
-                min-width: 30em ;
+                transition: all .15s ease-in-out ;
+                cursor: auto;
+
+                // min-width: 30em ;
+                width: 85vw ;
+
                 height: 17em;
                 padding: $dist2 ;
                 display: flex ;          
                 @include flex(row,space-between,center,nowrap,"") ;
                 position: absolute ;
-                right: 0 ;
+                right: 50% ;
                 top: calc(100% + .5em) ;
+                transform: translate(50%,0) ;
                 box-shadow: 0 0 .3em .05em $shadowColor ;
                 background-color: $paleColor ;
                 z-index: 6;

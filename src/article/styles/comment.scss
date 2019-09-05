@@ -22,15 +22,15 @@
         font-size: $font-l - .1em;
         border-radius: $dist3;
         cursor: pointer;
-        color: $whiteColor2;
-        background-color: lighten($primaryColor, 5%);
+        color: black;
+        background-color: $primaryColor ;
     }
 
     #user_comment {
         width: 100%;
         height: auto;
         padding: $dist1 $dist1 $dist3 $dist1;
-        ;
+        
         margin-top: 0;
         display: flex;
         @include flex(column, flex-start, flex-start, nowrap, "");
@@ -124,14 +124,12 @@
         padding-bottom: $dist3;
     }
 
-    .comment {
+    .comment,.user_reply {
         padding: $dist2 0;
         width: 100%;
         height: auto;
-        border-bottom: 1px solid $greyColor2;
         display: flex;
-        @include flex(row, flex-start, flex-start, wrap, flex-start);
-
+        @include flex(row, flex-start, flex-start, wrap, flex-start);  
         .img_data {
             width: auto;
         }
@@ -285,6 +283,24 @@
         form.reply.addTransition {
             transition: all .3s ease-in-out;
         }
+
+
+    }
+    .comment{
+        border-bottom: 1px solid lighten($greyColor2,25%) ;
+        &:last-child{border-bottom: none ;}
+    }
+    .user_reply{
+        // transform: scale(.8);
+        // margin-right: $dist4 ;
+        padding-right: $dist4 ;
+        // border-bottom: 1px solid lighten($greyColor2,30%);
+        // border-top: 1px solid lighten($greyColor2,30%);
+        &:last-child{
+            border-top: none ;
+            border-bottom: none ;
+        }
+
     }
 }
 

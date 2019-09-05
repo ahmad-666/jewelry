@@ -98,7 +98,7 @@ ProductSlider.prototype.bgHandler = function(e){
     fixImg.style.backgroundImage = `${imgPath}` ;
     blackFilter.classList.add('show');
     fixImgWrapper.classList.add('show') ;
-    util.docHandler(fixImgWrapper,blackFilter);
+    util.docHandler(fixImgWrapper,[blackFilter]);
 }
 let blackFilter = document.querySelector('#black_filter') ;
 let fixImgWrapper = document.querySelector('#fix_product_img') ;
