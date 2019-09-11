@@ -1,5 +1,5 @@
-import wNumb from 'wnumb' ;
-import noUiSlider from 'nouislider' ;
+//import wNumb from 'wnumb' ;
+//import noUiSlider from 'nouislider' ;
 //price ranger
 //----------------------------------------------------
 //----------------------------------------------------
@@ -100,9 +100,9 @@ ranger.noUiSlider.on('update',()=>{
 //collapse/expand animation
 //----------------------------------------------------
 //----------------------------------------------------
-let filtersWrapper = document.querySelector('#filters') ;
-let filtersContents = filtersWrapper.querySelectorAll('.filter:not(#price) .content') ;
-let arrows = filtersWrapper.querySelectorAll('.filter .title i') ;
+let filtersWrapper1 = document.querySelector('#filters') ;
+let filtersContents = filtersWrapper1.querySelectorAll('.filter:not(#price) .content') ;
+let arrows = filtersWrapper1.querySelectorAll('.filter .title i') ;
 let contentsHeights = [] ;
 filtersContents.forEach(content => {
     contentsHeights.push(content.scrollHeight) ;
@@ -127,7 +127,7 @@ arrows.forEach((arrow,i) => {
 //checkboxes
 //----------------------------------------------------
 //----------------------------------------------------
-let mainCategories = filtersWrapper.querySelectorAll('.filter .title .main_category') ;
+let mainCategories = filtersWrapper1.querySelectorAll('.filter .title .main_category') ;
 mainCategories.forEach(mainCategory => {
     mainCategory.addEventListener('change',mainCategoryHandler) ;
 });
@@ -144,7 +144,7 @@ function mainCategoryHandler(e){
         })
     }
 }
-let subCategories = filtersWrapper.querySelectorAll('.filter .content .sub_category') ;
+let subCategories = filtersWrapper1.querySelectorAll('.filter .content .sub_category') ;
 subCategories.forEach(subCategory => {
     subCategory.addEventListener('change',subCategoryHandler) ;
 })

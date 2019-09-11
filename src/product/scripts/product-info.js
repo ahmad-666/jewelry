@@ -109,3 +109,6 @@ fixClose.addEventListener('click',e=>{
     fixImgWrapper.classList.remove('show');
 })
 new ProductSlider(document.querySelector('#product_info .slider '))
+
+
+
