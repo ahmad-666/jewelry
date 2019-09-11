@@ -547,7 +547,7 @@
             </li>
         </ul>
     </nav>
-    <form id="product_info">
+    <div id="product_info">
         <div class="slider">
             <div class="bg">
                 <i class="fas fa-chevron-right"></i>
@@ -584,16 +584,9 @@
                 <i class="fas fa-star"></i>
                 <p class="vote">(۱۰۰نظر)</p>
             </div>
-            <div class="price">
-                <div class="before_discount">
-                    <p class="main_price">1.000.000 تومان</p>
-                    <span class="discount_val">50%</span>
-                </div>             
-                <p class="after_discount">5000.000 تومان</p>
-            </div>
             <div class="inputs">
                 <div class="input_wrapper select gender">
-                    <label for="gender">جنسیت:</label>
+                    <label for="gender">جنسیت</label>
                     <div class="input">
                         <input type="text" id="gender" name="gender" required readonly value="مردانه">
                         <i class="fas fa-angle-down"></i>
@@ -604,7 +597,7 @@
                     </div>
                 </div>
                 <div class="input_wrapper select material">
-                    <label for="material">جنس:</label>
+                    <label for="material">جنس</label>
                     <div class="input">
                         <input type="text" id="material" name="material" required readonly value="طلا">
                         <i class="fas fa-angle-down"></i>
@@ -615,7 +608,7 @@
                     </div>
                 </div>
                 <div class="input_wrapper select weight">
-                    <label for="weight">وزن:</label>
+                    <label for="weight">وزن</label>
                     <div class="input">
                         <input type="text" id="weight" name="weight" required readonly value=".۱ گرم">
                         <i class="fas fa-angle-down"></i>
@@ -629,7 +622,7 @@
                     </div>
                 </div>
                 <div class="input_wrapper select size">
-                    <label for="size">سایز:</label>
+                    <label for="size">سایز</label>
                     <div class="input">
                         <input type="text" id="size" name="size" required readonly value="۱۴">
                         <i class="fas fa-angle-down"></i>
@@ -645,29 +638,36 @@
                             <li>22</li>          
                         </ul>
                     </div>
-                </div>                         
-            </div>
-            <div class="buy">
-                <div class="input_wrapper">
-                    <label for="product_num">تعداد:</label>
+                </div>   
+                <div class="input_wrapper number">
+                    <label for="product_num">تعداد</label>
                     <div class="input">
-                        <input type="number" id="product_num" name="product_num" required readonly value="1">
                         <span class="increase">+</span>
+                        <input type="number" id="product_num" name="product_num" required readonly value="1">
                         <span class="decrease">-</span>
                     </div>
+                </div>                      
+            </div>
+            <div class="buy">
+                <div class="price">
+                    <div class="before_discount">
+                        <p class="main_price">1.000.000 تومان</p>
+                        <span class="discount_val">50%</span>
+                    </div>             
+                    <p class="after_discount">5000.000 تومان</p>
                 </div>
-                <button class="buy">افزودن به سبد خرید</button>
+                <button class="basket">افزودن به سبد خرید</button>
             </div>
             <div class="icons">
-                <div class="express">
+                <div class="icon">
                     <img src="../assets/svgs/express.svg" alt="express">
                     <p>تحویل اکسپرس</p>
                 </div>
-                <div class="support">
+                <div class="icon">
                     <img src="../assets/svgs/support.svg" alt="express">
                     <p>پشتیبانی ۲۴ساعته</p>
                 </div>
-                <div class="gurantee">
+                <div class="icon">
                     <img src="../assets/svgs/original.svg" alt="express">
                     <p>ضمانت اصالت کالا</p>
                 </div>
