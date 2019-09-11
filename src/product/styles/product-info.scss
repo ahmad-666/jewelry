@@ -127,11 +127,11 @@
             i{
                 font-size: $font-l ;
                 margin: 0 .1em ;
-                color: lighten($greyColor2,20%) ;
+                color: lighten($greyColor2,35%) ;
                 &:first-child{margin-right: 0 ;}
             }
             i.fill{
-                color: lighten($yellowColor,5%) ;
+                color: $primaryColor ;
             }
             .vote{
                 font-size: $font-m ;
@@ -144,8 +144,8 @@
             display: flex ;
             @include flex(row,flex-start,center,wrap,flex-start) ;
             margin-top: 0 ;
-            .input_wrapper.select{
-                width: 13em ;
+            .input_wrapper{
+                width: 30% ;
                 height: 2em;
                 margin: $dist1 ;
                 display: flex ;
@@ -157,6 +157,11 @@
                     color: $greyColor2 ;
                     text-align: center;
                 }
+            }
+            .input_wrapper.hide{
+                display: none ;
+            }
+            .input_wrapper.select{       
                 .input{
                     width: 100% ;
                     height: 100%;
@@ -165,7 +170,7 @@
                         width: 100% ;
                         height: 100%;
                         border: 1px solid lighten($greyColor2,30%) ;
-                        padding: $dist1 ;
+                        padding: 0 $dist1 ;
                         border-radius: $dist2 ;
                         color: $darkColor ;
                         font-size: $font-m ;
@@ -174,6 +179,7 @@
                     }
                     .fa-angle-down{
                         @include center-y ;
+                        top: 55% ;
                         left: $dist1 ;
                         font-size: $font-l ;
                         color: $darkColor ;
@@ -192,6 +198,7 @@
                         position: absolute ;
                         top: 110% ;
                         right: 0 ;
+                        z-index: 2;
                         li{
                             width: 100% ;
                             height: 2.5em;
@@ -214,38 +221,35 @@
                 }
             }
             .input_wrapper.number{
+                flex-shrink: 0 ;
                 width: auto ;
                 height: auto;
-                display: flex ;
-                @include flex(row,flex-start,center,nowrap,"") ;
-                label{
-                    font-size: $font-m ;
-                    color: $greyColor2 ;
-                }
+                margin-right: 0em;
                 .input{
                     width: auto ;
                     height: auto;
-                    margin-right: $dist1 ;
                     display: flex ;
                     @include flex(column,flex-start,center,nowrap,"") ;
+                    position: relative ;
                     .increase,input,.decrease{
-                        margin: $dist1 0 ;
+                        margin: .2em ;
                         &:first-child{margin-top: 0 ;}
                     }
                     input{
-                        width: 7em ;
-                        height: 4em;
+                        width: 4em ;
+                        height: 2em;
+                        line-clamp: 2em ;
                         border: 1px solid lighten($greyColor2,30%) ;
                         border-radius: $dist2 ;
-                        padding: $dist1 ;
                         font-size: $font-m ;
                         color: $darkColor ;
+                        text-align: center ;
                     }
                     span{
-                        color: &darkColor ;
-                        font-size: $font-l;
-                        padding: .3em ;
+                        font-size: $font-xl ;
                         cursor: pointer;
+                        padding: 0 $dist1 ;
+                        line-height: $dist1 ;
                     }
                 }
             }
@@ -269,19 +273,18 @@
                         font-size: $font-l ;
                         color: $darkColor ;
                         position: relative ;
-                        border: 1px solid blue ;
                     }
                 }
             }
             .basket{
                 width: auto ;
                 height: auto;
-                padding: $dist1 $dist3 + .3em ;
+                padding: $dist1 + .1em $dist3 + .3em ;
                 font-size: $font-m ;
                 border-radius: $dist3 ;
                 color: $whiteColor2 ;
                 background-color: $greenColor2 ;
-                margin-right: $dist2 ;
+                margin-right: $dist3 ;
                 cursor: pointer;
             }
         }
@@ -296,41 +299,44 @@
                 display: flex ;
                 @include flex(column,flex-start,center,nowrap,"") ;
                 img{
-                    width: 10em;
-                    height: 6em;
+                    width: 3.5em;
+                    height: 2.5em;
                 }
                 p{
-                    margin-top: $dist2 ;
-                    font-size: $font-m ;
+                    margin-top: $dist1 ;
+                    font-size: $font-m - .2em ;
                     color: $greyColor2 ;
                 }
             }
         }
     }
-    .infos.discount{
+    #infos.discount{
         .price{
             .before_discount{       
-                .main_price{
+                .main_price{      
+                    font-size: $font-l ; 
+                    color: $greyColor2 ;   
                     &::before{
                         content: '' ;
-                        width: 120% ;
-                        height: .2em;
-                        background-color: $greyColor2 ;
+                        width: 110% ;
+                        height: .05em;
+                        background-color: darken($greyColor2,15%) ;
                         @include center-xy ;
                     }
                 }
                 .discount_val{
                     width: auto ;
                     height: auto;
-                    padding: $dist1 $dist3 ;
+                    padding: .1em $dist1 ;
                     color: $whiteColor2 ;
-                    background-color: $primaryColor ;
-                    border-radius: $dist2 ;
+                    font-size: $font-m ;
+                    background-color: darken($primaryColor,5%) ;
+                    border-radius: $dist1 ;
                     margin-right: $dist2 ;
                 }
             }
             .after_discount{
-                font-size: $font-m ;
+                font-size: $font-l ;
                 color: $darkColor ;
                 margin-top: $dist1 ;
             }

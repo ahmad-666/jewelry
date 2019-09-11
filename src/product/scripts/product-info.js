@@ -1,4 +1,7 @@
 import util from '../../utilities/utilities' ;
+//Slider------------------------------------------
+//Slider------------------------------------------
+//Slider------------------------------------------
 function ProductSlider(elm){
     this.elm = elm ;
     this.bgs = this.elm.querySelectorAll('.bg .img') ;
@@ -109,6 +112,88 @@ fixClose.addEventListener('click',e=>{
     fixImgWrapper.classList.remove('show');
 })
 new ProductSlider(document.querySelector('#product_info .slider '))
+//Select------------------------------------------
+//Select------------------------------------------
+//Select------------------------------------------
+function Select(elm){
+    this.elm = elm ;
+    this.input = this.elm.querySelector('input[type="text"]') ;
+    this.ul = this.elm.querySelector('ul') ;
+    this.lis = this.ul.querySelectorAll('li') ;
+    this.arrow = this.elm.querySelector('i.fa-angle-down') ;
+    this.input.addEventListener('click',this.inputHandler.bind(this));
+    this.arrow.addEventListener('click',this.inputHandler.bind(this));
+}
+Select.prototype.inputHandler = function(e){
+    e.stopPropagation();
+    document.addEventListener('click',this) ;
+    this.ul.classList.add('show') ;
+    this.lis.forEach(li => {
+        li.addEventListener('click',this) ;
+    })
+    selects.forEach(select => {
+        if(select!=this) select.ul.classList.remove('show') ;
+    })
+}
+Select.prototype.handleEvent = function(e){
+    e.stopPropagation();
+    if(e.currentTarget == document){
+        let clickedElm = e.target ;
+        if(!this.ul.contains(clickedElm)){
+            selects.forEach(select => {
+                select.ul.classList.remove('show') ;
+                select.lis.forEach(li => {
+                    li.removeEventListener('click',this);
+                })
+            })
+            document.removeEventListener('click',this) ;
+        }
+    }
+    else{
+        let currLi = e.currentTarget ;
+        this.input.value = currLi.textContent ;
+        this.ul.classList.remove('show') ;
+        document.removeEventListener('click',this) ;
+        this.lis.forEach(li => {
+            li.removeEventListener('click',this) ;
+        })
+        if(this.input.value == 'نقره') weight.classList.add('hide') ;
+        else if(this.input.value == 'طلا') weight.classList.remove('hide') ;
+    }
+}
+let selects = [] ;
+let form = document.querySelector('form#infos') ;
+form.querySelectorAll('.inputs .select').forEach(select => {
+    selects.push(new Select(select)) ;
+})
+let weight = form.querySelector('#weight')  ;
+//Number------------------------------------------
+//Number------------------------------------------
+//Number------------------------------------------
+function NumberInput(elm){
+    this.elm = elm ;
+    this.increase = this.elm.querySelector('.increase') ;
+    this.decrease = this.elm.querySelector('.decrease') ;
+    this.input = this.elm.querySelector('input') ;
+    this.increase.addEventListener('click',this.add.bind(this)) ;
+    this.decrease.addEventListener('click',this.subtract.bind(this)) ;
+}
+NumberInput.prototype.add = function(e){
+    this.input.value = parseInt(this.input.value) + 1 ;
+}
+NumberInput.prototype.subtract = function(e){
+    this.input.value = parseInt(this.input.value)-1>=1? parseInt(this.input.value)-1 : 1 ;
+}
+let numberInputs = [] ;
+form.querySelectorAll('.input_wrapper.number').forEach(number => {
+    numberInputs.push(new NumberInput(number)) ;
+});
 
-
-
+document.addEventListener('mousedown', function (event) {
+    if (event.detail > 1) {
+      event.preventDefault();
+      // of course, you still do not know what you prevent here...
+      // You could also check event.ctrlKey/event.shiftKey/event.altKey
+      // to not prevent something useful.
+    }
+  }, false);
