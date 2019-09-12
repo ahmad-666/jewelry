@@ -8,6 +8,7 @@ import '../index/styles/grid.scss' ;
 import '../index/styles/slider.scss' ;
 import '../index/styles/footer.scss' ;
 import '../index/styles/copyright.scss' ;
+import '../index/styles/fix-contact.scss' ;
 //load scripts
 import '../index/scripts/header.js' ;
 import '../index/scripts/nav.js' ;
@@ -15,5 +16,6 @@ import '../index/scripts/top-slider.js' ;
 import '../index/scripts/grid.js' ;
 import '../index/scripts/slider.js' ;
 import '../index/scripts/footer.js' ;
+import '../index/scripts/fix-contact.js' ;
 //load videos 
 

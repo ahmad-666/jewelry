@@ -73,7 +73,7 @@
     @include flex(row,flex-start,flex-start,wrap,flex-start) ;
     .social{
         width: calc((60vw - (4 * 2.5em)) / 4) ;
-        height: calc((60vw - (4 * 2.5em)) / 4) ;
+        height: auto;
         margin: $dist2 ;
         display: flex ;
         @include flex(column,flex-start,center,nowrap,"") ;
@@ -86,10 +86,14 @@
             text-align: center ;
             line-height: 2em ;
         }
-        i.fa-phone{background-color: lighten($greyColor2,10%);}
-        i.fa-envelope{background-color: lighten($redColor2,5%);}
+        i.fa-phone{background-color: lighten($greyColor2,20%);}
+        i.fa-mobile-alt{background-color: lighten($greyColor2,5%);}
+        i.fa-envelope{background-color: lighten($purpleColor3,15%);}
         i.fa-telegram-plane{background-color: lighten($blueColor2,28%) ;}
-        i.fa-whatsapp{background-color: $greenColor2 ;}
+        i.fa-instagram{background-color: lighten($redColor2,5%) ;}
+        i.fa-whatsapp{background-color: lighten($greenColor2,5%) ;}
+        i.fa-linkedin-in{background-color: lighten($blueColor2,28%) ;}
+        i.fa-facebook-f{background-color: lighten($blueColor2,28%) ; ;} 
         p{
             font-size: $font-m ;
             color: black ;

@@ -117,7 +117,7 @@ new ProductSlider(document.querySelector('#product_info .slider '))
 //Select------------------------------------------
 function Select(elm){
     this.elm = elm ;
-    this.input = this.elm.querySelector('input[type="text"]') ;
+    this.input = this.elm.querySelector('input') ;
     this.ul = this.elm.querySelector('ul') ;
     this.lis = this.ul.querySelectorAll('li') ;
     this.arrow = this.elm.querySelector('i.fa-angle-down') ;
@@ -157,16 +157,57 @@ Select.prototype.handleEvent = function(e){
         this.lis.forEach(li => {
             li.removeEventListener('click',this) ;
         })
-        if(this.input.value == 'نقره') weight.classList.add('hide') ;
-        else if(this.input.value == 'طلا') weight.classList.remove('hide') ;
+        if(currLi.textContent == 'طلا') {
+            weight.classList.remove('hide') ;
+            updatePrice(currLi) ;
+        }
+        else if(currLi.textContent == 'نقره') {
+            weight.classList.add('hide') ;
+            updatePrice(currLi) ;
+        }
+        else if(this.elm.getAttribute('id')=='weight'){
+            updatePrice(currLi) ;
+        }
     }
 }
 let selects = [] ;
-let form = document.querySelector('form#infos') ;
-form.querySelectorAll('.inputs .select').forEach(select => {
+let product = document.querySelector('#infos') ;
+product.querySelectorAll('.inputs .select').forEach(select => {
     selects.push(new Select(select)) ;
 })
-let weight = form.querySelector('#weight')  ;
+let weight = product.querySelector('#weight')  ;
+let productNum = product.querySelector('.input_wrapper.number') ;
+let mainPrice = product.querySelector('.buy .main_price') ;
+let discount = product.querySelector('.buy .discount_val') ;
+let discountPrice = product.querySelector('.buy .after_discount') ;
+let initPrice = parseFloat(mainPrice.textContent) ;
+function updatePrice(elm){
+    let price = null ;
+    //for silver and gold's weights
+    if(elm.getAttribute('data-price')){
+        productNum.querySelector('input').value = 1 ;
+        initPrice = parseFloat(elm.getAttribute('data-price')) ;
+        price = parseFloat(elm.getAttribute('data-price')) ;
+    }
+    //for when we select gold 
+    else if(elm.textContent == 'طلا'){
+        productNum.querySelector('input').value = 1 ;
+        let firstWeight = weight.querySelector('li');
+        initPrice = parseFloat(firstWeight.getAttribute('data-price')) ;
+        weight.querySelector('input').value = firstWeight.textContent;
+        price = parseFloat(firstWeight.getAttribute('data-price')) ;
+    }
+    //when we change number of product
+    else { 
+        let howMany = parseInt(elm.value) ;
+        price = howMany*initPrice ;
+    }
+    mainPrice.textContent = `${price} تومان` ;
+    if(product.classList.contains('discount')){
+        let discountVal = parseFloat(discount.textContent) ; 
+        discountPrice.textContent = `${price*(discountVal/100)} تومان` ;
+    }
+}
 //Number------------------------------------------
 //Number------------------------------------------
 //Number------------------------------------------
@@ -180,20 +221,18 @@ function NumberInput(elm){
 }
 NumberInput.prototype.add = function(e){
     this.input.value = parseInt(this.input.value) + 1 ;
+    updatePrice(this.input) ;
 }
 NumberInput.prototype.subtract = function(e){
     this.input.value = parseInt(this.input.value)-1>=1? parseInt(this.input.value)-1 : 1 ;
+    updatePrice(this.input) ;
 }
-let numberInputs = [] ;
-form.querySelectorAll('.input_wrapper.number').forEach(number => {
-    numberInputs.push(new NumberInput(number)) ;
-});
-
+new NumberInput(productNum) ;
+//prevent double click to select anything-----------------
+//prevent double click to select anything-----------------
+//prevent double click to select anything-----------------
 document.addEventListener('mousedown', function (event) {
     if (event.detail > 1) {
       event.preventDefault();
-      // of course, you still do not know what you prevent here...
-      // You could also check event.ctrlKey/event.shiftKey/event.altKey
-      // to not prevent something useful.
     }
   }, false);

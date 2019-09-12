@@ -1,6 +1,14 @@
 @import '../../colors.scss' ;
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
+@font-face{
+    font-family : logoPersian ;
+    src: url('../../assets/fonts/mj.ttf') ;
+}
+@font-face{
+    font-family : logoEnglish ;
+    src: url('../../assets/fonts/corbel.ttf') ;
+}
 header{
     width: 100% ;
     height: $nav-height ;
@@ -137,12 +145,33 @@ header{
     }
     a.logo{
         @include center-y ;
-        left: $dist2 ;
+        left: $dist1 ;
         width: auto ;
-        height: 80% ;
+        height: 100% ;
+        display: flex ;
+        @include flex(row,flex-start,center,nowrap,"") ;
+        .text{
+            width: auto ;
+            height: 100%; ;
+            display: flex ;
+            @include flex(column,space-between,flex-start,nowrap,"") ;
+            p{
+                color: $darkColor ;
+                &:first-child{
+                    font-family: logoPersian ;
+                    font-size: $font-m + .2em ;
+                }
+                &:last-child{
+                    text-: uppercase ;
+                    font-family: logoEnglish ;
+                    font-size: $font-m + .1em ;
+                }
+            }
+        }
         img{
-            width: 12em ;
+            width: 5em ;
             height: 100%;
+            margin-right: $dist1 ;
         }
     }
 }

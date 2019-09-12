@@ -603,7 +603,7 @@
                         <i class="fas fa-angle-down"></i>
                         <ul>
                             <li>طلا</li>
-                            <li>نقره</li>
+                            <li data-price="333">نقره</li>
                         </ul>
                     </div>
                 </div>
@@ -651,10 +651,10 @@
             <div class="buy">
                 <div class="price">
                     <div class="before_discount">
-                        <p class="main_price">1.000.000 تومان</p>
+                        <p class="main_price">100 تومان</p>
                         <span class="discount_val">50%</span>
                     </div>             
-                    <p class="after_discount">5000.000 تومان</p>
+                    <p class="after_discount">50 تومان</p>
                 </div>
                 <button class="basket">افزودن به سبد خرید</button>
             </div>
@@ -869,7 +869,8 @@
     </div>
     <div id="tabs">
         <div class="tabs_wrapper">
-            <div class="tab active" data-target="info_section">اطلاعات بیشتر</div>
+            <div class="tab active" data-target="info_section">اطلاعات محصول</div>
+            <div class="tab" data-target="more_info">توضیحات بیشتر</div>
             <div class="tab" data-target="comment_section">نظرات کاربران</div>
         </div>
         <div class="content">
@@ -899,6 +900,82 @@
                     </tbody>
                 </table>
             </div>
+            <div class="tab_content" id="more_info">
+                <div class="wrapper">
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                </div>
+            </div>
             <div class="tab_content" id="comment_section">
                 <button class="add_comment">نظر خود را اضافه کنید</button>
                 <form novalidate name="user_comment" id="user_comment" method="GET" action="#!" enctype="text/plain">
@@ -913,9 +990,10 @@
                 <div class="comment">
                     <div class="img_data">
                         <img src="../assets/imgs/profile.png" alt="profile">
+                        <p class="name">نام نویسنده</p>
                         <p class="date">1398/0/24</p>
                     </div>
-                    <p class="name">نام نویسنده</p>
+                    
                     <div class="content">
                         <p class="text">
                             متن متن متن متن متن متن متن متن متن متن متن متن
@@ -941,13 +1019,63 @@
                         <textarea name="reply_content" class="reply_content" required></textarea>
                         <button type="submit">ثبت پاسخ</button>
                     </form>
+                    <div class="replies">
+                        <div class="other_reply">
+                            <div class="img_data">
+                                <img src="../assets/imgs/profile.png" alt="profile">
+                                <p class="name">نام نویسنده</p>
+                                <p class="date">1398/0/24</p>
+                            </div>
+                            <div class="content">
+                                <p class="text">
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                </p>
+                                <div class="likes_reply">
+                                    <div class="likes">
+                                        <i class="far fa-heart"></i>
+                                        <p>0</p>
+                                    </div>
+                                </div>
+                            </div>                    
+                        </div>
+                        <div class="other_reply">
+                            <div class="img_data">
+                                <img src="../assets/imgs/profile.png" alt="profile">
+                                <p class="name">نام نویسنده</p>
+                                <p class="date">1398/0/24</p>
+                            </div>
+                            <div class="content">
+                                <p class="text">
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                </p>
+                                <div class="likes_reply">
+                                    <div class="likes">
+                                        <i class="far fa-heart"></i>
+                                        <p>0</p>
+                                    </div>
+                                </div>
+                            </div>                    
+                        </div>
+                    </div>
                 </div>
                 <div class="comment">
                     <div class="img_data">
                         <img src="../assets/imgs/profile.png" alt="profile">
+                        <p class="name">نام نویسنده</p>
                         <p class="date">1398/0/24</p>
                     </div>
-                    <p class="name">نام نویسنده</p>
                     <div class="content">
                         <p class="text">
                             متن متن متن متن متن متن متن متن متن متن متن متن
@@ -970,38 +1098,6 @@
                         </div>
                     </div>
                     <form novalidate id="rep2" name="rep2" class="reply" method="GET" action="#!" enctype="text/plain">
-                        <textarea name="reply_content" class="reply_content" required></textarea>
-                        <button type="submit">ثبت پاسخ</button>
-                    </form>
-                </div>
-                <div class="comment">
-                    <div class="img_data">
-                        <img src="../assets/imgs/profile.png" alt="profile">
-                        <p class="date">1398/0/24</p>
-                    </div>
-                    <p class="name">نام نویسنده</p>
-                    <div class="content">
-                        <p class="text">
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                        </p>
-                        <div class="likes_reply">
-                            <div class="likes">
-                                <i class="far fa-heart"></i>
-                                <p>0</p>
-                            </div>
-                            <div class="reply" data-target="rep3">
-                                <i class="fas fa-reply"></i>
-                                <p>پاسخ</p>
-                            </div>
-                        </div>
-                    </div>
-                    <form novalidate id="rep3" name="rep3" class="reply" method="GET" action="#!" enctype="text/plain">
                         <textarea name="reply_content" class="reply_content" required></textarea>
                         <button type="submit">ثبت پاسخ</button>
                     </form>

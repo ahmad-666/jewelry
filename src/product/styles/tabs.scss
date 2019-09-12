@@ -53,6 +53,13 @@ body{
             visibility: hidden ;    
             opacity: 0;
             transition: all .3s ease-in-out ;    
+            
+        }
+        .tab_content.show{
+            visibility: visible ;
+            opacity: 1;
+        }
+        .tab_content#info_section{
             table{
                 width: auto ;
                 height: auto;
@@ -91,9 +98,19 @@ body{
                 }
             }
         }
-        .tab_content.show{
-            visibility: visible ;
-            opacity: 1;
+        .tab_content#more_info{
+            .wrapper{
+                @include containerStyle ;
+                width: 100% ;
+                height: auto;
+                font-size: $font-m ;
+                line-height: $dist3 ;
+                padding: $dist1 ;
+                margin: 0;
+                color: $darkColor ;
+                box-shadow: none ;
+                background-color: none ;
+            }
         }
     }
 }
