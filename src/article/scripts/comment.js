@@ -1,145 +1,149 @@
-let wrapper = document.querySelector('#comments') ;
-//Show #user_comment
-//-----------------------------------------------------------
-//-----------------------------------------------------------
-let addCommentBtn = wrapper.querySelector('.add_comment') ;
-let addComment = wrapper.querySelector('#user_comment') ;
-let addCommentHeight = addComment.clientHeight ;
-addComment.classList.add('hide') ;
-addCommentBtn.addEventListener('click',toggleAddComment) ;
-function toggleAddComment(e){
-    addComment.classList.add('addTransition') ;
-    addComment.classList.toggle('show');
-    if(addComment.classList.contains('show')) addComment.style.height = `${addCommentHeight}px` ;
-    else addComment.style.height = `${0}px` ;  
+import util from '../../utilities/utilities.js' ;
+let commentWrapper = document.querySelector('#comments') ;
+let addCommentTrigger = commentWrapper.querySelector('#addComment') ;
+let addCommentForm = commentWrapper.querySelector('#userComment') ;
+let comments = commentWrapper.querySelectorAll('.comment') ;
+let replyTriggers = commentWrapper.querySelectorAll('.comment .reply') ;
+let replyForms = commentWrapper.querySelectorAll('.comment .replyForm') ;
+let autoExpandTextAreas = commentWrapper.querySelectorAll('textarea.autoExpand') ;
+let approvePopup = document.querySelector('#adminApprove') ;
+let approveClose = approvePopup.querySelector('button') ;
+//Form validation -------------------------------------
+//Form validation -------------------------------------
+//Form validation -------------------------------------
+function FormValidation(form){
+    this.form = form ;
+    this.formElms = this.form.querySelectorAll('.validate') ;
+    this.form.addEventListener('submit',this.submitForm.bind(this)) ;
 }
-//likes
-//----------------------------------------------------------
-//----------------------------------------------------------
-let likes = wrapper.querySelectorAll('.comment .content .likes i.fa-heart') ;
-likes.forEach(like => {
-    like.addEventListener('click',toggleLike) ;
-})
-function toggleLike(e){
-    this.classList.toggle('far') ;
-    this.classList.toggle('fas') ;
-    this.classList.toggle('red') ;
-    let likesNum = this.parentElement.querySelector('p') ;
-    if(this.classList.contains('fas')) likesNum.textContent = parseInt(likesNum.textContent) + 1 ; 
-    else likesNum.textContent = parseInt(likesNum.textContent) - 1 ; 
-}
-//reply
-//----------------------------------------------------------
-//----------------------------------------------------------
-let replySample = wrapper.querySelector('.comment > .reply');
-let replyHeight = replySample.clientHeight ;
-wrapper.querySelectorAll('.comment .reply').forEach(reply => {
-    reply.classList.add('hide') ;
-})
-let replyTriggers = wrapper.querySelectorAll('.comment .content .likes_reply .reply') ;
-replyTriggers.forEach(replyTrigger => {
-    replyTrigger.addEventListener('click',toggleReply) ;
-})
-function toggleReply(e){
-    let targetID = `#${this.getAttribute('data-target')}` ;
-    let target = wrapper.querySelector(targetID) ;
-    target.classList.add('addTransition') ;
-    target.classList.toggle('show') ;
-    if(target.classList.contains('show')) target.style.height = `${replyHeight}px` ;
-    else target.style.height = `${0}px` ;
-}
-//add comment form validation
-//----------------------------------------------------------
-//----------------------------------------------------------
-let addCommentForm = document.forms['user_comment'] ;
-let addCommentName = addCommentForm['name'] ;
-let addCommentEmail = addCommentForm['email'] ;
-let addCommentContent = addCommentForm['comment_content'] ;
-addCommentForm.addEventListener('submit',submitAddComment) ;
-function submitAddComment(e){
+FormValidation.prototype.submitForm = function(e){
     e.preventDefault();
-    if(addCommentValidate()) this.submit() ;
+    if(this.formValidate()) {
+        //this.form.submit() ;
+        approvePopup.classList.add('show') ;
+        document.addEventListener('click',approveDocHandler) ;
+    }
 }
-function addCommentValidate(){
-    return (addCommentNameValidate() && addCommentEmailValidate() && addCommentContentValidate()) ;
+FormValidation.prototype.formValidate = function(){
+    let validate = true ;
+    for(let i=0 ; i<this.formElms.length ; i++){
+        let formElm = this.formElms[i] ;
+        if(!this.inputValidate(formElm)) {
+            validate = false ;
+            break ;
+        }       
+    }
+    return validate ;
 }
-function addCommentNameValidate(){
-    if(addCommentName.checkValidity()){
-        addCommentName.classList.remove('error') ;
-        addCommentName.removeEventListener('input',monitorAddCommentName) ;
+FormValidation.prototype.inputValidate = function(formElm){
+    if(formElm.checkValidity())  {
+        formElm.classList.remove('error') ;
+        formElm.removeEventListener('input',this) ;
         return true ;
-    }
-    else if(addCommentName.validity.valueMissing) {
-        addCommentName.classList.add('error') ;
-        addCommentName.addEventListener('input',monitorAddCommentName) ;
-    }
-}
-function monitorAddCommentName(e){
-    if(!this.validity.valueMissing) addCommentName.classList.remove('error') ;
-    else addCommentName.classList.add('error') ;
-    
-}
-function addCommentEmailValidate(){
-    if(addCommentEmail.checkValidity()){
-        addCommentEmail.classList.remove('error') ;
-        addCommentEmail.removeEventListener('input',monitorAddCommentEmail) ;
-        return true ;
-    }
-    else if(addCommentEmail.validity.valueMissing || addCommentEmail.validity.typeMismatch) {
-        addCommentEmail.classList.add('error') ;
-        addCommentEmail.addEventListener('input',monitorAddCommentEmail) ;
-    }
-}
-function monitorAddCommentEmail(e){
-    if(!this.validity.valueMissing && !this.validity.typeMismatch){
-        this.classList.remove('error') ;
     }
     else {
-        this.classList.add('error') ;
+        formElm.classList.add('error') ;
+        formElm.addEventListener('input',this) ;
     }
 }
-function addCommentContentValidate(){
-    if(addCommentContent.checkValidity()){
-        addCommentContent.classList.remove('error') ;
-        addCommentContent.removeEventListener('input',monitorAddCommentContent) ;
-        return true ;
-    }
-    else if(addCommentContent.validity.valueMissing) {
-        addCommentContent.classList.add('error') ;
-        addCommentContent.addEventListener('input',monitorAddCommentContent) ;
+FormValidation.prototype.handleEvent = function(e){
+    if(e.type == 'input'){
+        let formElm = e.currentTarget ;
+        if(formElm.checkValidity()) formElm.classList.remove('error') ;
+        else formElm.classList.add('error') ;
     }
 }
-function monitorAddCommentContent(e){
-    if(!this.validity.valueMissing) this.classList.remove('error') ;
-    else this.classList.add('error') ;
-}
-//reply comment form validation
-//----------------------------------------------------------
-//----------------------------------------------------------
-function ReplyForm(elm){
-    this.elm = elm ;
-    this.replyText = this.elm.querySelector('textarea') ;
-    this.elm.addEventListener('submit',this.submitHandler.bind(this)) ;
-} 
-ReplyForm.prototype.submitHandler = function(e){
-    e.preventDefault() ;
-    if(this.validate()) this.elm.submit() ;
-}
-ReplyForm.prototype.validate = function(){
-    if(this.replyText.checkValidity()){
-        this.replyText.classList.remove('error') ;
-        this.replyText.removeEventListener('input',this) ;
-        return true ;
-    }
-    else if(this.replyText.validity.valueMissing) {
-        this.replyText.classList.add('error') ;
-        this.replyText.addEventListener('input',this) ;
-    }
-}
-ReplyForm.prototype.handleEvent = function(e){
-    if(!this.replyText.validity.valueMissing) this.replyText.classList.remove('error') ;
-    else this.replyText.classList.add('error') ;
-}
-wrapper.querySelectorAll('.comment > form').forEach(reply => {
-    new ReplyForm(reply) ;
+document.querySelectorAll('form.validateForm').forEach(form => {
+    new FormValidation(form) ;
 })
+//label handler -------------------------------------
+//label handler -------------------------------------
+//label handler -------------------------------------
+function LabelHandler(inputWrapper){
+    this.inputWrapper = inputWrapper ;
+    this.label = this.inputWrapper.querySelector('label') ;
+    this.formElm = this.inputWrapper.querySelector('input,textarea') ;
+    this.formElm.addEventListener('input',this.inputHandler.bind(this)) ;
+}
+LabelHandler.prototype.inputHandler = function(e){
+    if(this.formElm.value.length!=0) this.formElm.classList.add('labelHandler') ;
+    else this.formElm.classList.remove('labelHandler') ;
+}
+document.querySelectorAll('.labelHandler').forEach(labelHandler => {
+    new LabelHandler(labelHandler) ;
+})
+//autoExpand textarea -----------------------
+//autoExpand textarea -----------------------
+//autoExpand textarea -----------------------
+autoExpandTextAreas.forEach(autoExpand => {
+    autoExpand.addEventListener('input',checkExpand) ;
+})
+function checkExpand(e){
+    let formElm = this.parentElement.parentElement ;
+    formElm.style.height = 'auto' ;
+    formElm.style.height = `${formElm.scrollHeight}px` ;
+    this.style.height = 'auto' ;
+    let textAreaHeight = null ;
+    if(this.value.length != 0){
+        textAreaHeight = parseFloat(util.getStyle(this,'border-top')) + 
+            this.scrollHeight + 
+            parseFloat(util.getStyle(this,'border-bottom')) ;
+        this.style.height = `${textAreaHeight}px` ;
+        formElm.style.height = `${formElm.scrollHeight}px` ;
+    }
+    else {
+        this.style.height = '3em' ;      
+    }
+}
+//add comment form -------------------------------------
+//add comment form -------------------------------------
+//add comment form -------------------------------------
+addCommentTrigger.addEventListener('click',toggleAddComment) ;
+function toggleAddComment(e){
+    addCommentForm.classList.toggle('show') ;
+    if(addCommentForm.classList.contains('show')) addCommentForm.style.height = `${addCommentForm.scrollHeight}px` ;
+    else addCommentForm.style.height = `${0}px` ;
+}
+//each comment -------------------------------------
+//each comment -------------------------------------
+//each comment -------------------------------------
+function Comment(comment){
+    this.comment = comment ;
+    this.likeTriggers = this.comment.querySelectorAll('.likeTrigger') ; //comment itself and all its replies
+    this.replyTrigger = this.comment.querySelector('.reply') ;
+    this.replyForm = this.comment.querySelector('.replyForm') ;
+    this.likeTriggers.forEach(like => {
+        like.addEventListener('click',this.likeHandler.bind(this)); 
+    });
+    this.replyTrigger.addEventListener('click',this.toggleReply.bind(this)) ;
+}
+Comment.prototype.likeHandler = function(e){
+    let like = e.currentTarget ;
+    let likesNum = like.parentElement.querySelector('.likesNum') ;
+    like.classList.toggle('fas') ;
+    like.classList.toggle('far') ;
+    if(like.classList.contains('fas')) likesNum.textContent = parseInt(likesNum.textContent) + 1 ;
+    else likesNum.textContent = parseInt(likesNum.textContent) - 1 ;
+}
+Comment.prototype.toggleReply = function(e){
+    this.replyForm.classList.toggle('show') ;
+    if(this.replyForm.classList.contains('show')) this.replyForm.style.height = `${this.replyForm.scrollHeight}px` ;
+    else this.replyForm.style.height = `${0}px` ;
+}
+commentWrapper.querySelectorAll('.comment').forEach(comment => {
+    new Comment(comment) ;
+}) ;
+//approve popup-----------------------------------------------------
+//approve popup-----------------------------------------------------
+//approve popup-----------------------------------------------------
+approveClose.addEventListener('click',closeApprove) ;
+function closeApprove(e){
+    approvePopup.classList.remove('show') ;
+}
+function approveDocHandler(e){
+    let clickedElm = e.target ;
+    if(!approvePopup.contains(clickedElm)) {
+        approvePopup.classList.remove('show') ;
+        document.removeEventListener('click',approveDocHandler) ;
+    }
+}

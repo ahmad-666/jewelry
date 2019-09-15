@@ -16,7 +16,7 @@ function Slider(slider){
     this.nextBtn.addEventListener('click',this.nextSlide.bind(this));
 }
 Slider.prototype.prevSlide = function(e){
-    if(this.currSlideIndex == this.slidesInViewport) this.firstSlide = true ;
+    if(this.currSlideIndex == this.slidesInViewport - 1) this.firstSlide = true ;
     else this.firstSlide = false ;
     if(!this.firstSlide){
         this.currSlideIndex-- ;   
@@ -30,7 +30,7 @@ Slider.prototype.prevSlide = function(e){
     }   
 }
 Slider.prototype.nextSlide = function(e){
-    if(this.currSlideIndex == this.slidesNum) this.lastSlide = true ;
+    if(this.currSlideIndex == this.slidesNum + 1) this.lastSlide = true ;
     else this.lastSlide = false ;
     if(!this.lastSlide){
         this.currSlideIndex++ ;   
