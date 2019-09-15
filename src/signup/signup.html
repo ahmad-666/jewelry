@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="signup_wrapper">
+        <img src="../assets/imgs/logo1.png" alt="logo">
+        <p class="persian">تاباچرم</p>
+        <form novalidate class="validate" id="signup" name="signup" enctype="text/plain" method="GET" action="#!">
+            <h4>ساخت حساب کاربری</h4>
+            <div class="input_wrapper">
+                <input type="text" class="validate" id="name" name="name" required placeholder="نام و نام خانوادگی">
+                <div class="error">
+                    <i class="fas fa-sort-up"></i>
+                    <p>نام خود را وارد کنید</p>
+                </div>
+            </div>
+            <div class="input_wrapper">
+                <input type="email" class="validate" id="email" name="email" required placeholder="ایمیل">
+                <div class="error">
+                    <i class="fas fa-sort-up"></i>
+                    <p>ایمیل صحیح وارد کنید</p>
+                </div>
+            </div>
+            <div class="input_wrapper">
+                <input type="number" class="validate" name="mobile" id="mobile" required placeholder="موبایل">
+                <div class="error">
+                    <i class="fas fa-sort-up"></i>
+                    <p>موبایل صحیح وارد کنید(با ۰۹ وارد کنید)</p>
+                </div>
+            </div>
+            <div class="input_wrapper">
+                <input type="password" class="validate" name="password" id="password" required placeholder="رمز عبور" pattern=".{6,}">
+                <div class="error">
+                    <i class="fas fa-sort-up"></i>
+                    <p>رمز عبور باید بیشتر از ۶رقم باشد</p>
+                </div>
+            </div>
+            <div class="input_wrapper">
+                <input type="password" class="validate" name="rep_password" id="rep_password" required placeholder="تکرار رمز عبور" pattern=".{6,}">
+                <div class="error">
+                    <i class="fas fa-sort-up"></i>
+                    <p>مقدار وارد شده با رمز عبور متفاوت است</p>
+                </div>
+            </div>
+            <button type="submit">ساخت حساب کاربری</button>
+            <div class="input_wrapper checkbox">
+                <input type="checkbox" id="remember" name="remember" value="remember">
+                <label for="remember">
+                    <span class="rect">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <p>مرا بخاطر بسپار</p>
+                </label>
+            </div>
+            <a class="create_new" href="./signin.html">قبلا ثبت نام کرده اید</a>
+        </form>
+    </div>
+</body>
+</html>

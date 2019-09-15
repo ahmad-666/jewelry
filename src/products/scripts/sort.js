@@ -1,3 +1,4 @@
+import util from '../../utilities/utilities.js' ;
 function Select(elm){
     this.elm = elm ;
     this.input = this.elm.querySelector('input') ;
@@ -40,8 +41,15 @@ Select.prototype.handleEvent = function(e){
         this.lis.forEach(li => {
             li.removeEventListener('click',this) ;
         })
+        if(this.elm == sortInput){
+            let sortVal = util.getChildIndex(currLi.parentElement,currLi) ;
+            hiddenSort.value = sortVal ;
+        }    
     }
 }
+let sort = document.querySelector('#order .sort') ;
+let hiddenSort = sort.querySelector('input[type="hidden"]') ;
+let sortInput = sort.querySelector('.input_wrapper') ;
 let selects = [] ;
 let orderWrapper = document.querySelector('#order') ;
 orderWrapper.querySelectorAll('.select').forEach(select => {
