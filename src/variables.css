@@ -1,0 +1,14 @@
+:export {
+  dist1: 0.5em;
+  dist2: 1em;
+  dist3: 2em;
+  dist4: 4em;
+  font-s: 0.6em;
+  font-m: 0.8em;
+  font-l: 1em;
+  font-xl: 1.2em;
+  font-xxl: 2em;
+  font-special: 1.6em;
+  sectionsDist: 4em;
+}
+/*# sourceMappingURL=variables.css.map */

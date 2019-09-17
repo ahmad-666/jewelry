@@ -92,97 +92,253 @@
         }
 
     }
-    .infos{
+    #infos{
         @include containerStyle ;
         width: 100% ;
         height: auto;
-        margin-right: $dist3 ;
-        margin-top: 0 ;
+        padding: $dist1 $dist2 ;
+        margin: 0 $dist3 0 0 ;
         display: flex ;
         @include flex(column,flex-start,flex-start,nowrap,"") ;
-        background-color: white ;
-        border: 1.2px solid lighten($greyColor2,30%) ;
-        .check_stock,.stars,.desc,.price,#buy{
-            margin-top: $dist2 ;
+        .name,.available,.not_available,.stars,.price,.inputs,.buy,.icons{
+            margin: $dist1 0 ;
+            &:first-child{margin-top: 0 ;}
         }
-        h4{
-            color: $darkColor ;
-            font-weight: 700; 
+        .name{
             font-size: $font-l ;
+            color: $darkColor ;
+            font-weight: 700 ;
         }
-        .check_stock{
+        .available,.not_available{
             width: auto ;
             height: auto;
-            border-radius: $dist3 ;
+            padding: $dist1 - .2em $dist3 + .5em;
             color: $whiteColor2 ;
-            padding: $dist1 $dist3 ;
-            font-size: $font-m ;
+            font-size: $font-m + .1em ;
+            border-radius: $dist3 ;
         }
-        .check_stock.available{
-            background-color: $greenColor2 ;
-        }
-        .check_stock.not_available{
-            background-color: $redColor2 ;
-        }
+        .available{background-color: $greenColor2 ;}
+        .not_available{background-color: lighten($redColor2,3%);}
         .stars{
             width: auto ;
             height: auto;
             display: flex ;
-            @include flex(row,flex-start,center,nowrap,"");
+            @include flex(row,flex-start,center,nowrap,"") ;
             i{
-                font-size: $font-m ;
-                color: $primaryColor ;
-                margin: 0 .2em;
+                font-size: $font-l ;
+                margin: 0 .1em ;
+                color: lighten($greyColor2,35%) ;
+                &:first-child{margin-right: 0 ;}
             }
-        }
-        .desc{
-            width: auto ;
-            height: auto;
-            font-size: $font-m ;
-            color: darken($greyColor2,20%) ;
-            line-height: $dist3 ;
-        }
-        .price{
-            font-size: $font-l ;
-            color: $darkColor ;
-        }
-        #buy{
+            i.fill{
+                color: $primaryColor ;
+            }
+            .vote{
+                font-size: $font-m ;
+                color: $greyColor2 ;
+            }
+        }   
+        .inputs{
             width: auto ;
             height: auto;
             display: flex ;
-            @include flex(row,flex-start,center,nowrap,"");
-            p{
-                font-size: $darkColor ;
-                font-size: $font-m ;
-            }
-            input#quantity{
-                width: 3em ;
-                height: 3em;
-                text-align: center ;
-                border: 1px solid $greyColor2 ;
-                padding: .2em ;
-                color: $darkColor ;
-                font-size: $font-m ;
-                cursor: pointer;
-                background-color: $whiteColor2 ;
-                transform: perspective(1000px) translateZ(0) ;
-                transition: all .3s ease-in-out ;
-                margin-right: $dist3 ;
-                &:focus{
-                    box-shadow: 0 0 .3em .05em $shadowColor ;
-                    transform: perspective(1000px) translateZ(7em) ;
+            @include flex(row,flex-start,center,wrap,flex-start) ;
+            margin-top: 0 ;
+            .input_wrapper{
+                width: 30% ;
+                height: 2em;
+                margin: $dist1 ;
+                display: flex ;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                label{
+                    width: 5em ;
+                    cursor: pointer;
+                    font-size: $font-m ;
+                    color: $greyColor2 ;
+                    text-align: center;
                 }
             }
-            .add_to_basket{
-                margin-right: $dist3 ;
+            .input_wrapper.hide{
+                display: none ;
+            }
+            .input_wrapper.select{       
+                .input{
+                    width: 100% ;
+                    height: 100%;
+                    position: relative ;
+                    input{
+                        width: 100% ;
+                        height: 100%;
+                        border: 1px solid lighten($greyColor2,30%) ;
+                        padding: 0 $dist1 ;
+                        border-radius: $dist2 ;
+                        color: $darkColor ;
+                        font-size: $font-m ;
+                        line-height: 2em ;
+                        cursor: pointer;
+                    }
+                    .fa-angle-down{
+                        @include center-y ;
+                        top: 55% ;
+                        left: $dist1 ;
+                        font-size: $font-l ;
+                        color: $darkColor ;
+                        cursor: pointer;
+                    }
+                    ul{
+                        visibility: hidden ;
+                        opacity: 0;
+                        transition: all .2s linear ;
+                        display: flex ;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        width: 100% ;
+                        max-height: 12em;
+                        overflow: auto;
+                        box-shadow: 0 .05em .3em .05em $shadowColor ;
+                        position: absolute ;
+                        top: 110% ;
+                        right: 0 ;
+                        z-index: 2;
+                        li{
+                            width: 100% ;
+                            height: 2.5em;
+                            line-height: 2.5em ;
+                            padding: 0 $dist1 ;
+                            font-size: $font-m ;
+                            color: $darkColor ;
+                            transition: all .3s ease-in-out ;
+                            background-color: $whiteColor2 ;
+                            cursor: pointer;
+                            &:hover{
+                                background-color: darken($whiteColor2,10%) ;
+                            }
+                        }
+                    }
+                    ul.show{
+                        opacity: 1;
+                        visibility: visible ;
+                    }
+                }
+            }
+            .input_wrapper.number{
+                flex-shrink: 0 ;
                 width: auto ;
                 height: auto;
-                padding: $dist1 $dist3 ;
+                margin-right: 0em;
+                .input{
+                    width: auto ;
+                    height: auto;
+                    display: flex ;
+                    @include flex(column,flex-start,center,nowrap,"") ;
+                    position: relative ;
+                    .increase,input,.decrease{
+                        margin: .2em ;
+                        &:first-child{margin-top: 0 ;}
+                    }
+                    input{
+                        width: 4em ;
+                        height: 2em;
+                        line-clamp: 2em ;
+                        border: 1px solid lighten($greyColor2,30%) ;
+                        border-radius: $dist2 ;
+                        font-size: $font-m ;
+                        color: $darkColor ;
+                        text-align: center ;
+                    }
+                    span{
+                        font-size: $font-xl ;
+                        cursor: pointer;
+                        padding: 0 $dist1 ;
+                        line-height: $dist1 ;
+                    }
+                }
+            }
+        }
+        .buy{
+            width: auto ;
+            height: auto;
+            display: flex ;
+            @include flex(row,flex-start,center,wrap,flex-start) ;      
+            .price{
+                width: auto ;
+                height: auto;
+                display: flex;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                .before_discount{
+                    display: flex ;
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    .main_price{
+                        width: auto ;
+                        height: auto;
+                        font-size: $font-l ;
+                        color: $darkColor ;
+                        position: relative ;
+                    }
+                }
+            }
+            .basket{
+                width: auto ;
+                height: auto;
+                padding: $dist1 + .1em $dist3 + .3em ;
                 font-size: $font-m ;
+                border-radius: $dist3 ;
                 color: $whiteColor2 ;
                 background-color: $greenColor2 ;
-                border-radius: $dist3 ;
+                margin-right: $dist3 ;
                 cursor: pointer;
+            }
+        }
+        .icons{
+            width: 100% ;
+            height: auto;
+            display: flex ;
+            @include flex(row,flex-start,center,wrap,flex-start) ;
+            .icon{
+                width: 33.3% ;
+                height: auto;
+                display: flex ;
+                @include flex(column,flex-start,center,nowrap,"") ;
+                img{
+                    width: 3.5em;
+                    height: 2.5em;
+                }
+                p{
+                    margin-top: $dist1 ;
+                    font-size: $font-m - .2em ;
+                    color: $greyColor2 ;
+                }
+            }
+        }
+    }
+    #infos.discount{
+        .price{
+            .before_discount{       
+                .main_price{      
+                    font-size: $font-l ; 
+                    color: $greyColor2 ;   
+                    &::before{
+                        content: '' ;
+                        width: 110% ;
+                        height: .05em;
+                        background-color: darken($greyColor2,15%) ;
+                        @include center-xy ;
+                    }
+                }
+                .discount_val{
+                    width: auto ;
+                    height: auto;
+                    padding: .1em $dist1 ;
+                    color: $whiteColor2 ;
+                    font-size: $font-m ;
+                    background-color: darken($primaryColor,5%) ;
+                    border-radius: $dist1 ;
+                    margin-right: $dist2 ;
+                }
+            }
+            .after_discount{
+                font-size: $font-l ;
+                color: $darkColor ;
+                margin-top: $dist1 ;
             }
         }
     }

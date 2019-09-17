@@ -1,0 +1,65 @@
+:export {
+  primaryColor: #f0c900;
+  blueColor1: #009CFF;
+  blueColor2: #003DBB;
+  purpleColor1: #6956D8;
+  purpleColor2: #9090C5;
+  purpleColor3: #4a4982;
+  greenColor1: #6BFBCE;
+  greenColor2: #1EC198;
+  redColor1: #FF5198;
+  redColor2: #e74a4a;
+  orangeColor1: #FF846C;
+  orangeColor2: #ff8f00;
+  yellowColor: #f9a825;
+  brownColor: #C99035;
+  paleColor: #f4f3f7;
+  whiteColor1: #f8f8f8;
+  whiteColor2: #fbfbfb;
+  greyColor: #b9b9c1;
+  greyColor2: #86878e;
+  darkColor: #2d2d31;
+  darkBlue: #5d6174;
+  shadowColor: rgba(70, 69, 85, 0.3);
+  shadowColor2: rgba(0, 0, 0, 0.5);
+  blackFilter: rgba(30, 30, 30, 0.8);
+  blackFilter2: rgba(30, 30, 30, 0.6);
+  blackFilter3: rgba(30, 30, 30, 0.7);
+}
+
+#copyright {
+  width: 100%;
+  padding: .5em;
+  color: #3c3c3c;
+  font-size: 1em;
+  text-align: center;
+  background-color: white;
+  border: 1.5px solid #e6e6e6;
+  position: relative;
+  z-index: 2;
+}
+
+#copyright i {
+  -webkit-transform: translateY(20%);
+     -moz-transform: translateY(20%);
+      -ms-transform: translateY(20%);
+          transform: translateY(20%);
+}
+
+#copyright a {
+  text-decoration: none;
+  color: #2d2d31;
+}
+
+@media screen and (max-width: 840px) {
+  #copyright {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  #copyright {
+    font-size: 12px;
+  }
+}
+/*# sourceMappingURL=copyright.css.map */

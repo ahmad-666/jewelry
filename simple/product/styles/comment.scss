@@ -126,57 +126,46 @@
         padding: $dist2 0;
         width: 100%;
         height: auto;
-        border-bottom: 1px solid $greyColor2;
+        border-bottom: 1px solid lighten($greyColor2,25%);
+        &:last-child{border-bottom: none ;}
         display: flex;
         @include flex(row, flex-start, flex-start, wrap, flex-start);
-
         .img_data {
-            width: auto;
+            width: 20%;
         }
-
-        p.name {
-            width: 10%;
-            @include ellipse;
-            margin-right: $dist1;
-            transform: translateY(2em);
-        }
-
         .content {
-            max-width: 75%;
+            width: 75%;
             margin-right: $dist1;
         }
-
         .reply {
             width: 100%;
         }
-
         .img_data {
             height: auto;
             display: flex;
             @include flex(column, flex-start, center, nowrap, "");
-
             img {
                 width: $dist4;
                 height: $dist4;
                 border-radius: 50%;
             }
-
             .date {
                 width: 100%;
                 text-align: center;
                 color: $greyColor2;
                 font-size: $font-m - .1em;
-                margin-top: $dist2;
+                @include ellipse ;
+            }
+            .name{
+                width: 100%;
+                text-align: center;
+                color: $greyColor2;
+                font-size: $font-m - .1em;
+                @include ellipse ;
             }
         }
-
-        p.name {
-            height: auto;
-            color: $greyColor2;
-            font-size: $font-m - .1em;
-        }
-
         .content {
+            margin-top: 0em ;
             height: auto;
             display: flex;
             @include flex(column, flex-start, flex-start, nowrap, "");
@@ -226,7 +215,6 @@
                 }
             }
         }
-
         form.reply {
             height: auto;
             width: 80%;
@@ -268,20 +256,102 @@
                 margin-top: $dist2;
             }
         }
-
         form.reply.hide {
             opacity: 0;
             visibility: hidden;
             height: 0;
         }
-
         form.reply.show {
             visibility: visible;
             opacity: 1;
         }
-
         form.reply.addTransition {
             transition: all .3s ease-in-out;
+        }
+        .replies{
+            width: 100% ;
+            height: auto;
+            margin-right: $dist4 ;
+            .other_reply {
+                padding: $dist2 0;
+                width: 100%;
+                height: auto;
+                border-bottom: 1px solid none;
+                &:last-child{border-bottom: none ;}
+                display: flex;
+                @include flex(row, flex-start, flex-start, wrap, flex-start);    
+                .img_data {width: auto;}    
+                p.name {
+                    width: 10%;
+                    @include ellipse;
+                    margin-right: $dist1;
+                    transform: translateY(2em);
+                } 
+                .content {
+                    max-width: 75%;
+                    margin-right: $dist1;
+                }                          
+                .img_data {
+                    height: auto;
+                    display: flex;
+                    @include flex(column, flex-start, center, nowrap, "");
+        
+                    img {
+                        width: $dist4;
+                        height: $dist4;
+                        border-radius: 50%;
+                    }
+        
+                    .date {
+                        width: 100%;
+                        text-align: center;
+                        color: $greyColor2;
+                        font-size: $font-m - .1em;
+                        margin-top: $dist2;
+                    }
+                }     
+                p.name {
+                    height: auto;
+                    color: $greyColor2;
+                    font-size: $font-m - .1em;
+                }  
+                .content {
+                    height: auto;
+                    display: flex;
+                    @include flex(column, flex-start, flex-start, nowrap, "");  
+                    .text {
+                        width: 100%;
+                        height: auto;
+                        color: $darkColor;
+                        font-size: $font-m;
+                        line-height: $dist3 + .2em;
+                    }      
+                    .likes_reply {
+                        width: auto;
+                        height: auto;
+                        margin-top: 0;
+                        display: flex;
+                        @include flex(row, flex-start, center, nowrap, "");
+                        .likes{
+                            width: auto;
+                            height: auto;
+                            display: flex;
+                            @include flex(row, flex-start, center, nowrap, "");       
+                            i {
+                                font-size: $font-l;
+                                cursor: pointer;
+                                color: $greyColor2;
+                            }
+                            i.fa-heart.red {color: lighten(crimson, 15%);}   
+                            p {
+                                font-size: $font-m;
+                                color: $greyColor2;
+                                margin-right: $dist1;
+                            }
+                        }    
+                    }
+                }       
+            }
         }
     }
 }

@@ -42,17 +42,22 @@ body{
         width: 100% ;
         margin: 0 auto ;
         height: auto;
-        position: relative ;
         margin-top: $dist2; 
         .tab_content{
             width: 100% ;
             height: auto;
-            position: absolute ;
-            right: 0 ;
-            top: 0;   
-            visibility: hidden ;    
-            opacity: 0;
+            display: none ;
             transition: all .3s ease-in-out ;    
+        }
+        .tab_content.show{
+            display: block ;
+            animation: fadeIn .3s linear forwards;
+        }
+        @keyframes fadeIn {
+            from{opacity: 0;}
+            to{opacity: 1;}
+        }
+        .tab_content#info_section{
             table{
                 width: auto ;
                 height: auto;
@@ -91,9 +96,19 @@ body{
                 }
             }
         }
-        .tab_content.show{
-            visibility: visible ;
-            opacity: 1;
+        .tab_content#more_info{
+            .wrapper{
+                @include containerStyle ;
+                width: 100% ;
+                height: auto;
+                font-size: $font-m ;
+                line-height: $dist3 ;
+                padding: $dist1 ;
+                margin: 0;
+                color: $darkColor ;
+                box-shadow: none ;
+                background-color: none ;
+            }
         }
     }
 }

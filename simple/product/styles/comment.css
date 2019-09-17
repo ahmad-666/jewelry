@@ -255,7 +255,7 @@
   padding: 1em 0;
   width: 100%;
   height: auto;
-  border-bottom: 1px solid #86878e;
+  border-bottom: 1px solid #c8c8cc;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -286,24 +286,16 @@
           align-content: flex-start;
 }
 
-#comment_section .comment .img_data {
-  width: auto;
+#comment_section .comment:last-child {
+  border-bottom: none;
 }
 
-#comment_section .comment p.name {
-  width: 10%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-right: 0.5em;
-  -webkit-transform: translateY(2em);
-     -moz-transform: translateY(2em);
-      -ms-transform: translateY(2em);
-          transform: translateY(2em);
+#comment_section .comment .img_data {
+  width: 20%;
 }
 
 #comment_section .comment .content {
-  max-width: 75%;
+  width: 75%;
   margin-right: 0.5em;
 }
 
@@ -354,16 +346,23 @@
   text-align: center;
   color: #86878e;
   font-size: 0.7em;
-  margin-top: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-#comment_section .comment p.name {
-  height: auto;
+#comment_section .comment .img_data .name {
+  width: 100%;
+  text-align: center;
   color: #86878e;
   font-size: 0.7em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #comment_section .comment .content {
+  margin-top: 0em;
   height: auto;
   display: -webkit-box;
   display: -webkit-flex;
@@ -603,5 +602,246 @@
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+}
+
+#comment_section .comment .replies {
+  width: 100%;
+  height: auto;
+  margin-right: 4em;
+}
+
+#comment_section .comment .replies .other_reply {
+  padding: 1em 0;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+}
+
+#comment_section .comment .replies .other_reply:last-child {
+  border-bottom: none;
+}
+
+#comment_section .comment .replies .other_reply .img_data {
+  width: auto;
+}
+
+#comment_section .comment .replies .other_reply p.name {
+  width: 10%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 0.5em;
+  -webkit-transform: translateY(2em);
+     -moz-transform: translateY(2em);
+      -ms-transform: translateY(2em);
+          transform: translateY(2em);
+}
+
+#comment_section .comment .replies .other_reply .content {
+  max-width: 75%;
+  margin-right: 0.5em;
+}
+
+#comment_section .comment .replies .other_reply .img_data {
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#comment_section .comment .replies .other_reply .img_data img {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+}
+
+#comment_section .comment .replies .other_reply .img_data .date {
+  width: 100%;
+  text-align: center;
+  color: #86878e;
+  font-size: 0.7em;
+  margin-top: 1em;
+}
+
+#comment_section .comment .replies .other_reply p.name {
+  height: auto;
+  color: #86878e;
+  font-size: 0.7em;
+}
+
+#comment_section .comment .replies .other_reply .content {
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#comment_section .comment .replies .other_reply .content .text {
+  width: 100%;
+  height: auto;
+  color: #2d2d31;
+  font-size: 0.8em;
+  line-height: 2.2em;
+}
+
+#comment_section .comment .replies .other_reply .content .likes_reply {
+  width: auto;
+  height: auto;
+  margin-top: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#comment_section .comment .replies .other_reply .content .likes_reply .likes {
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#comment_section .comment .replies .other_reply .content .likes_reply .likes i {
+  font-size: 1em;
+  cursor: pointer;
+  color: #86878e;
+}
+
+#comment_section .comment .replies .other_reply .content .likes_reply .likes i.fa-heart.red {
+  color: #ef4e6e;
+}
+
+#comment_section .comment .replies .other_reply .content .likes_reply .likes p {
+  font-size: 0.8em;
+  color: #86878e;
+  margin-right: 0.5em;
 }
 /*# sourceMappingURL=comment.css.map */

@@ -6,7 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="./external/fontawesome/all.min.css">
+    <link rel="stylesheet" href="./init.css">
+    <link rel="stylesheet" href="./index/styles/header.css">
+    <link rel="stylesheet" href="./index/styles/nav.css">
+    <link rel="stylesheet" href="./product/styles/product-info.css">
+    <link rel="stylesheet" href="./product/styles/tabs.css">
+    <link rel="stylesheet" href="./article/styles/comment.css">
+    <link rel="stylesheet" href="./index/styles/slider.css">
+    <link rel="stylesheet" href="./index/styles/footer.css">
+    <link rel="stylesheet" href="./index/styles/copyright.css">
+
 </head>
 
 <body>
@@ -573,54 +583,107 @@
                 <div class="slide"></div>
             </div>
         </div>
-        <div class="infos">
-            <h4>نام محصول</h4>
-            <p class="check_stock available">موجود</p>
-            <p class="check_stock not_available">ناموجود</p>
+        <form id="infos" class="discount" name="infos" method="GET" action="#!" enctype="text/plain">
+            <p class="name">نام محصول</p>
+            <p class="available">موجود</p>
+            <p class="not_available">ناموجود</p>
             <div class="stars">
+                <i class="fas fa-star fill"></i>
+                <i class="fas fa-star fill"></i>
+                <i class="fas fa-star fill"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                <p class="vote">(۱۰۰نظر)</p>
             </div>
-            <p class="desc">
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-                توضیحات توضیحات توضیحات توضیحات
-            </p>
-            <p class="price">۱۰۰.۰۰۰ تومان</p>
-            <form novalidate id="buy" name="buy" method="GET" action="#!" enctype="text/plain">
-                <p>تعداد</p>
-                <input type="number" id="quantity" name="quantity" value="1" required min="1">
-                <button type="submit" class="add_to_basket">افزودن به سبد خرید</button>
-            </form>
-        </div>
+            <div class="inputs">
+                <div class="input_wrapper select">
+                    <label for="gender">جنسیت</label>
+                    <div class="input">
+                        <input type="text" id="gender" name="gender" required readonly value="زنانه">
+                        <i class="fas fa-angle-down"></i>
+                        <ul>
+                            <li>مردانه</li>
+                            <li>زنانه</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input_wrapper select">
+                    <label for="material">جنس</label>
+                    <div class="input">
+                        <input type="text" id="material" name="material" required readonly value="طلا">
+                        <i class="fas fa-angle-down"></i>
+                        <ul>
+                            <li>طلا</li>
+                            <li data-price="333">نقره</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input_wrapper select" id="weight">
+                    <label for="weight">وزن</label>
+                    <div class="input">
+                        <input type="text" id="weight" name="weight" required readonly value="1. گرم">
+                        <i class="fas fa-angle-down"></i>
+                        <ul>
+                            <li data-price="100">1. گرم</li>
+                            <li data-price="200">2. گرم</li>
+                            <li data-price="300">3. گرم</li>
+                            <li data-price="400">4. گرم</li>
+                            <li data-price="500">5. گرم</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input_wrapper select">
+                    <label for="size">سایز</label>
+                    <div class="input">
+                        <input type="text" id="size" name="size" required readonly value="۱۴">
+                        <i class="fas fa-angle-down"></i>
+                        <ul>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>          
+                            <li>21</li>          
+                            <li>22</li>          
+                        </ul>
+                    </div>
+                </div>   
+                <div class="input_wrapper number">
+                    <label for="product_num">تعداد</label>
+                    <div class="input">
+                        <span class="increase">+</span>
+                        <input type="number" id="product_num" name="product_num" required readonly value="1">
+                        <span class="decrease">-</span>
+                    </div>
+                </div>                      
+            </div>
+            <div class="buy">
+                <div class="price">
+                    <div class="before_discount">
+                        <p class="main_price">100 تومان</p>
+                        <span class="discount_val">50%</span>
+                    </div>             
+                    <p class="after_discount">50 تومان</p>
+                </div>
+                <button class="basket">افزودن به سبد خرید</button>
+            </div>
+            <div class="icons">
+                <div class="icon">
+                    <img src="./assets/svgs/express.svg" alt="express">
+                    <p>تحویل اکسپرس</p>
+                </div>
+                <div class="icon">
+                    <img src="./assets/svgs/support.svg" alt="express">
+                    <p>پشتیبانی ۲۴ساعته</p>
+                </div>
+                <div class="icon">
+                    <img src="./assets/svgs/original.svg" alt="express">
+                    <p>ضمانت اصالت کالا</p>
+                </div>
+            </div>
+        </form>
     </div>
     <div id="black_filter"></div>
     <div id="fix_product_img">
@@ -817,7 +880,8 @@
     </div>
     <div id="tabs">
         <div class="tabs_wrapper">
-            <div class="tab active" data-target="info_section">اطلاعات بیشتر</div>
+            <div class="tab active" data-target="info_section">اطلاعات محصول</div>
+            <div class="tab" data-target="more_info">توضیحات بیشتر</div>
             <div class="tab" data-target="comment_section">نظرات کاربران</div>
         </div>
         <div class="content">
@@ -847,112 +911,306 @@
                     </tbody>
                 </table>
             </div>
+            <div class="tab_content" id="more_info">
+                <div class="wrapper">
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                    متن متن متن متن متن متن متن
+                </div>
+            </div>
             <div class="tab_content" id="comment_section">
-                <button class="add_comment">نظر خود را اضافه کنید</button>
-                <form novalidate name="user_comment" id="user_comment" method="GET" action="#!" enctype="text/plain">
-                    <div class="infos">
-                        <input type="text" name="name" id="name" required placeholder="نام خود را وارد کنید">
-                        <input type="email" name="email" id="email" required placeholder="ایمیل خود را وارد کنید">
-                    </div>
-                    <textarea name="comment_content" id="comment_content" placeholder="متن نظر خود را وارد نمایید"
-                        required></textarea>
-                    <button type="submit">ثبت نظر</button>
-                </form>
-                <div class="comment">
-                    <div class="img_data">
-                        <img src="./assets/imgs/profile.png" alt="profile">
-                        <p class="date">1398/0/24</p>
-                    </div>
-                    <p class="name">نام نویسنده</p>
-                    <div class="content">
-                        <p class="text">
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                        </p>
-                        <div class="likes_reply">
-                            <div class="likes">
-                                <i class="far fa-heart"></i>
-                                <p>0</p>
+                <div id="comments" class="productComment">
+                    <button id="addComment">افزودن نظر</button>
+                    <form novalidate class="validateForm" id="userComment" name="userComment" method="GEt" action="#!" enctype="text/plain">
+                        <div class="row">
+                            <div class="inputWrapper labelHandler">
+                                <input type="text" name="name" class="validate" id="name" required>
+                                <i class="fas fa-user icon"></i>
+                                <label for="name">نام و نام خانوادگی</label>
+                                <span class="line"></span>
                             </div>
-                            <div class="reply" data-target="rep1">
-                                <i class="fas fa-reply"></i>
-                                <p>پاسخ</p>
+                            <div class="inputWrapper labelHandler">
+                                <input type="email" name="email" class="validate" id="email" required>
+                                <i class="fas fa-user icon"></i>
+                                <label for="email">پست الکترونیکی</label>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                        <div class="inputWrapper labelHandler textarea">
+                            <textarea name="commentContent" class="validate autoExpand" id="commentContent" required></textarea>
+                            <label for="commentContent">متن نظر</label>
+                        </div>
+                        <button type="submit">ثبت نظر</button>
+                    </form>
+                    <div class="comment">
+                        <div class="row">
+                            <a class="userProfile" href="#!">
+                                <img src="./assets/imgs/profile.png" alt="profile.png">
+                                <div class="userInfo">
+                                    <p class="name">نام کاربر</p>
+                                    <p class="date">1398/10/10</p>
+                                </div>
+                            </a>
+                            <div class="content">
+                                <p>
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                   متن متن متن متن متن متن 
+                                </p>
+                                <div class="row">
+                                    <div class="like">
+                                        <i class="far fa-heart likeTrigger"></i>
+                                        <span class="likesNum">0</span>
+                                    </div>
+                                    <div class="reply" data-target="reply1">
+                                        <i class="fas fa-reply"></i>
+                                        <span>پاسخ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form novalidate id="reply1" name="reply1" class="validateForm replyForm" method="GET" action="#!" enctype="text/plain">
+                            <div class="inputWrapper labelHandler textarea">
+                                <textarea name="reply1Content" class="validate autoExpand" id="reply1Content" required></textarea>
+                                <label for="reply1Content">پاسخ شما</label>
+                            </div>
+                            <button type="submit">ارسال پاسخ</button>
+                        </form>
+                        <div class="userReply">
+                            <div class="row">
+                                <a class="userProfile" href="#!">
+                                    <img src="./assets/imgs/profile.png" alt="profile.png">
+                                    <div class="userInfo">
+                                        <p class="name">نام کاربر</p>
+                                        <p class="date">1398/10/10</p>
+                                    </div>
+                                </a>
+                                <div class="content">
+                                    <p>
+                                        متن متن متن متن متن متن متن متن متن متن
+                                        متن متن متن متن متن متن متن متن متن متن
+                                        متن متن متن متن متن متن متن متن متن متن
+                                        متن متن متن متن متن متن متن متن متن متن
+                                        متن متن متن متن متن متن متن متن متن متن
+                                    </p>
+                                    <div class="row">
+                                        <div class="like">
+                                            <i class="far fa-heart likeTrigger"></i>
+                                            <span class="likesNum">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="userReply">
+                            <div class="row">
+                                <a class="userProfile" href="#!">
+                                    <img src="./assets/imgs/profile.png" alt="profile.png">
+                                    <div class="userInfo">
+                                        <p class="name">نام کاربر</p>
+                                        <p class="date">1398/10/10</p>
+                                    </div>
+                                </a>
+                                <div class="content">
+                                    <p>
+                                        متن متن متن متن متن متن متن متن متن متن
+                                        متن متن متن متن متن متن متن متن متن متن
+                                        متن متن متن متن متن متن متن متن متن متن
+                                        متن متن متن متن متن متن متن متن متن متن
+                                        متن متن متن متن متن متن متن متن متن متن
+                                    </p>
+                                    <div class="row">
+                                        <div class="like">
+                                            <i class="far fa-heart likeTrigger"></i>
+                                            <span class="likesNum">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="userReply">
+                            <div class="row">
+                                <a class="userProfile" href="#!">
+                                    <img src="./assets/imgs/profile.png" alt="profile.png">
+                                    <div class="userInfo">
+                                        <p class="name">نام کاربر</p>
+                                        <p class="date">1398/10/10</p>
+                                    </div>
+                                </a>
+                                <div class="content">
+                                    <p>
+                                        متن متن متن متن متن متن متن متن متن متن
+                                        متن متن متن متن متن متن متن متن متن متن
+                                        متن متن متن متن متن متن متن متن متن متن
+                                        متن متن متن متن متن متن متن متن متن متن
+                                        متن متن متن متن متن متن متن متن متن متن
+                                    </p>
+                                    <div class="row">
+                                        <div class="like">
+                                            <i class="far fa-heart likeTrigger"></i>
+                                            <span class="likesNum">0</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <form novalidate id="rep1" name="rep1" class="reply" method="GET" action="#!" enctype="text/plain">
-                        <textarea name="reply_content" class="reply_content" required></textarea>
-                        <button type="submit">ثبت پاسخ</button>
-                    </form>
-                </div>
-                <div class="comment">
-                    <div class="img_data">
-                        <img src="./assets/imgs/profile.png" alt="profile">
-                        <p class="date">1398/0/24</p>
-                    </div>
-                    <p class="name">نام نویسنده</p>
-                    <div class="content">
-                        <p class="text">
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                        </p>
-                        <div class="likes_reply">
-                            <div class="likes">
-                                <i class="far fa-heart"></i>
-                                <p>0</p>
-                            </div>
-                            <div class="reply" data-target="rep2">
-                                <i class="fas fa-reply"></i>
-                                <p>پاسخ</p>
+                    <div class="comment">
+                        <div class="row">
+                            <a class="userProfile" href="#!">
+                                <img src="./assets/imgs/profile.png" alt="profile.png">
+                                <div class="userInfo">
+                                    <p class="name">نام کاربر</p>
+                                    <p class="date">1398/10/10</p>
+                                </div>
+                            </a>
+                            <div class="content">
+                                <p>
+                                    متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن
+                                </p>
+                                <div class="row">
+                                    <div class="like">
+                                        <i class="far fa-heart likeTrigger"></i>
+                                        <span class="likesNum">0</span>
+                                    </div>
+                                    <div class="reply" data-target="reply2">
+                                        <i class="fas fa-reply"></i>
+                                        <span>پاسخ</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <form novalidate id="rep2" name="rep2" class="reply" method="GET" action="#!" enctype="text/plain">
-                        <textarea name="reply_content" class="reply_content" required></textarea>
-                        <button type="submit">ثبت پاسخ</button>
-                    </form>
-                </div>
-                <div class="comment">
-                    <div class="img_data">
-                        <img src="./assets/imgs/profile.png" alt="profile">
-                        <p class="date">1398/0/24</p>
-                    </div>
-                    <p class="name">نام نویسنده</p>
-                    <div class="content">
-                        <p class="text">
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                        </p>
-                        <div class="likes_reply">
-                            <div class="likes">
-                                <i class="far fa-heart"></i>
-                                <p>0</p>
+                        <form novalidate id="reply2" name="reply2" class="validateForm replyForm" method="GET" action="#!" enctype="text/plain">
+                            <div class="inputWrapper labelHandler textarea">
+                                <textarea name="reply1Content" class="validate autoExpand" id="reply1Content" required></textarea>
+                                <label for="reply1Content">پاسخ شما</label>
                             </div>
-                            <div class="reply" data-target="rep3">
-                                <i class="fas fa-reply"></i>
-                                <p>پاسخ</p>
+                            <button type="submit">ارسال پاسخ</button>
+                        </form>
+                    </div>
+                    <div class="comment">
+                        <div class="row">
+                            <a class="userProfile" href="#!">
+                                <img src="./assets/imgs/profile.png" alt="profile.png">
+                                <div class="userInfo">
+                                    <p class="name">نام کاربر</p>
+                                    <p class="date">1398/10/10</p>
+                                </div>
+                            </a>
+                            <div class="content">
+                                <p>
+                                    متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن
+                                </p>
+                                <div class="row">
+                                    <div class="like">
+                                        <i class="far fa-heart likeTrigger"></i>
+                                        <span class="likesNum">0</span>
+                                    </div>
+                                    <div class="reply" data-target="reply3">
+                                        <i class="fas fa-reply"></i>
+                                        <span>پاسخ</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <form novalidate id="reply3" name="reply3" class="replyForm validateForm" method="GET" action="#!" enctype="text/plain">
+                            <div class="inputWrapper labelHandler textarea">
+                                <textarea name="reply1Content" class="validate autoExpand" id="reply1Content" required></textarea>
+                                <label for="reply1Content">پاسخ شما</label>
+                            </div>
+                            <button type="submit">ارسال پاسخ</button>
+                        </form>
                     </div>
-                    <form novalidate id="rep3" name="rep3" class="reply" method="GET" action="#!" enctype="text/plain">
-                        <textarea name="reply_content" class="reply_content" required></textarea>
-                        <button type="submit">ثبت پاسخ</button>
-                    </form>
+                    <button class="showMore">نظرات بیشتر</button>
                 </div>
             </div>
         </div>
@@ -1041,7 +1299,24 @@
             طراحی سایت توسط ittoos
         </a>
     </div>
-    
+    <div id="adminApprove">
+        <i class="fas fa-user-shield icon"></i>
+        <p>پیغام شما بعد از تایید مدیر نمایش داده میشود</p>
+        <button>بستن</button>
+    </div>
+    <script src="./utilities/docHandler.js"></script>
+    <script src="./utilities/getStyle.js"></script>
+    <script src="./utilities/getActiveIndex.js"></script>
+    <script src="./utilities/getChildIndex.js"></script>
+    <script src="./external/anime.min.js"></script>
+    <script src="./index/scripts/header.js"></script>
+    <script src="./index/scripts/nav.js"></script>
+    <script src="./product/scripts/product-info.js"></script>
+    <script src="./product/scripts/tabs.js"></script>
+    <script src="./article/scripts/comment.js"></script>
+    <script src="./index/scripts/slider.js"></script>
+    <script src="./index/scripts/footer.js"></script>
+
 </body>
 
 </html>

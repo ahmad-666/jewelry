@@ -71,7 +71,7 @@ main{
                 height: auto;
                 position: absolute ;
                 right: 0 ;
-                top: 60% ;
+                top: 70% ;
                 display: flex ;
                 @include flex(column,flex-start,flex-start,nowrap,"") ;
                 padding: 0 $dist2 ;

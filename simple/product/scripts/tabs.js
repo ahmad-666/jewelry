@@ -1,11 +1,11 @@
-import FontFaceObserver from 'fontfaceobserver';
+//import FontFaceObserver from 'fontfaceobserver';
 let tabTriggers = document.querySelectorAll('.tab') ;
 let contentWrapper = document.querySelector('.content') ;
 let tabContents = document.querySelectorAll('.tab_content') ;
-let font = new FontFaceObserver('iranSans');
-font.load().then(function () {
-    contentWrapper.style.height = `${tabContents[0].clientHeight}px` ;
-});
+//let font = new FontFaceObserver('iranSans');
+// font.load().then(function () {
+//     contentWrapper.style.height = `${tabContents[0].clientHeight}px` ;
+// });
 tabTriggers.forEach(tabTrigger => {
     tabTrigger.addEventListener('click',openTab) ;
 });
@@ -22,7 +22,6 @@ function openTab(e){
     tabContents.forEach(tabContent=>{
         if(tabContent!=targetElm) tabContent.classList.remove('show') ;
         else {
-            contentWrapper.style.height = `${targetElm.clientHeight}px` ;
             tabContent.classList.add('show') ;
         }
     })

@@ -106,24 +106,53 @@ body {
   width: 100%;
   margin: 0 auto;
   height: auto;
-  position: relative;
   margin-top: 1em;
 }
 
 #tabs .content .tab_content {
   width: 100%;
   height: auto;
-  position: absolute;
-  right: 0;
-  top: 0;
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
-#tabs .content .tab_content table {
+#tabs .content .tab_content.show {
+  display: block;
+  -webkit-animation: fadeIn .3s linear forwards;
+     -moz-animation: fadeIn .3s linear forwards;
+          animation: fadeIn .3s linear forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#tabs .content .tab_content#info_section table {
   width: auto;
   height: auto;
   margin-top: 1em;
@@ -157,7 +186,7 @@ body {
           align-content: "";
 }
 
-#tabs .content .tab_content table tbody {
+#tabs .content .tab_content#info_section table tbody {
   width: auto;
   height: auto;
   display: -webkit-box;
@@ -190,7 +219,7 @@ body {
           align-content: "";
 }
 
-#tabs .content .tab_content table tbody tr {
+#tabs .content .tab_content#info_section table tbody tr {
   width: auto;
   height: 3em;
   line-height: 3em;
@@ -224,11 +253,11 @@ body {
           align-content: "";
 }
 
-#tabs .content .tab_content table tbody tr:nth-child(odd) {
+#tabs .content .tab_content#info_section table tbody tr:nth-child(odd) {
   background-color: #f4f3f7;
 }
 
-#tabs .content .tab_content table tbody tr th {
+#tabs .content .tab_content#info_section table tbody tr th {
   width: auto;
   height: 100%;
   font-size: 0.9em;
@@ -237,7 +266,7 @@ body {
   padding: 0 4em;
 }
 
-#tabs .content .tab_content table tbody tr td {
+#tabs .content .tab_content#info_section table tbody tr td {
   width: auto;
   height: 100%;
   font-size: 0.8em;
@@ -245,8 +274,24 @@ body {
   padding: 0 8em;
 }
 
-#tabs .content .tab_content.show {
-  visibility: visible;
-  opacity: 1;
+#tabs .content .tab_content#more_info .wrapper {
+  width: 80%;
+  height: auto;
+  margin: 2em auto 0 auto;
+  padding: 0.5em 1em;
+  background-color: white;
+  -webkit-box-shadow: 0 0 0.6em 0.05em rgba(70, 69, 85, 0.3);
+          box-shadow: 0 0 0.6em 0.05em rgba(70, 69, 85, 0.3);
+  border-radius: 0.5em;
+  width: 100%;
+  height: auto;
+  font-size: 0.8em;
+  line-height: 2em;
+  padding: 0.5em;
+  margin: 0;
+  color: #2d2d31;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: none;
 }
 /*# sourceMappingURL=tabs.css.map */

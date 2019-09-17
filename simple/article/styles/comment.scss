@@ -1,306 +1,367 @@
-@import '../../colors.scss';
-@import '../../variables.scss';
-@import '../../mixins.scss';
-
-#comments {
-    width: 100%;
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+#comments{
+    @include containerStyle;
+    width: 100% ;
     height: auto;
-    display: flex;
-    @include flex(column, flex-start, flex-start, nowrap, "");
-    padding: 0 1em 1em 1em;
-    margin-top: $dist3;
-    .add_comment,
-    #user_comment,
-    .comment {
-        margin-top: $dist2;
+    margin: $dist3 auto 0 auto ;
+    padding: $dist2  ;
+    display: flex ;
+    @include flex(column,flex-start,flex-start,nowrap,"") ;
+    #userComment,.comment{
+        margin-top: $dist2 ;
     }
-
-    .add_comment {
-        width: auto;
+    .inputWrapper{
+        width: auto ;
         height: auto;
-        padding: ($dist1 + .2em) ($dist3 + .2em);
-        font-size: $font-l - .1em;
-        border-radius: $dist3;
+        position: relative ;
+        input,textarea{
+            color: $darkColor ;
+            font-size: $font-m ;
+            border: none ;
+            border-bottom: 1.2px solid lighten($greyColor2,25%) ;
+            padding: $dist1 ;
+            transition: all .2s linear ;
+            &:focus{
+                ~.icon{color: $primaryColor;}
+                ~label{
+                    right: $dist1 ;
+                    font-size: $font-m - .2em ;
+                    color: $primaryColor ;
+                    top: 0 ;
+                    transform: translateY(-75%) ;
+                }
+                ~.line{width: 100% ;}
+            }
+        }
+        input.labelHandler,textarea.labelHandler{
+            ~.icon{color: $primaryColor;}
+            ~label{
+                right: $dist1 ;
+                font-size: $font-m - .2em ;
+                color: $primaryColor ;
+                top: 0 ;
+                transform: translateY(-75%) ;
+            }
+            ~.line{width: 100% ;}           
+        }
+        input{padding-right: $dist2 + .5em ;}
+        input#name,input#email{
+            width: 16em ;
+            height: 2.5em;
+        }     
+        textarea{
+            width: 34.5em ;
+            margin: 0 auto ;
+            resize: none;
+            &:focus{
+                border-bottom: 1.2px solid $primaryColor ;
+            }
+        }
+        textarea.autoExpand{
+            height: 4em;
+            max-height: 15em ;
+            overflow: auto;
+        }
+        input.validate.error,textarea.validate.error{
+            border-bottom: 2px solid lighten($redColor2,5%); 
+            ~.icon{color: lighten($redColor2,5%);}
+            ~label{       
+                color: lighten($redColor2,5%) ;           
+            }
+            ~.line{
+                width: 100% ;
+                background-color: lighten($redColor2,5%) ;
+            }        
+        }
+        .icon{
+            font-size: $font-l ;
+            color: lighten($greyColor2,10%) ;
+            @include center-y ;
+            right: .2em ;
+            transition: all .2s linear ;
+        }
+        label{
+            font-size: $font-m - .1em ;
+            color: lighten($greyColor2,10%) ;
+            @include center-y ;
+            right: $dist3 ;
+            transition: all .2s linear ;
+        }
+        .line{
+            width: 0% ;
+            height: 2px ;
+            background-color: $primaryColor ;
+            position: absolute ;
+            right: 0 ;
+            top: calc(100% - 2px) ;
+            transition: all .2s linear ;
+        }
+    }
+    .inputWrapper.textarea{
+        label{
+            right: $dist1 ;
+        }
+    }
+    button[type="submit"]{
+        width: auto ;
+        height: auto;
+        padding: $dist1 + .1em $dist3 + .2em ;
+        font-size: $font-m ;
         cursor: pointer;
-        color: black;
+        color: black ;
+        background-color: $primaryColor ;
+        border-radius: $dist3 ;    
+        margin-top: $dist2 ;   
+    }
+    #addComment{
+        width: auto ;
+        height: auto;
+        font-size: $font-m ;
+        border-radius: $dist3 ;
+        padding: $dist1 + .1em $dist3 + .2em ;
+        cursor: pointer;
+        color: black ;
         background-color: $primaryColor ;
     }
-
-    #user_comment {
-        width: 100%;
-        height: auto;
-        padding: $dist1 $dist1 $dist3 $dist1;
-        
-        margin-top: 0;
-        display: flex;
-        @include flex(column, flex-start, flex-start, nowrap, "");
-        border-bottom: 1px solid $greyColor2;
-
-        .infos,
-        textarea,
-        button[type="submit"] {
-            margin-top: $dist2;
-        }
-
-        .infos {
-            width: 100%;
-            height: auto;
-            display: flex;
-            @include flex(row, flex-start, center, nowrap, "");
-
-            input {
-                width: 45%;
-                height: 3em;
-                border-radius: $dist3;
-                background-color: white;
-                border: 1px solid $greyColor2;
-                padding: $dist1;
-                color: $darkColor;
-                font-size: $font-m + .05em;
-                cursor: pointer;
-
-                &::placeholder {
-                    color: $greyColor2;
-                    font-size: $font-m + .05em;
-                }
-
-                &:nth-child(2) {
-                    margin-right: 10%;
-                }
-            }
-
-            input.error {
-                border: 1.5px solid lighten(crimson, 15%);
-            }
-        }
-
-        textarea {
-            width: 100%;
-            height: 15em;
-            font-size: $font-m;
-            color: $darkColor;
-            padding: $dist1;
-            line-height: $dist3 + .2em;
-            border: 1px solid $greyColor2;
-
-            &::placeholder {
-                font-size: $font-m;
-                color: $greyColor2;
-            }
-        }
-
-        textarea.error {
-            border: 1.5px solid lighten(crimson, 15%);
-        }
-
-        button[type="submit"] {
-            width: auto;
-            height: auto;
-            border-radius: $dist3;
-            padding: ($dist1 + .2em) ($dist3 + .5em);
-            color: $whiteColor2;
-            font-size: $font-l;
-            cursor: pointer;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: $greenColor2;
-        }
-    }
-
-    #user_comment.addTransition {
-        transition: all .4s ease-in-out;
-    }
-
-    #user_comment.hide {
-        height: 0;
-        visibility: hidden;
+    #userComment{
         opacity: 0;
-        padding-bottom: 0;
-    }
-
-    #user_comment.show {
-        visibility: visible;
-        opacity: 1;
-        padding-bottom: $dist3;
-    }
-
-    .comment,.user_reply {
-        padding: $dist2 0;
-        width: 100%;
-        height: auto;
-        display: flex;
-        @include flex(row, flex-start, flex-start, wrap, flex-start);  
-        .img_data {
-            width: auto;
-        }
-
-        p.name {
-            width: 10%;
-            @include ellipse;
-            margin-right: $dist1;
-            transform: translateY(2em);
-        }
-
-        .content {
-            max-width: 75%;
-            margin-right: $dist1;
-        }
-
-        .reply {
-            width: 100%;
-        }
-
-        .img_data {
+        visibility: hidden ;
+        height: 0;
+        transition: all .2s linear; 
+        width: auto ;
+        display: flex ;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        .row{
+            width: 100% ;
             height: auto;
-            display: flex;
-            @include flex(column, flex-start, center, nowrap, "");
-
-            img {
-                width: $dist4;
-                height: $dist4;
-                border-radius: 50%;
+            display: flex ;
+            @include flex(row,flex-start,center,wrap,flex-start) ;
+            margin-top: $dist2 ; 
+            .inputWrapper{
+                &:nth-child(2){margin-right: $dist3 ;}
+            }   
+        }
+        .inputWrapper.textarea{margin-top: $dist3 ;}
+        .score{
+            width: auto ;
+            height: auto;
+            display: flex ;
+            @include flex(row,flex-start,center,nowrap,"") ;
+            margin-top: $dist1 ;
+            p{
+                font-size: $font-m ;
+                color: $darkColor ;
+                transform: translateY(0%) ;
             }
-
-            .date {
-                width: 100%;
-                text-align: center;
-                color: $greyColor2;
-                font-size: $font-m - .1em;
-                margin-top: $dist2;
-            }
-        }
-
-        p.name {
-            height: auto;
-            color: $greyColor2;
-            font-size: $font-m - .1em;
-        }
-
-        .content {
-            height: auto;
-            display: flex;
-            @include flex(column, flex-start, flex-start, nowrap, "");
-
-            .text {
-                width: 100%;
+            .stars{
+                width: auto ;
                 height: auto;
-                color: $darkColor;
-                font-size: $font-m;
-                line-height: $dist3 + .2em;
-            }
-
-            .likes_reply {
-                width: auto;
-                height: auto;
-                margin-top: 0;
-                display: flex;
-                @include flex(row, flex-start, center, nowrap, "");
-
-                .likes,
-                .reply {
-                    width: auto;
-                    height: auto;
-                    display: flex;
-                    @include flex(row, flex-start, center, nowrap, "");
-
-                    i {
-                        font-size: $font-l;
-                        cursor: pointer;
-                        color: $greyColor2;
-                    }
-
-                    i.fa-heart.red {
-                        color: lighten(crimson, 15%);
-                    }
-
-                    p {
-                        font-size: $font-m;
-                        color: $greyColor2;
-                        margin-right: $dist1;
-                    }
-                }
-
-                .reply {
+                display: flex ;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                margin-right: $dist1 ;
+                i{
+                    font-size: $font-m + .1em ;
+                    color: lighten($greyColor2,20%) ;
+                    margin-right: .3em ;
+                    transition: all .15s linear ;
                     cursor: pointer;
-                    margin-right: $dist2;
+                }
+                i.fill{
+                    color: $yellowColor ;
                 }
             }
         }
-
-        form.reply {
-            height: auto;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            @include flex(column, flex-start, flex-start, nowrap, "");
-            padding: $dist1;
-
-            textarea {
-                width: 100%;
-                height: 10em;
-                padding: $dist1;
-                color: $darkColor;
-                font-size: $font-m;
-                border: 1px solid $greyColor2;
-
-                &::placeholder {
-                    font-size: $font-m;
-                    color: $greyColor2;
-                }
-            }
-
-            textarea.error {
-                border: 1.5px solid lighten(crimson, 15%);
-            }
-
-            button[type="submit"] {
-                width: auto;
-                height: auto;
-                cursor: pointer;
-                color: $whiteColor2;
-                border-radius: $dist3;
-                margin-left: auto;
-                margin-right: auto;
-                background-color: $greenColor2;
-                padding: $dist1 $dist3 + .2em;
-                font-size: $font-l;
-                margin-top: $dist2;
-            }
+        button[type="submit"]{
+            margin: $dist2 auto 0 auto ;
         }
-
-        form.reply.hide {
-            opacity: 0;
-            visibility: hidden;
-            height: 0;
-        }
-
-        form.reply.show {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        form.reply.addTransition {
-            transition: all .3s ease-in-out;
-        }
-
-
+    }
+    #userComment.show{
+        opacity: 1;
+        visibility: visible ;
     }
     .comment{
+        width: 100% ;
+        height: auto;
+        display: flex ;
+        @include flex(column,flex-start,center,nowrap,"") ;
         border-bottom: 1px solid lighten($greyColor2,25%) ;
+        margin-top: $dist2 ;
+        padding-bottom: $dist2 ;
         &:last-child{border-bottom: none ;}
-    }
-    .user_reply{
-        // transform: scale(.8);
-        // margin-right: $dist4 ;
-        padding-right: $dist4 ;
-        // border-bottom: 1px solid lighten($greyColor2,30%);
-        // border-top: 1px solid lighten($greyColor2,30%);
-        &:last-child{
-            border-top: none ;
-            border-bottom: none ;
+        .row{
+            width: 100% ;
+            height: auto;
+            display: flex ;
+            @include flex(row,flex-start,flex-start,nowrap,"") ;
+            .userProfile{
+                flex-shrink: 0 ;
+                width: auto ;
+                height: auto;
+                display: flex ;
+                @include flex(row,flex-start,flex-start,nowrap,"") ;
+                img{
+                    width: 3em ;
+                    height: 3em;
+                    border-radius: 50% ;
+                }
+                .userInfo{
+                    width: auto ;
+                    height: auto;
+                    margin-right: $dist1 ;
+                    display: flex ;
+                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                    .name,.date{
+                        font-size: $font-m - .1em ;
+                        color: $greyColor2 ;
+                        &:not(:first-child){
+                            margin-top: 0 ;
+                        }
+                    }
+                    .stars{
+                        width: auto ;
+                        height: auto;
+                        margin-top: 0 ;
+                        display: flex ;
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        i{
+                            font-size: $font-m - .1em ;
+                            color: lighten($greyColor2,20%) ;
+                            margin-right: .1em ;
+                        }
+                        i.fill{
+                            color: $yellowColor ;
+                        }
+                    }
+                }
+            }
+            .content{
+                width: 100% ;
+                height: auto;
+                margin: -$dist1 $dist2 0 0 ;
+                display: flex ;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                p{
+                    width: 100% ;
+                    height: auto;
+                    color: $darkColor ;
+                    font-size: $font-m ;
+                    line-height: $dist3 ;
+                    padding: $dist1 ;
+                }
+                .row{
+                    width: auto ;
+                    height: auto;
+                    display: flex ; 
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    margin-top: 0 ;
+                    .like,.reply{
+                        width: auto ;
+                        height: auto;
+                        display: flex ;
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        margin-right: $dist1 ;                
+                        i{
+                            font-size: $font-l ;
+                            color: $greyColor2 ;
+                        }
+                        .far.fa-heart,.fas.fa-heart{
+                            cursor: pointer;
+                            transition: all .2s linear ;
+                        }
+                        .fas.fa-heart{color: lighten($redColor2,5%) ;}
+                        span{
+                            font-size: $font-m ;
+                            color: $greyColor2 ;
+                            margin-right: $dist1 ;
+                        }
+                    }
+                    .reply{
+                        margin-right: $dist2 + .5em ;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
-
+        .replyForm{
+            opacity: 0;
+            visibility: hidden ;
+            height: 0;
+            transition: all .2s linear ;
+            width: 100% ;
+            margin-top: $dist1  ;
+            display: flex ;
+            @include flex(column,flex-start,center,nowrap,"") ;
+            .inputWrapper.textarea{
+                margin-top: $dist1 ;
+            }
+        }
+        .replyForm.show{
+            opacity: 1;
+            visibility: visible;
+        }
+        .userReply{
+            width: 100% ;
+            margin: $dist2 $dist4 + 2em 0 0;
+            padding-left: $dist3 ;
+        }
+    }
+    .showMore{
+        width: auto ;
+        height: auto;
+        padding: $dist1 + .2em  $dist3  ;
+        margin: $dist3 auto ;
+        border-radius: $dist3 ;
+        font-size: $font-l - .1em ;
+        color: black ;
+        background-color: $primaryColor ;
+        cursor: pointer;
     }
 }
-
+#comments.productComment{
+    background-color: transparent ;
+    box-shadow: none ;
+    margin: 0 auto ;
+}
+#adminApprove{
+    opacity: 0;
+    visibility: hidden ;
+    transition: all .4s linear ;
+    @include containerStyle ;
+    margin: 0 ;
+    padding: $dist1 ;
+    width: 18em ;
+    height: auto;
+    display: flex ;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    position: fixed ;
+    top: 50% ;
+    right: 50%;
+    transform: translate(50%,-50%) ;
+    p,button{
+        margin: $dist2 auto 0 auto ;
+    }
+    .icon{
+        font-size: $font-special ;
+        color: $primaryColor ;
+    }
+    p{
+        font-size: $font-m ;
+        color: $darkColor ;     
+    }
+    button{
+        width: auto ;
+        height: auto;
+        border-radius: $dist3 ;
+        padding: $dist1 $dist3 ;
+        color: black ;
+        background-color: $primaryColor ;
+        font-size: $font-m ;
+        cursor: pointer;
+    }
+}
+#adminApprove.show{
+    opacity: 1;
+    visibility: visible ;
+}
