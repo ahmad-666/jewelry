@@ -5,13 +5,13 @@ form#basket{
     @include containerStyle ;
     width: 80% ;
     height: auto;
-    padding: $dist2 $dist1 ;
+    padding: $dist2 0 ;
     margin: $dist3 auto 0 auto ;
     display: flex ;
     @include flex(column,flex-start,center,nowrap,"") ;
     overflow: hidden;
     #timeline{
-        width: 100% ;
+        width: 95% ;
         height: auto;
         padding: $dist2 0 ;
         display: flex ;
@@ -83,10 +83,12 @@ form#basket{
         @include flex(row,flex-start,flex-start,nowrap,"") ;
         transition: all .5s linear ;
         .slide{
+            border: 1px solid blue ;
             flex-shrink: 0 ;
             width: 100% ;
             height: auto;
             display: flex ;
+            padding: $dist1 ;
             @include flex(column,flex-start,center,nowrap,"") ;
             h4{
                 font-size: $font-xl ;
@@ -123,20 +125,22 @@ form#basket{
                             background-color: darken($whiteColor2,5%) ;
                         }
                         th,td{
+                            border: 1px solid blue ;
                             height: auto;
+                            font-size: 16px !important;
                             &:nth-child(1){
-                                width: 40% ;
+                                width: 100% ;
                             }
                             &:nth-child(2){
                                 flex-shrink: 0 ;
-                                width: 15% ;                          
+                                width: 7em ;                          
                             }
                             &:nth-child(3){
-                                width: 30% ;
+                                width: 50% ;
                             }
                             &:nth-child(4){
                                 flex-shrink: 0 ;
-                                width: 15% ;
+                                width: 5em ;
                             }
                         }
                         th{
@@ -166,7 +170,7 @@ form#basket{
                                     display: flex ;
                                     @include flex(column,flex-start,flex-start,nowrap,"") ;
                                     p{
-                                        font-size: $font-m - .1em;
+                                        font-size: $font-l ;
                                         color: lighten($greyColor2,15%) ;
                                         margin-top: 0 ;
                                         &:first-child{margin-top: 0 ;}
@@ -174,7 +178,6 @@ form#basket{
                                 }
                             }
                             &:nth-child(2){
-                                border: 1px solid blue ;
                                 .input_wrapper{
                                     width: 100% ;
                                     height: 3em ;
@@ -198,7 +201,7 @@ form#basket{
                                         height: 100%;
                                         border-radius: 1px solid lighten($greenColor2,30%) ;
                                         color: $darkColor ;
-                                        font-size: $font-m ;
+                                        font-size: $font-l ;
                                         text-align: center ;
                                         pad: $dist1 ;
                                         border-radius: $dist2 ;
@@ -212,7 +215,7 @@ form#basket{
                                     width: auto ;
                                     height: auto;
                                     color: lightn($greenColor2,15%) ;
-                                    font-size: $font-m ;
+                                    font-size: $font-l ;
                                     margin-top: $dist1 ;
                                     &:first-child{margin-top: 0 ;}
                                 }
@@ -221,7 +224,7 @@ form#basket{
                                 display: flex ;
                                 @include flex(row,center,center,nowrap,"") ;
                                 i{
-                                    color: darken($greenColor2,5%) ;
+                                    color: darken($greyColor2,5%) ;
                                     font-size: $font-xl ;
                                     cursor: pointer;
                                 }
