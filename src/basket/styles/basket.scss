@@ -1,0 +1,500 @@
+@import '../../variables.scss' ;
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+form#basket{
+    @include containerStyle ;
+    width: 80% ;
+    height: auto;
+    padding: $dist2 $dist1 ;
+    margin: $dist3 auto 0 auto ;
+    display: flex ;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    overflow: hidden;
+    #timeline{
+        width: 100% ;
+        height: auto;
+        padding: $dist2 0 ;
+        display: flex ;
+        @include flex(row,space-between,center,nowrap,"") ;
+        position: relative ;
+        &::before{
+            content: '' ;
+            width: 100% ;
+            height: .2em;
+            @include center-y ;
+            right: 0 ;
+            background-color: lighten($greyColor2,35%) ;
+        }
+        .line{
+            // width should be inline
+            height: .2em;
+            background-color: lighten($greenColor2,15%) ;
+            @include center-y ;
+            right: 0 ;
+            transition: all .3s linear ;
+        }
+        .stage{
+            width: auto ;
+            height: auto;
+            position: relative ;
+            display: flex ;
+            @include flex(column,flex-start,center,nowrap,"") ;
+            p{
+                width: 200% ;
+                font-size: $font-m ;
+                color: lighten($greenColor2,25%) ;    
+                transition: all .3s linear ;
+                @include center-x ;
+                top: -70% ;
+                text-align: center ;
+            }
+            .circle{
+                width: 2.5em ;
+                height: 2.5em;
+                border-radius: 50% ;
+                border: 1.2px solid lighten($greenColor2,25%) ;
+                background-color: white ;
+                transition: all .3s linear ;
+                position: relative ;      
+                &::before{
+                    @include center-xy ;
+                    font-size: $font-xl ;
+                    color: $whiteColor2 ;
+                    opacity: 0;
+                    transition: all .3s linear; 
+                }
+            }
+        }
+        .stage.active{
+            p{color: $dark-blue ;}
+            .circle{
+                border: 1.2px solid transparent ;
+                background-color: lighten($greenColor2,5%) ;         
+                &::before{opacity: 1;}
+            }
+        }
+    }
+    .slider{
+        width: 100% ;
+        height: auto;
+        padding: 0 ;
+        margin-top: $dist1 ;
+        display: flex ;
+        @include flex(row,flex-start,flex-start,nowrap,"") ;
+        transition: all .5s linear ;
+        .slide{
+            flex-shrink: 0 ;
+            width: 100% ;
+            height: auto;
+            display: flex ;
+            @include flex(column,flex-start,center,nowrap,"") ;
+            h4{
+                font-size: $font-xl ;
+                color: $darkColor ;
+                font-weight: 700 ;
+            }
+            table{
+                width: 80% ;
+                height: auto;
+                margin-top: $dist2 ;
+                display: flex ;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                p.title{
+                    font-size: $font-m ;
+                    color: $darkColor; 
+                    font-weight: 700 ;
+                }
+                thead,tbody{
+                    width: 100% ;
+                    height: auto;
+                    display: flex ;
+                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                    tr{
+                        width: 100% ;
+                        height: auto;
+                        display: flex ;
+                        @include flex(row,flex-start,flex-start,nowrap,"") ;
+                        border-bottom: 1px solid lighten($greyColor2,30%) ;
+                        padding: $dist1 ;
+                        // &:last-child{border-bottom: none ;}
+                        background-color: transparent ;
+                        transition: all .3s linear ;
+                        &:hover{
+                            background-color: darken($whiteColor2,5%) ;
+                        }
+                        th,td{
+                            height: auto;
+                            &:nth-child(1){
+                                width: 40% ;
+                            }
+                            &:nth-child(2){
+                                flex-shrink: 0 ;
+                                width: 15% ;                          
+                            }
+                            &:nth-child(3){
+                                width: 30% ;
+                            }
+                            &:nth-child(4){
+                                flex-shrink: 0 ;
+                                width: 15% ;
+                            }
+                        }
+                        th{
+                            font-size: $font-m ;
+                            color: $darkColor ;
+                            font-weight: 700 ; 
+                            text-align: center ;     
+                        }
+                        td{
+                            &:nth-child(1){
+                                display: flex ;
+                                @include flex(row,flex-start,center,wrap,flex-start) ;
+                                a{
+                                    width: auto ;
+                                    height: auto;
+                                    img{
+                                        width: 4em ;
+                                        height: 4em;
+                                        border-radius: 50% ;
+                                        transform: translateY(.3em) ;
+                                    }
+                                }         
+                                .info{
+                                    width: auto ;
+                                    height: auto;
+                                    margin-right: $dist1 ;
+                                    display: flex ;
+                                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                                    p{
+                                        font-size: $font-m - .1em;
+                                        color: lighten($greyColor2,15%) ;
+                                        margin-top: 0 ;
+                                        &:first-child{margin-top: 0 ;}
+                                    }
+                                }
+                            }
+                            &:nth-child(2){
+                                border: 1px solid blue ;
+                                .input_wrapper{
+                                    width: 100% ;
+                                    height: 3em ;
+                                    display: flex ;
+                                    @include flex(row,space-around,center,nowrap,"") ;
+                                    i,input{
+                                        margin-right: $dist1 ; 
+                                        &:first-child{margin-right: 0 ;}
+                                    }
+                                    i{
+                                        position: relative ;
+                                        cursor: pointer;
+                                        &::before{
+                                            @include center-xy ;
+                                            font-size: $font-xl ;
+                                            color: $darkColor ;
+                                        }
+                                    }
+                                    input{
+                                        width: 100% ;
+                                        height: 100%;
+                                        border-radius: 1px solid lighten($greenColor2,30%) ;
+                                        color: $darkColor ;
+                                        font-size: $font-m ;
+                                        text-align: center ;
+                                        pad: $dist1 ;
+                                        border-radius: $dist2 ;
+                                    }
+                                }
+                            }
+                            &:nth-child(3){
+                                display: flex ;
+                                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                                p{
+                                    width: auto ;
+                                    height: auto;
+                                    color: lightn($greenColor2,15%) ;
+                                    font-size: $font-m ;
+                                    margin-top: $dist1 ;
+                                    &:first-child{margin-top: 0 ;}
+                                }
+                            }
+                            &:nth-child(4){
+                                display: flex ;
+                                @include flex(row,center,center,nowrap,"") ;
+                                i{
+                                    color: darken($greenColor2,5%) ;
+                                    font-size: $font-xl ;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    } 
+                }
+            }
+            .row{
+                margin-top: $dist2 ;
+                width: 100% ;
+                height: auto;
+                display: flex ;
+                @include flex(row,space-between,center,wrap,flex-start) ;
+                .sum{
+                    width: auto ;
+                    height: auto;
+                    display: flex ;
+                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                    p{
+                        color: $greyColor2 ;
+                        font-size: $font-m ;
+                        &:nth-child(2){
+                            margin-top: $dist1 ;
+                        }
+                    }
+                }
+                *:nth-child(2){margin-right: $dist2 ;}
+                button#removeAll{
+                    width: auto ;
+                    height: auto;
+                    cursor: pointer;
+                    display: flex ;
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    color: lighten($redColor2,10%) ;
+                    i{
+                        font-size: $font-xl ;
+                        transform: translateY(15%) ;
+                    }
+                    p{
+                        font-size: $font-m ;
+                        transform: translateX(-.3em) ;
+                    }
+                }
+            }
+            button.changeSlide{
+                width: auto ;
+                height: auto;
+                border-radius: $dist3 ;
+                color: white ;
+                font-size: $font-l ;
+                padding: $dist1 $dist3 ;      
+                cursor: pointer; 
+                transition: all .3s linear ;
+            }
+            button.changeSlide.prev{
+                background-color: lighten($redColor2,5%) ;
+                &:hover{
+                    color: lighten($redColor2,5%) ;
+                    background-color: white ;
+                    border: 1px solid lighten($redColor2,5%) ;
+                }
+            } 
+            button.changeSlide.next{
+                background-color: lighten($greenColor2,5%) ;
+                &:hover{
+                    color: lighten($greenColor2,5%) ;
+                    background-color: white ;
+                    border: 1px solid lighten($greenColor2,5%) ;
+                }
+            }
+            .input_wrapper{
+                width: auto ;
+                height: auto;
+                position: relative ;
+                input{
+                    color: $darkColor ;
+                    font-size: $font-m ;
+                    padding: $dist1 ;
+                    border: none ;
+                    border-bottom: 1.2px solid lighten($greyColor2,25%) ;
+                    background-color: white ;
+                    transition: all .15s linear ;
+                    &::placeholder{
+                        font-size: $font-m ;
+                        color: $greyColor2 ;
+                    } 
+                }
+                input.error{
+                    border-bottom: 1.2px solid lighten($redColor2,5%) ;
+                }
+            }    
+            .input_wrapper.withSubmit{
+                input{
+                    width: 15em ;
+                    height: 2.5em ;
+                    border-radius: $dist2 ;
+                    border: 1.2px solid lighten($greyColor2,25%) ;
+                    transition: all .15s linear ;  
+                }
+                button#sendDiscount{
+                    width: auto ;
+                    height: 100%;
+                    border-radius: $dist2 ;
+                    font-size: $font-m ;
+                    color: white ;
+                    padding: 0 $dist2 ;
+                    position: absolute ;
+                    left: 0;
+                    top:0 ;
+                }
+            }      
+            .info_wrapper.select{
+                input{cursor: pointer;}
+                i{
+                    @include center-y ;
+                    left: $dist2;
+                    font-size: $font-xl ;
+                    color: $darkColor ;
+                }
+                ul{
+                    opacity: 0;
+                    visibility: hidden ;
+                    transition: all .3s linear ;
+                    display: flex ;
+                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                    box-shadow: 0 .2em .5em -.1em $shadowColor ;
+                    li{
+                        width: 100% ;
+                        height: 2.5em;
+                        padding: 0 $dist1 ;
+                        color: $font-m ;
+                        line-height: 2.5em ;
+                        color: $darkColor ;
+                        transition: all .3s linear ;
+                        border-bottom: 1px solid lighten($greyColor2,30%) ;
+                        background-color: white ;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: darken(white,5%) ;
+                        }
+                    }
+                }
+                ul.show{
+                    opacity: 1;
+                    visibility: visible ;
+                }
+            }
+            .info_wrapper.checkbox{
+                margin-top: $dist1 ;
+                input[type="checkbox"]{
+                    width: 0 ;
+                    height: 0;
+                    display: none ;
+                    &:checked{
+                        ~label{
+                            .rect{
+                                background-color: $primaryColor ;
+                                i{
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+                label{
+                    width: auto ;
+                    height: auto;
+                    display: flex ;
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    .rect{
+                        width: 1.2em ;
+                        height: 1.2em;
+                        border-radius: .3em ;
+                        border: 1px solid $greyColor2 ;
+                        transition: all .2s linear ;
+                        background-color: white ;
+                        position: relative ;
+                        i{
+                            @include center-xy ;
+                            opacity: 0;
+                            color: white ;
+                            font-size: $font-xl ;
+                            transition: all .2s linear ;
+                        }
+                    }
+                    p{
+                        width: auto ;
+                        height: auto;
+                        font-size: $font-m ;
+                        color: $greyColor2 ;
+                        display: flex ;
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        a{
+                            color: $primaryColor ;
+                        }
+                    }
+                }
+            }
+            textarea{
+                width: 20em ;
+                height: 10em;
+                margin-top: $dist1 ;
+                color: $darkColor ;
+                font-size: $font-m ;
+                padding: $dist1 ;
+                border-radius: $dist2 ;
+                border: 1px solid lighten($greyColor2,25%) ;
+                &::placeholder{
+                    font-size: $font-m ;
+                    color: $greyColor2 ;
+                }
+            }
+        }
+        .slide#showBasket{
+            
+        }
+        .slide#sendAddress{
+            .infosWrapper{
+                width: 100% ;
+                height: auto;
+                margin-top: $dist2 ;
+                display: flex ;
+                @include flex(row,flex-start,center,wrap,flex-start) ;
+                .info_wrapper{
+                    margin: $dist1 ;
+                    input{
+                        width: calc((100% - (4 * 1em)) / 4) ;
+                        height: 2.5em;
+                        &:read-only{
+                            background-color: lighten($greyColor2,30%) ;
+                        }
+                    }
+                    input#address{
+                        width: 50% ;
+                    }
+                    .fa-edit{
+                        @include center-y ;
+                        left: $dist2;
+                        font-size: $font-xl ;
+                        cursor: pointer;
+                        color: darken($greyColor2,5%) ;
+                    }
+                }
+            }         
+        }
+        .slide#beforeCheckout{
+            
+        }
+        .slide#confirm{
+            #trackCode{
+                margin-top: $dist2 ;
+                width: auto ;
+                height: auto;
+                padding: $dist1 $dist3 ;
+                border-radius: $dist3 ;
+                display: flex ;
+                @include flex(column,flex-start,center,nowrap,"") ;
+                p{
+                    font-size: $font-m ;
+                    color: $darkColor  ;
+                    &:nth-child(2){margin-top: $dist1 ;}
+                }
+            }
+            >p{
+                font-size: $font-m ;
+                color: $greyColor2 ;
+                display: flex ;
+                @include flex(row,flex-start,start,nowrap,"") ;
+                a{
+                    color: $primaryColor ;
+                }
+            }
+        }
+    }
+}
