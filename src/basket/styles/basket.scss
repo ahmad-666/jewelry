@@ -2,110 +2,109 @@
 @import '../../colors.scss' ;
 @import '../../mixins.scss' ;
 form#basket{
-    @include containerStyle ;
+    @include containerStyle;
     width: 80% ;
     height: auto;
-    padding: $dist2 0 ;
+    padding: $dist2 0;
     margin: $dist3 auto 0 auto ;
+    overflow: hidden;
     display: flex ;
     @include flex(column,flex-start,center,nowrap,"") ;
-    overflow: hidden;
     #timeline{
-        width: 95% ;
+        width: 90% ;
         height: auto;
-        padding: $dist2 0 ;
+        margin-top: $dist1 ;
+        position: relative ;
         display: flex ;
         @include flex(row,space-between,center,nowrap,"") ;
-        position: relative ;
         &::before{
             content: '' ;
             width: 100% ;
-            height: .2em;
+            height: .15em;
             @include center-y ;
             right: 0 ;
             background-color: lighten($greyColor2,35%) ;
         }
         .line{
-            // width should be inline
+            // 'width' is inline
+            display: inline-block ;
             height: .2em;
-            background-color: lighten($greenColor2,15%) ;
+            position: absolute ;
             @include center-y ;
             right: 0 ;
+            background-color: lighten($greenColor2,5%) ;
             transition: all .3s linear ;
         }
         .stage{
             width: auto ;
             height: auto;
             position: relative ;
-            display: flex ;
-            @include flex(column,flex-start,center,nowrap,"") ;
             p{
                 width: 200% ;
+                height: auto;
                 font-size: $font-m ;
-                color: lighten($greenColor2,25%) ;    
-                transition: all .3s linear ;
+                color: lighten($greyColor2,25%) ;
                 @include center-x ;
-                top: -70% ;
+                top: -2em ;
                 text-align: center ;
             }
             .circle{
                 width: 2.5em ;
                 height: 2.5em;
                 border-radius: 50% ;
-                border: 1.2px solid lighten($greenColor2,25%) ;
                 background-color: white ;
+                border: 1.5px solid lighten($greyColor2,25%) ;
                 transition: all .3s linear ;
-                position: relative ;      
-                &::before{
+                position: relative ;
+                i{
                     @include center-xy ;
                     font-size: $font-xl ;
-                    color: $whiteColor2 ;
+                    color: white ;
                     opacity: 0;
-                    transition: all .3s linear; 
+                    transition: all .3s linear ;
+                }
+            }
+            
+        }
+        .stage.active{
+            p{
+                color: darken($greyColor2,15%) ;
+            }
+            .circle{
+                background-color: lighten($greenColor2,5%) ;
+                border: 1.5px solid transparent ;
+                i{
+                    opacity: 1;
                 }
             }
         }
-        .stage.active{
-            p{color: $dark-blue ;}
-            .circle{
-                border: 1.2px solid transparent ;
-                background-color: lighten($greenColor2,5%) ;         
-                &::before{opacity: 1;}
-            }
-        }
-    }
+
+    } 
     .slider{
         width: 100% ;
         height: auto;
-        padding: 0 ;
-        margin-top: $dist1 ;
+        margin-top: $dist1; 
+        // overflow: hidden;
         display: flex ;
         @include flex(row,flex-start,flex-start,nowrap,"") ;
-        transition: all .5s linear ;
+        position: relative ;
+        transition: all .3s linear ;
         .slide{
-            border: 1px solid blue ;
             flex-shrink: 0 ;
             width: 100% ;
             height: auto;
             display: flex ;
-            padding: $dist1 ;
             @include flex(column,flex-start,center,nowrap,"") ;
             h4{
-                font-size: $font-xl ;
+                font-size: $font-l ;
                 color: $darkColor ;
                 font-weight: 700 ;
             }
             table{
-                width: 80% ;
                 height: auto;
-                margin-top: $dist2 ;
+                margin: $dist1 ;
                 display: flex ;
                 @include flex(column,flex-start,flex-start,nowrap,"") ;
-                p.title{
-                    font-size: $font-m ;
-                    color: $darkColor; 
-                    font-weight: 700 ;
-                }
                 thead,tbody{
                     width: 100% ;
                     height: auto;
@@ -114,40 +113,34 @@ form#basket{
                     tr{
                         width: 100% ;
                         height: auto;
+                        padding: $dist1 0 ;
+                        background-color: white ;
+                        border-bottom: 1px solid lighten($greyColor2,25%) ;
                         display: flex ;
-                        @include flex(row,flex-start,flex-start,nowrap,"") ;
-                        border-bottom: 1px solid lighten($greyColor2,30%) ;
-                        padding: $dist1 ;
-                        // &:last-child{border-bottom: none ;}
-                        background-color: transparent ;
-                        transition: all .3s linear ;
-                        &:hover{
-                            background-color: darken($whiteColor2,5%) ;
-                        }
+                        @include flex(row,flex-start,flex-start,nowrap,"") ;           
                         th,td{
-                            border: 1px solid blue ;
                             height: auto;
-                            font-size: 16px !important;
+                            font-size: 16px ;
                             &:nth-child(1){
                                 width: 100% ;
                             }
                             &:nth-child(2){
                                 flex-shrink: 0 ;
-                                width: 7em ;                          
+                                width: 6em ;
+                                margin-right: $dist2 ;
                             }
                             &:nth-child(3){
                                 width: 50% ;
+                                margin-right: $dist3 ;
                             }
                             &:nth-child(4){
                                 flex-shrink: 0 ;
-                                width: 5em ;
+                                width: 3em ;
+                                margin-right: $dist2 ;
                             }
                         }
                         th{
-                            font-size: $font-m ;
-                            color: $darkColor ;
-                            font-weight: 700 ; 
-                            text-align: center ;     
+                            text-align: center;
                         }
                         td{
                             &:nth-child(1){
@@ -156,55 +149,53 @@ form#basket{
                                 a{
                                     width: auto ;
                                     height: auto;
+                                    display: flex ;
                                     img{
-                                        width: 4em ;
-                                        height: 4em;
+                                        width: 5em ;
+                                        height: 5em;
                                         border-radius: 50% ;
-                                        transform: translateY(.3em) ;
                                     }
-                                }         
-                                .info{
+                                }                
+                                .col{
                                     width: auto ;
                                     height: auto;
                                     margin-right: $dist1 ;
                                     display: flex ;
-                                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                                    @include flex(column,flex-start,center,nowrap,"") ;
                                     p{
-                                        font-size: $font-l ;
-                                        color: lighten($greyColor2,15%) ;
-                                        margin-top: 0 ;
-                                        &:first-child{margin-top: 0 ;}
+                                        font-size: $font-l - .1em ;
+                                        color: $greyColor2 ;
                                     }
                                 }
                             }
                             &:nth-child(2){
-                                .input_wrapper{
-                                    width: 100% ;
-                                    height: 3em ;
-                                    display: flex ;
-                                    @include flex(row,space-around,center,nowrap,"") ;
-                                    i,input{
-                                        margin-right: $dist1 ; 
-                                        &:first-child{margin-right: 0 ;}
-                                    }
-                                    i{
-                                        position: relative ;
-                                        cursor: pointer;
-                                        &::before{
-                                            @include center-xy ;
-                                            font-size: $font-xl ;
-                                            color: $darkColor ;
+                                .inputWrapper.numberHandler {
+                                    width: auto;
+                                    height: auto;
+                                    display: flex;
+                                    @include flex(row, space-around, center, nowrap, "");    
+                                    .increase,.decrease,input {
+                                        margin-right: 0;
+                                        &:first-child {
+                                            margin-right: 0;
                                         }
-                                    }
-                                    input{
-                                        width: 100% ;
-                                        height: 100%;
-                                        border-radius: 1px solid lighten($greenColor2,30%) ;
-                                        color: $darkColor ;
-                                        font-size: $font-l ;
-                                        text-align: center ;
-                                        pad: $dist1 ;
-                                        border-radius: $dist2 ;
+                                    }      
+                                    .increase,.decrease {
+                                        font-size: $font-m;
+                                        cursor: pointer;
+                                        color: lighten($darkColor, 5%);
+                                    }                  
+                                    input {
+                                        width: 2em;
+                                        height: 2em;
+                                        text-align: center;
+                                        line-height: 2em;
+                                        color: $darkColor;
+                                        font-size: $font-xl;
+                                        border: 1.2px solid lighten($greyColor2, 20%);               
+                                    }        
+                                    input.error {
+                                        border: 1.2px solid lighten($redColor2, 5%);
                                     }
                                 }
                             }
@@ -214,289 +205,1122 @@ form#basket{
                                 p{
                                     width: auto ;
                                     height: auto;
-                                    color: lightn($greenColor2,15%) ;
-                                    font-size: $font-l ;
+                                    font-size: $font-l - .1em ;
+                                    color: $greyColor2 ;
                                     margin-top: $dist1 ;
-                                    &:first-child{margin-top: 0 ;}
+                                    &:first-child{
+                                        margin-top: 0 ;
+                                        font-size: $font-l + .1em ;
+                                    }
+                                    &:nth-child(2){
+                                        font-size: $font-l - .1em ;
+                                    }
                                 }
                             }
                             &:nth-child(4){
                                 display: flex ;
-                                @include flex(row,center,center,nowrap,"") ;
+                                @include flex(row,space-around,center,nowrap,"") ;
                                 i{
-                                    color: darken($greyColor2,5%) ;
-                                    font-size: $font-xl ;
                                     cursor: pointer;
+                                    font-size: $font-xl ;
+                                    color: $greyColor2 ;
                                 }
                             }
                         }
-                    } 
+                    }
+                }
+                tbody{
+                    tr{
+                        transition: all .3s linear ;
+                        &:hover{
+                            background-color: darken(white,7%) ;
+                        }
+                    }
                 }
             }
             .row{
-                margin-top: $dist2 ;
-                width: 100% ;
                 height: auto;
+                margin-top: $dist1 ;
                 display: flex ;
                 @include flex(row,space-between,center,wrap,flex-start) ;
-                .sum{
+                .totalBasket{
                     width: auto ;
                     height: auto;
                     display: flex ;
                     @include flex(column,flex-start,flex-start,nowrap,"") ;
                     p{
-                        color: $greyColor2 ;
-                        font-size: $font-m ;
+                        &:nth-child(1){
+                            font-size: $font-m ;
+                            color: $greyColor2 ;
+                        }   
                         &:nth-child(2){
-                            margin-top: $dist1 ;
+                            font-size: $font-l ;
+                            color: $darkColor ;
+                            // margin-top: $dist1 ;
                         }
                     }
                 }
-                *:nth-child(2){margin-right: $dist2 ;}
+                .changeSlide{
+                    width: auto ;
+                    height: auto;
+                    padding: $dist1 $dist3  ;
+                    border-radius: $dist3 ;
+                    font-size: $font-m ;
+                    color: white ;
+                    border: 1.2px solid transparent ;
+                    cursor: pointer;
+                    transition: all .2s linear ;
+                }
+                .changeSlide.prev{
+                    background-color: lighten($redColor2,5%) ;
+                    &:hover{
+                        background-color: white ;
+                        color: lighten($redColor2,5%);
+                        border: 1.2px solid lighten($redColor2,5%) ;
+                    }
+                }
+                .changeSlide.next{
+                    background-color: lighten($greenColor2,0%) ;
+                    &:hover{
+                        background-color: white ;
+                        color: lighten($greenColor2,0%);
+                        border: 1.2px solid lighten($greenColor2,0%) ;
+                    }
+                }
+                
+            }
+            .row.start{
+                @include flex(row,flex-start,center,nowrap,"") ;
+            }
+            .row#remove{
+                @include flex(row,flex-end,center,nowrap,"") ;
                 button#removeAll{
                     width: auto ;
                     height: auto;
                     cursor: pointer;
-                    display: flex ;
-                    @include flex(row,flex-start,center,nowrap,"") ;
-                    color: lighten($redColor2,10%) ;
-                    i{
-                        font-size: $font-xl ;
-                        transform: translateY(15%) ;
-                    }
-                    p{
-                        font-size: $font-m ;
-                        transform: translateX(-.3em) ;
-                    }
-                }
-            }
-            button.changeSlide{
-                width: auto ;
-                height: auto;
-                border-radius: $dist3 ;
-                color: white ;
-                font-size: $font-l ;
-                padding: $dist1 $dist3 ;      
-                cursor: pointer; 
-                transition: all .3s linear ;
-            }
-            button.changeSlide.prev{
-                background-color: lighten($redColor2,5%) ;
-                &:hover{
                     color: lighten($redColor2,5%) ;
-                    background-color: white ;
-                    border: 1px solid lighten($redColor2,5%) ;
-                }
-            } 
-            button.changeSlide.next{
-                background-color: lighten($greenColor2,5%) ;
-                &:hover{
-                    color: lighten($greenColor2,5%) ;
-                    background-color: white ;
-                    border: 1px solid lighten($greenColor2,5%) ;
+                    font-size: $font-m ;
+                    background-color: transparent ;
+                    margin-left: $dist2 ;
                 }
             }
-            .input_wrapper{
-                width: auto ;
+            .inputs {
+                width: 100%;
                 height: auto;
-                position: relative ;
-                input{
-                    color: $darkColor ;
-                    font-size: $font-m ;
-                    padding: $dist1 ;
-                    border: none ;
-                    border-bottom: 1.2px solid lighten($greyColor2,25%) ;
-                    background-color: white ;
-                    transition: all .15s linear ;
-                    &::placeholder{
-                        font-size: $font-m ;
-                        color: $greyColor2 ;
-                    } 
+                margin-top: $dist1;
+                display: flex;
+                @include flex(row, flex-start, center, wrap, flex-start);    
+            }
+            .inputWrapper.text {
+                width: auto;
+                height: auto;
+                position: relative;
+                margin: $dist2;
+                input {
+                    width: calc((80vw - (4 * 3em)) / 4);
+                    height: 2.5em;
+                    line-height: 2.5em;
+                    padding: 0 $dist1;
+                    font-size: $font-m;
+                    color: $darkColor;
+                    transition: all .2s linear;
+                    &::placeholder {
+                        color: $greyColor2;
+                        font-size: $font-m;
+                    }
                 }
-                input.error{
-                    border-bottom: 1.2px solid lighten($redColor2,5%) ;
-                }
-            }    
-            .input_wrapper.withSubmit{
-                input{
-                    width: 15em ;
-                    height: 2.5em ;
-                    border-radius: $dist2 ;
-                    border: 1.2px solid lighten($greyColor2,25%) ;
-                    transition: all .15s linear ;  
-                }
-                button#sendDiscount{
-                    width: auto ;
-                    height: 100%;
-                    border-radius: $dist2 ;
-                    font-size: $font-m ;
-                    color: white ;
-                    padding: 0 $dist2 ;
-                    position: absolute ;
-                    left: 0;
-                    top:0 ;
-                }
-            }      
-            .info_wrapper.select{
-                input{cursor: pointer;}
-                i{
-                    @include center-y ;
-                    left: $dist2;
-                    font-size: $font-xl ;
-                    color: $darkColor ;
-                }
-                ul{
-                    opacity: 0;
-                    visibility: hidden ;
-                    transition: all .3s linear ;
-                    display: flex ;
-                    @include flex(column,flex-start,flex-start,nowrap,"") ;
-                    box-shadow: 0 .2em .5em -.1em $shadowColor ;
-                    li{
-                        width: 100% ;
-                        height: 2.5em;
-                        padding: 0 $dist1 ;
-                        color: $font-m ;
-                        line-height: 2.5em ;
-                        color: $darkColor ;
-                        transition: all .3s linear ;
-                        border-bottom: 1px solid lighten($greyColor2,30%) ;
-                        background-color: white ;
-                        cursor: pointer;
-                        &:hover{
-                            background-color: darken(white,5%) ;
+                input.style1 {
+                    border: none;
+                    border-bottom: 1.2px solid lighten($greyColor2, 25%);
+    
+                    &:focus {
+                        ~label {
+                            color: $primaryColor;
+                            font-size: 16px;
+                            bottom: calc(100% + .5em);
+                            transform: translateY(50%);
+                            right: 0;
+                        }
+    
+                        ~.line {
+                            width: 100%;
                         }
                     }
                 }
-                ul.show{
+    
+                input.style2 {
+                    border: 1.2px solid lighten($greyColor2, 25%);
+                    border-radius: $dist3;
+    
+                    &:focus {
+                        border: 1.2px solid $primaryColor;
+    
+                        ~label {
+                            color: $primaryColor;
+                            font-size: 16px;
+                            bottom: calc(100% + 1em);
+                            transform: translateY(50%);
+                            right: 0;
+                        }
+    
+                        ~.line {
+                            width: 0%;
+                        }
+                    }
+                }
+    
+                input.style1.error {
+                    border-bottom: 1.2px solid lighten($redColor2, 5%);
+    
+                    ~label {
+                        color: lighten($redColor2, 5%);
+                    }
+    
+                    ~.line {
+                        background-color: lighten($redColor2, 5%);
+                    }
+                }
+    
+                input.style2.error {
+                    border: 1.2px solid lighten($redColor2, 5%);
+    
+                    ~label {
+                        color: lighten($redColor2, 5%);
+                    }
+                }
+    
+                label {
+                    width: auto;
+                    height: auto;
+                    position: absolute;
+                    right: $dist1;
+                    bottom: 50%;
+                    transform: translateY(50%);
+                    display: flex;
+                    @include flex(row, flex-start, center, nowrap, "");
+                    color: lighten($greyColor2, 20%);
+                    transition: all .2s linear;
+    
+                    .icon {
+                        font-size: $font-m;
+                    }
+    
+                    p {
+                        font-size: $font-m - .1em;
+                        transform: translateX(-.3em);
+                    }
+                }
+    
+                input.style1 {
+                    ~label.top {
+                        font-size: 16px;
+                        bottom: calc(100% + .5em);
+                        transform: translateY(50%);
+                        right: 0;
+                    }
+                }
+    
+                input.style2 {
+                    ~label.top {
+                        font-size: 16px;
+                        bottom: calc(100% + 1em);
+                        transform: translateY(50%);
+                        right: 0;
+                    }
+                }
+    
+                .line {
+                    width: 0%;
+                    height: 1.2px;
+                    background-color: $primaryColor;
+                    position: absolute;
+                    right: 0;
+                    top: calc(100% - .6px);
+                    transition: all .2s linear;
+                }
+    
+                .msg {
+                    width: auto;
+                    height: auto;
+                    border-radius: $dist3;
+                    padding: $dist1 $dist2;
+                    position: relative;
+                    background-color: lighten($redColor2, 5%);
+                    position: absolute;
+                    right: 0;
+                    top: 115%;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .2s linear;
+    
+                    p {
+                        color: $whiteColor2;
+                        font-size: $font-m - .2em;
+                    }
+    
+                    i {
+                        font-size: $font-xl;
+                        color: lighten($redColor2, 5%);
+                        position: absolute;
+                        right: $dist2;
+                        top: calc(0% - .6em);
+                    }
+                }
+    
+                .msg.show {
                     opacity: 1;
-                    visibility: visible ;
+                    visibility: visible;
+                    z-index: 2;
+                }
+            }    
+            .inputWrapper.select {
+                width: auto;
+                height: auto;
+                position: relative;
+                margin: $dist2;
+    
+                input {
+                    width: calc((80vw - (4 * 3em)) / 4);
+                    height: 2.5em;
+                    line-height: 2.5em;
+                    padding: 0 $dist1;
+                    color: $darkColor;
+                    font-size: $font-m;
+                    cursor: pointer;
+                    transition: all .2s linear;
+    
+                    &::placeholder {
+                        font-size: $font-m;
+                        color: $greyColor2;
+                    }
+                }
+    
+                input.style1 {
+                    border: none;
+                    border-bottom: 1.2px solid lighten($greyColor2, 25%);
+    
+                    &:focus {
+                        ~label {
+                            font-size: 16px;
+                            color: $primaryColor;
+                            right: 0;
+                            bottom: calc(100% + 0em);
+                        }
+    
+                        ~.arrow {
+                            color: $primaryColor;
+                        }
+    
+                        ~.line {
+                            width: 100%;
+                        }
+    
+                        ~ul {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+    
+                input.style2 {
+                    border: 1.2px solid lighten($greyColor2, 25%);
+                    border-radius: $dist3;
+    
+                    &:focus {
+                        border: 1.2px solid $primaryColor;
+    
+                        ~label {
+                            font-size: 16px;
+                            color: $primaryColor;
+                            right: 0;
+                            bottom: calc(100% + .5em);
+                        }
+    
+                        ~.arrow {
+                            color: $primaryColor;
+                        }
+    
+                        ~.line {
+                            width: 0%;
+                        }
+    
+                        ~ul {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+    
+                input.style1.error {
+                    ~label {
+                        color: lighten($redColor2, 5%);
+                    }
+    
+                    ~.arrow {
+                        color: lighten($redColor2, 5%);
+                    }
+    
+                    ~.line {
+                        width: 100%;
+                        background-color: lighten($redColor2, 5%);
+                    }
+                }
+    
+                input.style2.error {
+                    border: 1.2px solid lighten($redColor2, 5%);
+    
+                    ~label {
+                        color: lighten($redColor2, 5%);
+                    }
+    
+                    ~.arrow {
+                        color: lighten($redColor2, 5%);
+                    }
+    
+                    ~.line {
+                        background-color: lighten($redColor2, 5%);
+                    }
+                }
+    
+                label {
+                    cursor: pointer;
+                    width: auto;
+                    height: auto;
+                    display: flex;
+                    @include flex(row, flex-start, center, nowrap, "");
+                    color: lighten($greyColor2, 20%);
+                    position: absolute;
+                    right: $dist1;
+                    bottom: 50%;
+                    transform: translateY(50%);
+                    transition: all .2s linear;
+    
+                    .icon {
+                        font-size: $font-m;
+                    }
+    
+                    p {
+                        font-size: $font-m - .1em;
+                        transform: translateX(-.3em);
+                    }
+                }
+    
+                input.style1 {
+                    ~label.top {
+                        font-size: 16px;
+                        right: 0;
+                        bottom: calc(100% + 0em);
+                    }
+                }
+    
+                input.style2 {
+                    ~label.top {
+                        font-size: 16px;
+                        right: 0;
+                        bottom: calc(100% + .5em);
+                    }
+                }
+    
+                .arrow {
+                    cursor: pointer;
+                    font-size: $font-l;
+                    color: lighten($greyColor2, 20%);
+                    @include center-y;
+                    left: $dist1;
+                    transition: all .2s linear;
+                }
+    
+                .line {
+                    width: 0;
+                    height: 1.2px;
+                    background-color: $primaryColor;
+                    position: absolute;
+                    right: 0;
+                    top: calc(100% - .6px);
+                    transition: all .2s linear;
+                }
+    
+                ul {
+                    z-index: 5;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .2s linear;
+                    width: 100%;
+                    max-height: 12em; //7 * 2.5em(height of each <li>)
+                    overflow: auto;
+                    display: flex;
+                    @include flex(column, flex-start, flex-start, nowrap, "");
+                    position: absolute;
+                    top: 105%;
+                    right: 0;
+                    box-shadow: 0 .2em .5em 0em $shadowColor;
+    
+                    li {
+                        width: 100%;
+                        height: 2.5em;
+                        line-height: 2.5em;
+                        padding: 0 $dist1;
+                        font-size: $font-m;
+                        color: $darkColor;
+                        transition: all .2s linear;
+                        cursor: pointer;
+                        background-color: white;
+    
+                        &:hover {
+                            background-color: darken(white, 10%);
+                        }
+                    }
+                }
+    
+                ul.show {
+                    opacity: 1;
+                    visibility: visible;
                 }
             }
-            .info_wrapper.checkbox{
-                margin-top: $dist1 ;
-                input[type="checkbox"]{
-                    width: 0 ;
-                    height: 0;
-                    display: none ;
-                    &:checked{
-                        ~label{
-                            .rect{
-                                background-color: $primaryColor ;
-                                i{
-                                    opacity: 1;
+            .inputWrapper.withSubmit {
+                width: auto;
+                height: auto;
+                position: relative;
+                margin: $dist2;
+    
+                input {
+                    width: calc((80vw - (4 * 3em)) / 4);
+                    height: 2.5em;
+                    line-height: 2.5em;
+                    padding: 0 $dist1;
+                    color: $darkColor;
+                    font-size: $font-m;
+                    border-radius: $dist3;
+                    border: 1.2px solid lighten($greyColor2, 25%);
+                    transition: all .2s linear;
+    
+                    &::placeholder {
+                        font-size: $font-m;
+                        color: $greyColor2;
+                    }
+    
+                    &:focus {
+                        border: 1.2px solid $primaryColor;
+                    }
+                }
+    
+                input.error {
+                    border: 1.2px solid lighten($redColor2, 5%);
+                }
+    
+                button[type="submit"] {
+                    width: auto;
+                    height: calc(100% + .1em);
+                    line-height: 2.5em;
+                    background-color: $primaryColor;
+                    border-radius: $dist3;
+                    padding: 0 $dist2;
+                    position: absolute;
+                    left: -.1em;
+                    top: -.1em;
+                    cursor: pointer;
+    
+                    i {
+                        color: $whiteColor2;
+                        font-size: $font-l;
+                        transform: translateY(.2em);
+                    }
+                }
+    
+                .msg {
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .2s linear;
+                    width: auto;
+                    height: auto;
+                    padding: $dist1 $dist2;
+                    border-radius: $dist3;
+                    background-color: lighten($redColor2, 5%);
+                    position: absolute;
+                    right: 0;
+                    top: 115%;
+    
+                    i {
+                        font-size: $font-l;
+                        color: lighten($redColor2, 5%);
+                        position: absolute;
+                        right: $dist2;
+                        top: -.6em;
+                    }
+    
+                    p {
+                        color: $whiteColor2;
+                        font-size: $font-m - .2em;
+                    }
+                }
+    
+                .msg.show {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            .inputWrapper.numberHandler {
+                width: auto;
+                height: auto;
+                // position: relative ;
+                display: flex;
+                @include flex(row, space-around, center, nowrap, "");
+    
+                .increase,
+                .decrease,
+                input {
+                    margin-right: $dist1;
+    
+                    &:first-child {
+                        margin-right: 0;
+                    }
+                }
+    
+                .increase,
+                .decrease {
+                    font-size: $font-m;
+                    cursor: pointer;
+                    color: lighten($darkColor, 5%);
+                    // color: darken($greyColor2,15%) ;      
+                }
+    
+                input {
+                    width: 2em;
+                    height: 2em;
+                    text-align: center;
+                    line-height: 2em;
+                    color: $darkColor;
+                    font-size: $font-m;
+                    border: 1.2px solid lighten($greyColor2, 20%);
+    
+                }
+    
+                input.error {
+                    border: 1.2px solid lighten($redColor2, 5%);
+                }
+            }
+            .inputWrapper.checkboxes {
+                width: auto;
+                height: auto;
+                display: flex;
+                @include flex(column, flex-start, flex-start, nowrap, "");
+                margin: $dist2;
+    
+                .checkbox {
+                    width: calc((80vw - (4 * 2.4em)) / 4);
+                    height: 2.5em;
+                    padding-right: $dist1;
+    
+                    input[type="checkbox"] {
+                        width: 0;
+                        height: 0;
+                        display: none;
+                    }
+    
+                    input[type="checkbox"].style1 {
+                        &:checked {
+                            ~label {
+                                .rect {
+                                    width: 1.4em;
+                                    height: .6em;
+                                    border-radius: 0;
+                                    border-top: none;
+                                    border-right: none;
+                                    border-left: 1.2px solid $primaryColor;
+                                    border-bottom: 1.2px solid $primaryColor;
+                                    transform: translateY(-.3em) rotate(-45deg);
+                                }
+    
+                                p {
+                                    color: $primaryColor;
                                 }
                             }
                         }
                     }
-                }
-                label{
-                    width: auto ;
-                    height: auto;
-                    display: flex ;
-                    @include flex(row,flex-start,center,nowrap,"") ;
-                    .rect{
-                        width: 1.2em ;
-                        height: 1.2em;
-                        border-radius: .3em ;
-                        border: 1px solid $greyColor2 ;
-                        transition: all .2s linear ;
-                        background-color: white ;
-                        position: relative ;
-                        i{
-                            @include center-xy ;
-                            opacity: 0;
-                            color: white ;
-                            font-size: $font-xl ;
-                            transition: all .2s linear ;
+    
+                    input[type="checkbox"].style2 {
+                        &:checked {
+                            ~label {
+                                .rect {
+                                    border: 1px solid transparent;
+                                    background-color: $primaryColor;
+    
+                                    i {
+                                        opacity: 1;
+                                    }
+                                }
+    
+                                p {
+                                    color: $primaryColor;
+                                }
+                            }
                         }
                     }
-                    p{
-                        width: auto ;
-                        height: auto;
-                        font-size: $font-m ;
-                        color: $greyColor2 ;
-                        display: flex ;
-                        @include flex(row,flex-start,center,nowrap,"") ;
-                        a{
-                            color: $primaryColor ;
-                        }
-                    }
-                }
-            }
-            textarea{
-                width: 20em ;
-                height: 10em;
-                margin-top: $dist1 ;
-                color: $darkColor ;
-                font-size: $font-m ;
-                padding: $dist1 ;
-                border-radius: $dist2 ;
-                border: 1px solid lighten($greyColor2,25%) ;
-                &::placeholder{
-                    font-size: $font-m ;
-                    color: $greyColor2 ;
-                }
-            }
-        }
-        .slide#showBasket{
-            
-        }
-        .slide#sendAddress{
-            .infosWrapper{
-                width: 100% ;
-                height: auto;
-                margin-top: $dist2 ;
-                display: flex ;
-                @include flex(row,flex-start,center,wrap,flex-start) ;
-                .info_wrapper{
-                    margin: $dist1 ;
-                    input{
-                        width: calc((100% - (4 * 1em)) / 4) ;
-                        height: 2.5em;
-                        &:read-only{
-                            background-color: lighten($greyColor2,30%) ;
-                        }
-                    }
-                    input#address{
-                        width: 50% ;
-                    }
-                    .fa-edit{
-                        @include center-y ;
-                        left: $dist2;
-                        font-size: $font-xl ;
+    
+                    label {
                         cursor: pointer;
-                        color: darken($greyColor2,5%) ;
+                        width: 100%;
+                        height: 100%;
+                        line-height: 2.5em;
+                        display: flex;
+                        @include flex(row, flex-start, center, nowrap, "");
+    
+                        .rect {
+                            flex-shrink: 0;
+                            width: 1.2em;
+                            height: 1.2em;
+                            border: 1px solid darken($greyColor2, 15%);
+                            position: relative;
+                            transition: all .2s linear;
+                            border-radius: .3em;
+    
+                            i {
+                                @include center-xy;
+                                opacity: 0;
+                                font-size: $font-m;
+                                color: $whiteColor2;
+                                transition: all .2s linear;
+                            }
+                        }
+    
+                        p {
+                            max-width: calc(100% - .5em - 1.2em - .5em);
+                            @include ellipse;
+                            font-size: $font-m;
+                            color: darken($greyColor2, 15%);
+                            margin-right: $dist1;
+                            transition: all .2s linear;
+                        }
                     }
                 }
-            }         
+            }  
+            .inputWrapper.radios {
+                width: auto;
+                height: auto;
+                margin: $dist2;
+                display: flex;
+                @include flex(column, flex-start, flex-start, nowrap, "");
+    
+                .radio {
+                    width: calc((80vw - (4 * 2.4em)) / 4);
+                    height: 2.5em;
+                    padding-right: $dist1;
+    
+                    input[type="radio"] {
+                        width: 0;
+                        height: 0;
+                        display: none;
+                    }
+    
+                    input[type="radio"].style1 {
+                        ~label {
+                            .circle {
+                                .fill {
+                                    width: 110%;
+                                    height: 110%;
+                                }
+                            }
+                        }
+    
+                        &:checked {
+                            ~label {
+                                .circle {
+                                    border: 1px solid transparent;
+    
+                                    .fill {
+                                        transform: translate(50%, -50%) scale(1);
+                                        opacity: 1;
+                                    }
+                                }
+    
+                                p {
+                                    color: $primaryColor;
+                                }
+                            }
+                        }
+                    }
+    
+                    input[type="radio"].style2 {
+                        ~label {
+                            .circle {
+                                .fill {
+                                    width: 80%;
+                                    height: 80%;
+                                }
+                            }
+                        }
+    
+                        &:checked {
+                            ~label {
+                                .circle {
+                                    border: 1px solid $primaryColor;
+    
+                                    .fill {
+                                        transform: translate(50%, -50%) scale(1);
+                                        opacity: 1;
+                                    }
+                                }
+    
+                                p {
+                                    color: $primaryColor;
+                                }
+                            }
+                        }
+                    }
+    
+                    label {
+                        cursor: pointer;
+                        width: 100%;
+                        height: 100%;
+                        line-height: 2.5em;
+                        display: flex;
+                        @include flex(row, flex-start, center, nowrap, "");
+    
+                        .circle {
+                            flex-shrink: 0;
+                            width: 1.5em;
+                            height: 1.5em;
+                            border-radius: 50%;
+                            border: 1px solid darken($greyColor2, 15%);
+                            transition: all .2s linear;
+                            position: relative;
+                            transition: all .2s linear;
+    
+                            .fill {
+                                border-radius: 50%;
+                                opacity: 0;
+                                background-color: $primaryColor;
+                                position: absolute;
+                                top: 50%;
+                                right: 50%;
+                                transform: translate(50%, -50%) scale(0);
+                                transition: all .2s linear;
+                            }
+                        }
+    
+                        p {
+                            font-size: $font-m;
+                            color: darken($greyColor2, 15%);
+                            margin-right: $dist1;
+                            transition: all .2s linear;
+                        }
+                    }
+                }
+            }       
+            .inputWrapper.toggle {
+                width: auto;
+                height: auto;
+                margin: $dist2;
+                display: flex;
+                @include flex(row, flex-start, center, nowrap, "");
+    
+                .toggleText,
+                .switch {
+                    margin-right: $dist1;
+    
+                    &:first-child {
+                        margin-right: 0;
+                    }
+                }
+    
+                .toggleText {
+                    font-size: $font-m;
+                    color: lighten($greyColor2, 30%);
+                    transition: all .2s linear;
+                }
+    
+                .toggleText.active {
+                    color: darken($greyColor2, 30%);
+                }
+    
+                .switch {
+                    width: 3em;
+                    height: 1.2em;
+                    position: relative;
+                    background-color: $primaryColor;
+                    border-radius: $dist3;
+                    cursor: pointer;
+    
+                    .circle {
+                        width: .9em;
+                        height: .9em;
+                        border-radius: 50%;
+                        background-color: $whiteColor2;
+                        position: absolute;
+                        @include center-y;
+                        transition: all .2s linear;
+                    }
+    
+                    .circle.left {
+                        left: .2em;
+                    }
+    
+                    .circle.right {
+                        left: calc(100% - .9em - .2em);
+                    }
+                }
+            }    
+            .inputWrapper.textarea {
+                width: auto;
+                height: auto;
+                position: relative;
+                margin: $dist2;
+                display: flex;
+    
+                textarea {
+                    width: calc((80vw - (2 * 3.6em)) / 2);
+                    font-size: $font-m;
+                    color: $darkColor;
+                    padding: $dist1;
+                    line-height: $dist3;
+                    transition: all .2s linear;
+                    resize: none;
+    
+                    &::placeholder {
+                        font-size: $font-m;
+                        color: $greyColor2;
+                    }
+                }
+    
+                textarea.style1 {
+                    height: 8em;
+                    border: 1.2px solid lighten($greyColor2, 25%);
+                    border-radius: $dist2;
+    
+                    ~label {
+                        bottom: 100%;
+                        transform: translateY(150%);
+                    }
+    
+                    &:focus {
+                        border: 1.2px solid $primaryColor;
+    
+                        ~label {
+                            font-size: 16px;
+                            right: $dist1;
+                            color: $primaryColor;
+                            bottom: calc(100% + .5em);
+                            transform: translateY(0);
+                        }
+                    }
+                }
+    
+                textarea.style2 {
+                    height: 4em;
+                    max-height: 12em;
+                    overflow: auto;
+                    border: none;
+                    border-bottom: 1.2px solid lighten($greyColor2, 25%);
+    
+                    ~label {
+                        bottom: 50%;
+                        transform: translateY(50%);
+                    }
+    
+                    &:focus {
+                        border-bottom: 1.2px solid $primaryColor;
+    
+                        ~label {
+                            font-size: 16px;
+                            right: 0;
+                            color: $primaryColor;
+                            bottom: calc(100% + 0em);
+                            transform: translateY(0);
+                        }
+    
+                        ~.line {
+                            width: 100%;
+                        }
+                    }
+                }
+    
+                textarea.style1.error {
+                    border: 1.2px solid lighten($redColor2, 5%);
+    
+                    ~label {
+                        color: lighten($redColor2, 5%);
+                    }
+                }
+    
+                textarea.style2.error {
+                    border-bottom: 1.2px solid lighten($redColor2, 5%);
+    
+                    ~label {
+                        color: lighten($redColor2, 5%);
+                    }
+                }
+    
+                textarea.style1 {
+                    ~label.top {
+                        font-size: 16px;
+                        bottom: calc(100% + .5em);
+                        transform: translateY(50%);
+                        right: 0;
+                    }
+                }
+    
+                textarea.style2 {
+                    ~label.top {
+                        font-size: 16px;
+                        bottom: calc(100% + 1em);
+                        transform: translateY(50%);
+                        right: 0;
+                    }
+                }
+    
+                label {
+                    width: auto;
+                    height: auto;
+                    position: absolute;
+                    right: $dist1;
+                    position: absolute;
+                    display: flex;
+                    @include flex(row, flex-start, center, nowrap, "");
+                    transition: all .2s linear;
+                    color: lighten($greyColor2, 25%);
+    
+                    i {
+                        font-size: $font-m;
+                    }
+    
+                    p {
+                        font-size: $font-m - .1em;
+                        transform: translateX(-.3em);
+                    }
+                }
+    
+                .line {
+                    width: 0%;
+                    height: 1.2px;
+                    background-color: $primaryColor;
+                    position: absolute;
+                    right: 0;
+                    top: calc(100% - .6px);
+                    transition: all .2s linear;
+                }
+            }       
+            .inputWrapper.range {
+                width: 100%;
+                height: auto;
+                margin: $dist2;
+                display: flex;
+                @include flex(column, flex-start, center, nowrap, "");
+                h4 {
+                    font-size: $font-l;
+                    font-weight: 700;
+                    color: $darkColor;
+                }
+                .ranger {
+                    width: 100% ;
+                    height: .2em;
+                    margin-top: $dist1;
+                    .noUi-connect {
+                        background-color: $primaryColor;
+                    }
+                    .noUi-handle.circle {
+                        width: 1.2em;
+                        height: 1.2em;
+                        border-radius: 50%;
+                        background-color: $primaryColor;
+                        border: none;
+                        box-shadow: none;
+                        cursor: pointer;
+                        &::before {
+                            display: none;
+                        }
+                        &::after {
+                            display: none;
+                        }
+                        &:focus {
+                            outline: none;
+                            .noUi-tooltip {
+                                outline: none;
+                            }
+                        }
+                    }
+                    .noUi-handle.right {
+                        right: 0;
+                        transform: translate(0%, -40%);
+                        top: 0%;
+                    }
+                    .noUi-handle.left {
+                        left: 0;
+                        top: 0%;
+                        transform: translate(0%, -40%);
+                    }
+                    .noUi-tooltip {
+                        display: none;
+                    }
+                    .noUi-tooltip.newStyle {
+                        font-size: .8em;
+                    }
+                    .noUi-tooltip.right {
+                        transform: translate(-90%, 0);
+                    }
+                    .noUi-tooltip.left {
+                        transform: translate(0%, 0);
+                    }
+                }
+                .text {
+                    width: 100%;
+                    height: auto;
+                    margin-top: $dist2;
+                    text-align: center ;
+                    color: $greyColor2;
+                    font-size: $font-m;
+                }
+            }        
         }
-        .slide#beforeCheckout{
+        .slide#buyBasket{
+            table{
+                width: 80% ;
+            }
+            .row{
+                width: 80% ;
+            }
+        }
+        .slide#address{
+            .row{
+                min-width: 20em ;
+                
+            }
+        }
+        .slide#checkout{
+            table{
+                width: 70% ;
+            }
+            .row{
+                width: 70% ;
+                .inputWrapper.checkboxes,.inputWrapper.select,.inputWrapper.textarea{
+                    margin: 0 ;
+                    margin-top: $dist1 ;
+                }
+            }
             
+
         }
         .slide#confirm{
-            #trackCode{
-                margin-top: $dist2 ;
+            #track,p{
+                margin-top: $dist1 ;
+                &:first-child{margin-top: 0;}
+            }
+            #track{
                 width: auto ;
                 height: auto;
-                padding: $dist1 $dist3 ;
                 border-radius: $dist3 ;
+                background-color: $primaryColor ;
+                padding: .3em $dist3 + 1em;
                 display: flex ;
                 @include flex(column,flex-start,center,nowrap,"") ;
                 p{
                     font-size: $font-m ;
-                    color: $darkColor  ;
-                    &:nth-child(2){margin-top: $dist1 ;}
+                    color: $darkColor ;
+                    margin-top: 0 ;
                 }
             }
-            >p{
+            p{
                 font-size: $font-m ;
                 color: $greyColor2 ;
-                display: flex ;
-                @include flex(row,flex-start,start,nowrap,"") ;
-                a{
-                    color: $primaryColor ;
-                }
             }
         }
     }

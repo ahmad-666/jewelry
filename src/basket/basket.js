@@ -10,6 +10,8 @@ import '../index/styles/copyright.scss' ;
 //load scripts
 import '../index/scripts/header.js' ;
 import '../index/scripts/nav.js' ;
+import '../basket/scripts/timeline.js' ;
+import '../basket/scripts/form.js' ;
 import '../basket/scripts/basket.js' ;
 import '../orders/scripts/main-menu.js' ;
 import '../index/scripts/footer.js' ;
