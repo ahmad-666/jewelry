@@ -1,0 +1,1018 @@
+@import '../../colors.scss';
+@import '../../variables.scss';
+@import '../../mixins.scss';
+form#basket,form#userInfo,form#changePass,form#returnRequest{
+    @include containerStyle;
+    width: 80%;
+    height: auto;
+    padding: $dist1;
+    margin: $sectionsDist auto;
+    display: flex;
+    @include flex(column, flex-start, center, nowrap, "");
+    h4 {
+        font-size: $font-l;
+        font-weight: 700;
+        color: $darkColor;
+    }
+    p.desc{
+        font-size: $font-m ;
+        color: $greyColor2 ;
+    }
+    .inputs {
+        width: 100%;
+        height: auto;
+        margin-top: $dist1;
+        display: flex;
+        @include flex(row, flex-start, center, wrap, flex-start);     
+    }
+    .inputWrapper.text {
+        width: auto;
+        height: auto;
+        position: relative;
+        margin: $dist2;
+        input {
+            width: calc((80vw - (4 * 3em)) / 4);
+            height: 2.5em;
+            line-height: 2.5em;
+            padding: 0 $dist1;
+            font-size: $font-m;
+            color: $darkColor;
+            transition: all .2s linear;
+            &::placeholder {
+                color: $greyColor2;
+                font-size: $font-m;
+            }
+        }
+        input.style1 {
+            border: none;
+            border-bottom: 1.2px solid lighten($greyColor2, 25%);
+
+            &:focus {
+                ~label {
+                    color: $primaryColor;
+                    font-size: 16px;
+                    bottom: calc(100% + .5em);
+                    transform: translateY(50%);
+                    right: 0;
+                }
+
+                ~.line {
+                    width: 100%;
+                }
+            }
+        }
+
+        input.style2 {
+            border: 1.2px solid lighten($greyColor2, 25%);
+            border-radius: $dist3;
+
+            &:focus {
+                border: 1.2px solid $primaryColor;
+
+                ~label {
+                    color: $primaryColor;
+                    font-size: 16px;
+                    bottom: calc(100% + 1em);
+                    transform: translateY(50%);
+                    right: 0;
+                }
+
+                ~.line {
+                    width: 0%;
+                }
+            }
+        }
+
+        input.style1.error {
+            border-bottom: 1.2px solid lighten($redColor2, 5%);
+
+            ~label {
+                color: lighten($redColor2, 5%);
+            }
+
+            ~.line {
+                background-color: lighten($redColor2, 5%);
+            }
+        }
+
+        input.style2.error {
+            border: 1.2px solid lighten($redColor2, 5%);
+
+            ~label {
+                color: lighten($redColor2, 5%);
+            }
+        }
+
+        label {
+            width: auto;
+            height: auto;
+            position: absolute;
+            right: $dist1;
+            bottom: 50%;
+            transform: translateY(50%);
+            display: flex;
+            @include flex(row, flex-start, center, nowrap, "");
+            color: lighten($greyColor2, 20%);
+            transition: all .2s linear;
+
+            .icon {
+                font-size: $font-m;
+            }
+
+            p {
+                font-size: $font-m - .1em;
+                transform: translateX(-.3em);
+            }
+        }
+
+        input.style1 {
+            ~label.top {
+                font-size: 16px;
+                bottom: calc(100% + .5em);
+                transform: translateY(50%);
+                right: 0;
+            }
+        }
+
+        input.style2 {
+            ~label.top {
+                font-size: 16px;
+                bottom: calc(100% + 1em);
+                transform: translateY(50%);
+                right: 0;
+            }
+        }
+
+        .line {
+            width: 0%;
+            height: 1.2px;
+            background-color: $primaryColor;
+            position: absolute;
+            right: 0;
+            top: calc(100% - .6px);
+            transition: all .2s linear;
+        }
+
+        .msg {
+            width: auto;
+            height: auto;
+            border-radius: $dist3;
+            padding: $dist1 $dist2;
+            position: relative;
+            background-color: lighten($redColor2, 5%);
+            position: absolute;
+            right: 0;
+            top: 115%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s linear;
+
+            p {
+                color: $whiteColor2;
+                font-size: $font-m - .2em;
+            }
+
+            i {
+                font-size: $font-xl;
+                color: lighten($redColor2, 5%);
+                position: absolute;
+                right: $dist2;
+                top: calc(0% - .6em);
+            }
+        }
+
+        .msg.show {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+        }
+    }
+    .inputWrapper.select {
+        width: auto;
+        height: auto;
+        position: relative;
+        margin: $dist2;
+
+        input {
+            width: calc((80vw - (4 * 3em)) / 4);
+            height: 2.5em;
+            line-height: 2.5em;
+            padding: 0 $dist1;
+            color: $darkColor;
+            font-size: $font-m;
+            cursor: pointer;
+            transition: all .2s linear;
+
+            &::placeholder {
+                font-size: $font-m;
+                color: $greyColor2;
+            }
+        }
+
+        input.style1 {
+            border: none;
+            border-bottom: 1.2px solid lighten($greyColor2, 25%);
+
+            &:focus {
+                ~label {
+                    font-size: 16px;
+                    color: $primaryColor;
+                    right: 0;
+                    bottom: calc(100% + 0em);
+                }
+
+                ~.arrow {
+                    color: $primaryColor;
+                }
+
+                ~.line {
+                    width: 100%;
+                }
+
+                ~ul {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        input.style2 {
+            border: 1.2px solid lighten($greyColor2, 25%);
+            border-radius: $dist3;
+
+            &:focus {
+                border: 1.2px solid $primaryColor;
+
+                ~label {
+                    font-size: 16px;
+                    color: $primaryColor;
+                    right: 0;
+                    bottom: calc(100% + .5em);
+                }
+
+                ~.arrow {
+                    color: $primaryColor;
+                }
+
+                ~.line {
+                    width: 0%;
+                }
+
+                ~ul {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        input.style1.error {
+            ~label {
+                color: lighten($redColor2, 5%);
+            }
+
+            ~.arrow {
+                color: lighten($redColor2, 5%);
+            }
+
+            ~.line {
+                width: 100%;
+                background-color: lighten($redColor2, 5%);
+            }
+        }
+
+        input.style2.error {
+            border: 1.2px solid lighten($redColor2, 5%);
+
+            ~label {
+                color: lighten($redColor2, 5%);
+            }
+
+            ~.arrow {
+                color: lighten($redColor2, 5%);
+            }
+
+            ~.line {
+                background-color: lighten($redColor2, 5%);
+            }
+        }
+
+        label {
+            cursor: pointer;
+            width: auto;
+            height: auto;
+            display: flex;
+            @include flex(row, flex-start, center, nowrap, "");
+            color: lighten($greyColor2, 20%);
+            position: absolute;
+            right: $dist1;
+            bottom: 50%;
+            transform: translateY(50%);
+            transition: all .2s linear;
+
+            .icon {
+                font-size: $font-m;
+            }
+
+            p {
+                font-size: $font-m - .1em;
+                transform: translateX(-.3em);
+            }
+        }
+
+        input.style1 {
+            ~label.top {
+                font-size: 16px;
+                right: 0;
+                bottom: calc(100% + 0em);
+            }
+        }
+
+        input.style2 {
+            ~label.top {
+                font-size: 16px;
+                right: 0;
+                bottom: calc(100% + .5em);
+            }
+        }
+
+        .arrow {
+            cursor: pointer;
+            font-size: $font-l;
+            color: lighten($greyColor2, 20%);
+            @include center-y;
+            left: $dist1;
+            transition: all .2s linear;
+        }
+
+        .line {
+            width: 0;
+            height: 1.2px;
+            background-color: $primaryColor;
+            position: absolute;
+            right: 0;
+            top: calc(100% - .6px);
+            transition: all .2s linear;
+        }
+
+        ul {
+            z-index: 5;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s linear;
+            width: 100%;
+            max-height: 12em; //7 * 2.5em(height of each <li>)
+            overflow: auto;
+            display: flex;
+            @include flex(column, flex-start, flex-start, nowrap, "");
+            position: absolute;
+            top: 105%;
+            right: 0;
+            box-shadow: 0 .2em .5em 0em $shadowColor;
+
+            li {
+                width: 100%;
+                height: 2.5em;
+                line-height: 2.5em;
+                padding: 0 $dist1;
+                font-size: $font-m;
+                color: $darkColor;
+                transition: all .2s linear;
+                cursor: pointer;
+                background-color: white;
+
+                &:hover {
+                    background-color: darken(white, 10%);
+                }
+            }
+        }
+
+        ul.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .inputWrapper.withSubmit {
+        width: auto;
+        height: auto;
+        position: relative;
+        margin: $dist2;
+
+        input {
+            width: calc((80vw - (4 * 3em)) / 4);
+            height: 2.5em;
+            line-height: 2.5em;
+            padding: 0 $dist1;
+            color: $darkColor;
+            font-size: $font-m;
+            border-radius: $dist3;
+            border: 1.2px solid lighten($greyColor2, 25%);
+            transition: all .2s linear;
+
+            &::placeholder {
+                font-size: $font-m;
+                color: $greyColor2;
+            }
+
+            &:focus {
+                border: 1.2px solid $primaryColor;
+            }
+        }
+
+        input.error {
+            border: 1.2px solid lighten($redColor2, 5%);
+        }
+
+        button[type="submit"] {
+            width: auto;
+            height: calc(100% + .1em);
+            line-height: 2.5em;
+            background-color: $primaryColor;
+            border-radius: $dist3;
+            padding: 0 $dist2;
+            position: absolute;
+            left: -.1em;
+            top: -.1em;
+            cursor: pointer;
+
+            i {
+                color: $whiteColor2;
+                font-size: $font-l;
+                transform: translateY(.2em);
+            }
+        }
+
+        .msg {
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s linear;
+            width: auto;
+            height: auto;
+            padding: $dist1 $dist2;
+            border-radius: $dist3;
+            background-color: lighten($redColor2, 5%);
+            position: absolute;
+            right: 0;
+            top: 115%;
+
+            i {
+                font-size: $font-l;
+                color: lighten($redColor2, 5%);
+                position: absolute;
+                right: $dist2;
+                top: -.6em;
+            }
+
+            p {
+                color: $whiteColor2;
+                font-size: $font-m - .2em;
+            }
+        }
+
+        .msg.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .inputWrapper.numberHandler {
+        width: auto;
+        height: auto;
+        // position: relative ;
+        display: flex;
+        @include flex(row, space-around, center, nowrap, "");
+
+        .increase,
+        .decrease,
+        input {
+            margin-right: $dist1;
+
+            &:first-child {
+                margin-right: 0;
+            }
+        }
+
+        .increase,
+        .decrease {
+            font-size: $font-m;
+            cursor: pointer;
+            color: lighten($darkColor, 5%);
+            // color: darken($greyColor2,15%) ;      
+        }
+
+        input {
+            width: 2em;
+            height: 2em;
+            text-align: center;
+            line-height: 2em;
+            color: $darkColor;
+            font-size: $font-m;
+            border: 1.2px solid lighten($greyColor2, 20%);
+
+        }
+
+        input.error {
+            border: 1.2px solid lighten($redColor2, 5%);
+        }
+    }
+
+    .inputWrapper.checkboxes {
+        width: auto;
+        height: auto;
+        display: flex;
+        @include flex(column, flex-start, flex-start, nowrap, "");
+        margin: $dist2;
+
+        .checkbox {
+            width: calc((80vw - (4 * 2.4em)) / 4);
+            height: 2.5em;
+            padding-right: $dist1;
+
+            input[type="checkbox"] {
+                width: 0;
+                height: 0;
+                display: none;
+            }
+
+            input[type="checkbox"].style1 {
+                &:checked {
+                    ~label {
+                        .rect {
+                            width: 1.4em;
+                            height: .6em;
+                            border-radius: 0;
+                            border-top: none;
+                            border-right: none;
+                            border-left: 1.2px solid $primaryColor;
+                            border-bottom: 1.2px solid $primaryColor;
+                            transform: translateY(-.3em) rotate(-45deg);
+                        }
+
+                        p {
+                            color: $primaryColor;
+                        }
+                    }
+                }
+            }
+
+            input[type="checkbox"].style2 {
+                &:checked {
+                    ~label {
+                        .rect {
+                            border: 1px solid transparent;
+                            background-color: $primaryColor;
+
+                            i {
+                                opacity: 1;
+                            }
+                        }
+
+                        p {
+                            color: $primaryColor;
+                        }
+                    }
+                }
+            }
+
+            label {
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+                line-height: 2.5em;
+                display: flex;
+                @include flex(row, flex-start, center, nowrap, "");
+
+                .rect {
+                    flex-shrink: 0;
+                    width: 1.2em;
+                    height: 1.2em;
+                    border: 1px solid darken($greyColor2, 15%);
+                    position: relative;
+                    transition: all .2s linear;
+                    border-radius: .3em;
+
+                    i {
+                        @include center-xy;
+                        opacity: 0;
+                        font-size: $font-m;
+                        color: $whiteColor2;
+                        transition: all .2s linear;
+                    }
+                }
+
+                p {
+                    max-width: calc(100% - .5em - 1.2em - .5em);
+                    @include ellipse;
+                    font-size: $font-m;
+                    color: darken($greyColor2, 15%);
+                    margin-right: $dist1;
+                    transition: all .2s linear;
+                }
+            }
+        }
+    }
+
+    .inputWrapper.radios {
+        width: auto;
+        height: auto;
+        margin: $dist2;
+        display: flex;
+        @include flex(column, flex-start, flex-start, nowrap, "");
+
+        .radio {
+            width: calc((80vw - (4 * 2.4em)) / 4);
+            height: 2.5em;
+            padding-right: $dist1;
+
+            input[type="radio"] {
+                width: 0;
+                height: 0;
+                display: none;
+            }
+
+            input[type="radio"].style1 {
+                ~label {
+                    .circle {
+                        .fill {
+                            width: 110%;
+                            height: 110%;
+                        }
+                    }
+                }
+
+                &:checked {
+                    ~label {
+                        .circle {
+                            border: 1px solid transparent;
+
+                            .fill {
+                                transform: translate(50%, -50%) scale(1);
+                                opacity: 1;
+                            }
+                        }
+
+                        p {
+                            color: $primaryColor;
+                        }
+                    }
+                }
+            }
+
+            input[type="radio"].style2 {
+                ~label {
+                    .circle {
+                        .fill {
+                            width: 80%;
+                            height: 80%;
+                        }
+                    }
+                }
+
+                &:checked {
+                    ~label {
+                        .circle {
+                            border: 1px solid $primaryColor;
+
+                            .fill {
+                                transform: translate(50%, -50%) scale(1);
+                                opacity: 1;
+                            }
+                        }
+
+                        p {
+                            color: $primaryColor;
+                        }
+                    }
+                }
+            }
+
+            label {
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+                line-height: 2.5em;
+                display: flex;
+                @include flex(row, flex-start, center, nowrap, "");
+
+                .circle {
+                    flex-shrink: 0;
+                    width: 1.5em;
+                    height: 1.5em;
+                    border-radius: 50%;
+                    border: 1px solid darken($greyColor2, 15%);
+                    transition: all .2s linear;
+                    position: relative;
+                    transition: all .2s linear;
+
+                    .fill {
+                        border-radius: 50%;
+                        opacity: 0;
+                        background-color: $primaryColor;
+                        position: absolute;
+                        top: 50%;
+                        right: 50%;
+                        transform: translate(50%, -50%) scale(0);
+                        transition: all .2s linear;
+                    }
+                }
+
+                p {
+                    font-size: $font-m;
+                    color: darken($greyColor2, 15%);
+                    margin-right: $dist1;
+                    transition: all .2s linear;
+                }
+            }
+        }
+    }
+
+    .inputWrapper.toggle {
+        width: auto;
+        height: auto;
+        margin: $dist2;
+        display: flex;
+        @include flex(row, flex-start, center, nowrap, "");
+
+        .toggleText,
+        .switch {
+            margin-right: $dist1;
+
+            &:first-child {
+                margin-right: 0;
+            }
+        }
+
+        .toggleText {
+            font-size: $font-m;
+            color: lighten($greyColor2, 30%);
+            transition: all .2s linear;
+        }
+
+        .toggleText.active {
+            color: darken($greyColor2, 30%);
+        }
+
+        .switch {
+            width: 3em;
+            height: 1.2em;
+            position: relative;
+            background-color: $primaryColor;
+            border-radius: $dist3;
+            cursor: pointer;
+
+            .circle {
+                width: .9em;
+                height: .9em;
+                border-radius: 50%;
+                background-color: $whiteColor2;
+                position: absolute;
+                @include center-y;
+                transition: all .2s linear;
+            }
+
+            .circle.left {
+                left: .2em;
+            }
+
+            .circle.right {
+                left: calc(100% - .9em - .2em);
+            }
+        }
+    }
+
+    .inputWrapper.textarea {
+        width: auto;
+        height: auto;
+        position: relative;
+        margin: $dist2;
+        display: flex;
+
+        textarea {
+            width: calc((80vw - (2 * 3.6em)) / 2);
+            font-size: $font-m;
+            color: $darkColor;
+            padding: $dist1;
+            line-height: $dist3;
+            transition: all .2s linear;
+            resize: none;
+
+            &::placeholder {
+                font-size: $font-m;
+                color: $greyColor2;
+            }
+        }
+
+        textarea.style1 {
+            height: 8em;
+            border: 1.2px solid lighten($greyColor2, 25%);
+            border-radius: $dist2;
+
+            ~label {
+                bottom: 100%;
+                transform: translateY(150%);
+            }
+
+            &:focus {
+                border: 1.2px solid $primaryColor;
+
+                ~label {
+                    font-size: 16px;
+                    right: $dist1;
+                    color: $primaryColor;
+                    bottom: calc(100% + .5em);
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        textarea.style2 {
+            height: 4em;
+            max-height: 12em;
+            overflow: auto;
+            border: none;
+            border-bottom: 1.2px solid lighten($greyColor2, 25%);
+
+            ~label {
+                bottom: 50%;
+                transform: translateY(50%);
+            }
+
+            &:focus {
+                border-bottom: 1.2px solid $primaryColor;
+
+                ~label {
+                    font-size: 16px;
+                    right: 0;
+                    color: $primaryColor;
+                    bottom: calc(100% + 0em);
+                    transform: translateY(0);
+                }
+
+                ~.line {
+                    width: 100%;
+                }
+            }
+        }
+
+        textarea.style1.error {
+            border: 1.2px solid lighten($redColor2, 5%);
+
+            ~label {
+                color: lighten($redColor2, 5%);
+            }
+        }
+
+        textarea.style2.error {
+            border-bottom: 1.2px solid lighten($redColor2, 5%);
+
+            ~label {
+                color: lighten($redColor2, 5%);
+            }
+        }
+
+        textarea.style1 {
+            ~label.top {
+                font-size: 16px;
+                bottom: calc(100% + .5em);
+                transform: translateY(50%);
+                right: 0;
+            }
+        }
+
+        textarea.style2 {
+            ~label.top {
+                font-size: 16px;
+                bottom: calc(100% + 1em);
+                transform: translateY(50%);
+                right: 0;
+            }
+        }
+
+        label {
+            width: auto;
+            height: auto;
+            position: absolute;
+            right: $dist1;
+            position: absolute;
+            display: flex;
+            @include flex(row, flex-start, center, nowrap, "");
+            transition: all .2s linear;
+            color: lighten($greyColor2, 25%);
+
+            i {
+                font-size: $font-m;
+            }
+
+            p {
+                font-size: $font-m - .1em;
+                transform: translateX(-.3em);
+            }
+        }
+
+        .line {
+            width: 0%;
+            height: 1.2px;
+            background-color: $primaryColor;
+            position: absolute;
+            right: 0;
+            top: calc(100% - .6px);
+            transition: all .2s linear;
+        }
+    }
+
+    .inputWrapper.range {
+        width: 100%;
+        height: auto;
+        margin: $dist2;
+        display: flex;
+        @include flex(column, flex-start, center, nowrap, "");
+        h4 {
+            font-size: $font-l;
+            font-weight: 700;
+            color: $darkColor;
+        }
+        .ranger {
+            width: 100% ;
+            height: .2em;
+            margin-top: $dist1;
+            .noUi-connect {
+                background-color: $primaryColor;
+            }
+            .noUi-handle.circle {
+                width: 1.2em;
+                height: 1.2em;
+                border-radius: 50%;
+                background-color: $primaryColor;
+                border: none;
+                box-shadow: none;
+                cursor: pointer;
+                &::before {
+                    display: none;
+                }
+                &::after {
+                    display: none;
+                }
+                &:focus {
+                    outline: none;
+                    .noUi-tooltip {
+                        outline: none;
+                    }
+                }
+            }
+            .noUi-handle.right {
+                right: 0;
+                transform: translate(0%, -40%);
+                top: 0%;
+            }
+            .noUi-handle.left {
+                left: 0;
+                top: 0%;
+                transform: translate(0%, -40%);
+            }
+            .noUi-tooltip {
+                display: none;
+            }
+            .noUi-tooltip.newStyle {
+                font-size: .8em;
+            }
+            .noUi-tooltip.right {
+                transform: translate(-90%, 0);
+            }
+            .noUi-tooltip.left {
+                transform: translate(0%, 0);
+            }
+        }
+        .text {
+            width: 100%;
+            height: auto;
+            margin-top: $dist2;
+            text-align: center ;
+            color: $greyColor2;
+            font-size: $font-m;
+        }
+    }
+    button[type="submit"].final {
+        width: auto;
+        height: auto;
+        padding: .3em $dist3 + .5em;
+        margin: $dist2 auto;
+        border-radius: $dist3;
+        font-size: $font-l;
+        background-color: $primaryColor;
+        color: black;
+        cursor: pointer;
+        border: 1.2px solid transparent;
+        transition: all .3s linear;
+
+        &:hover {
+            color: $primaryColor;
+            background-color: white;
+            border: 1.2px solid $primaryColor;
+        }
+    }
+}
+form#returnRequest{
+    .inputs{
+        @include flex(column, flex-start, flex-start, nowrap, "");     
+    }
+}

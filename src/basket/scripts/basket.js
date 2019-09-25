@@ -1,3 +1,4 @@
+import form from '../../utilities/scripts/form.js' ;
 let basketForm = document.querySelector('form#basket') ;
 let timeline = basketForm.querySelector('#timeline') ;
 let slider = basketForm.querySelector('.slider') ;
@@ -5,6 +6,34 @@ let buyBasketSlide = slider.querySelector('#buyBasket');
 let addressSlide = slider.querySelector('#address');
 let checkoutSlide = slider.querySelector('#checkout');
 let totalBasket = buyBasketSlide.querySelector('.totalBasket') ;
+let addressSubmit = addressSlide.querySelector('button.next') ;
+let validateInputs = addressSlide.querySelectorAll('.validate')
+let addressForm = new form.FormValidate(basketForm,addressSubmit,validateInputs,false) ;
+let selects = document.querySelectorAll('.inputWrapper.select') ;
+selects = [...selects] ;
+selects.forEach(select => {
+    let otherSelects = selects.filter(curr=>{
+        return (curr!=select)
+    });
+    new form.Select(select,otherSelects) ;
+})
+document.querySelectorAll('.labelHandler').forEach(labelHandler => {
+    new form.LabelHandler(labelHandler) ;
+})
+document.querySelectorAll('input[type="number"]').forEach(numberInput => {
+    new form.NumberInput(numberInput) ;
+})
+export default{
+    basketForm,
+    timeline, 
+    slider,
+    buyBasketSlide,
+    addressSlide,
+    checkoutSlide,
+    totalBasket,
+    addressForm,
+    addressSubmit,
+}
 //init table/rows from 'buyBasketSlide'-----------------
 //init table/rows from 'buyBasketSlide'-----------------
 //init table/rows from 'buyBasketSlide'-----------------

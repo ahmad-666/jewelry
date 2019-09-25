@@ -31,6 +31,9 @@ module.exports = {
         'signup' : './src/signup/signup.js' ,    
         'forgetPassword' : './src/forget-password/forget-password.js' ,    
         'basket' : './src/basket/basket.js' ,            
+        'editProfile' : './src/edit-profile/edit-profile.js' ,            
+        'changePassword' : './src/change-password/change-password.js' ,            
+        'returnRequest' : './src/return-request/return-request.js' ,            
     },
     output: {//for each entry point we create one .js bundle(with the same name of entry point)
         filename: '[name].js',
@@ -279,6 +282,24 @@ module.exports = {
             inject: true,
             chunks: ['basket'],
             template: './src/basket/basket.html' //should point to target html file that we want to add <script>,<link>
+        }),
+        new HtmlWebpackPlugin({ //for each .html file we need new instance of 'HtmlWebpackPlugin'
+            filename: 'edit-profile.html' , //name of file inside ./dist folder
+            inject: true,
+            chunks: ['editProfile'],
+            template: './src/edit-profile/edit-profile.html' //should point to target html file that we want to add <script>,<link>
+        }),
+        new HtmlWebpackPlugin({ //for each .html file we need new instance of 'HtmlWebpackPlugin'
+            filename: 'change-password.html' , //name of file inside ./dist folder
+            inject: true,
+            chunks: ['changePassword'],
+            template: './src/change-password/change-password.html' //should point to target html file that we want to add <script>,<link>
+        }),
+        new HtmlWebpackPlugin({ //for each .html file we need new instance of 'HtmlWebpackPlugin'
+            filename: 'return-request.html' , //name of file inside ./dist folder
+            inject: true,
+            chunks: ['returnRequest'],
+            template: './src/return-request/return-request.html' //should point to target html file that we want to add <script>,<link>
         }),
         new CleanWebpackPlugin()
     ]

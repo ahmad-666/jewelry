@@ -1,24 +1,27 @@
 //form validation------------------------------
 //form validation------------------------------
 //form validation------------------------------
-let basketForm = document.querySelector('form#basket') ;
-let slider = basketForm.querySelector('.slider') ;
-let addressSlide = slider.querySelector('#address');
-let simulateSubmit = addressSlide.querySelector('.row button.next') ;
-function FormValidate(form){
+function FormValidate(form,submit,inputs,send){
     this.form = form ;
-    this.inputs = this.form.querySelectorAll('.validate') ;
-    simulateSubmit.addEventListener('click',this.formSubmit.bind(this)) ;
+    this.inputs = inputs ;
+    this.submit = submit ;
+    this.send = send ;
+    this.submit.addEventListener('click',this.formSubmit.bind(this)) ;
+    this.validate = false ;
 }
 FormValidate.prototype.formSubmit = function(e){
     e.preventDefault() ;
-    if(this.allValidate())  ;//this.form.submit() ;
+    if(this.allValidate())  {
+        this.validate = true ;
+        if(this.send) this.form.submit() ;
+    }
 }
 FormValidate.prototype.allValidate = function(){
     let validate = true ;
     for(let i=0 ; i<this.inputs.length ; i++){
         let input = this.inputs[i] ;
         if(!this.validateInput(input)){
+            this.validate = false ;
             validate = false ;
             break ;
         }
@@ -98,23 +101,21 @@ FormValidate.prototype.handleEvent = function(e){
         }       
     }
 }
-document.querySelectorAll('form.validate').forEach(form => {
-    new FormValidate(form) ;
-})
 //select/option------------------------------------------
 //select/option------------------------------------------
 //select/option------------------------------------------
-function Select(wrapper){
+function Select(wrapper,otherSelects){
     this.wrapper = wrapper ;
     this.input = this.wrapper.querySelector('input') ;
     this.label = this.wrapper.querySelector('label') ;
     this.ul = this.wrapper.querySelector('ul') ;
     this.lis = this.ul.querySelectorAll('li') ; 
+    this.otherSelects = otherSelects ;
     this.input.addEventListener('click',this.openMenu.bind(this)) ;
 }
 Select.prototype.openMenu = function(e){
     e.stopPropagation() ;
-    selects.forEach(select => {
+    this.otherSelects.forEach(select => {
         if(select != this.wrapper) select.querySelector('ul').classList.remove('show') ;
     })
     this.ul.classList.add('show') ;
@@ -148,10 +149,6 @@ Select.prototype.handleEvent = function(e){
     }
     
 }
-let selects = document.querySelectorAll('.inputWrapper.select') ;
-selects.forEach(select => {
-    new Select(select) ;
-})
 //label handlers-------------------------------------
 //label handlers-------------------------------------
 //label handlers-------------------------------------
@@ -164,9 +161,6 @@ LabelHandler.prototype.focusLost = function(e){
     if(this.input.value.length!=0) this.label.classList.add('top');
     else this.label.classList.remove('top');
 }
-document.querySelectorAll('.labelHandler').forEach(labelHandler => {
-    new LabelHandler(labelHandler) ;
-})
 //just number on input[type="number"]---------------
 //just number on input[type="number"]---------------
 //just number on input[type="number"]---------------
@@ -177,6 +171,12 @@ function NumberInput(input){
 NumberInput.prototype.justNumber = function(e){
     if(e.key =='e' || e.key=='E') e.preventDefault(); 
 }
-document.querySelectorAll('input[type="number"]').forEach(number => {
-    new NumberInput(number) ;
-})
+//export --------------------------------
+//export --------------------------------
+//export --------------------------------
+export default {
+    FormValidate,
+    Select,
+    LabelHandler,
+    NumberInput,
+}
