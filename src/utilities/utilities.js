@@ -115,5 +115,4 @@ export default{
     getActiveIndex,
     docHandler,
     FormValidation,
-    
 }

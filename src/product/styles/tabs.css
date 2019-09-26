@@ -225,7 +225,7 @@ body {
 }
 
 #tabs .content .tab_content#info_section table {
-  width: auto;
+  width: 25em;
   height: auto;
   margin-top: 1em;
   display: -webkit-box;
@@ -259,7 +259,7 @@ body {
 }
 
 #tabs .content .tab_content#info_section table tbody {
-  width: auto;
+  width: 100%;
   height: auto;
   display: -webkit-box;
   display: -webkit-flex;
@@ -292,9 +292,9 @@ body {
 }
 
 #tabs .content .tab_content#info_section table tbody tr {
-  width: auto;
-  height: 3em;
-  line-height: 3em;
+  width: 100%;
+  height: auto;
+  padding: 0.5em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -330,16 +330,19 @@ body {
 }
 
 #tabs .content .tab_content#info_section table tbody tr th {
-  width: auto;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  width: 10em;
   height: 100%;
   font-size: 0.9em;
   font-weight: 700;
   color: #2d2d31;
-  padding: 0 4em;
+  padding: 0;
 }
 
 #tabs .content .tab_content#info_section table tbody tr td {
-  width: auto;
+  width: 100%;
   height: 100%;
   font-size: 0.8em;
   color: #86878e;

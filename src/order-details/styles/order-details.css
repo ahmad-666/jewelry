@@ -1,1 +1,673 @@
-/* No CSS *//*# sourceMappingURL=order-details.css.map */
+:export {
+  dist1: 0.5em;
+  dist2: 1em;
+  dist3: 2em;
+  dist4: 4em;
+  font-s: 0.6em;
+  font-m: 0.8em;
+  font-l: 1em;
+  font-xl: 1.2em;
+  font-xxl: 2em;
+  font-special: 1.6em;
+  sectionsDist: 4em;
+}
+
+:export {
+  primaryColor: #f0c900;
+  blueColor1: #009CFF;
+  blueColor2: #003DBB;
+  purpleColor1: #6956D8;
+  purpleColor2: #9090C5;
+  purpleColor3: #4a4982;
+  greenColor1: #6BFBCE;
+  greenColor2: #1EC198;
+  redColor1: #FF5198;
+  redColor2: #e74a4a;
+  orangeColor1: #FF846C;
+  orangeColor2: #ff8f00;
+  yellowColor: #f9a825;
+  brownColor: #C99035;
+  paleColor: #f4f3f7;
+  whiteColor1: #f8f8f8;
+  whiteColor2: #fbfbfb;
+  greyColor: #b9b9c1;
+  greyColor2: #86878e;
+  darkColor: #2d2d31;
+  darkBlue: #5d6174;
+  shadowColor: rgba(70, 69, 85, 0.3);
+  shadowColor2: rgba(0, 0, 0, 0.5);
+  blackFilter: rgba(30, 30, 30, 0.8);
+  blackFilter2: rgba(30, 30, 30, 0.6);
+  blackFilter3: rgba(30, 30, 30, 0.7);
+}
+
+:export {
+  primaryColor: #f0c900;
+  blueColor1: #009CFF;
+  blueColor2: #003DBB;
+  purpleColor1: #6956D8;
+  purpleColor2: #9090C5;
+  purpleColor3: #4a4982;
+  greenColor1: #6BFBCE;
+  greenColor2: #1EC198;
+  redColor1: #FF5198;
+  redColor2: #e74a4a;
+  orangeColor1: #FF846C;
+  orangeColor2: #ff8f00;
+  yellowColor: #f9a825;
+  brownColor: #C99035;
+  paleColor: #f4f3f7;
+  whiteColor1: #f8f8f8;
+  whiteColor2: #fbfbfb;
+  greyColor: #b9b9c1;
+  greyColor2: #86878e;
+  darkColor: #2d2d31;
+  darkBlue: #5d6174;
+  shadowColor: rgba(70, 69, 85, 0.3);
+  shadowColor2: rgba(0, 0, 0, 0.5);
+  blackFilter: rgba(30, 30, 30, 0.8);
+  blackFilter2: rgba(30, 30, 30, 0.6);
+  blackFilter3: rgba(30, 30, 30, 0.7);
+}
+
+#generalInfo {
+  width: 80%;
+  height: auto;
+  margin: 2em auto 0 auto;
+  padding: 0.5em 1em;
+  background-color: white;
+  -webkit-box-shadow: 0 0 0.6em 0.05em rgba(70, 69, 85, 0.3);
+          box-shadow: 0 0 0.6em 0.05em rgba(70, 69, 85, 0.3);
+  border-radius: 0.5em;
+  width: 80%;
+  height: auto;
+  margin: 2em auto 0 auto;
+  padding: 0.5em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#generalInfo h4 {
+  font-size: 700;
+  font-size: 1em;
+  color: #2d2d31;
+}
+
+#generalInfo .infos {
+  width: 100%;
+  height: auto;
+  margin-top: 0.5em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+}
+
+#generalInfo .infos .info {
+  width: -webkit-calc(100% / 4);
+  width: -moz-calc(100% / 4);
+  width: calc(100% / 4);
+  min-height: 3em;
+  padding: 0 0.5em;
+  overflow: hidden;
+  margin: 0.5em 0;
+  border-right: 1.2px solid #bbbbbf;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#generalInfo .infos .info:first-child {
+  border-right: none;
+}
+
+#generalInfo .infos .info p {
+  text-align: center;
+}
+
+#generalInfo .infos .info p:nth-child(1) {
+  font-size: 0.8em;
+  color: #2d2d31;
+}
+
+#generalInfo .infos .info p:nth-child(2) {
+  font-size: 0.7em;
+  color: #86878e;
+}
+
+#generalInfo .infos .info p.process, #generalInfo .infos .info p.ready, #generalInfo .infos .info p.send {
+  width: auto;
+  height: auto;
+  border-radius: 1em;
+  color: white;
+  padding: 0.3em 1.2em;
+}
+
+#generalInfo .infos .info p.process {
+  background-color: #ff723d;
+}
+
+#generalInfo .infos .info p.ready {
+  background-color: #006db3;
+}
+
+#generalInfo .infos .info p.send {
+  background-color: #1EC198;
+}
+
+#generalInfo .infos .info.special {
+  border-right: 1.2px solid #bbbbbf;
+  border-left: 1.2px solid #bbbbbf;
+}
+
+#generalInfo .infos .info.special p:nth-child(1) {
+  font-size: 0.7em;
+}
+
+#generalInfo .infos .info.special + .info {
+  border-right: none;
+  border-left: none;
+}
+
+#details {
+  width: 80%;
+  height: auto;
+  margin: 2em auto 0 auto;
+  padding: 0.5em 1em;
+  background-color: white;
+  -webkit-box-shadow: 0 0 0.6em 0.05em rgba(70, 69, 85, 0.3);
+          box-shadow: 0 0 0.6em 0.05em rgba(70, 69, 85, 0.3);
+  border-radius: 0.5em;
+  width: 80%;
+  height: auto;
+  padding: 0.5em;
+  margin: 2em auto 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#details h4 {
+  font-size: 1em;
+  color: #2d2d31;
+  font-weight: 700;
+}
+
+#details table {
+  width: 100%;
+  height: auto;
+  margin: 1em auto 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#details table thead, #details table tbody {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#details table thead tr, #details table tbody tr {
+  width: 100%;
+  height: auto;
+  padding: 0.5em;
+  border-bottom: 1px solid #aeaeb3;
+  background-color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#details table thead tr th, #details table thead tr td, #details table tbody tr th, #details table tbody tr td {
+  text-align: center;
+  height: auto;
+  font-size: 16px !important;
+}
+
+#details table thead tr th:nth-child(1), #details table thead tr td:nth-child(1), #details table tbody tr th:nth-child(1), #details table tbody tr td:nth-child(1) {
+  width: 100%;
+}
+
+#details table thead tr th:nth-child(2), #details table thead tr td:nth-child(2), #details table tbody tr th:nth-child(2), #details table tbody tr td:nth-child(2) {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  width: 6em;
+  margin-right: 1em;
+}
+
+#details table thead tr th:nth-child(3), #details table thead tr td:nth-child(3), #details table tbody tr th:nth-child(3), #details table tbody tr td:nth-child(3) {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  width: 12em;
+  margin-right: 2em;
+}
+
+#details table thead tr th:nth-child(4), #details table thead tr td:nth-child(4), #details table tbody tr th:nth-child(4), #details table tbody tr td:nth-child(4) {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  width: 12em;
+  margin-right: 2em;
+}
+
+#details table thead tr th, #details table tbody tr th {
+  font-weight: 700;
+  color: #2d2d31;
+}
+
+#details table thead tr td:nth-child(1), #details table tbody tr td:nth-child(1) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+}
+
+#details table thead tr td:nth-child(1) a, #details table tbody tr td:nth-child(1) a {
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#details table thead tr td:nth-child(1) a img, #details table tbody tr td:nth-child(1) a img {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+}
+
+#details table thead tr td:nth-child(1) .col, #details table tbody tr td:nth-child(1) .col {
+  margin-right: 0.5em;
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#details table thead tr td:nth-child(1) .col p, #details table tbody tr td:nth-child(1) .col p {
+  font-size: 1em;
+  color: #86878e;
+}
+
+#details table thead tr td:nth-child(2) p, #details table tbody tr td:nth-child(2) p {
+  font-size: 1em;
+  color: #2d2d31;
+}
+
+#details table thead tr td:nth-child(3), #details table tbody tr td:nth-child(3) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#details table thead tr td:nth-child(3) p, #details table tbody tr td:nth-child(3) p {
+  font-size: 1em;
+  color: #2d2d31;
+  margin-top: 0.5em;
+}
+
+#details table thead tr td:nth-child(3) p:first-child, #details table tbody tr td:nth-child(3) p:first-child {
+  margin-top: 0;
+}
+
+#details table thead tr td:nth-child(4), #details table tbody tr td:nth-child(4) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#details table thead tr td:nth-child(4) .starsScore, #details table tbody tr td:nth-child(4) .starsScore {
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#details table thead tr td:nth-child(4) .starsScore i, #details table tbody tr td:nth-child(4) .starsScore i {
+  font-size: 1em;
+  color: #d5d5d8;
+  cursor: pointer;
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear;
+  margin-right: .3em;
+}
+
+#details table thead tr td:nth-child(4) .starsScore i:first-child, #details table tbody tr td:nth-child(4) .starsScore i:first-child {
+  margin-right: 0;
+}
+
+#details table thead tr td:nth-child(4) .starsScore i.active, #details table tbody tr td:nth-child(4) .starsScore i.active {
+  color: #f0c900;
+}
+
+#details table thead tr td:nth-child(4) button, #details table tbody tr td:nth-child(4) button {
+  width: auto;
+  height: auto;
+  border-radius: 1em;
+  color: #2d2d31;
+  background-color: #f0c900;
+  padding: 0.3em 2em;
+  font-size: 0.8em;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+#details table tbody tr {
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+#details table tbody tr:hover {
+  background-color: #ebebeb;
+}
+/*# sourceMappingURL=order-details.css.map */
