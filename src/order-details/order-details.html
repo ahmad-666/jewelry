@@ -611,7 +611,7 @@
                 <p>کارت به کارت</p>
                 <p>نحوه پرداخت</p>
             </div>     
-            <div class="info">
+            <div class="info special">
                 <p>
                     آدرس آدرس آدرس أدرس
                     آدرس آدرس آدرس أدرس
@@ -625,12 +625,9 @@
                 <p>کد پستی</p>
             </div>
             <div class="info">           
-                <!-- orangered            
-                darken($blueColor1,25%)               
-                $greenColor2                           -->
-                <p class="process">۱۲۳۴۵۶۷۸۹۰</p>
-                <!-- <p class="ready">۱۲۳۴۵۶۷۸۹۰</p>
-                <p class="send">۱۲۳۴۵۶۷۸۹۰</p> -->
+                <!-- <p class="process">در حال پردازش</p> -->
+                <p class="ready"> آماده ارسال </p>
+                <!-- <p class="send"> ارسال شده </p> -->
                 <p>وضعیت</p>
             </div>
         </div>
@@ -643,12 +640,15 @@
                     <th>نام محصول</th>
                     <th>تعداد</th>
                     <th>قیمت</th>
+                    <th>ثبت امتیاز</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr id="prod1">
                     <td>
-                        <img src="../assets/imgs/amirhossein.jpg" alt="product">
+                        <a href="./product.html">
+                            <img src="../assets/imgs/amirhossein.jpg" alt="product">
+                        </a>
                         <div class="col">
                             <p>نام محصول</p>
                             <p>زنانه-طلا-۱۰۰گرم</p>
@@ -659,7 +659,76 @@
                     </td>
                     <td>
                         <p>3000000تومان</p>
-                        <p>1000000تومان</p>
+                        <p>(قیمت واحد 1000000تومان)</p>
+                    </td>
+                    <td>
+                        <div class="starsScore">
+                            <input type="hidden" id="prod1Score" name="prod1Score">
+                            <i class="fas fa-star star" data-score="1"></i>
+                            <i class="fas fa-star star" data-score="2"></i>
+                            <i class="fas fa-star star" data-score="3"></i>
+                            <i class="fas fa-star star" data-score="4"></i>
+                            <i class="fas fa-star star" data-score="5"></i>
+                        </div>       
+                        <button type="button">ثبت</button>
+                    </td>
+                </tr>
+                <tr id="prod2">
+                    <td>
+                        <a href="./product.html">
+                            <img src="../assets/imgs/amirhossein.jpg" alt="product">
+                        </a>
+                        <div class="col">
+                            <p>نام محصول</p>
+                            <p>زنانه-طلا-۱۰۰گرم</p>
+                        </div>
+                    </td>
+                    <td>
+                        <p>3 عدد</p>
+                    </td>
+                    <td>
+                        <p>3000000تومان</p>
+                        <p>(قیمت واحد 1000000تومان)</p>
+                    </td>
+                    <td>
+                        <div class="starsScore">
+                            <input type="hidden" id="prod2Score" name="prod2Score">
+                            <i class="fas fa-star star" data-score="1"></i>
+                            <i class="fas fa-star star" data-score="2"></i>
+                            <i class="fas fa-star star" data-score="3"></i>
+                            <i class="fas fa-star star" data-score="4"></i>
+                            <i class="fas fa-star star" data-score="5"></i>
+                        </div>       
+                        <button type="button">ثبت</button>
+                    </td>
+                </tr>
+                <tr id="prod3">
+                    <td>
+                        <a href="./product.html">
+                            <img src="../assets/imgs/amirhossein.jpg" alt="product">
+                        </a>
+                        <div class="col">
+                            <p>نام محصول</p>
+                            <p>زنانه-طلا-۱۰۰گرم</p>
+                        </div>
+                    </td>
+                    <td>
+                        <p>3 عدد</p>
+                    </td>
+                    <td>
+                        <p>3000000تومان</p>
+                        <p>(قیمت واحد 1000000تومان)</p>
+                    </td>
+                    <td>
+                        <div class="starsScore">
+                            <input type="hidden" id="prod3Score" name="prod3Score">
+                            <i class="fas fa-star star" data-score="1"></i>
+                            <i class="fas fa-star star" data-score="2"></i>
+                            <i class="fas fa-star star" data-score="3"></i>
+                            <i class="fas fa-star star" data-score="4"></i>
+                            <i class="fas fa-star star" data-score="5"></i>
+                        </div>       
+                        <button type="button">ثبت</button>
                     </td>
                 </tr>
             </tbody>
