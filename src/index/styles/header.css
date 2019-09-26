@@ -404,7 +404,7 @@ header form#search ul#result li a p {
   color: #86878e;
 }
 
-header form#search ul#result.show {
+header form#search ul#result {
   visibility: visible;
   opacity: 1;
 }
