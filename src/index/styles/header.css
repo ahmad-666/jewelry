@@ -82,7 +82,7 @@
 
 header {
   width: 100%;
-  height: 3em;
+  height: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -100,11 +100,11 @@ header {
      -moz-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-flex-wrap: nowrap;
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap;
@@ -115,12 +115,12 @@ header {
   background-color: #fbfbfb;
   -webkit-box-shadow: 0 0.2em 0.2em -0.2em rgba(70, 69, 85, 0.3);
           box-shadow: 0 0.2em 0.2em -0.2em rgba(70, 69, 85, 0.3);
-  padding: 0.5em 1em;
+  padding: 0.5em;
 }
 
 header .helpers {
   width: auto;
-  height: 100%;
+  height: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -194,13 +194,13 @@ header .helpers a:hover {
 }
 
 header .helpers a i {
-  font-size: 1em;
+  font-size: 0.8em;
   color: #f0c900;
 }
 
 header .helpers a p {
   color: #2d2d31;
-  font-size: 0.7em;
+  font-size: 0.6em;
 }
 
 header .helpers a.basket {
@@ -211,26 +211,26 @@ header .helpers a.basket .badge {
   position: absolute;
   top: -25%;
   right: -15%;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.3em;
+  height: 1.3em;
   border-radius: 50%;
   background-color: #f0c900;
   color: #fbfbfb;
-  line-height: 1.5em;
+  line-height: 1.3em;
   text-align: center;
   font-size: 0.8em;
 }
 
 header form#search {
-  width: 25em;
-  height: 100%;
+  width: 18em;
+  height: auto;
   position: relative;
-  margin-right: 2em;
+  margin-right: 0.5em;
 }
 
 header form#search input {
   width: 100%;
-  height: 100%;
+  height: 2.5em;
   font-size: 0.8em;
   color: #2d2d31;
   border: 1px solid #bbbbbf;
@@ -270,7 +270,7 @@ header form#search input::placeholder {
 
 header form#search button[type="submit"] {
   width: auto;
-  height: 100%;
+  height: 105%;
   color: #fbfbfb;
   background-color: #f0c900;
   cursor: pointer;
@@ -418,7 +418,7 @@ header a.logo {
           transform: translateY(-50%);
   left: 0.5em;
   width: auto;
-  height: 100%;
+  height: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -451,7 +451,7 @@ header a.logo {
 
 header a.logo .text {
   width: auto;
-  height: 100%;
+  height: 3em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -498,8 +498,59 @@ header a.logo .text p:last-child {
 }
 
 header a.logo img {
-  width: 5em;
-  height: 100%;
+  width: 6em;
+  height: 3em;
   margin-right: 0.5em;
+}
+
+@media screen and (max-width: 940px) {
+  header {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  header {
+    height: 6.5em;
+  }
+  header form#search {
+    width: 75%;
+    position: absolute;
+    position: absolute;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+       -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+            transform: translateX(50%);
+    bottom: 0.5em;
+    margin-right: 0;
+  }
+  header a.logo {
+    top: 0.5em;
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  header {
+    height: 6.5em;
+  }
+  header form#search {
+    width: 90%;
+  }
+  header a.logo img {
+    width: 4em;
+    height: 3em;
+    margin-right: 0.5em;
+  }
 }
 /*# sourceMappingURL=header.css.map */

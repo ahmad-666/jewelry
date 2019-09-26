@@ -1,0 +1,221 @@
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+@import '../../colors.scss' ;
+#generalInfo{
+    @include containerStyle ;
+    width: 80% ;
+    height: auto;
+    margin: $dist3 auto 0 auto ;
+    padding: $dist1 ;
+    display: flex ;
+    @include flex(column,flex-start,flex-start,nowrap,"") ;
+    h4{
+        font-size: 700 ;
+        font-size: $font-l ;
+        color: $darkColor ;
+    }
+    .infos{
+        width: 100% ;
+        height: auto;
+        margin-top: $dist1 ;
+        display: flex ;
+        @include flex(row,flex-start,flex-start,wrap,flex-start) ;
+        .info{
+            width: calc(100% / 4) ;
+            min-height: 3em;
+            padding: 0 $dist1 ;
+            overflow: hidden;
+            margin: $dist1 0 ;
+            border-right: 1.2px solid lighten($greyColor2,20%) ;
+            &:first-child{border-right: none; }
+            display: flex ;
+            @include flex(column,flex-start,center,nowrap,"") ;
+            p{
+                text-align: center ;
+                &:nth-child(1){
+                    font-size: $font-m ;
+                    color: $darkColor ;
+                }
+                &:nth-child(2){
+                    font-size: $font-m - .1em ;
+                    color: $greyColor2 ;
+                }
+            }
+            p.process,p.ready,p.send{
+                width: auto ;
+                height: auto;
+                border-radius: $dist2 ;
+                color: white ;
+                padding: .3em $dist2 + .2em ;
+            }
+            p.process{background-color: lighten(orangered,12%) ;}
+            p.ready{background-color: darken($blueColor1,15%);}
+            p.send{background-color: $greenColor2 ;}
+        }
+        .info.special{
+            border-right: 1.2px solid lighten($greyColor2,20%) ;
+            border-left: 1.2px solid lighten($greyColor2,20%) ;
+            p{
+                &:nth-child(1){
+                    font-size: $font-m - .1em ;
+                }
+            }
+            
+        }
+        .info.special + .info{
+            border-right: none ;
+            border-left: none ;           
+        }
+    }
+}
+#details{
+    @include containerStyle ;
+    width: 80% ;
+    height: auto;
+    padding: $dist1 ;
+    margin: $dist3 auto 0 auto ;
+    display: flex ;
+    @include flex(column,flex-start,flex-start,nowrap,"") ;
+    h4{
+        font-size: $font-l ;
+        color: $darkColor ;
+        font-weight: 700 ;
+    }
+    table{
+        width: 100% ;
+        height: auto;
+        margin: $dist2 auto 0 auto ;
+        display: flex ;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        thead,tbody{
+            width: 100%; 
+            height: auto;
+            display: flex ;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            tr{
+                width: 100% ;
+                height: auto;
+                padding: $dist1 ;
+                border-bottom: 1px solid lighten($greyColor2,15%) ;
+                background-color: white ;
+                display: flex ;
+                @include flex(row,flex-start,flex-start,nowrap,"") ;
+                th,td{
+                    text-align: center ;
+                    height: auto;
+                    font-size: 16px !important;
+                    &:nth-child(1){
+                        width: 100% ;
+                    }
+                    &:nth-child(2){
+                        flex-shrink: 0 ;
+                        width: 6em ;
+                        margin-right: $dist2 ;
+                    }
+                    &:nth-child(3){
+                        flex-shrink: 0 ;
+                        width: 12em ;
+                        margin-right: $dist3 ;
+                    }
+                    &:nth-child(4){
+                        flex-shrink: 0 ;
+                        width: 12em ;
+                        margin-right: $dist3 ;
+                    }
+                }
+                th{
+                    font-weight: 700 ;
+                    color: $darkColor ;
+                }
+                td{
+                    &:nth-child(1){
+                        display: flex ;
+                        @include flex(row,flex-start,center,wrap,flex-start) ;
+                        a{
+                            width: auto ;
+                            height: auto;
+                            display: flex ;
+                            img{
+                                width: 4em;
+                                height: 4em;
+                                border-radius: 50% ;
+                            }               
+                        }                 
+                        .col{
+                            margin-right: $dist1 ;
+                            width: auto ;
+                            height: auto;
+                            display: flex ;
+                            @include flex(column,flex-start,flex-start,nowrap,"") ;
+                            p{
+                                font-size: $font-l ;
+                                color: $greyColor2 ;
+                            }
+                        }
+                    }
+                    &:nth-child(2){
+                        p{
+                            font-size: $font-l ;
+                            color: $darkColor ;
+                        }
+                    }
+                    &:nth-child(3){
+                        display: flex ;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        p{
+                            font-size: $font-l ;
+                            color: $darkColor ;
+                            margin-top: $dist1 ;
+                            &:first-child{margin-top: 0;}
+                        }
+                    }
+                    &:nth-child(4){
+                        display: flex ;
+                        @include flex(column,flex-start,center,nowrap,"") ;
+                        .starsScore{
+                            width: auto ;
+                            height: auto;
+                            display: flex ;
+                            @include flex(row,flex-start,center,nowrap,"") ;
+                            i{
+                                font-size: $font-l ;
+                                color: lighten($greyColor2,30%) ;
+                                cursor: pointer;
+                                transition: all .15s linear ;
+                                margin-right: .3em ;
+                                &:first-child{margin-right: 0 ;}
+                                // &:hover{
+                                //     color: $primaryColor ;
+                                // }
+                            }
+                            i.active{
+                                color: $primaryColor ;
+                            }
+                        }
+                        button{
+                            width: auto ;
+                            height: auto;
+                            border-radius: $dist2 ;
+                            color: $darkColor ;
+                            background-color: $primaryColor ;
+                            padding: .3em $dist3 ;
+                            font-size: $font-m ;
+                            cursor: pointer;
+                            margin-top: $dist2 ;
+                        }
+
+                    }
+                }
+
+            }
+        }
+        tbody{
+            tr{
+                transition: all .3s linear ;
+                &:hover{
+                    background-color: darken(white,8%) ;
+                }
+            }
+        }
+    }
+}

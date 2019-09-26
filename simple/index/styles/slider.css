@@ -40,7 +40,7 @@
       -ms-flex-line-pack: "";
           align-content: "";
   position: relative;
-  padding: 0.5em 1em 3em 1em;
+  padding: 0.5em 0 3em 0;
 }
 
 .slider_wrapper#new_product h4,
@@ -146,12 +146,12 @@
 }
 
 .slider_wrapper#new_product .slider .slide, .slider_wrapper#suggestions .slider .slide {
-  width: -webkit-calc((80vw - (5 * 1.25em))/ 5);
-  width: -moz-calc((80vw - (5 * 1.25em))/ 5);
-  width: calc((80vw - (5 * 1.25em))/ 5);
+  width: -webkit-calc((80vw - (5 * 1.1em))/ 5);
+  width: -moz-calc((80vw - (5 * 1.1em))/ 5);
+  width: calc((80vw - (5 * 1.1em))/ 5);
   height: 14em;
   position: relative;
-  margin: 0 .5em;
+  margin: 0 0.5em;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
@@ -192,10 +192,6 @@
   transition: all .4s ease-in-out;
   display: flex;
   border-radius: 0.5em;
-}
-
-.slider_wrapper#new_product .slider .slide:first-child, .slider_wrapper#suggestions .slider .slide:first-child {
-  margin-right: 0;
 }
 
 .slider_wrapper#new_product .slider .slide .not_in_stock, .slider_wrapper#suggestions .slider .slide .not_in_stock {
@@ -410,7 +406,7 @@
       -ms-flex-line-pack: "";
           align-content: "";
   position: relative;
-  padding: 0.5em 1em 3em 1em;
+  padding: 1em 0 3em 0;
 }
 
 .slider_wrapper#latest_articles h4, .slider_wrapper#latest_articles .slider, .slider_wrapper#similars h4, .slider_wrapper#similars .slider {
@@ -510,20 +506,16 @@
 }
 
 .slider_wrapper#latest_articles .slider .slide, .slider_wrapper#similars .slider .slide {
-  width: -webkit-calc((80vw - (4 * 1.3em)) / 4);
-  width: -moz-calc((80vw - (4 * 1.3em)) / 4);
-  width: calc((80vw - (4 * 1.3em)) / 4);
+  width: -webkit-calc((80vw - (4 * 1.1em)) / 4);
+  width: -moz-calc((80vw - (4 * 1.1em)) / 4);
+  width: calc((80vw - (4 * 1.1em)) / 4);
   height: 13em;
   position: relative;
-  margin: 0 .5em;
+  margin: 0 0.5em;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
   border-radius: 1em;
-}
-
-.slider_wrapper#latest_articles .slider .slide:first-child, .slider_wrapper#similars .slider .slide:first-child {
-  margin-right: 0;
 }
 
 .slider_wrapper#latest_articles .slider .slide::before, .slider_wrapper#similars .slider .slide::before {

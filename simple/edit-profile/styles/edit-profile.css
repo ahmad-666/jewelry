@@ -1,0 +1,1817 @@
+:export {
+  dist1: 0.5em;
+  dist2: 1em;
+  dist3: 2em;
+  dist4: 4em;
+  font-s: 0.6em;
+  font-m: 0.8em;
+  font-l: 1em;
+  font-xl: 1.2em;
+  font-xxl: 2em;
+  font-special: 1.6em;
+  sectionsDist: 4em;
+}
+
+:export {
+  primaryColor: #f0c900;
+  blueColor1: #009CFF;
+  blueColor2: #003DBB;
+  purpleColor1: #6956D8;
+  purpleColor2: #9090C5;
+  purpleColor3: #4a4982;
+  greenColor1: #6BFBCE;
+  greenColor2: #1EC198;
+  redColor1: #FF5198;
+  redColor2: #e74a4a;
+  orangeColor1: #FF846C;
+  orangeColor2: #ff8f00;
+  yellowColor: #f9a825;
+  brownColor: #C99035;
+  paleColor: #f4f3f7;
+  whiteColor1: #f8f8f8;
+  whiteColor2: #fbfbfb;
+  greyColor: #b9b9c1;
+  greyColor2: #86878e;
+  darkColor: #2d2d31;
+  darkBlue: #5d6174;
+  shadowColor: rgba(70, 69, 85, 0.3);
+  shadowColor2: rgba(0, 0, 0, 0.5);
+  blackFilter: rgba(30, 30, 30, 0.8);
+  blackFilter2: rgba(30, 30, 30, 0.6);
+  blackFilter3: rgba(30, 30, 30, 0.7);
+}
+
+:export {
+  primaryColor: #f0c900;
+  blueColor1: #009CFF;
+  blueColor2: #003DBB;
+  purpleColor1: #6956D8;
+  purpleColor2: #9090C5;
+  purpleColor3: #4a4982;
+  greenColor1: #6BFBCE;
+  greenColor2: #1EC198;
+  redColor1: #FF5198;
+  redColor2: #e74a4a;
+  orangeColor1: #FF846C;
+  orangeColor2: #ff8f00;
+  yellowColor: #f9a825;
+  brownColor: #C99035;
+  paleColor: #f4f3f7;
+  whiteColor1: #f8f8f8;
+  whiteColor2: #fbfbfb;
+  greyColor: #b9b9c1;
+  greyColor2: #86878e;
+  darkColor: #2d2d31;
+  darkBlue: #5d6174;
+  shadowColor: rgba(70, 69, 85, 0.3);
+  shadowColor2: rgba(0, 0, 0, 0.5);
+  blackFilter: rgba(30, 30, 30, 0.8);
+  blackFilter2: rgba(30, 30, 30, 0.6);
+  blackFilter3: rgba(30, 30, 30, 0.7);
+}
+
+:export {
+  primaryColor: #f0c900;
+  blueColor1: #009CFF;
+  blueColor2: #003DBB;
+  purpleColor1: #6956D8;
+  purpleColor2: #9090C5;
+  purpleColor3: #4a4982;
+  greenColor1: #6BFBCE;
+  greenColor2: #1EC198;
+  redColor1: #FF5198;
+  redColor2: #e74a4a;
+  orangeColor1: #FF846C;
+  orangeColor2: #ff8f00;
+  yellowColor: #f9a825;
+  brownColor: #C99035;
+  paleColor: #f4f3f7;
+  whiteColor1: #f8f8f8;
+  whiteColor2: #fbfbfb;
+  greyColor: #b9b9c1;
+  greyColor2: #86878e;
+  darkColor: #2d2d31;
+  darkBlue: #5d6174;
+  shadowColor: rgba(70, 69, 85, 0.3);
+  shadowColor2: rgba(0, 0, 0, 0.5);
+  blackFilter: rgba(30, 30, 30, 0.8);
+  blackFilter2: rgba(30, 30, 30, 0.6);
+  blackFilter3: rgba(30, 30, 30, 0.7);
+}
+
+:export {
+  dist1: 0.5em;
+  dist2: 1em;
+  dist3: 2em;
+  dist4: 4em;
+  font-s: 0.6em;
+  font-m: 0.8em;
+  font-l: 1em;
+  font-xl: 1.2em;
+  font-xxl: 2em;
+  font-special: 1.6em;
+  sectionsDist: 4em;
+}
+
+:export {
+  primaryColor: #f0c900;
+  blueColor1: #009CFF;
+  blueColor2: #003DBB;
+  purpleColor1: #6956D8;
+  purpleColor2: #9090C5;
+  purpleColor3: #4a4982;
+  greenColor1: #6BFBCE;
+  greenColor2: #1EC198;
+  redColor1: #FF5198;
+  redColor2: #e74a4a;
+  orangeColor1: #FF846C;
+  orangeColor2: #ff8f00;
+  yellowColor: #f9a825;
+  brownColor: #C99035;
+  paleColor: #f4f3f7;
+  whiteColor1: #f8f8f8;
+  whiteColor2: #fbfbfb;
+  greyColor: #b9b9c1;
+  greyColor2: #86878e;
+  darkColor: #2d2d31;
+  darkBlue: #5d6174;
+  shadowColor: rgba(70, 69, 85, 0.3);
+  shadowColor2: rgba(0, 0, 0, 0.5);
+  blackFilter: rgba(30, 30, 30, 0.8);
+  blackFilter2: rgba(30, 30, 30, 0.6);
+  blackFilter3: rgba(30, 30, 30, 0.7);
+}
+
+form#basket, form#userInfo, form#changePass, form#returnRequest {
+  width: 80%;
+  height: auto;
+  margin: 2em auto 0 auto;
+  padding: 0.5em 1em;
+  background-color: white;
+  -webkit-box-shadow: 0 0 0.6em 0.05em rgba(70, 69, 85, 0.3);
+          box-shadow: 0 0 0.6em 0.05em rgba(70, 69, 85, 0.3);
+  border-radius: 0.5em;
+  width: 80%;
+  height: auto;
+  padding: 0.5em;
+  margin: 4em auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+form#basket h4, form#userInfo h4, form#changePass h4, form#returnRequest h4 {
+  font-size: 1em;
+  font-weight: 700;
+  color: #2d2d31;
+}
+
+form#basket p.desc, form#userInfo p.desc, form#changePass p.desc, form#returnRequest p.desc {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputs, form#userInfo .inputs, form#changePass .inputs, form#returnRequest .inputs {
+  width: 100%;
+  height: auto;
+  margin-top: 0.5em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+}
+
+form#basket .inputWrapper.text, form#userInfo .inputWrapper.text, form#changePass .inputWrapper.text, form#returnRequest .inputWrapper.text {
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 1em;
+}
+
+form#basket .inputWrapper.text input, form#userInfo .inputWrapper.text input, form#changePass .inputWrapper.text input, form#returnRequest .inputWrapper.text input {
+  width: -webkit-calc((80vw - (4 * 3em)) / 4);
+  width: -moz-calc((80vw - (4 * 3em)) / 4);
+  width: calc((80vw - (4 * 3em)) / 4);
+  height: 2.5em;
+  line-height: 2.5em;
+  padding: 0 0.5em;
+  font-size: 0.8em;
+  color: #2d2d31;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.text input::-webkit-input-placeholder, form#userInfo .inputWrapper.text input::-webkit-input-placeholder, form#changePass .inputWrapper.text input::-webkit-input-placeholder, form#returnRequest .inputWrapper.text input::-webkit-input-placeholder {
+  color: #86878e;
+  font-size: 0.8em;
+}
+
+form#basket .inputWrapper.text input:-moz-placeholder, form#userInfo .inputWrapper.text input:-moz-placeholder, form#changePass .inputWrapper.text input:-moz-placeholder, form#returnRequest .inputWrapper.text input:-moz-placeholder {
+  color: #86878e;
+  font-size: 0.8em;
+}
+
+form#basket .inputWrapper.text input::-moz-placeholder, form#userInfo .inputWrapper.text input::-moz-placeholder, form#changePass .inputWrapper.text input::-moz-placeholder, form#returnRequest .inputWrapper.text input::-moz-placeholder {
+  color: #86878e;
+  font-size: 0.8em;
+}
+
+form#basket .inputWrapper.text input:-ms-input-placeholder, form#userInfo .inputWrapper.text input:-ms-input-placeholder, form#changePass .inputWrapper.text input:-ms-input-placeholder, form#returnRequest .inputWrapper.text input:-ms-input-placeholder {
+  color: #86878e;
+  font-size: 0.8em;
+}
+
+form#basket .inputWrapper.text input::-ms-input-placeholder, form#userInfo .inputWrapper.text input::-ms-input-placeholder, form#changePass .inputWrapper.text input::-ms-input-placeholder, form#returnRequest .inputWrapper.text input::-ms-input-placeholder {
+  color: #86878e;
+  font-size: 0.8em;
+}
+
+form#basket .inputWrapper.text input::placeholder, form#userInfo .inputWrapper.text input::placeholder, form#changePass .inputWrapper.text input::placeholder, form#returnRequest .inputWrapper.text input::placeholder {
+  color: #86878e;
+  font-size: 0.8em;
+}
+
+form#basket .inputWrapper.text input.style1, form#userInfo .inputWrapper.text input.style1, form#changePass .inputWrapper.text input.style1, form#returnRequest .inputWrapper.text input.style1 {
+  border: none;
+  border-bottom: 1.2px solid #c8c8cc;
+}
+
+form#basket .inputWrapper.text input.style1:focus ~ label, form#userInfo .inputWrapper.text input.style1:focus ~ label, form#changePass .inputWrapper.text input.style1:focus ~ label, form#returnRequest .inputWrapper.text input.style1:focus ~ label {
+  color: #f0c900;
+  font-size: 16px;
+  bottom: -webkit-calc(100% + .5em);
+  bottom: -moz-calc(100% + .5em);
+  bottom: calc(100% + .5em);
+  -webkit-transform: translateY(50%);
+     -moz-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  right: 0;
+}
+
+form#basket .inputWrapper.text input.style1:focus ~ .line, form#userInfo .inputWrapper.text input.style1:focus ~ .line, form#changePass .inputWrapper.text input.style1:focus ~ .line, form#returnRequest .inputWrapper.text input.style1:focus ~ .line {
+  width: 100%;
+}
+
+form#basket .inputWrapper.text input.style2, form#userInfo .inputWrapper.text input.style2, form#changePass .inputWrapper.text input.style2, form#returnRequest .inputWrapper.text input.style2 {
+  border: 1.2px solid #c8c8cc;
+  border-radius: 2em;
+}
+
+form#basket .inputWrapper.text input.style2:focus, form#userInfo .inputWrapper.text input.style2:focus, form#changePass .inputWrapper.text input.style2:focus, form#returnRequest .inputWrapper.text input.style2:focus {
+  border: 1.2px solid #f0c900;
+}
+
+form#basket .inputWrapper.text input.style2:focus ~ label, form#userInfo .inputWrapper.text input.style2:focus ~ label, form#changePass .inputWrapper.text input.style2:focus ~ label, form#returnRequest .inputWrapper.text input.style2:focus ~ label {
+  color: #f0c900;
+  font-size: 16px;
+  bottom: -webkit-calc(100% + 1em);
+  bottom: -moz-calc(100% + 1em);
+  bottom: calc(100% + 1em);
+  -webkit-transform: translateY(50%);
+     -moz-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  right: 0;
+}
+
+form#basket .inputWrapper.text input.style2:focus ~ .line, form#userInfo .inputWrapper.text input.style2:focus ~ .line, form#changePass .inputWrapper.text input.style2:focus ~ .line, form#returnRequest .inputWrapper.text input.style2:focus ~ .line {
+  width: 0%;
+}
+
+form#basket .inputWrapper.text input.style1.error, form#userInfo .inputWrapper.text input.style1.error, form#changePass .inputWrapper.text input.style1.error, form#returnRequest .inputWrapper.text input.style1.error {
+  border-bottom: 1.2px solid #ea6161;
+}
+
+form#basket .inputWrapper.text input.style1.error ~ label, form#userInfo .inputWrapper.text input.style1.error ~ label, form#changePass .inputWrapper.text input.style1.error ~ label, form#returnRequest .inputWrapper.text input.style1.error ~ label {
+  color: #ea6161;
+}
+
+form#basket .inputWrapper.text input.style1.error ~ .line, form#userInfo .inputWrapper.text input.style1.error ~ .line, form#changePass .inputWrapper.text input.style1.error ~ .line, form#returnRequest .inputWrapper.text input.style1.error ~ .line {
+  background-color: #ea6161;
+}
+
+form#basket .inputWrapper.text input.style2.error, form#userInfo .inputWrapper.text input.style2.error, form#changePass .inputWrapper.text input.style2.error, form#returnRequest .inputWrapper.text input.style2.error {
+  border: 1.2px solid #ea6161;
+}
+
+form#basket .inputWrapper.text input.style2.error ~ label, form#userInfo .inputWrapper.text input.style2.error ~ label, form#changePass .inputWrapper.text input.style2.error ~ label, form#returnRequest .inputWrapper.text input.style2.error ~ label {
+  color: #ea6161;
+}
+
+form#basket .inputWrapper.text label, form#userInfo .inputWrapper.text label, form#changePass .inputWrapper.text label, form#returnRequest .inputWrapper.text label {
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 0.5em;
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+     -moz-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+  color: #bbbbbf;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.text label .icon, form#userInfo .inputWrapper.text label .icon, form#changePass .inputWrapper.text label .icon, form#returnRequest .inputWrapper.text label .icon {
+  font-size: 0.8em;
+}
+
+form#basket .inputWrapper.text label p, form#userInfo .inputWrapper.text label p, form#changePass .inputWrapper.text label p, form#returnRequest .inputWrapper.text label p {
+  font-size: 0.7em;
+  -webkit-transform: translateX(-0.3em);
+     -moz-transform: translateX(-0.3em);
+      -ms-transform: translateX(-0.3em);
+          transform: translateX(-0.3em);
+}
+
+form#basket .inputWrapper.text input.style1 ~ label.top, form#userInfo .inputWrapper.text input.style1 ~ label.top, form#changePass .inputWrapper.text input.style1 ~ label.top, form#returnRequest .inputWrapper.text input.style1 ~ label.top {
+  font-size: 16px;
+  bottom: -webkit-calc(100% + .5em);
+  bottom: -moz-calc(100% + .5em);
+  bottom: calc(100% + .5em);
+  -webkit-transform: translateY(50%);
+     -moz-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  right: 0;
+}
+
+form#basket .inputWrapper.text input.style2 ~ label.top, form#userInfo .inputWrapper.text input.style2 ~ label.top, form#changePass .inputWrapper.text input.style2 ~ label.top, form#returnRequest .inputWrapper.text input.style2 ~ label.top {
+  font-size: 16px;
+  bottom: -webkit-calc(100% + 1em);
+  bottom: -moz-calc(100% + 1em);
+  bottom: calc(100% + 1em);
+  -webkit-transform: translateY(50%);
+     -moz-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  right: 0;
+}
+
+form#basket .inputWrapper.text .line, form#userInfo .inputWrapper.text .line, form#changePass .inputWrapper.text .line, form#returnRequest .inputWrapper.text .line {
+  width: 0%;
+  height: 1.2px;
+  background-color: #f0c900;
+  position: absolute;
+  right: 0;
+  top: -webkit-calc(100% - .6px);
+  top: -moz-calc(100% - .6px);
+  top: calc(100% - .6px);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.text .msg, form#userInfo .inputWrapper.text .msg, form#changePass .inputWrapper.text .msg, form#returnRequest .inputWrapper.text .msg {
+  width: auto;
+  height: auto;
+  border-radius: 2em;
+  padding: 0.5em 1em;
+  position: relative;
+  background-color: #ea6161;
+  position: absolute;
+  right: 0;
+  top: 115%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.text .msg p, form#userInfo .inputWrapper.text .msg p, form#changePass .inputWrapper.text .msg p, form#returnRequest .inputWrapper.text .msg p {
+  color: #fbfbfb;
+  font-size: 0.6em;
+}
+
+form#basket .inputWrapper.text .msg i, form#userInfo .inputWrapper.text .msg i, form#changePass .inputWrapper.text .msg i, form#returnRequest .inputWrapper.text .msg i {
+  font-size: 1.2em;
+  color: #ea6161;
+  position: absolute;
+  right: 1em;
+  top: -webkit-calc(0% - .6em);
+  top: -moz-calc(0% - .6em);
+  top: calc(0% - .6em);
+}
+
+form#basket .inputWrapper.text .msg.show, form#userInfo .inputWrapper.text .msg.show, form#changePass .inputWrapper.text .msg.show, form#returnRequest .inputWrapper.text .msg.show {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+form#basket .inputWrapper.select, form#userInfo .inputWrapper.select, form#changePass .inputWrapper.select, form#returnRequest .inputWrapper.select {
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 1em;
+}
+
+form#basket .inputWrapper.select input, form#userInfo .inputWrapper.select input, form#changePass .inputWrapper.select input, form#returnRequest .inputWrapper.select input {
+  width: -webkit-calc((80vw - (4 * 3em)) / 4);
+  width: -moz-calc((80vw - (4 * 3em)) / 4);
+  width: calc((80vw - (4 * 3em)) / 4);
+  height: 2.5em;
+  line-height: 2.5em;
+  padding: 0 0.5em;
+  color: #2d2d31;
+  font-size: 0.8em;
+  cursor: pointer;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.select input::-webkit-input-placeholder, form#userInfo .inputWrapper.select input::-webkit-input-placeholder, form#changePass .inputWrapper.select input::-webkit-input-placeholder, form#returnRequest .inputWrapper.select input::-webkit-input-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.select input:-moz-placeholder, form#userInfo .inputWrapper.select input:-moz-placeholder, form#changePass .inputWrapper.select input:-moz-placeholder, form#returnRequest .inputWrapper.select input:-moz-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.select input::-moz-placeholder, form#userInfo .inputWrapper.select input::-moz-placeholder, form#changePass .inputWrapper.select input::-moz-placeholder, form#returnRequest .inputWrapper.select input::-moz-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.select input:-ms-input-placeholder, form#userInfo .inputWrapper.select input:-ms-input-placeholder, form#changePass .inputWrapper.select input:-ms-input-placeholder, form#returnRequest .inputWrapper.select input:-ms-input-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.select input::-ms-input-placeholder, form#userInfo .inputWrapper.select input::-ms-input-placeholder, form#changePass .inputWrapper.select input::-ms-input-placeholder, form#returnRequest .inputWrapper.select input::-ms-input-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.select input::placeholder, form#userInfo .inputWrapper.select input::placeholder, form#changePass .inputWrapper.select input::placeholder, form#returnRequest .inputWrapper.select input::placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.select input.style1, form#userInfo .inputWrapper.select input.style1, form#changePass .inputWrapper.select input.style1, form#returnRequest .inputWrapper.select input.style1 {
+  border: none;
+  border-bottom: 1.2px solid #c8c8cc;
+}
+
+form#basket .inputWrapper.select input.style1:focus ~ label, form#userInfo .inputWrapper.select input.style1:focus ~ label, form#changePass .inputWrapper.select input.style1:focus ~ label, form#returnRequest .inputWrapper.select input.style1:focus ~ label {
+  font-size: 16px;
+  color: #f0c900;
+  right: 0;
+  bottom: -webkit-calc(100% + 0em);
+  bottom: -moz-calc(100% + 0em);
+  bottom: calc(100% + 0em);
+}
+
+form#basket .inputWrapper.select input.style1:focus ~ .arrow, form#userInfo .inputWrapper.select input.style1:focus ~ .arrow, form#changePass .inputWrapper.select input.style1:focus ~ .arrow, form#returnRequest .inputWrapper.select input.style1:focus ~ .arrow {
+  color: #f0c900;
+}
+
+form#basket .inputWrapper.select input.style1:focus ~ .line, form#userInfo .inputWrapper.select input.style1:focus ~ .line, form#changePass .inputWrapper.select input.style1:focus ~ .line, form#returnRequest .inputWrapper.select input.style1:focus ~ .line {
+  width: 100%;
+}
+
+form#basket .inputWrapper.select input.style1:focus ~ ul, form#userInfo .inputWrapper.select input.style1:focus ~ ul, form#changePass .inputWrapper.select input.style1:focus ~ ul, form#returnRequest .inputWrapper.select input.style1:focus ~ ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+form#basket .inputWrapper.select input.style2, form#userInfo .inputWrapper.select input.style2, form#changePass .inputWrapper.select input.style2, form#returnRequest .inputWrapper.select input.style2 {
+  border: 1.2px solid #c8c8cc;
+  border-radius: 2em;
+}
+
+form#basket .inputWrapper.select input.style2:focus, form#userInfo .inputWrapper.select input.style2:focus, form#changePass .inputWrapper.select input.style2:focus, form#returnRequest .inputWrapper.select input.style2:focus {
+  border: 1.2px solid #f0c900;
+}
+
+form#basket .inputWrapper.select input.style2:focus ~ label, form#userInfo .inputWrapper.select input.style2:focus ~ label, form#changePass .inputWrapper.select input.style2:focus ~ label, form#returnRequest .inputWrapper.select input.style2:focus ~ label {
+  font-size: 16px;
+  color: #f0c900;
+  right: 0;
+  bottom: -webkit-calc(100% + .5em);
+  bottom: -moz-calc(100% + .5em);
+  bottom: calc(100% + .5em);
+}
+
+form#basket .inputWrapper.select input.style2:focus ~ .arrow, form#userInfo .inputWrapper.select input.style2:focus ~ .arrow, form#changePass .inputWrapper.select input.style2:focus ~ .arrow, form#returnRequest .inputWrapper.select input.style2:focus ~ .arrow {
+  color: #f0c900;
+}
+
+form#basket .inputWrapper.select input.style2:focus ~ .line, form#userInfo .inputWrapper.select input.style2:focus ~ .line, form#changePass .inputWrapper.select input.style2:focus ~ .line, form#returnRequest .inputWrapper.select input.style2:focus ~ .line {
+  width: 0%;
+}
+
+form#basket .inputWrapper.select input.style2:focus ~ ul, form#userInfo .inputWrapper.select input.style2:focus ~ ul, form#changePass .inputWrapper.select input.style2:focus ~ ul, form#returnRequest .inputWrapper.select input.style2:focus ~ ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+form#basket .inputWrapper.select input.style1.error ~ label, form#userInfo .inputWrapper.select input.style1.error ~ label, form#changePass .inputWrapper.select input.style1.error ~ label, form#returnRequest .inputWrapper.select input.style1.error ~ label {
+  color: #ea6161;
+}
+
+form#basket .inputWrapper.select input.style1.error ~ .arrow, form#userInfo .inputWrapper.select input.style1.error ~ .arrow, form#changePass .inputWrapper.select input.style1.error ~ .arrow, form#returnRequest .inputWrapper.select input.style1.error ~ .arrow {
+  color: #ea6161;
+}
+
+form#basket .inputWrapper.select input.style1.error ~ .line, form#userInfo .inputWrapper.select input.style1.error ~ .line, form#changePass .inputWrapper.select input.style1.error ~ .line, form#returnRequest .inputWrapper.select input.style1.error ~ .line {
+  width: 100%;
+  background-color: #ea6161;
+}
+
+form#basket .inputWrapper.select input.style2.error, form#userInfo .inputWrapper.select input.style2.error, form#changePass .inputWrapper.select input.style2.error, form#returnRequest .inputWrapper.select input.style2.error {
+  border: 1.2px solid #ea6161;
+}
+
+form#basket .inputWrapper.select input.style2.error ~ label, form#userInfo .inputWrapper.select input.style2.error ~ label, form#changePass .inputWrapper.select input.style2.error ~ label, form#returnRequest .inputWrapper.select input.style2.error ~ label {
+  color: #ea6161;
+}
+
+form#basket .inputWrapper.select input.style2.error ~ .arrow, form#userInfo .inputWrapper.select input.style2.error ~ .arrow, form#changePass .inputWrapper.select input.style2.error ~ .arrow, form#returnRequest .inputWrapper.select input.style2.error ~ .arrow {
+  color: #ea6161;
+}
+
+form#basket .inputWrapper.select input.style2.error ~ .line, form#userInfo .inputWrapper.select input.style2.error ~ .line, form#changePass .inputWrapper.select input.style2.error ~ .line, form#returnRequest .inputWrapper.select input.style2.error ~ .line {
+  background-color: #ea6161;
+}
+
+form#basket .inputWrapper.select label, form#userInfo .inputWrapper.select label, form#changePass .inputWrapper.select label, form#returnRequest .inputWrapper.select label {
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+  color: #bbbbbf;
+  position: absolute;
+  right: 0.5em;
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+     -moz-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.select label .icon, form#userInfo .inputWrapper.select label .icon, form#changePass .inputWrapper.select label .icon, form#returnRequest .inputWrapper.select label .icon {
+  font-size: 0.8em;
+}
+
+form#basket .inputWrapper.select label p, form#userInfo .inputWrapper.select label p, form#changePass .inputWrapper.select label p, form#returnRequest .inputWrapper.select label p {
+  font-size: 0.7em;
+  -webkit-transform: translateX(-0.3em);
+     -moz-transform: translateX(-0.3em);
+      -ms-transform: translateX(-0.3em);
+          transform: translateX(-0.3em);
+}
+
+form#basket .inputWrapper.select input.style1 ~ label.top, form#userInfo .inputWrapper.select input.style1 ~ label.top, form#changePass .inputWrapper.select input.style1 ~ label.top, form#returnRequest .inputWrapper.select input.style1 ~ label.top {
+  font-size: 16px;
+  right: 0;
+  bottom: -webkit-calc(100% + 0em);
+  bottom: -moz-calc(100% + 0em);
+  bottom: calc(100% + 0em);
+}
+
+form#basket .inputWrapper.select input.style2 ~ label.top, form#userInfo .inputWrapper.select input.style2 ~ label.top, form#changePass .inputWrapper.select input.style2 ~ label.top, form#returnRequest .inputWrapper.select input.style2 ~ label.top {
+  font-size: 16px;
+  right: 0;
+  bottom: -webkit-calc(100% + .5em);
+  bottom: -moz-calc(100% + .5em);
+  bottom: calc(100% + .5em);
+}
+
+form#basket .inputWrapper.select .arrow, form#userInfo .inputWrapper.select .arrow, form#changePass .inputWrapper.select .arrow, form#returnRequest .inputWrapper.select .arrow {
+  cursor: pointer;
+  font-size: 1em;
+  color: #bbbbbf;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0.5em;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.select .line, form#userInfo .inputWrapper.select .line, form#changePass .inputWrapper.select .line, form#returnRequest .inputWrapper.select .line {
+  width: 0;
+  height: 1.2px;
+  background-color: #f0c900;
+  position: absolute;
+  right: 0;
+  top: -webkit-calc(100% - .6px);
+  top: -moz-calc(100% - .6px);
+  top: calc(100% - .6px);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.select ul, form#userInfo .inputWrapper.select ul, form#changePass .inputWrapper.select ul, form#returnRequest .inputWrapper.select ul {
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+  width: 100%;
+  max-height: 12em;
+  overflow: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+  position: absolute;
+  top: 105%;
+  right: 0;
+  -webkit-box-shadow: 0 0.2em 0.5em 0em rgba(70, 69, 85, 0.3);
+          box-shadow: 0 0.2em 0.5em 0em rgba(70, 69, 85, 0.3);
+}
+
+form#basket .inputWrapper.select ul li, form#userInfo .inputWrapper.select ul li, form#changePass .inputWrapper.select ul li, form#returnRequest .inputWrapper.select ul li {
+  width: 100%;
+  height: 2.5em;
+  line-height: 2.5em;
+  padding: 0 0.5em;
+  font-size: 0.8em;
+  color: #2d2d31;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+  cursor: pointer;
+  background-color: white;
+}
+
+form#basket .inputWrapper.select ul li:hover, form#userInfo .inputWrapper.select ul li:hover, form#changePass .inputWrapper.select ul li:hover, form#returnRequest .inputWrapper.select ul li:hover {
+  background-color: #e6e6e6;
+}
+
+form#basket .inputWrapper.select ul.show, form#userInfo .inputWrapper.select ul.show, form#changePass .inputWrapper.select ul.show, form#returnRequest .inputWrapper.select ul.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+form#basket .inputWrapper.withSubmit, form#userInfo .inputWrapper.withSubmit, form#changePass .inputWrapper.withSubmit, form#returnRequest .inputWrapper.withSubmit {
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 1em;
+}
+
+form#basket .inputWrapper.withSubmit input, form#userInfo .inputWrapper.withSubmit input, form#changePass .inputWrapper.withSubmit input, form#returnRequest .inputWrapper.withSubmit input {
+  width: -webkit-calc((80vw - (4 * 3em)) / 4);
+  width: -moz-calc((80vw - (4 * 3em)) / 4);
+  width: calc((80vw - (4 * 3em)) / 4);
+  height: 2.5em;
+  line-height: 2.5em;
+  padding: 0 0.5em;
+  color: #2d2d31;
+  font-size: 0.8em;
+  border-radius: 2em;
+  border: 1.2px solid #c8c8cc;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.withSubmit input::-webkit-input-placeholder, form#userInfo .inputWrapper.withSubmit input::-webkit-input-placeholder, form#changePass .inputWrapper.withSubmit input::-webkit-input-placeholder, form#returnRequest .inputWrapper.withSubmit input::-webkit-input-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.withSubmit input:-moz-placeholder, form#userInfo .inputWrapper.withSubmit input:-moz-placeholder, form#changePass .inputWrapper.withSubmit input:-moz-placeholder, form#returnRequest .inputWrapper.withSubmit input:-moz-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.withSubmit input::-moz-placeholder, form#userInfo .inputWrapper.withSubmit input::-moz-placeholder, form#changePass .inputWrapper.withSubmit input::-moz-placeholder, form#returnRequest .inputWrapper.withSubmit input::-moz-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.withSubmit input:-ms-input-placeholder, form#userInfo .inputWrapper.withSubmit input:-ms-input-placeholder, form#changePass .inputWrapper.withSubmit input:-ms-input-placeholder, form#returnRequest .inputWrapper.withSubmit input:-ms-input-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.withSubmit input::-ms-input-placeholder, form#userInfo .inputWrapper.withSubmit input::-ms-input-placeholder, form#changePass .inputWrapper.withSubmit input::-ms-input-placeholder, form#returnRequest .inputWrapper.withSubmit input::-ms-input-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.withSubmit input::placeholder, form#userInfo .inputWrapper.withSubmit input::placeholder, form#changePass .inputWrapper.withSubmit input::placeholder, form#returnRequest .inputWrapper.withSubmit input::placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.withSubmit input:focus, form#userInfo .inputWrapper.withSubmit input:focus, form#changePass .inputWrapper.withSubmit input:focus, form#returnRequest .inputWrapper.withSubmit input:focus {
+  border: 1.2px solid #f0c900;
+}
+
+form#basket .inputWrapper.withSubmit input.error, form#userInfo .inputWrapper.withSubmit input.error, form#changePass .inputWrapper.withSubmit input.error, form#returnRequest .inputWrapper.withSubmit input.error {
+  border: 1.2px solid #ea6161;
+}
+
+form#basket .inputWrapper.withSubmit button[type="submit"], form#userInfo .inputWrapper.withSubmit button[type="submit"], form#changePass .inputWrapper.withSubmit button[type="submit"], form#returnRequest .inputWrapper.withSubmit button[type="submit"] {
+  width: auto;
+  height: -webkit-calc(100% + .1em);
+  height: -moz-calc(100% + .1em);
+  height: calc(100% + .1em);
+  line-height: 2.5em;
+  background-color: #f0c900;
+  border-radius: 2em;
+  padding: 0 1em;
+  position: absolute;
+  left: -.1em;
+  top: -.1em;
+  cursor: pointer;
+}
+
+form#basket .inputWrapper.withSubmit button[type="submit"] i, form#userInfo .inputWrapper.withSubmit button[type="submit"] i, form#changePass .inputWrapper.withSubmit button[type="submit"] i, form#returnRequest .inputWrapper.withSubmit button[type="submit"] i {
+  color: #fbfbfb;
+  font-size: 1em;
+  -webkit-transform: translateY(0.2em);
+     -moz-transform: translateY(0.2em);
+      -ms-transform: translateY(0.2em);
+          transform: translateY(0.2em);
+}
+
+form#basket .inputWrapper.withSubmit .msg, form#userInfo .inputWrapper.withSubmit .msg, form#changePass .inputWrapper.withSubmit .msg, form#returnRequest .inputWrapper.withSubmit .msg {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+  width: auto;
+  height: auto;
+  padding: 0.5em 1em;
+  border-radius: 2em;
+  background-color: #ea6161;
+  position: absolute;
+  right: 0;
+  top: 115%;
+}
+
+form#basket .inputWrapper.withSubmit .msg i, form#userInfo .inputWrapper.withSubmit .msg i, form#changePass .inputWrapper.withSubmit .msg i, form#returnRequest .inputWrapper.withSubmit .msg i {
+  font-size: 1em;
+  color: #ea6161;
+  position: absolute;
+  right: 1em;
+  top: -.6em;
+}
+
+form#basket .inputWrapper.withSubmit .msg p, form#userInfo .inputWrapper.withSubmit .msg p, form#changePass .inputWrapper.withSubmit .msg p, form#returnRequest .inputWrapper.withSubmit .msg p {
+  color: #fbfbfb;
+  font-size: 0.6em;
+}
+
+form#basket .inputWrapper.withSubmit .msg.show, form#userInfo .inputWrapper.withSubmit .msg.show, form#changePass .inputWrapper.withSubmit .msg.show, form#returnRequest .inputWrapper.withSubmit .msg.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+form#basket .inputWrapper.numberHandler, form#userInfo .inputWrapper.numberHandler, form#changePass .inputWrapper.numberHandler, form#returnRequest .inputWrapper.numberHandler {
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+form#basket .inputWrapper.numberHandler .increase,
+form#basket .inputWrapper.numberHandler .decrease,
+form#basket .inputWrapper.numberHandler input, form#userInfo .inputWrapper.numberHandler .increase,
+form#userInfo .inputWrapper.numberHandler .decrease,
+form#userInfo .inputWrapper.numberHandler input, form#changePass .inputWrapper.numberHandler .increase,
+form#changePass .inputWrapper.numberHandler .decrease,
+form#changePass .inputWrapper.numberHandler input, form#returnRequest .inputWrapper.numberHandler .increase,
+form#returnRequest .inputWrapper.numberHandler .decrease,
+form#returnRequest .inputWrapper.numberHandler input {
+  margin-right: 0.5em;
+}
+
+form#basket .inputWrapper.numberHandler .increase:first-child,
+form#basket .inputWrapper.numberHandler .decrease:first-child,
+form#basket .inputWrapper.numberHandler input:first-child, form#userInfo .inputWrapper.numberHandler .increase:first-child,
+form#userInfo .inputWrapper.numberHandler .decrease:first-child,
+form#userInfo .inputWrapper.numberHandler input:first-child, form#changePass .inputWrapper.numberHandler .increase:first-child,
+form#changePass .inputWrapper.numberHandler .decrease:first-child,
+form#changePass .inputWrapper.numberHandler input:first-child, form#returnRequest .inputWrapper.numberHandler .increase:first-child,
+form#returnRequest .inputWrapper.numberHandler .decrease:first-child,
+form#returnRequest .inputWrapper.numberHandler input:first-child {
+  margin-right: 0;
+}
+
+form#basket .inputWrapper.numberHandler .increase,
+form#basket .inputWrapper.numberHandler .decrease, form#userInfo .inputWrapper.numberHandler .increase,
+form#userInfo .inputWrapper.numberHandler .decrease, form#changePass .inputWrapper.numberHandler .increase,
+form#changePass .inputWrapper.numberHandler .decrease, form#returnRequest .inputWrapper.numberHandler .increase,
+form#returnRequest .inputWrapper.numberHandler .decrease {
+  font-size: 0.8em;
+  cursor: pointer;
+  color: #39393e;
+}
+
+form#basket .inputWrapper.numberHandler input, form#userInfo .inputWrapper.numberHandler input, form#changePass .inputWrapper.numberHandler input, form#returnRequest .inputWrapper.numberHandler input {
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  line-height: 2em;
+  color: #2d2d31;
+  font-size: 0.8em;
+  border: 1.2px solid #bbbbbf;
+}
+
+form#basket .inputWrapper.numberHandler input.error, form#userInfo .inputWrapper.numberHandler input.error, form#changePass .inputWrapper.numberHandler input.error, form#returnRequest .inputWrapper.numberHandler input.error {
+  border: 1.2px solid #ea6161;
+}
+
+form#basket .inputWrapper.checkboxes, form#userInfo .inputWrapper.checkboxes, form#changePass .inputWrapper.checkboxes, form#returnRequest .inputWrapper.checkboxes {
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+  margin: 1em;
+}
+
+form#basket .inputWrapper.checkboxes .checkbox, form#userInfo .inputWrapper.checkboxes .checkbox, form#changePass .inputWrapper.checkboxes .checkbox, form#returnRequest .inputWrapper.checkboxes .checkbox {
+  width: -webkit-calc((80vw - (4 * 2.4em)) / 4);
+  width: -moz-calc((80vw - (4 * 2.4em)) / 4);
+  width: calc((80vw - (4 * 2.4em)) / 4);
+  height: 2.5em;
+  padding-right: 0.5em;
+}
+
+form#basket .inputWrapper.checkboxes .checkbox input[type="checkbox"], form#userInfo .inputWrapper.checkboxes .checkbox input[type="checkbox"], form#changePass .inputWrapper.checkboxes .checkbox input[type="checkbox"], form#returnRequest .inputWrapper.checkboxes .checkbox input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+form#basket .inputWrapper.checkboxes .checkbox input[type="checkbox"].style1:checked ~ label .rect, form#userInfo .inputWrapper.checkboxes .checkbox input[type="checkbox"].style1:checked ~ label .rect, form#changePass .inputWrapper.checkboxes .checkbox input[type="checkbox"].style1:checked ~ label .rect, form#returnRequest .inputWrapper.checkboxes .checkbox input[type="checkbox"].style1:checked ~ label .rect {
+  width: 1.4em;
+  height: .6em;
+  border-radius: 0;
+  border-top: none;
+  border-right: none;
+  border-left: 1.2px solid #f0c900;
+  border-bottom: 1.2px solid #f0c900;
+  -webkit-transform: translateY(-0.3em) rotate(-45deg);
+     -moz-transform: translateY(-0.3em) rotate(-45deg);
+      -ms-transform: translateY(-0.3em) rotate(-45deg);
+          transform: translateY(-0.3em) rotate(-45deg);
+}
+
+form#basket .inputWrapper.checkboxes .checkbox input[type="checkbox"].style1:checked ~ label p, form#userInfo .inputWrapper.checkboxes .checkbox input[type="checkbox"].style1:checked ~ label p, form#changePass .inputWrapper.checkboxes .checkbox input[type="checkbox"].style1:checked ~ label p, form#returnRequest .inputWrapper.checkboxes .checkbox input[type="checkbox"].style1:checked ~ label p {
+  color: #f0c900;
+}
+
+form#basket .inputWrapper.checkboxes .checkbox input[type="checkbox"].style2:checked ~ label .rect, form#userInfo .inputWrapper.checkboxes .checkbox input[type="checkbox"].style2:checked ~ label .rect, form#changePass .inputWrapper.checkboxes .checkbox input[type="checkbox"].style2:checked ~ label .rect, form#returnRequest .inputWrapper.checkboxes .checkbox input[type="checkbox"].style2:checked ~ label .rect {
+  border: 1px solid transparent;
+  background-color: #f0c900;
+}
+
+form#basket .inputWrapper.checkboxes .checkbox input[type="checkbox"].style2:checked ~ label .rect i, form#userInfo .inputWrapper.checkboxes .checkbox input[type="checkbox"].style2:checked ~ label .rect i, form#changePass .inputWrapper.checkboxes .checkbox input[type="checkbox"].style2:checked ~ label .rect i, form#returnRequest .inputWrapper.checkboxes .checkbox input[type="checkbox"].style2:checked ~ label .rect i {
+  opacity: 1;
+}
+
+form#basket .inputWrapper.checkboxes .checkbox input[type="checkbox"].style2:checked ~ label p, form#userInfo .inputWrapper.checkboxes .checkbox input[type="checkbox"].style2:checked ~ label p, form#changePass .inputWrapper.checkboxes .checkbox input[type="checkbox"].style2:checked ~ label p, form#returnRequest .inputWrapper.checkboxes .checkbox input[type="checkbox"].style2:checked ~ label p {
+  color: #f0c900;
+}
+
+form#basket .inputWrapper.checkboxes .checkbox label, form#userInfo .inputWrapper.checkboxes .checkbox label, form#changePass .inputWrapper.checkboxes .checkbox label, form#returnRequest .inputWrapper.checkboxes .checkbox label {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  line-height: 2.5em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+form#basket .inputWrapper.checkboxes .checkbox label .rect, form#userInfo .inputWrapper.checkboxes .checkbox label .rect, form#changePass .inputWrapper.checkboxes .checkbox label .rect, form#returnRequest .inputWrapper.checkboxes .checkbox label .rect {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  width: 1.2em;
+  height: 1.2em;
+  border: 1px solid #606167;
+  position: relative;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+  border-radius: .3em;
+}
+
+form#basket .inputWrapper.checkboxes .checkbox label .rect i, form#userInfo .inputWrapper.checkboxes .checkbox label .rect i, form#changePass .inputWrapper.checkboxes .checkbox label .rect i, form#returnRequest .inputWrapper.checkboxes .checkbox label .rect i {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+     -moz-transform: translate(50%, -50%);
+      -ms-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  opacity: 0;
+  font-size: 0.8em;
+  color: #fbfbfb;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.checkboxes .checkbox label p, form#userInfo .inputWrapper.checkboxes .checkbox label p, form#changePass .inputWrapper.checkboxes .checkbox label p, form#returnRequest .inputWrapper.checkboxes .checkbox label p {
+  max-width: -webkit-calc(100% - .5em - 1.2em - .5em);
+  max-width: -moz-calc(100% - .5em - 1.2em - .5em);
+  max-width: calc(100% - .5em - 1.2em - .5em);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.8em;
+  color: #606167;
+  margin-right: 0.5em;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.radios, form#userInfo .inputWrapper.radios, form#changePass .inputWrapper.radios, form#returnRequest .inputWrapper.radios {
+  width: auto;
+  height: auto;
+  margin: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+form#basket .inputWrapper.radios .radio, form#userInfo .inputWrapper.radios .radio, form#changePass .inputWrapper.radios .radio, form#returnRequest .inputWrapper.radios .radio {
+  width: -webkit-calc((80vw - (4 * 2.4em)) / 4);
+  width: -moz-calc((80vw - (4 * 2.4em)) / 4);
+  width: calc((80vw - (4 * 2.4em)) / 4);
+  height: 2.5em;
+  padding-right: 0.5em;
+}
+
+form#basket .inputWrapper.radios .radio input[type="radio"], form#userInfo .inputWrapper.radios .radio input[type="radio"], form#changePass .inputWrapper.radios .radio input[type="radio"], form#returnRequest .inputWrapper.radios .radio input[type="radio"] {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+form#basket .inputWrapper.radios .radio input[type="radio"].style1 ~ label .circle .fill, form#userInfo .inputWrapper.radios .radio input[type="radio"].style1 ~ label .circle .fill, form#changePass .inputWrapper.radios .radio input[type="radio"].style1 ~ label .circle .fill, form#returnRequest .inputWrapper.radios .radio input[type="radio"].style1 ~ label .circle .fill {
+  width: 110%;
+  height: 110%;
+}
+
+form#basket .inputWrapper.radios .radio input[type="radio"].style1:checked ~ label .circle, form#userInfo .inputWrapper.radios .radio input[type="radio"].style1:checked ~ label .circle, form#changePass .inputWrapper.radios .radio input[type="radio"].style1:checked ~ label .circle, form#returnRequest .inputWrapper.radios .radio input[type="radio"].style1:checked ~ label .circle {
+  border: 1px solid transparent;
+}
+
+form#basket .inputWrapper.radios .radio input[type="radio"].style1:checked ~ label .circle .fill, form#userInfo .inputWrapper.radios .radio input[type="radio"].style1:checked ~ label .circle .fill, form#changePass .inputWrapper.radios .radio input[type="radio"].style1:checked ~ label .circle .fill, form#returnRequest .inputWrapper.radios .radio input[type="radio"].style1:checked ~ label .circle .fill {
+  -webkit-transform: translate(50%, -50%) scale(1);
+     -moz-transform: translate(50%, -50%) scale(1);
+      -ms-transform: translate(50%, -50%) scale(1);
+          transform: translate(50%, -50%) scale(1);
+  opacity: 1;
+}
+
+form#basket .inputWrapper.radios .radio input[type="radio"].style1:checked ~ label p, form#userInfo .inputWrapper.radios .radio input[type="radio"].style1:checked ~ label p, form#changePass .inputWrapper.radios .radio input[type="radio"].style1:checked ~ label p, form#returnRequest .inputWrapper.radios .radio input[type="radio"].style1:checked ~ label p {
+  color: #f0c900;
+}
+
+form#basket .inputWrapper.radios .radio input[type="radio"].style2 ~ label .circle .fill, form#userInfo .inputWrapper.radios .radio input[type="radio"].style2 ~ label .circle .fill, form#changePass .inputWrapper.radios .radio input[type="radio"].style2 ~ label .circle .fill, form#returnRequest .inputWrapper.radios .radio input[type="radio"].style2 ~ label .circle .fill {
+  width: 80%;
+  height: 80%;
+}
+
+form#basket .inputWrapper.radios .radio input[type="radio"].style2:checked ~ label .circle, form#userInfo .inputWrapper.radios .radio input[type="radio"].style2:checked ~ label .circle, form#changePass .inputWrapper.radios .radio input[type="radio"].style2:checked ~ label .circle, form#returnRequest .inputWrapper.radios .radio input[type="radio"].style2:checked ~ label .circle {
+  border: 1px solid #f0c900;
+}
+
+form#basket .inputWrapper.radios .radio input[type="radio"].style2:checked ~ label .circle .fill, form#userInfo .inputWrapper.radios .radio input[type="radio"].style2:checked ~ label .circle .fill, form#changePass .inputWrapper.radios .radio input[type="radio"].style2:checked ~ label .circle .fill, form#returnRequest .inputWrapper.radios .radio input[type="radio"].style2:checked ~ label .circle .fill {
+  -webkit-transform: translate(50%, -50%) scale(1);
+     -moz-transform: translate(50%, -50%) scale(1);
+      -ms-transform: translate(50%, -50%) scale(1);
+          transform: translate(50%, -50%) scale(1);
+  opacity: 1;
+}
+
+form#basket .inputWrapper.radios .radio input[type="radio"].style2:checked ~ label p, form#userInfo .inputWrapper.radios .radio input[type="radio"].style2:checked ~ label p, form#changePass .inputWrapper.radios .radio input[type="radio"].style2:checked ~ label p, form#returnRequest .inputWrapper.radios .radio input[type="radio"].style2:checked ~ label p {
+  color: #f0c900;
+}
+
+form#basket .inputWrapper.radios .radio label, form#userInfo .inputWrapper.radios .radio label, form#changePass .inputWrapper.radios .radio label, form#returnRequest .inputWrapper.radios .radio label {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  line-height: 2.5em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+form#basket .inputWrapper.radios .radio label .circle, form#userInfo .inputWrapper.radios .radio label .circle, form#changePass .inputWrapper.radios .radio label .circle, form#returnRequest .inputWrapper.radios .radio label .circle {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  border: 1px solid #606167;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+  position: relative;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.radios .radio label .circle .fill, form#userInfo .inputWrapper.radios .radio label .circle .fill, form#changePass .inputWrapper.radios .radio label .circle .fill, form#returnRequest .inputWrapper.radios .radio label .circle .fill {
+  border-radius: 50%;
+  opacity: 0;
+  background-color: #f0c900;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%) scale(0);
+     -moz-transform: translate(50%, -50%) scale(0);
+      -ms-transform: translate(50%, -50%) scale(0);
+          transform: translate(50%, -50%) scale(0);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.radios .radio label p, form#userInfo .inputWrapper.radios .radio label p, form#changePass .inputWrapper.radios .radio label p, form#returnRequest .inputWrapper.radios .radio label p {
+  font-size: 0.8em;
+  color: #606167;
+  margin-right: 0.5em;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.toggle, form#userInfo .inputWrapper.toggle, form#changePass .inputWrapper.toggle, form#returnRequest .inputWrapper.toggle {
+  width: auto;
+  height: auto;
+  margin: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+form#basket .inputWrapper.toggle .toggleText,
+form#basket .inputWrapper.toggle .switch, form#userInfo .inputWrapper.toggle .toggleText,
+form#userInfo .inputWrapper.toggle .switch, form#changePass .inputWrapper.toggle .toggleText,
+form#changePass .inputWrapper.toggle .switch, form#returnRequest .inputWrapper.toggle .toggleText,
+form#returnRequest .inputWrapper.toggle .switch {
+  margin-right: 0.5em;
+}
+
+form#basket .inputWrapper.toggle .toggleText:first-child,
+form#basket .inputWrapper.toggle .switch:first-child, form#userInfo .inputWrapper.toggle .toggleText:first-child,
+form#userInfo .inputWrapper.toggle .switch:first-child, form#changePass .inputWrapper.toggle .toggleText:first-child,
+form#changePass .inputWrapper.toggle .switch:first-child, form#returnRequest .inputWrapper.toggle .toggleText:first-child,
+form#returnRequest .inputWrapper.toggle .switch:first-child {
+  margin-right: 0;
+}
+
+form#basket .inputWrapper.toggle .toggleText, form#userInfo .inputWrapper.toggle .toggleText, form#changePass .inputWrapper.toggle .toggleText, form#returnRequest .inputWrapper.toggle .toggleText {
+  font-size: 0.8em;
+  color: #d5d5d8;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.toggle .toggleText.active, form#userInfo .inputWrapper.toggle .toggleText.active, form#changePass .inputWrapper.toggle .toggleText.active, form#returnRequest .inputWrapper.toggle .toggleText.active {
+  color: #3b3c40;
+}
+
+form#basket .inputWrapper.toggle .switch, form#userInfo .inputWrapper.toggle .switch, form#changePass .inputWrapper.toggle .switch, form#returnRequest .inputWrapper.toggle .switch {
+  width: 3em;
+  height: 1.2em;
+  position: relative;
+  background-color: #f0c900;
+  border-radius: 2em;
+  cursor: pointer;
+}
+
+form#basket .inputWrapper.toggle .switch .circle, form#userInfo .inputWrapper.toggle .switch .circle, form#changePass .inputWrapper.toggle .switch .circle, form#returnRequest .inputWrapper.toggle .switch .circle {
+  width: .9em;
+  height: .9em;
+  border-radius: 50%;
+  background-color: #fbfbfb;
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.toggle .switch .circle.left, form#userInfo .inputWrapper.toggle .switch .circle.left, form#changePass .inputWrapper.toggle .switch .circle.left, form#returnRequest .inputWrapper.toggle .switch .circle.left {
+  left: .2em;
+}
+
+form#basket .inputWrapper.toggle .switch .circle.right, form#userInfo .inputWrapper.toggle .switch .circle.right, form#changePass .inputWrapper.toggle .switch .circle.right, form#returnRequest .inputWrapper.toggle .switch .circle.right {
+  left: -webkit-calc(100% - .9em - .2em);
+  left: -moz-calc(100% - .9em - .2em);
+  left: calc(100% - .9em - .2em);
+}
+
+form#basket .inputWrapper.textarea, form#userInfo .inputWrapper.textarea, form#changePass .inputWrapper.textarea, form#returnRequest .inputWrapper.textarea {
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+form#basket .inputWrapper.textarea textarea, form#userInfo .inputWrapper.textarea textarea, form#changePass .inputWrapper.textarea textarea, form#returnRequest .inputWrapper.textarea textarea {
+  width: -webkit-calc((80vw - (2 * 3.6em)) / 2);
+  width: -moz-calc((80vw - (2 * 3.6em)) / 2);
+  width: calc((80vw - (2 * 3.6em)) / 2);
+  font-size: 0.8em;
+  color: #2d2d31;
+  padding: 0.5em;
+  line-height: 2em;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+  resize: none;
+}
+
+form#basket .inputWrapper.textarea textarea::-webkit-input-placeholder, form#userInfo .inputWrapper.textarea textarea::-webkit-input-placeholder, form#changePass .inputWrapper.textarea textarea::-webkit-input-placeholder, form#returnRequest .inputWrapper.textarea textarea::-webkit-input-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.textarea textarea:-moz-placeholder, form#userInfo .inputWrapper.textarea textarea:-moz-placeholder, form#changePass .inputWrapper.textarea textarea:-moz-placeholder, form#returnRequest .inputWrapper.textarea textarea:-moz-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.textarea textarea::-moz-placeholder, form#userInfo .inputWrapper.textarea textarea::-moz-placeholder, form#changePass .inputWrapper.textarea textarea::-moz-placeholder, form#returnRequest .inputWrapper.textarea textarea::-moz-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.textarea textarea:-ms-input-placeholder, form#userInfo .inputWrapper.textarea textarea:-ms-input-placeholder, form#changePass .inputWrapper.textarea textarea:-ms-input-placeholder, form#returnRequest .inputWrapper.textarea textarea:-ms-input-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.textarea textarea::-ms-input-placeholder, form#userInfo .inputWrapper.textarea textarea::-ms-input-placeholder, form#changePass .inputWrapper.textarea textarea::-ms-input-placeholder, form#returnRequest .inputWrapper.textarea textarea::-ms-input-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.textarea textarea::placeholder, form#userInfo .inputWrapper.textarea textarea::placeholder, form#changePass .inputWrapper.textarea textarea::placeholder, form#returnRequest .inputWrapper.textarea textarea::placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+form#basket .inputWrapper.textarea textarea.style1, form#userInfo .inputWrapper.textarea textarea.style1, form#changePass .inputWrapper.textarea textarea.style1, form#returnRequest .inputWrapper.textarea textarea.style1 {
+  height: 8em;
+  border: 1.2px solid #c8c8cc;
+  border-radius: 1em;
+}
+
+form#basket .inputWrapper.textarea textarea.style1 ~ label, form#userInfo .inputWrapper.textarea textarea.style1 ~ label, form#changePass .inputWrapper.textarea textarea.style1 ~ label, form#returnRequest .inputWrapper.textarea textarea.style1 ~ label {
+  bottom: 100%;
+  -webkit-transform: translateY(150%);
+     -moz-transform: translateY(150%);
+      -ms-transform: translateY(150%);
+          transform: translateY(150%);
+}
+
+form#basket .inputWrapper.textarea textarea.style1:focus, form#userInfo .inputWrapper.textarea textarea.style1:focus, form#changePass .inputWrapper.textarea textarea.style1:focus, form#returnRequest .inputWrapper.textarea textarea.style1:focus {
+  border: 1.2px solid #f0c900;
+}
+
+form#basket .inputWrapper.textarea textarea.style1:focus ~ label, form#userInfo .inputWrapper.textarea textarea.style1:focus ~ label, form#changePass .inputWrapper.textarea textarea.style1:focus ~ label, form#returnRequest .inputWrapper.textarea textarea.style1:focus ~ label {
+  font-size: 16px;
+  right: 0.5em;
+  color: #f0c900;
+  bottom: -webkit-calc(100% + .5em);
+  bottom: -moz-calc(100% + .5em);
+  bottom: calc(100% + .5em);
+  -webkit-transform: translateY(0);
+     -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+form#basket .inputWrapper.textarea textarea.style2, form#userInfo .inputWrapper.textarea textarea.style2, form#changePass .inputWrapper.textarea textarea.style2, form#returnRequest .inputWrapper.textarea textarea.style2 {
+  height: 4em;
+  max-height: 12em;
+  overflow: auto;
+  border: none;
+  border-bottom: 1.2px solid #c8c8cc;
+}
+
+form#basket .inputWrapper.textarea textarea.style2 ~ label, form#userInfo .inputWrapper.textarea textarea.style2 ~ label, form#changePass .inputWrapper.textarea textarea.style2 ~ label, form#returnRequest .inputWrapper.textarea textarea.style2 ~ label {
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+     -moz-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+form#basket .inputWrapper.textarea textarea.style2:focus, form#userInfo .inputWrapper.textarea textarea.style2:focus, form#changePass .inputWrapper.textarea textarea.style2:focus, form#returnRequest .inputWrapper.textarea textarea.style2:focus {
+  border-bottom: 1.2px solid #f0c900;
+}
+
+form#basket .inputWrapper.textarea textarea.style2:focus ~ label, form#userInfo .inputWrapper.textarea textarea.style2:focus ~ label, form#changePass .inputWrapper.textarea textarea.style2:focus ~ label, form#returnRequest .inputWrapper.textarea textarea.style2:focus ~ label {
+  font-size: 16px;
+  right: 0;
+  color: #f0c900;
+  bottom: -webkit-calc(100% + 0em);
+  bottom: -moz-calc(100% + 0em);
+  bottom: calc(100% + 0em);
+  -webkit-transform: translateY(0);
+     -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+form#basket .inputWrapper.textarea textarea.style2:focus ~ .line, form#userInfo .inputWrapper.textarea textarea.style2:focus ~ .line, form#changePass .inputWrapper.textarea textarea.style2:focus ~ .line, form#returnRequest .inputWrapper.textarea textarea.style2:focus ~ .line {
+  width: 100%;
+}
+
+form#basket .inputWrapper.textarea textarea.style1.error, form#userInfo .inputWrapper.textarea textarea.style1.error, form#changePass .inputWrapper.textarea textarea.style1.error, form#returnRequest .inputWrapper.textarea textarea.style1.error {
+  border: 1.2px solid #ea6161;
+}
+
+form#basket .inputWrapper.textarea textarea.style1.error ~ label, form#userInfo .inputWrapper.textarea textarea.style1.error ~ label, form#changePass .inputWrapper.textarea textarea.style1.error ~ label, form#returnRequest .inputWrapper.textarea textarea.style1.error ~ label {
+  color: #ea6161;
+}
+
+form#basket .inputWrapper.textarea textarea.style2.error, form#userInfo .inputWrapper.textarea textarea.style2.error, form#changePass .inputWrapper.textarea textarea.style2.error, form#returnRequest .inputWrapper.textarea textarea.style2.error {
+  border-bottom: 1.2px solid #ea6161;
+}
+
+form#basket .inputWrapper.textarea textarea.style2.error ~ label, form#userInfo .inputWrapper.textarea textarea.style2.error ~ label, form#changePass .inputWrapper.textarea textarea.style2.error ~ label, form#returnRequest .inputWrapper.textarea textarea.style2.error ~ label {
+  color: #ea6161;
+}
+
+form#basket .inputWrapper.textarea textarea.style1 ~ label.top, form#userInfo .inputWrapper.textarea textarea.style1 ~ label.top, form#changePass .inputWrapper.textarea textarea.style1 ~ label.top, form#returnRequest .inputWrapper.textarea textarea.style1 ~ label.top {
+  font-size: 16px;
+  bottom: -webkit-calc(100% + .5em);
+  bottom: -moz-calc(100% + .5em);
+  bottom: calc(100% + .5em);
+  -webkit-transform: translateY(50%);
+     -moz-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  right: 0;
+}
+
+form#basket .inputWrapper.textarea textarea.style2 ~ label.top, form#userInfo .inputWrapper.textarea textarea.style2 ~ label.top, form#changePass .inputWrapper.textarea textarea.style2 ~ label.top, form#returnRequest .inputWrapper.textarea textarea.style2 ~ label.top {
+  font-size: 16px;
+  bottom: -webkit-calc(100% + 1em);
+  bottom: -moz-calc(100% + 1em);
+  bottom: calc(100% + 1em);
+  -webkit-transform: translateY(50%);
+     -moz-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  right: 0;
+}
+
+form#basket .inputWrapper.textarea label, form#userInfo .inputWrapper.textarea label, form#changePass .inputWrapper.textarea label, form#returnRequest .inputWrapper.textarea label {
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 0.5em;
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+  color: #c8c8cc;
+}
+
+form#basket .inputWrapper.textarea label i, form#userInfo .inputWrapper.textarea label i, form#changePass .inputWrapper.textarea label i, form#returnRequest .inputWrapper.textarea label i {
+  font-size: 0.8em;
+}
+
+form#basket .inputWrapper.textarea label p, form#userInfo .inputWrapper.textarea label p, form#changePass .inputWrapper.textarea label p, form#returnRequest .inputWrapper.textarea label p {
+  font-size: 0.7em;
+  -webkit-transform: translateX(-0.3em);
+     -moz-transform: translateX(-0.3em);
+      -ms-transform: translateX(-0.3em);
+          transform: translateX(-0.3em);
+}
+
+form#basket .inputWrapper.textarea .line, form#userInfo .inputWrapper.textarea .line, form#changePass .inputWrapper.textarea .line, form#returnRequest .inputWrapper.textarea .line {
+  width: 0%;
+  height: 1.2px;
+  background-color: #f0c900;
+  position: absolute;
+  right: 0;
+  top: -webkit-calc(100% - .6px);
+  top: -moz-calc(100% - .6px);
+  top: calc(100% - .6px);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+form#basket .inputWrapper.range, form#userInfo .inputWrapper.range, form#changePass .inputWrapper.range, form#returnRequest .inputWrapper.range {
+  width: 100%;
+  height: auto;
+  margin: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+form#basket .inputWrapper.range h4, form#userInfo .inputWrapper.range h4, form#changePass .inputWrapper.range h4, form#returnRequest .inputWrapper.range h4 {
+  font-size: 1em;
+  font-weight: 700;
+  color: #2d2d31;
+}
+
+form#basket .inputWrapper.range .ranger, form#userInfo .inputWrapper.range .ranger, form#changePass .inputWrapper.range .ranger, form#returnRequest .inputWrapper.range .ranger {
+  width: 100%;
+  height: .2em;
+  margin-top: 0.5em;
+}
+
+form#basket .inputWrapper.range .ranger .noUi-connect, form#userInfo .inputWrapper.range .ranger .noUi-connect, form#changePass .inputWrapper.range .ranger .noUi-connect, form#returnRequest .inputWrapper.range .ranger .noUi-connect {
+  background-color: #f0c900;
+}
+
+form#basket .inputWrapper.range .ranger .noUi-handle.circle, form#userInfo .inputWrapper.range .ranger .noUi-handle.circle, form#changePass .inputWrapper.range .ranger .noUi-handle.circle, form#returnRequest .inputWrapper.range .ranger .noUi-handle.circle {
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  background-color: #f0c900;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: pointer;
+}
+
+form#basket .inputWrapper.range .ranger .noUi-handle.circle::before, form#userInfo .inputWrapper.range .ranger .noUi-handle.circle::before, form#changePass .inputWrapper.range .ranger .noUi-handle.circle::before, form#returnRequest .inputWrapper.range .ranger .noUi-handle.circle::before {
+  display: none;
+}
+
+form#basket .inputWrapper.range .ranger .noUi-handle.circle::after, form#userInfo .inputWrapper.range .ranger .noUi-handle.circle::after, form#changePass .inputWrapper.range .ranger .noUi-handle.circle::after, form#returnRequest .inputWrapper.range .ranger .noUi-handle.circle::after {
+  display: none;
+}
+
+form#basket .inputWrapper.range .ranger .noUi-handle.circle:focus, form#userInfo .inputWrapper.range .ranger .noUi-handle.circle:focus, form#changePass .inputWrapper.range .ranger .noUi-handle.circle:focus, form#returnRequest .inputWrapper.range .ranger .noUi-handle.circle:focus {
+  outline: none;
+}
+
+form#basket .inputWrapper.range .ranger .noUi-handle.circle:focus .noUi-tooltip, form#userInfo .inputWrapper.range .ranger .noUi-handle.circle:focus .noUi-tooltip, form#changePass .inputWrapper.range .ranger .noUi-handle.circle:focus .noUi-tooltip, form#returnRequest .inputWrapper.range .ranger .noUi-handle.circle:focus .noUi-tooltip {
+  outline: none;
+}
+
+form#basket .inputWrapper.range .ranger .noUi-handle.right, form#userInfo .inputWrapper.range .ranger .noUi-handle.right, form#changePass .inputWrapper.range .ranger .noUi-handle.right, form#returnRequest .inputWrapper.range .ranger .noUi-handle.right {
+  right: 0;
+  -webkit-transform: translate(0%, -40%);
+     -moz-transform: translate(0%, -40%);
+      -ms-transform: translate(0%, -40%);
+          transform: translate(0%, -40%);
+  top: 0%;
+}
+
+form#basket .inputWrapper.range .ranger .noUi-handle.left, form#userInfo .inputWrapper.range .ranger .noUi-handle.left, form#changePass .inputWrapper.range .ranger .noUi-handle.left, form#returnRequest .inputWrapper.range .ranger .noUi-handle.left {
+  left: 0;
+  top: 0%;
+  -webkit-transform: translate(0%, -40%);
+     -moz-transform: translate(0%, -40%);
+      -ms-transform: translate(0%, -40%);
+          transform: translate(0%, -40%);
+}
+
+form#basket .inputWrapper.range .ranger .noUi-tooltip, form#userInfo .inputWrapper.range .ranger .noUi-tooltip, form#changePass .inputWrapper.range .ranger .noUi-tooltip, form#returnRequest .inputWrapper.range .ranger .noUi-tooltip {
+  display: none;
+}
+
+form#basket .inputWrapper.range .ranger .noUi-tooltip.newStyle, form#userInfo .inputWrapper.range .ranger .noUi-tooltip.newStyle, form#changePass .inputWrapper.range .ranger .noUi-tooltip.newStyle, form#returnRequest .inputWrapper.range .ranger .noUi-tooltip.newStyle {
+  font-size: .8em;
+}
+
+form#basket .inputWrapper.range .ranger .noUi-tooltip.right, form#userInfo .inputWrapper.range .ranger .noUi-tooltip.right, form#changePass .inputWrapper.range .ranger .noUi-tooltip.right, form#returnRequest .inputWrapper.range .ranger .noUi-tooltip.right {
+  -webkit-transform: translate(-90%, 0);
+     -moz-transform: translate(-90%, 0);
+      -ms-transform: translate(-90%, 0);
+          transform: translate(-90%, 0);
+}
+
+form#basket .inputWrapper.range .ranger .noUi-tooltip.left, form#userInfo .inputWrapper.range .ranger .noUi-tooltip.left, form#changePass .inputWrapper.range .ranger .noUi-tooltip.left, form#returnRequest .inputWrapper.range .ranger .noUi-tooltip.left {
+  -webkit-transform: translate(0%, 0);
+     -moz-transform: translate(0%, 0);
+      -ms-transform: translate(0%, 0);
+          transform: translate(0%, 0);
+}
+
+form#basket .inputWrapper.range .text, form#userInfo .inputWrapper.range .text, form#changePass .inputWrapper.range .text, form#returnRequest .inputWrapper.range .text {
+  width: 100%;
+  height: auto;
+  margin-top: 1em;
+  text-align: center;
+  color: #86878e;
+  font-size: 0.8em;
+}
+
+form#basket button[type="submit"].final, form#userInfo button[type="submit"].final, form#changePass button[type="submit"].final, form#returnRequest button[type="submit"].final {
+  width: auto;
+  height: auto;
+  padding: 0.3em 2.5em;
+  margin: 1em auto;
+  border-radius: 2em;
+  font-size: 1em;
+  background-color: #f0c900;
+  color: black;
+  cursor: pointer;
+  border: 1.2px solid transparent;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+form#basket button[type="submit"].final:hover, form#userInfo button[type="submit"].final:hover, form#changePass button[type="submit"].final:hover, form#returnRequest button[type="submit"].final:hover {
+  color: #f0c900;
+  background-color: white;
+  border: 1.2px solid #f0c900;
+}
+
+form#returnRequest .inputs {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+/*# sourceMappingURL=edit-profile.css.map */

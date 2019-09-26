@@ -1,3 +1,75 @@
+:export {
+  dist1: 0.5em;
+  dist2: 1em;
+  dist3: 2em;
+  dist4: 4em;
+  font-s: 0.6em;
+  font-m: 0.8em;
+  font-l: 1em;
+  font-xl: 1.2em;
+  font-xxl: 2em;
+  font-special: 1.6em;
+  sectionsDist: 4em;
+}
+
+:export {
+  primaryColor: #f0c900;
+  blueColor1: #009CFF;
+  blueColor2: #003DBB;
+  purpleColor1: #6956D8;
+  purpleColor2: #9090C5;
+  purpleColor3: #4a4982;
+  greenColor1: #6BFBCE;
+  greenColor2: #1EC198;
+  redColor1: #FF5198;
+  redColor2: #e74a4a;
+  orangeColor1: #FF846C;
+  orangeColor2: #ff8f00;
+  yellowColor: #f9a825;
+  brownColor: #C99035;
+  paleColor: #f4f3f7;
+  whiteColor1: #f8f8f8;
+  whiteColor2: #fbfbfb;
+  greyColor: #b9b9c1;
+  greyColor2: #86878e;
+  darkColor: #2d2d31;
+  darkBlue: #5d6174;
+  shadowColor: rgba(70, 69, 85, 0.3);
+  shadowColor2: rgba(0, 0, 0, 0.5);
+  blackFilter: rgba(30, 30, 30, 0.8);
+  blackFilter2: rgba(30, 30, 30, 0.6);
+  blackFilter3: rgba(30, 30, 30, 0.7);
+}
+
+:export {
+  primaryColor: #f0c900;
+  blueColor1: #009CFF;
+  blueColor2: #003DBB;
+  purpleColor1: #6956D8;
+  purpleColor2: #9090C5;
+  purpleColor3: #4a4982;
+  greenColor1: #6BFBCE;
+  greenColor2: #1EC198;
+  redColor1: #FF5198;
+  redColor2: #e74a4a;
+  orangeColor1: #FF846C;
+  orangeColor2: #ff8f00;
+  yellowColor: #f9a825;
+  brownColor: #C99035;
+  paleColor: #f4f3f7;
+  whiteColor1: #f8f8f8;
+  whiteColor2: #fbfbfb;
+  greyColor: #b9b9c1;
+  greyColor2: #86878e;
+  darkColor: #2d2d31;
+  darkBlue: #5d6174;
+  shadowColor: rgba(70, 69, 85, 0.3);
+  shadowColor2: rgba(0, 0, 0, 0.5);
+  blackFilter: rgba(30, 30, 30, 0.8);
+  blackFilter2: rgba(30, 30, 30, 0.6);
+  blackFilter3: rgba(30, 30, 30, 0.7);
+}
+
 body {
   background-color: #f8f8f8;
 }
@@ -153,7 +225,7 @@ body {
 }
 
 #tabs .content .tab_content#info_section table {
-  width: auto;
+  width: 25em;
   height: auto;
   margin-top: 1em;
   display: -webkit-box;
@@ -187,7 +259,7 @@ body {
 }
 
 #tabs .content .tab_content#info_section table tbody {
-  width: auto;
+  width: 100%;
   height: auto;
   display: -webkit-box;
   display: -webkit-flex;
@@ -220,9 +292,9 @@ body {
 }
 
 #tabs .content .tab_content#info_section table tbody tr {
-  width: auto;
-  height: 3em;
-  line-height: 3em;
+  width: 100%;
+  height: auto;
+  padding: 0.5em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -258,16 +330,19 @@ body {
 }
 
 #tabs .content .tab_content#info_section table tbody tr th {
-  width: auto;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  width: 10em;
   height: 100%;
   font-size: 0.9em;
   font-weight: 700;
   color: #2d2d31;
-  padding: 0 4em;
+  padding: 0;
 }
 
 #tabs .content .tab_content#info_section table tbody tr td {
-  width: auto;
+  width: 100%;
   height: 100%;
   font-size: 0.8em;
   color: #86878e;

@@ -1,0 +1,95 @@
+#fix_contact {
+  width: auto;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 0.5em;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+  z-index: 8;
+}
+
+#fix_contact i {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  transition: all .3s linear;
+  border: 1px solid transparent;
+}
+
+#fix_contact i::before {
+  color: white;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  transition: all .3s linear;
+  font-size: 1.2em;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+     -moz-transform: translate(50%, -50%);
+      -ms-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+}
+
+#fix_contact i.telegram {
+  background-color: #3c7bff;
+}
+
+#fix_contact i.telegram:hover {
+  background-color: white;
+  border: 1px solid #3c7bff;
+}
+
+#fix_contact i.telegram:hover::before {
+  color: #3c7bff;
+}
+
+#fix_contact i.instagram {
+  margin-top: 0.5em;
+  background-color: #ea6161;
+}
+
+#fix_contact i.instagram:hover {
+  background-color: white;
+  border: 1px solid #ed7777;
+}
+
+#fix_contact i.instagram:hover::before {
+  color: #ed7777;
+}
+/*# sourceMappingURL=fix-contact.css.map */

@@ -1,4 +1,4 @@
-import util from '../../utilities/utilities' ;
+//import util from '../../utilities/utilities' ;
 let sideMenu = document.querySelector('aside') ;
 let sideMenuTrigger = document.querySelector('body > .fa-bars.main_menu') ;
 let blackFilter = document.querySelector('#black_filter') ;
@@ -9,5 +9,5 @@ function toggleSideMenu(e){
     sideMenu.classList.toggle('show') ;
     sideMenuTrigger.classList.toggle('show') ;
     document.body.classList.toggle('disableScroll') ;
-    util.docHandler(sideMenu,[blackFilter,sideMenuTrigger]) ;
+    docHandler(sideMenu,[blackFilter,sideMenuTrigger]) ;
 }
