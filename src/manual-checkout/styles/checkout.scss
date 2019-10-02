@@ -102,3 +102,33 @@ form#checkout{
         border: 2px solid lighten($redColor2,5%) ;
     }
 }
+@media screen and (max-width:900px){
+    #desc,form#checkout{font-size: 16px;}
+}
+@media screen and (max-width:750px){
+    #desc{
+        width: 90% ;
+    }
+    form#checkout{
+        width: 75% ;
+    }
+}
+@media screen and (max-width:550px){
+    #desc,form#checkout{
+        font-size: 13px ;
+    }
+    #desc{
+        @include flex(column,flex-start,center,nowrap,"") ;
+        img{
+            width: 16em ;
+            height: 12em;
+            margin-top: $dist2 ;
+            margin-right: 0 ;
+        }
+    }
+}
+@media screen and (max-width:400px){
+    form#checkout{
+        width: 90% ;
+    }
+}

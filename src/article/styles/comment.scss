@@ -365,3 +365,45 @@
     opacity: 1;
     visibility: visible ;
 }
+@media screen and (max-width:900px){
+    #adminApprove{font-size: 16px;}
+}
+@media screen and (max-width:550px){
+    #adminApprove{font-size: 13px;}
+}
+@media screen and (max-width:450px){
+    #comments{
+        form#userComment{
+            width: 100% ;
+            .row{
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                .inputWrapper{
+                    width: 80% ;
+                    input{
+                        width: 100% ;
+                    }
+                    &:nth-child(2){
+                        margin-right: 0 ;
+                        margin-top: $dist3 ;
+                    }
+                   
+                }
+            }
+            .inputWrapper.textarea{
+                width: 80% ;
+                margin-top: $dist2 ;
+                margin-right: 0 ;
+                textarea{width: 100% ;}
+
+            }
+        }
+        .comment{
+            form.reply{
+                .inputWrapper.textarea{
+                    width: 100% ;
+                    textarea{width: 100%;}
+                }
+            }
+        }
+    }
+}

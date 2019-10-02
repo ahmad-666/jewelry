@@ -189,6 +189,7 @@ header{
             @include center-x ;    
             bottom: $dist1 ; 
             margin-right: 0 ;
+            z-index: 5;
         }
         a.logo{
             top: $dist1 ;

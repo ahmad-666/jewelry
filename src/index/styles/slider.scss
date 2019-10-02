@@ -17,7 +17,7 @@
         margin: $dist1 0;
     }
     h4 {
-        font-size: $font-special;
+        font-size: $font-xl;
         font-weight: 700;
         color: $darkColor;
         margin-top: 0 ;
@@ -64,8 +64,8 @@
         display: flex;
         @include flex(row, flex-start, center, nowrap, "");
         .slide {
-            width: calc((80vw - (5 * 1.1em))/ 5);
-            height: 14em;
+            width: calc((80vw - (5 * 1.1em)) / 5);
+            height: 11em;
             position: relative;
             margin: 0 $dist1;
             flex-shrink: 0;
@@ -88,7 +88,7 @@
                 background-color: $redColor2;
                 color: $whiteColor2;
                 font-size: $font-m;
-                padding: ($dist1 - .2em) ($dist3 - .5em);
+                padding: .3em .5em;
             }
             .discount_val {
                 width: auto;
@@ -101,7 +101,7 @@
                 background-color: $primaryColor;
                 color: $whiteColor2;
                 font-size: $font-m;
-                padding: ($dist1 - .2em) ($dist3 - .5em);
+                padding: .2em .5em ;
             }
             img {
                 width: 50%;
@@ -124,7 +124,7 @@
                     display: flex;
                     @include flex(row, flex-start, center, nowrap, "");
                     i {
-                        font-size: $font-m;
+                        font-size: $font-m - .2em;
                         color: $primaryColor;
                         margin: 0 .1em;
                     }
@@ -210,7 +210,7 @@
         }
     }
     h4{
-        font-size: $font-special ;
+        font-size: $font-xl ;
         font-weight: 700 ;
         color: $darkColor ;
         margin-top: 0 ;
@@ -381,4 +381,100 @@
         }
     }
 
+}
+@media screen and (max-width:1200px){
+    .slider_wrapper#new_product,.slider_wrapper#suggestions {
+        .slider {
+            .slide {
+                width: calc((80vw - (4 * 1.2em)) / 4);
+                        
+            }
+    
+            
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .slider_wrapper#new_product,.slider_wrapper#suggestions {
+        font-size: 16px ;
+    }
+}
+@media screen and (max-width:750px){
+    .slider_wrapper#new_product,.slider_wrapper#suggestions {
+        width: 90% ;
+        .slider {
+            .slide {
+                width: calc((90vw - (3 * 1.3em)) / 3);
+                        
+            }
+    
+            
+        }
+    }
+}
+@media screen and (max-width:550px){
+    .slider_wrapper#new_product,.slider_wrapper#suggestions {
+       font-size: 13px ;
+       button.next,button.prev {
+        display: none ;
+        }
+        .slider{
+            overflow: auto;
+        }
+
+    }
+}
+@media screen and (max-width:400px){
+    .slider_wrapper#new_product,.slider_wrapper#suggestions {
+        width: 90% ;
+        .slider {
+            .slide {
+                width: calc((90vw - (2 * 1.5em)) / 2);
+                        
+            }
+    
+            
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .slider_wrapper#latest_articles,.slider_wrapper#similars{
+        font-size: 16px ;
+        width: 80% ;
+        button{        
+        }   
+        .slider{
+            .slide{
+                width: calc((80vw - (3 * 1.2em)) / 3) ;
+            }
+        }
+    }
+}
+@media screen and (max-width:750px){
+    .slider_wrapper#latest_articles,.slider_wrapper#similars{
+        width: 90% ;
+        button{        
+        }   
+        .slider{
+            .slide{
+                width: calc((90vw - (3 * 1.2em)) / 3) ;
+            }
+        }
+    }
+}
+@media screen and (max-width:550px){
+    .slider_wrapper#latest_articles,.slider_wrapper#similars{
+        font-size: 13px; 
+        button{     
+            display: none ;   
+        }   
+        .slider{
+            overflow: auto;
+            padding-top: $dist2 ;
+            padding-bottom: $dist2 ;
+            .slide{
+                width: calc((90vw - (2 * 1.3em)) / 2) ;
+            }
+        }
+    }
 }

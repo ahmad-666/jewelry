@@ -53,7 +53,7 @@ body{
             @include fullSize-abs ;
             opacity: 0;
             visibility: hidden ;
-            @include bg("",center center,no-repeat,cover) ;
+            @include bg("",center center,no-repeat,100% 100%) ;
             transition: all .7s linear ;
             &:nth-child(1){background-image: url('../../assets/imgs/slider1.jpg');}
             &:nth-child(2){background-image: url('../../assets/imgs/slider2.jpg');}
@@ -65,4 +65,10 @@ body{
             visibility: visible;
         }
     }
+}
+@media screen and (max-width:900px){
+    #top_slider{font-size: 16px ;}
+}
+@media screen and (max-width:500px){
+    #top_slider{font-size: 13px ;}
 }

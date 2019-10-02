@@ -27,3 +27,12 @@ body{
         line-height: $dist3 ;
     }
 }
+@media screen and (max-width:900px){
+    #guide{font-size: 16px;}
+}
+@media screen and (max-width:750px){
+    #guide{width: 95%;}
+}
+@media screen and (max-width:600px){
+    #guide{font-size: 13px;}
+}

@@ -1,365 +1,354 @@
-@import '../../colors.scss' ;
-@import '../../variables.scss' ;
-@import '../../mixins.scss' ;
-#grid{
-    @include containerStyle ;
-    width: 80vw ;
+@import '../../colors.scss';
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+#grid {
+    @include containerStyle;
+    width: 80vw;
     height: auto;
-    display: flex ;
-    @include flex(column,flex-start,center,nowrap,"") ;
-    margin: $dist3 auto 0 auto ;
-    h4{
-        font-size: $font-special ;
-        color: $darkColor ;
-        font-weight: 700 ;
+    display: flex;
+    @include flex(column, flex-start, center, nowrap, "");
+    margin: $dist3 auto 0 auto;
+
+    h4 {
+        font-size: $font-xl;
+        color: $darkColor;
+        font-weight: 700;
     }
-    .col{
-        width: 100% ;
-        display: flex ;
+
+    .col {
+        width: 100%;
+        display: flex;
         overflow: hidden;
-        .box{
-            @include bg("",center center,no-repeat,cover) ;
-            position: relative ;    
+
+        .box {
+            @include bg("", center center, no-repeat, 100% 100%);
+            position: relative;
             overflow: hidden;
-            &::before{
+
+            &::before {
                 content: '';
-                width: 100% ;
+                width: 100%;
                 height: 100%;
-                border-radius: 50% ;
-                position: absolute ;
-                top: 50% ;
-                right: 50% ;   
-                transform: translate(50%,-50%) scale(0) ;             
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                transform: translate(50%, -50%) scale(0);
                 background-color: $blackFilter;
-                transition: all .6s ease-in-out ;
+                transition: all .6s ease-in-out;
             }
-            .content{
-                width: 100% ;
+
+            .content {
+                width: 100%;
                 height: auto;
-                @include center-y ;
-                display: flex ;
-                @include flex(column,flex-start,center,nowrap,"") ;
+                @include center-y;
+                display: flex;
+                @include flex(column, flex-start, center, nowrap, "");
                 opacity: 0;
-                visibility: hidden ;
-                transition: all .5s ease-in-out ;
-                .name,.price,a{
-                    margin: $dist1 / 2 auto ;
+                visibility: hidden;
+                transition: all .5s ease-in-out;
+
+                .name,
+                .price,
+                a {
+                    margin: $dist1 / 2 auto;
                 }
-                .name,.price{
-                    width: 100% ;
-                    text-align: center ;
-                    @include ellipse ;
+
+                .name,
+                .price {
+                    width: 100%;
+                    text-align: center;
+                    @include ellipse;
                     height: auto;
-                    font-size: $font-l ;
-                    color: $whiteColor2 ;
+                    font-size: $font-l;
+                    color: $whiteColor2;
                 }
-                a{
-                    padding: $dist1 - .2em $dist3  ;
-                    color: black ;
-                    font-size: $font-l - .1em ;
-                    background-color: $primaryColor ;
-                    border-radius: $dist3 ;
+
+                a {
+                    padding: $dist1 - .2em $dist3;
+                    color: black;
+                    font-size: $font-l - .1em;
+                    background-color: $primaryColor;
+                    border-radius: $dist3;
                 }
             }
-            &:hover{
-                &::before{
-                    transform: translate(50%,-50%) scale(2) ;             
+
+            &:hover {
+                &::before {
+                    transform: translate(50%, -50%) scale(2);
                 }
-                .content{
+
+                .content {
                     opacity: 1;
-                    visibility: visible ;
+                    visibility: visible;
                 }
             }
         }
     }
-    .col.num1{
-        margin-top: $dist2 ;
+
+    .col.num1 {
+        margin-top: $dist2;
         height: 50vh;
-        @include flex(column,space-between,flex-start,wrap,flex-start) ;
-        .box{
-            &:nth-child(1){
-                width: 25% ;
+        @include flex(column, space-between, flex-start, wrap, flex-start);
+
+        .box {
+            &:nth-child(1) {
+                width: 25%;
                 height: calc(50% - .25em);
                 background-image: url('../../assets/imgs/mahdi2.jpg');
             }
-            &:nth-child(2){
-                width: 25% ;
+
+            &:nth-child(2) {
+                width: 25%;
                 height: calc(50% - .25em);
-                background-image: url('../../assets/imgs/ehsan.jpg') ;
+                background-image: url('../../assets/imgs/ehsan.jpg');
             }
-            &:nth-child(3){
-                width: 25% ;
+
+            &:nth-child(3) {
+                width: 25%;
                 height: calc(50% - .25em);
-                background-image: url('../../assets/imgs/atefeh.jpg') ;
-                margin-right: $dist1 ;
+                background-image: url('../../assets/imgs/atefeh.jpg');
+                margin-right: $dist1;
             }
-            &:nth-child(4){
-                width: 25% ;
+
+            &:nth-child(4) {
+                width: 25%;
                 height: calc(50% - .25em);
-                background-image: url('../../assets/imgs/mohammad1.jpg') ;
-                margin-right: $dist1 ;
+                background-image: url('../../assets/imgs/mohammad1.jpg');
+                margin-right: $dist1;
             }
-            &:nth-child(5){
-                width: 50% ;
+
+            &:nth-child(5) {
+                width: 50%;
                 height: 100%;
-                background-image: url('../../assets/imgs/amirhossein.jpg') ;
-                margin-right: $dist1 ;
+                background-image: url('../../assets/imgs/amirhossein.jpg');
+                margin-right: $dist1;
             }
         }
     }
-    .col.num2{
-        margin-top: $dist1 ;
-        width: 100% ;
+
+    .col.num2 {
+        margin-top: $dist1;
+        width: 100%;
         height: 25vh;
-        @include flex(row,space-between,center,nowrap,"") ;
-        .box{
-            &:nth-child(1){
-                width: 33.3% ;
+        @include flex(row, space-between, center, nowrap, "");
+
+        .box {
+            &:nth-child(1) {
+                width: 33.3%;
                 height: 100%;
                 background-image: url('../../assets/imgs/mozhde.jpg');
             }
-            &:nth-child(2){
-                width: 33.3% ;
+
+            &:nth-child(2) {
+                width: 33.3%;
                 height: 100%;
-                background-image: url('../../assets/imgs/tarikh1.jpg') ;
-                margin-right: $dist1 ;
+                background-image: url('../../assets/imgs/tarikh1.jpg');
+                margin-right: $dist1;
             }
-            &:nth-child(3){
-                width: 33.3% ;
+
+            &:nth-child(3) {
+                width: 33.3%;
                 height: 100%;
-                background-image: url('../../assets/imgs/kifsafa.jpg') ;
-                margin-right: $dist1 ;
+                background-image: url('../../assets/imgs/kifsafa.jpg');
+                margin-right: $dist1;
             }
         }
     }
 }
 
+@media screen and (max-width:1100px) {
+    #grid {
+        font-size: 16px;
+    }
+}
 
+@media screen and (max-width:900px) {
+    #grid {
+        width: 80vw;
 
-// <div id="grid">
-//     <h4>پیشنهادهای تاباچرم</h4>
-//     <div class="col num1">
-//         <div class="inner_col num1">
-//             <div class="box">
-//                 <div class="content">
-//                     <p class="name">نام محصول</p>
-//                     <p class="price">1.000.000 تومان</p>
-//                     <a href="./product.html">اطلاعات بیشتر</a>
-//                 </div>
-//             </div>
-//             <div class="box">
-//                 <div class="content">
-//                     <p class="name">نام محصول</p>
-//                     <p class="price">1.000.000 تومان</p>
-//                     <a href="./product.html">اطلاعات بیشتر</a>
-//                 </div>
-//             </div>
-//         </div>
-//         <div class="inner_col num2">
-//             <div class="box">
-//                 <div class="content">
-//                     <p class="name">نام محصول</p>
-//                     <p class="price">1.000.000 تومان</p>
-//                     <a href="./product.html">اطلاعات بیشتر</a>
-//                 </div>
-//             </div>
-//             <div class="box">
-//                 <div class="content">
-//                     <p class="name">نام محصول</p>
-//                     <p class="price">1.000.000 تومان</p>
-//                     <a href="./product.html">اطلاعات بیشتر</a>
-//                 </div>
-//             </div>
-//         </div>
-//         <div class="inner_col num3">
-//             <div class="box">
-//                 <div class="content">
-//                     <p class="name">نام محصول</p>
-//                     <p class="price">1.000.000 تومان</p>
-//                     <a href="./product.html">اطلاعات بیشتر</a>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-//     <div class="col num2">
-//         <div class="box">
-//             <div class="content">
-//                 <p class="name">نام محصول</p>
-//                 <p class="price">1.000.000 تومان</p>
-//                 <a href="./product.html">اطلاعات بیشتر</a>
-//             </div>
-//         </div>
-//         <div class="box">
-//             <div class="content">
-//                 <p class="name">نام محصول</p>
-//                 <p class="price">1.000.000 تومان</p>
-//                 <a href="./product.html">اطلاعات بیشتر</a>
-//             </div>
-//         </div>
-//         <div class="box">
-//             <div class="content">
-//                 <p class="name">نام محصول</p>
-//                 <p class="price">1.000.000 تومان</p>
-//                 <a href="./product.html">اطلاعات بیشتر</a>
-//             </div>
-//         </div>
-//     </div>
-// </div>
+        .col {
+            width: 100%;
+        }
 
-// @import '../../colors.scss' ;
-// @import '../../variables.scss' ;
-// @import '../../mixins.scss' ;
-// #grid{
-//     width: 80vw ;
-//     height: auto;
-//     display: flex ;
-//     @include flex(column,flex-start,center,nowrap,"") ;
-//     margin: $dist3 auto 0 auto ;
-//     h4{
-//         font-size: $font-special ;
-//         color: $darkColor ;
-//         font-weight: 700 ;
-//     }
-//     .col{
-//         width: 100% ;
-//         display: flex ;
-//         overflow: hidden;
-//         .box{
-//             @include bg("",center center,no-repeat,cover) ;
-//             position: relative ;    
-//             overflow: hidden;
-//             &::before{
-//                 content: '';
-//                 width: 100% ;
-//                 height: 100%;
-//                 border-radius: 50% ;
-//                 position: absolute ;
-//                 top: 50% ;
-//                 right: 50% ;   
-//                 transform: translate(50%,-50%) scale(0) ;             
-//                 background-color: $blackFilter;
-//                 transition: all .6s ease-in-out ;
-//             }
-//             .content{
-//                 width: 100% ;
-//                 height: auto;
-//                 @include center-y ;
-//                 display: flex ;
-//                 @include flex(column,flex-start,center,nowrap,"") ;
-//                 opacity: 0;
-//                 visibility: hidden ;
-//                 transition: all .5s ease-in-out ;
-//                 .name,.price,a{
-//                     margin: $dist1 / 2 auto ;
-//                 }
-//                 .name,.price{
-//                     width: 100% ;
-//                     text-align: center ;
-//                     @include ellipse ;
-//                     height: auto;
-//                     font-size: $font-l ;
-//                     color: $whiteColor2 ;
-//                 }
-//                 a{
-//                     padding: $dist1 - .2em $dist3  ;
-//                     color: $greenColor2 ;
-//                     font-size: $font-l - .1em ;
-//                     background-color: $whiteColor2 ;
-//                     border-radius: $dist3 ;
-//                 }
-//             }
-//             &:hover{
-//                 &::before{
-//                     transform: translate(50%,-50%) scale(2) ;             
-//                 }
-//                 .content{
-//                     opacity: 1;
-//                     visibility: visible ;
-//                 }
-//             }
-//         }
-//         .inner_col{
-//             display: flex ;
-//             @include flex(column,space-between,center,nowrap,"") ;
-//         }
-//     }
-//     .col.num1{
-//         margin-top: $dist2 ;
-//         height: 20em;
-//         @include flex(row,space-between,center,nowrap,"") ;
-//         .inner_col.num1{
-//             width: 25% ;
-//             height: 100%;
-//             .box{
-//                 &:nth-child(1){
-//                     width: 100% ;
-//                     height: 50%;
-//                     background-image: url('../../assets/imgs/mahdi2.jpg');
-//                 }
-//                 &:nth-child(2){
-//                     width: 100% ;
-//                     height: 50%;
-//                     background-image: url('../../assets/imgs/ehsan.jpg') ;
-//                     margin-top: $dist1 ;
-//                 }
-//             }
-//         }
-//         .inner_col.num2{
-//             width: 25% ;
-//             height: 100%;
-//             margin-right: $dist1 ;
-//             .box{
-//                 &:nth-child(1){
-//                     width: 100% ;
-//                     height: 50%;
-//                     background-image: url('../../assets/imgs/atefeh.jpg') ;
-//                 }
-//                 &:nth-child(2){
-//                     width: 100% ;
-//                     height: 50%;
-//                     background-size: 100% 100% ;
-//                     background-image: url('../../assets/imgs/mohammad1.jpg') ;
-//                     margin-top: $dist1 ;
-//                 }
-//             }
-//         }
-//         .inner_col.num3{
-//             width: 50% ;
-//             height: 100%;
-//             margin-right: $dist1 ;
-//             .box{
-//                 &:nth-child(1){
-//                     width: 100% ;
-//                     height: 100%;
-//                     background-image: url('../../assets/imgs/amirhossein.jpg') ;
-//                     margin-right: $dist1 ;
-//                 }
-//             }            
-//         }
-//     }
-//     .col.num2{
-//         margin-top: $dist1 ;
-//         width: 100% ;
-//         height: 10em;
-//         @include flex(row,space-between,center,nowrap,"") ;
-//         .box{
-//             &:nth-child(1){
-//                 width: 33.3% ;
-//                 height: 100%;
-//                 background-image: url('../../assets/imgs/mozhde.jpg');
-//             }
-//             &:nth-child(2){
-//                 width: 33.3% ;
-//                 height: 100%;
-//                 background-image: url('../../assets/imgs/tarikh1.jpg') ;
-//                 margin-right: $dist1 ;
-//             }
-//             &:nth-child(3){
-//                 width: 33.3% ;
-//                 height: 100%;
-//                 background-image: url('../../assets/imgs/kifsafa.jpg') ;
-//                 margin-right: $dist1 ;
-//             }
-//         }
-//     }
-// }
+        .col.num1 {
+            margin-top: $dist2;
+            height: auto;
+            @include flex(row, flex-start, flex-start, wrap, flex-start);
+
+            .box {
+                &:nth-child(1) {
+                    width: calc(50% - .25em);
+                    height: 12em;
+                }
+
+                &:nth-child(2) {
+                    width: calc(50% - .25em);
+                    height: 12em;
+                    margin-right: .5em;
+                }
+
+                &:nth-child(3) {
+                    width: calc(50% - .25em);
+                    height: 12em;
+                    margin-top: .5em;
+                    margin-right: 0em;
+                }
+
+                &:nth-child(4) {
+                    width: calc(50% - .25em);
+                    height: 12em;
+                    margin-top: .5em;
+                    margin-right: .5em;
+                }
+
+                &:nth-child(5) {
+                    width: 100%;
+                    height: 12em;
+                    margin-right: 0;
+                    margin-top: .5em;
+                }
+            }
+        }
+
+        .col.num2 {
+            margin-top: $dist1;
+            width: 100%;
+            height: 25vh;
+            @include flex(row, space-between, center, nowrap, "");
+
+            .box {
+                &:nth-child(1) {
+                    width: 33.3%;
+                    height: 100%;
+                }
+
+                &:nth-child(2) {
+                    width: 33.3%;
+                    height: 100%;
+                    margin-right: $dist1;
+                }
+
+                &:nth-child(3) {
+                    width: 33.3%;
+                    height: 100%;
+                    margin-right: $dist1;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:750px) {
+    #grid {
+        width: 90vw;
+    }
+}
+@media screen and (max-width:600px) {
+    #grid {
+        font-size: 13px;
+        .col {
+            width: 100%;
+        }
+        .col.num2 {
+            margin-top: $dist1;
+            width: 100%;
+            height: auto;
+            @include flex(column, flex-start, center, nowrap, "");
+
+            .box {
+                &:nth-child(1) {
+                    width: 100%;
+                    height: 12em;
+                }
+
+                &:nth-child(2) {
+                    width: 100%;
+                    height: 12em;
+                    margin-top: .5em;
+                }
+
+                &:nth-child(3) {
+                    width: 100%;
+                    height: 12em;
+                    margin-top: .5em;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:500px) {
+    #grid {
+        .col {
+            width: 100%;
+        }
+
+        .col.num1 {
+            margin-top: $dist2;
+            height: auto;
+            @include flex(column, flex-start, flex-start, nowrap, "");
+
+            .box {
+                &:nth-child(1) {
+                    width: 100%;
+                    height: 10em;
+                }
+
+                &:nth-child(2) {
+                    width: 100%;
+                    height: 10em;
+                    margin-top: .5em;
+                    margin-right: 0;
+                }
+
+                &:nth-child(3) {
+                    width: 100%;
+                    height: 10em;
+                    margin-top: .5em;
+                    margin-right: 0em;
+                }
+
+                &:nth-child(4) {
+                    width: 100%;
+                    height: 10em;
+                    margin-top: .5em;
+                    margin-right: 0 ;
+                }
+
+                &:nth-child(5) {
+                    width: 100%;
+                    height: 10em;
+                    margin-right: 0;
+                    margin-top: .5em;
+                }
+            }
+        }
+
+        .col.num2 {
+            margin-top: $dist1;
+            width: 100%;
+            height: auto;
+            @include flex(column, flex-start, center, nowrap, "");
+
+            .box {
+                &:nth-child(1) {
+                    width: 100%;
+                    height: 10em;
+                }
+
+                &:nth-child(2) {
+                    width: 100%;
+                    height: 10em;
+                    margin-top: .5em;
+                }
+
+                &:nth-child(3) {
+                    width: 100%;
+                    height: 10em;
+                    margin-top: .5em;
+                }
+            }
+        }
+    }
+}
