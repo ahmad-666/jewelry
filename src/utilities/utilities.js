@@ -36,6 +36,7 @@ function docHandler(container,others){
     document.addEventListener('click',docClick);
 }
 function docClick(e){
+    //we should use  e.stopPropagation() on other eventListener too
     e.stopPropagation();  
     let container = document.container ;
     let clickedElm = e.target ;

@@ -142,31 +142,55 @@ footer{
             color: $redColor2 ;
             font-weight: 700 ;
         }
-        .infos{
-            margin: $dist1 0 ;
-            width: auto ;
+        .wrapper{
+            width: 100% ;
             height: auto;
+            margin: $dist1 0 ;
             display: flex ;
-            @include flex(column,flex-start,flex-start,nowrap,"") ;
-            div{
+            @include flex(row,space-between,flex-start,wrap,flex-start) ;
+            .infos{
                 width: auto ;
                 height: auto;
                 display: flex ;
-                @include flex(row,flex-start,center,nowrap,"") ;
-                margin: $dist1 0 ;
-                &:first-child{margin-top: 0 ;}
-                i{
-                    font-size: $font-l ;
-                    color: $greyColor2 ;
-                    transform: translateY(6%) ;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                div{
+                    width: auto ;
+                    height: auto;
+                    display: flex ;
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    margin: $dist1 0 ;
+                    &:first-child{margin-top: 0 ;}
+                    i{
+                        font-size: $font-l ;
+                        color: $greyColor2 ;
+                        transform: translateY(6%) ;
+                    }
+                    p{
+                        font-size: $font-m - .1em ;
+                        color: $greyColor2 ;
+                        transform: translateX(-.3em) ;
+                    }
                 }
-                p{
-                    font-size: $font-m - .1em ;
-                    color: $greyColor2 ;
-                    transform: translateX(-.3em) ;
+            }
+            .apps{
+                width: auto ;
+                height: auto;
+                margin-right: $dist2 ;
+                display: flex ;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                a{
+                    width: auto ;
+                    height: auto;
+                    margin-top: $dist1 ;
+                    &:first-child{margin-top: 0;}
+                    img{
+                        width: 8em ;
+                        height: 2.5em;
+                    }
                 }
             }
         }
+     
     }
 }
 @media screen and (max-width:1000px){
@@ -207,35 +231,5 @@ footer{
                 width: calc((100% - (2 * 1.4em)) / 2);
             }
         }
-        // #links{     
-        //     @include flex(row,space-around,flex-start,wrap,flex-start) ;
-        //     .guide,.services,.more_info{
-        //     }
-        //     form#rss{
-        //         @include flex(column,flex-start,flex-start,nowrap,"") ;
-        //         .input-wrapper{
-        //             width: 18em ;
-        //             height: 2.5em;
-        //         }
-        //         .socials{
-        //             @include flex(row,flex-start,center,wrap,flex-start) ;
-        //             a{
-        //                 width: 2.5em ;
-        //                 height: 2.5em;
-        //                 border-radius: 50% ;
-        //             }
-        //         }
-        //     }
-        // }
-        // #contact{
-        //    @include flex(column,flex-start,flex-start,nowrap,"") ;
-        //     .infos{
-        //         @include flex(column,flex-start,flex-start,nowrap,"") ;
-        //         div{
-        //             @include flex(row,flex-start,center,nowrap,"") ;
-        //             margin: $dist1 0 ;
-        //         }
-        //     }
-        // }
     }
 }

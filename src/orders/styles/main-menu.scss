@@ -155,9 +155,9 @@ body>i.fa-bars.main_menu{
     line-height: $dist3 ;
     cursor: pointer;
     position: fixed ;
-    right: 2.5% ;
+    right: .5em ;
     top: 50% ;
-    transform: translate(50%,-50%) ;
+    transform: translateY(-50%) ;
     font-size: $font-xl + .2em ;
     z-index: 12;
     transition: all .3s linear ;

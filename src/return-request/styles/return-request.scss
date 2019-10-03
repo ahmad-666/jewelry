@@ -2,3 +2,27 @@
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
 @import '../../utilities/styles/form.scss' ;
+form#returnRequest .inputWrapper.text input{
+    width: 15em ;
+}
+form#returnRequest .inputWrapper.textarea textarea{
+    width: 35em ;
+}
+@media screen and (max-width:1000px){
+    form#returnRequest{
+        font-size: 16px ;
+    }
+}
+@media screen and (max-width:750px){
+    form#returnRequest{
+        font-size: 13px ;
+    }
+}
+@media screen and (max-width:520px){
+    form#returnRequest .inputWrapper.text input{
+        width: 50vw ;
+    }
+    form#returnRequest .inputWrapper.textarea textarea{
+        width: 70vw ;
+    }
+}

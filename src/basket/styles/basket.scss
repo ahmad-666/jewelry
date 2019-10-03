@@ -358,3 +358,120 @@ form#basket{
         }
     }
 }
+@media screen and (max-width:1000px){
+    form#basket{
+        font-size: 16px;    
+        .slider{          
+            .slide{
+                table{
+                    thead,tbody{
+                        tr{
+                            th,td{
+                                font-size: 13px ;
+                            }                                  
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:800px){
+    form#basket{
+        width: 90% ;
+        .slider{          
+            .slide#buyBasket{
+                table{
+                    width: 95% ;
+                }
+            }
+            .slide#checkout{
+                table{
+                    width: 90% ;
+                }
+                .row{
+                    width: 90% ;
+                }        
+            }
+        }
+    }
+    form#basket{
+        .inputWrapper.text {
+            input {
+                width: calc((90vw - (3 * 3em)) / 3);
+               
+            }
+        }
+        .inputWrapper.select {
+            input {
+                width: calc((90vw - (3 * 3em)) / 3);
+            }
+        }  
+        .inputWrapper.textarea {
+            textarea {
+                width: 60vw;
+            }
+        }
+
+    }
+}
+@media screen and (max-width:600px){
+    form#basket{
+        font-size: 13px;    
+        .slider{          
+            .slide{
+                table{
+                    thead,tbody{
+                        tr{
+                            th,td{
+                                font-size: 11px ;
+                            }                                  
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:500px){
+    form#basket{
+        .inputWrapper.text {
+            input {
+                width: calc((90vw - (2 * 3.2em)) / 2);
+               
+            }
+        }
+        .inputWrapper.select {
+            input {
+                width: calc((90vw - (2 * 3.2em)) / 2);
+            }
+        }  
+        .inputWrapper.textarea {
+            textarea {
+                width: 80vw;
+            }
+        }
+
+    }
+}
+@media screen and (max-width:350px){
+    form#basket{
+        .inputWrapper.text {
+            input {
+                width: 75vw;
+               
+            }
+        }
+        .inputWrapper.select {
+            input {
+                width: 75vw;
+            }
+        }  
+        .inputWrapper.textarea {
+            textarea {
+                width: 75vw;
+            }
+        }
+
+    }
+}

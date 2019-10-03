@@ -1,3 +1,4 @@
+import util from '../../utilities/utilities.js' ;
 import wNumb from 'wnumb' ;
 import noUiSlider from 'nouislider' ;
 //price ranger
@@ -157,5 +158,29 @@ function subCategoryHandler(e){
     })
     if(noSubCategory) mainCategory.checked = false ;
     else mainCategory.checked = true ;
-
+}
+let mobileFilter = document.querySelector('#openFilter') ;
+let mobileSort = document.querySelector('#openSort') ;
+let sortWrapper = document.querySelector('#order') ;
+filterOpenCheck();
+window.addEventListener('resize',filterOpenCheck) ;
+function filterOpenCheck(e){
+    if(window.innerWidth<=750) {
+        mobileFilter.addEventListener('click',openFilter) ;
+        mobileSort.addEventListener('click',openSort) ;
+    }
+    else {
+        mobileFilter.removeEventListener('click',openFilter) ;
+        mobileSort.removeEventListener('click',openSort) ;
+    }
+}
+function openFilter(e){
+    e.stopPropagation();  
+    filtersWrapper.classList.add('show') ;
+    util.docHandler(filtersWrapper,[sortWrapper]) ;
+}
+function openSort(e){
+    e.stopPropagation();  
+    sortWrapper.classList.add('show') ;
+    util.docHandler(sortWrapper,[filtersWrapper]) ;
 }
