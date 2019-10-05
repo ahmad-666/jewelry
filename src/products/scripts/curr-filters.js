@@ -27,6 +27,7 @@ function createFilterTag(checkbox){
     closeIcon.classList.add('fas','fa-times') ;
     let text = document.createElement('p') ;
     text.textContent = checkbox.parentElement.querySelector('p').textContent ;
+    currFilter.setAttribute('id',`${checkbox.getAttribute('id')}_curr`)
     currFilter.appendChild(closeIcon) ;
     currFilter.appendChild(text) ;
     currFiltersWrapper.appendChild(currFilter) ;
@@ -36,7 +37,8 @@ function removeFilterTag(checkbox){
     let currFilters = currFiltersWrapper.querySelectorAll('.curr') ;
     for(let i=0 ; i<currFilters.length ; i++){
         let currFilter = currFilters[i] ;
-        if(currFilter.querySelector('p').textContent == checkbox.parentElement.querySelector('p').textContent) {
+        //if(currFilter.querySelector('p').textContent == checkbox.parentElement.querySelector('p').textContent) {
+        if(currFilter.getAttribute('id') == `${checkbox.getAttribute('id')}_curr`){  
             currFilter.querySelector('i').removeEventListener('click',closeCurrFilter)
             currFilter.parentElement.removeChild(currFilter) ;
             break ;
