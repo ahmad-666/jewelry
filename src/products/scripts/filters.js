@@ -176,11 +176,11 @@ function filterOpenCheck(e){
 }
 function openFilter(e){
     e.stopPropagation();  
-    filtersWrapper.classList.add('show') ;
+    filtersWrapper.classList.toggle('show') ;
     util.docHandler(filtersWrapper,[sortWrapper]) ;
 }
 function openSort(e){
     e.stopPropagation();  
-    sortWrapper.classList.add('show') ;
+    sortWrapper.classList.toggle('show') ;
     util.docHandler(sortWrapper,[filtersWrapper]) ;
 }

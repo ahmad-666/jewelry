@@ -13,6 +13,15 @@
             background-color: white ;
             box-shadow: 0 0 .3em .05em $shadowColor ;
             padding: $dist1 ;
+            #mobileFixer{
+                width: 100% ;
+                min-height: min-content ;
+                display: flex ;
+                flex-direction: column ;
+                justify-content: flex-start ;
+                align-items: flex-start ;
+                flex-wrap: nowrap ;
+            }
             .filter{
                 width: 100% ;
                 height: auto;
@@ -252,6 +261,35 @@
                     
                 }
             }
+        }
+    }
+}
+@media screen and (max-width:600px){
+    .wrapper{
+        #filters_wrapper{
+            #filters{
+                .filter#price{
+                    .content{
+                        #range{
+                            .noUi-handle.circle{
+                                width: 1.5em ;
+                                height: 1.5em;
+                            }               
+                            .noUi-handle.right{
+                                right: 0 ;
+                                transform: translate(0%,-40%) ;
+                                top: 0% ;
+                            }   
+                            .noUi-handle.left{
+                                left: 0 ;
+                                top: 0% ;
+                                transform: translate(0%,-40%) ;
+                            }                  
+                        }
+                    }
+                }
+            }
+           
         }
     }
 }
