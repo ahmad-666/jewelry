@@ -5,7 +5,6 @@
     #products_wrapper{
         #products{
             border-radius: $dist1 ;
-
             margin-top: $dist2 ;
             width: 100% ;
             height: auto;
@@ -16,11 +15,11 @@
             padding-bottom: $dist4 ;
             position: relative;
             .product{
-                // width: 12em ;
+                width: calc((100% - (4 * 1em)) / 4) ;
                 border-radius: $dist1 ;
                 height: 15em;
                 border: 1px solid lighten($greyColor2,25%) ;
-                margin: $dist2 $dist1;
+                margin: $dist1;
                 position: relative ;
                 display: flex ;
                 @include flex(column,flex-start,center,nowrap,"") ;
@@ -128,12 +127,12 @@
                 }
             }
             #pagination{
-                width: auto ;
+                width: 100% ;
                 height: auto;
                 @include center-x ;
                 bottom: $dist1 ;
                 display: flex ;
-                @include flex(row,flex-start,center,nowrap,"") ;
+                @include flex(row,center,center,wrap,flex-start) ;     
                 .page{
                     width: auto ;
                     height: 2.5em;
@@ -146,11 +145,75 @@
                     background-color: $whiteColor2 ;
                     border: 1px solid $greyColor2 ;
                     margin-right: $dist1 ;
+                    overflow-wrap: keep-all ;
                     &:hover{
                         color: black ;
                         background-color: $primaryColor ;
                         border: 1px solid transparent ;
                     }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1300px){
+    .wrapper{
+        #products_wrapper{
+            #products{
+                .product{
+                    width: calc((100% - (3 * 1em)) / 3) ;
+                    height: 15em;                       
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:900px){
+    .wrapper{
+        #products_wrapper{
+            #products{
+                .product{
+                    width: calc((100% - (2 * 1em)) / 2) ;
+                    height: 15em;                       
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:750px){
+    .wrapper{
+        #products_wrapper{
+            margin-right: 0 ;
+            #products{
+                .product{
+                    width: calc((100% - (3 * 1em)) / 3) ;
+                    height: 15em;                       
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:620px){
+    .wrapper{
+        #products_wrapper{
+            margin-right: 0 ;
+            #products{
+                .product{
+                    width: calc((100% - (2 * 1em)) / 2) ;
+                    height: 15em;                       
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:380px){
+    .wrapper{
+        #products_wrapper{
+            margin-right: 0 ;
+            #products{
+                .product{
+                    width: 100% ;
+                    height: 15em;                       
                 }
             }
         }

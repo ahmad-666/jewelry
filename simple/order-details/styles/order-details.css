@@ -1,75 +1,3 @@
-:export {
-  dist1: 0.5em;
-  dist2: 1em;
-  dist3: 2em;
-  dist4: 4em;
-  font-s: 0.6em;
-  font-m: 0.8em;
-  font-l: 1em;
-  font-xl: 1.2em;
-  font-xxl: 2em;
-  font-special: 1.6em;
-  sectionsDist: 4em;
-}
-
-:export {
-  primaryColor: #f0c900;
-  blueColor1: #009CFF;
-  blueColor2: #003DBB;
-  purpleColor1: #6956D8;
-  purpleColor2: #9090C5;
-  purpleColor3: #4a4982;
-  greenColor1: #6BFBCE;
-  greenColor2: #1EC198;
-  redColor1: #FF5198;
-  redColor2: #e74a4a;
-  orangeColor1: #FF846C;
-  orangeColor2: #ff8f00;
-  yellowColor: #f9a825;
-  brownColor: #C99035;
-  paleColor: #f4f3f7;
-  whiteColor1: #f8f8f8;
-  whiteColor2: #fbfbfb;
-  greyColor: #b9b9c1;
-  greyColor2: #86878e;
-  darkColor: #2d2d31;
-  darkBlue: #5d6174;
-  shadowColor: rgba(70, 69, 85, 0.3);
-  shadowColor2: rgba(0, 0, 0, 0.5);
-  blackFilter: rgba(30, 30, 30, 0.8);
-  blackFilter2: rgba(30, 30, 30, 0.6);
-  blackFilter3: rgba(30, 30, 30, 0.7);
-}
-
-:export {
-  primaryColor: #f0c900;
-  blueColor1: #009CFF;
-  blueColor2: #003DBB;
-  purpleColor1: #6956D8;
-  purpleColor2: #9090C5;
-  purpleColor3: #4a4982;
-  greenColor1: #6BFBCE;
-  greenColor2: #1EC198;
-  redColor1: #FF5198;
-  redColor2: #e74a4a;
-  orangeColor1: #FF846C;
-  orangeColor2: #ff8f00;
-  yellowColor: #f9a825;
-  brownColor: #C99035;
-  paleColor: #f4f3f7;
-  whiteColor1: #f8f8f8;
-  whiteColor2: #fbfbfb;
-  greyColor: #b9b9c1;
-  greyColor2: #86878e;
-  darkColor: #2d2d31;
-  darkBlue: #5d6174;
-  shadowColor: rgba(70, 69, 85, 0.3);
-  shadowColor2: rgba(0, 0, 0, 0.5);
-  blackFilter: rgba(30, 30, 30, 0.8);
-  blackFilter2: rgba(30, 30, 30, 0.6);
-  blackFilter3: rgba(30, 30, 30, 0.7);
-}
-
 #generalInfo {
   width: 80%;
   height: auto;
@@ -161,7 +89,6 @@
   padding: 0 0.5em;
   overflow: hidden;
   margin: 0.5em 0;
-  border-right: 1.2px solid #bbbbbf;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -190,10 +117,6 @@
   -webkit-align-content: "";
       -ms-flex-line-pack: "";
           align-content: "";
-}
-
-#generalInfo .infos .info:first-child {
-  border-right: none;
 }
 
 #generalInfo .infos .info p {
@@ -228,11 +151,6 @@
 
 #generalInfo .infos .info p.send {
   background-color: #1EC198;
-}
-
-#generalInfo .infos .info.special {
-  border-right: 1.2px solid #bbbbbf;
-  border-left: 1.2px solid #bbbbbf;
 }
 
 #generalInfo .infos .info.special p:nth-child(1) {
@@ -415,9 +333,6 @@
 }
 
 #details table thead tr th:nth-child(3), #details table thead tr td:nth-child(3), #details table tbody tr th:nth-child(3), #details table tbody tr td:nth-child(3) {
-  -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
   width: 12em;
   margin-right: 2em;
 }
@@ -669,5 +584,60 @@
 
 #details table tbody tr:hover {
   background-color: #ebebeb;
+}
+
+@media screen and (max-width: 1000px) {
+  #generalInfo {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #generalInfo {
+    width: 95%;
+  }
+  #generalInfo .infos .info {
+    width: -webkit-calc(100% / 3);
+    width: -moz-calc(100% / 3);
+    width: calc(100% / 3);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #generalInfo {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  #generalInfo .infos .info {
+    width: -webkit-calc(100% / 2);
+    width: -moz-calc(100% / 2);
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #details {
+    font-size: 16px;
+  }
+  #details table thead tr th, #details table thead tr td, #details table tbody tr th, #details table tbody tr td {
+    font-size: 13px !important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #details {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #details {
+    font-size: 13px;
+  }
+  #details table thead tr th, #details table thead tr td, #details table tbody tr th, #details table tbody tr td {
+    font-size: 10px !important;
+  }
 }
 /*# sourceMappingURL=order-details.css.map */

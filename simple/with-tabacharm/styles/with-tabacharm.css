@@ -54,4 +54,22 @@ body {
   color: #86878e;
   line-height: 2em;
 }
+
+@media screen and (max-width: 900px) {
+  #with_tabacharm {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #with_tabacharm {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #with_tabacharm {
+    font-size: 13px;
+  }
+}
 /*# sourceMappingURL=with-tabacharm.css.map */

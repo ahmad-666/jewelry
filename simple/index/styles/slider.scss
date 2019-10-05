@@ -1,7 +1,6 @@
 @import '../../colors.scss';
 @import '../../variables.scss';
 @import '../../mixins.scss';
-
 .slider_wrapper#new_product,.slider_wrapper#suggestions {
     @include containerStyle ;
     width: 80%;
@@ -17,7 +16,7 @@
         margin: $dist1 0;
     }
     h4 {
-        font-size: $font-special;
+        font-size: $font-xl;
         font-weight: 700;
         color: $darkColor;
         margin-top: 0 ;
@@ -64,8 +63,8 @@
         display: flex;
         @include flex(row, flex-start, center, nowrap, "");
         .slide {
-            width: calc((80vw - (5 * 1.1em))/ 5);
-            height: 14em;
+            width: calc((100% - (5 * 1.1em)) / 5);
+            height: 11em;
             position: relative;
             margin: 0 $dist1;
             flex-shrink: 0;
@@ -88,7 +87,7 @@
                 background-color: $redColor2;
                 color: $whiteColor2;
                 font-size: $font-m;
-                padding: ($dist1 - .2em) ($dist3 - .5em);
+                padding: .3em .5em;
             }
             .discount_val {
                 width: auto;
@@ -101,7 +100,7 @@
                 background-color: $primaryColor;
                 color: $whiteColor2;
                 font-size: $font-m;
-                padding: ($dist1 - .2em) ($dist3 - .5em);
+                padding: .2em .5em ;
             }
             img {
                 width: 50%;
@@ -124,7 +123,7 @@
                     display: flex;
                     @include flex(row, flex-start, center, nowrap, "");
                     i {
-                        font-size: $font-m;
+                        font-size: $font-m - .2em;
                         color: $primaryColor;
                         margin: 0 .1em;
                     }
@@ -173,7 +172,7 @@
     }
 }
 .slider_wrapper#suggestions {
-    width: 90vw ;
+    width: 90% ;
     // .slider {
     //     .slide {
     //         background-color: white;
@@ -181,7 +180,7 @@
     // }
     .slider{
         .slide{
-            width: calc((90vw - (6 * 1.1em)) / 6) ;
+            width: calc((100% - (6 * 1em)) / 6) ;
         }
     }
 
@@ -210,7 +209,7 @@
         }
     }
     h4{
-        font-size: $font-special ;
+        font-size: $font-xl ;
         font-weight: 700 ;
         color: $darkColor ;
         margin-top: 0 ;
@@ -243,7 +242,7 @@
         display: flex ;
         @include flex(row,flex-start,center,nowrap,"") ;
         .slide{
-            width: calc((80vw - (4 * 1.1em)) / 4) ;
+            width: calc((100% - (4 * 1.1em)) / 4) ;
             height: 13em;
             position: relative ;
             margin: 0 $dist1 ;
@@ -374,11 +373,171 @@
     }
 }
 .slider_wrapper#similars {
-    width: 90vw ;
+    width: 90% ;
     .slider{
         .slide{
-            width: calc((90vw - (4 * 1.2em)) / 4) ;
+            width: calc((100% - (4 * 1em)) / 4) ;
         }
     }
 
+}
+@media screen and (max-width:1200px){
+    .slider_wrapper#new_product{
+        .slider {
+            .slide {
+                width: calc((100% - (4 * 1em)) / 4);                    
+            }      
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .slider_wrapper#new_product{
+        font-size: 16px ;
+    }
+}
+@media screen and (max-width:750px){
+    .slider_wrapper#new_product {
+        width: 90% ;
+        .slider {
+            .slide {
+                width: calc((100% - (3 * 1.1em)) / 3);
+                        
+            }
+    
+            
+        }
+    }
+}
+@media screen and (max-width:550px){
+    .slider_wrapper#new_product {
+       font-size: 13px ;
+       button.next,button.prev {
+        display: none ;
+        }
+        .slider{
+            overflow: auto;
+        }
+
+    }
+}
+@media screen and (max-width:400px){
+    .slider_wrapper#new_product{
+        width: 90% ;
+        .slider {
+            .slide {
+                width: calc((100% - (2 * 1.1em)) / 2);
+                        
+            }
+    
+            
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .slider_wrapper#latest_articles,.slider_wrapper#similars{
+        font-size: 16px ;
+        width: 80% ;
+        button{        
+        }   
+        .slider{
+            .slide{
+                width: calc((100% - (3 * 1.1em)) / 3) ;
+            }
+        }
+    }
+    .slider_wrapper#similars {
+        width: 90% ; 
+    }
+}
+@media screen and (max-width:750px){
+    .slider_wrapper#latest_articles,.slider_wrapper#similars{
+        width: 90% ;
+        button{        
+        }   
+        .slider{
+            .slide{
+                width: calc((100% - (3 * 1em)) / 3) ;
+            }
+        }
+    }
+}
+@media screen and (max-width:550px){
+    .slider_wrapper#latest_articles,.slider_wrapper#similars{
+        font-size: 13px; 
+        button{     
+            display: none ;   
+        }   
+        .slider{
+            overflow: auto;
+            padding-top: $dist2 ;
+            padding-bottom: $dist2 ;
+            .slide{
+                width: calc((100% - (2 * 1.1em)) / 2) ;
+            }
+        }
+    }
+}
+@media screen and (max-width:1200px){
+    .slider_wrapper#suggestions {
+        .slider {
+            .slide {
+                width: calc((100% - (5 * 1em)) / 5);
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .slider_wrapper#suggestions {
+        button.next,button.prev {}
+        .show-all {           
+            top: 90%;
+        }
+        .slider {
+            .slide {
+                width: calc((100% - (4 * 1em)) / 4);
+                height: 11em;            
+            }
+        }
+    }
+}
+@media screen and (max-width:900px){
+    .slider_wrapper#suggestions {
+        font-size: 16px ;
+    }
+}
+@media screen and (max-width:750px){
+    .slider_wrapper#suggestions {
+        width: 95% ;
+        .slider {
+            .slide {
+                width: calc((100% - (3 * 1em)) / 3);
+            }
+        }
+    }
+}
+@media screen and (max-width:600px){
+    .slider_wrapper#suggestions {
+        font-size: 13px ;
+        button.next,button.prev {display: none ;}
+        .show-all {           
+            top: 90%;
+        }
+        .slider {
+            overflow: auto;
+            .slide {
+                width: calc((100% - (3 * 1em)) / 3);
+                height: 11em;            
+            }
+        }
+    }
+}
+@media screen and (max-width:420px){
+    .slider_wrapper#suggestions {
+        .slider {
+            .slide {
+                width: calc((100% - (2 * 1em)) / 2);
+                height: 11em;            
+            }
+        }
+    }
 }

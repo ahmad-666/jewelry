@@ -2,7 +2,6 @@
 @import '../../mixins.scss' ;
 @import '../../variables.scss' ;
 main{
-
     .articles{
         display: flex ;
         @include flex(row,flex-start,flex-start,wrap,flex-start);
@@ -12,7 +11,7 @@ main{
         box-shadow: 0 0 .5em .1em $shadowColor ;
         padding-bottom: $dist4 + 1em;
         h4{
-            font-size: $font-special ;
+            font-size: $font-xl ;
             color: $darkColor ;
             font-weight: 700 ;
             width: 100% ;
@@ -160,6 +159,102 @@ main{
             }
             .dots{
                 line-height: 2.2em !important ;
+            }
+        }
+    }
+}
+@media screen and (max-width:1100px){
+    main{
+        .articles{
+            .article{
+                width: calc((63vw - (2 * 2.2em)) / 2) ;  
+                margin: $dist1 ;           
+                .img{
+                    height: 10em ;
+                }            
+            }
+        }
+    }
+}
+@media screen and (max-width:800px){
+    main{
+        .articles{
+            .article{
+                width: calc((100% - (3 * 1em)) / 3) ;  
+                margin: $dist1 ;           
+                .img{
+                    height: 10em ;
+                }            
+            }
+            .pagination{
+                width: 100% ;
+                height: auto;
+                position: absolute ;
+                right: 0 ;
+                bottom: $dist1 ;
+                text-align: center ;
+                .links{
+                    width: auto ;
+                    height: auto;
+                    display: inline-flex ;
+                    @include flex(row,flex-start,center,wrap,flex-start) ;
+                }
+                a,.dots{
+                    position: relative ;
+                    width: auto ;
+                    height: 2.5em;
+                    padding: 0 $dist2 ;
+                    font-size: $font-l ;
+                    border-radius: $dist1 ;
+                    color: $primaryColor ;
+                    background-color: $paleColor ;
+                    margin: $dist1 ;
+                    transition: all .3s ease-in-out ;
+                    &:first-child{line-height: 2.4em ;}
+                    &:last-child{line-height: 2.4em ;}
+                    &:not(:first-child):not(:last-child){line-height: 2.8em;}
+                    &:hover{
+                        color: $whiteColor2 ;
+                        background-color: $primaryColor ;
+                    }
+                }
+                .dots{
+                    line-height: 2.2em !important ;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:600px){
+    main{
+        .articles{
+            .article{
+                width: calc((100% - (2 * 1.2em)) / 2) ;  
+                .img{
+                    height: 12em ;
+                }            
+            }
+        }
+    }
+}
+@media screen and (max-width:450px){
+    main{
+        .articles{
+            padding-bottom: $dist4  + 3em;
+        }
+    }
+}
+@media screen and (max-width:380px){
+    main{
+        .articles{
+            .article{
+                width: 100% ;  
+                .img{
+                    height: 12em ;
+                }            
+            }
+            .pagination{
+                font-size: 10px ;
             }
         }
     }

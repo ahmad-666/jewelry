@@ -5,7 +5,6 @@
     #products_wrapper{
         #order{
             border-radius: $dist1 ;
-
             width: 100% ;
             height: auto;
             display: flex ;
@@ -88,6 +87,44 @@
             }
             .show{
                 .input_wrapper{width: 3em ;}
+            }
+        }
+        #order.show{
+            visibility: visible ;
+            opacity: 1;         
+        }
+    }
+}
+@media screen and (max-width:750px){
+    .wrapper{
+        #products_wrapper{
+            #order{
+                opacity: 0;
+                visibility: hidden ;
+                width: 90% ;
+                height: auto;
+                position: fixed ;
+                top: 50% ;
+                right: 50% ;
+                transform: translate(50%,-50%) ;
+                z-index: 6;
+                @include flex(row,space-around,center,wrap,flex-start) ;
+                transition: all .3s linear ;
+                .sort{
+                    .input_wrapper{width: 9em ;}
+                }
+                .show{
+                    .input_wrapper{width: 3em ;}
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:400px){
+    .wrapper{
+        #products_wrapper{
+            #order{
+                font-size: 11px ;
             }
         }
     }

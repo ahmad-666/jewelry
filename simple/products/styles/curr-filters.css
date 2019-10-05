@@ -174,4 +174,10 @@
   font-size: 0.7em;
   margin-right: 0.5em;
 }
+
+@media screen and (max-width: 750px) {
+  .wrapper #filters_wrapper {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=curr-filters.css.map */

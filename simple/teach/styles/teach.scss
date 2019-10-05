@@ -27,3 +27,12 @@ body{
         line-height: $dist3 ;
     }
 }
+@media screen and (max-width:900px){
+    #teach{font-size: 16px;}
+}
+@media screen and (max-width:750px){
+    #teach{width: 95%;}
+}
+@media screen and (max-width:600px){
+    #teach{font-size: 13px;}
+}

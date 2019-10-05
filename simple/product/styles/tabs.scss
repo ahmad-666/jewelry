@@ -6,7 +6,7 @@ body{
 }
 #tabs{
     @include containerStyle ;
-    width: 90vw ;
+    width: 90% ;
     height: auto;
     display: flex ;
     @include flex(column,flex-start,flex-start,nowrap,"") ;
@@ -109,6 +109,35 @@ body{
                 color: $darkColor ;
                 box-shadow: none ;
                 background-color: none ;
+            }
+        }
+    }
+}
+@media screen and (max-width:900px){
+    #tabs{
+        font-size: 16px ;
+    }
+}
+@media screen and (max-width:750px){
+    #tabs{
+        width: 95% ;
+    }
+}
+@media screen and (max-width:600px){
+    #tabs{
+        font-size: 13px ;
+    }
+}
+@media screen and (max-width:400px){
+    #tabs{
+        .tabs_wrapper{
+           font-size: 11px ;
+        } 
+        .content{
+            .tab_content#info_section{
+                table{
+                    width: 100% ;
+                }
             }
         }
     }

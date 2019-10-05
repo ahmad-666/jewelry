@@ -398,8 +398,41 @@ footer #contact h4 {
   font-weight: 700;
 }
 
-footer #contact .infos {
+footer #contact .wrapper {
+  width: 100%;
+  height: auto;
   margin: 0.5em 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+}
+
+footer #contact .wrapper .infos {
   width: auto;
   height: auto;
   display: -webkit-box;
@@ -432,7 +465,7 @@ footer #contact .infos {
           align-content: "";
 }
 
-footer #contact .infos div {
+footer #contact .wrapper .infos div {
   width: auto;
   height: auto;
   display: -webkit-box;
@@ -466,11 +499,11 @@ footer #contact .infos div {
   margin: 0.5em 0;
 }
 
-footer #contact .infos div:first-child {
+footer #contact .wrapper .infos div:first-child {
   margin-top: 0;
 }
 
-footer #contact .infos div i {
+footer #contact .wrapper .infos div i {
   font-size: 1em;
   color: #86878e;
   -webkit-transform: translateY(6%);
@@ -479,12 +512,100 @@ footer #contact .infos div i {
           transform: translateY(6%);
 }
 
-footer #contact .infos div p {
+footer #contact .wrapper .infos div p {
   font-size: 0.7em;
   color: #86878e;
   -webkit-transform: translateX(-0.3em);
      -moz-transform: translateX(-0.3em);
       -ms-transform: translateX(-0.3em);
           transform: translateX(-0.3em);
+}
+
+footer #contact .wrapper .apps {
+  width: auto;
+  height: auto;
+  margin-right: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+footer #contact .wrapper .apps a {
+  width: auto;
+  height: auto;
+  margin-top: 0.5em;
+}
+
+footer #contact .wrapper .apps a:first-child {
+  margin-top: 0;
+}
+
+footer #contact .wrapper .apps a img {
+  width: 8em;
+  height: 2.5em;
+}
+
+@media screen and (max-width: 1000px) {
+  footer #why_us, footer #links, footer #contact {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  footer {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  footer #why_us .item {
+    width: -webkit-calc((100% - (4 * 1.3em)) / 4);
+    width: -moz-calc((100% - (4 * 1.3em)) / 4);
+    width: calc((100% - (4 * 1.3em)) / 4);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  footer {
+    font-size: 13px;
+  }
+  footer #why_us .item {
+    width: -webkit-calc((100% - (3 * 1.4em)) / 3);
+    width: -moz-calc((100% - (3 * 1.4em)) / 3);
+    width: calc((100% - (3 * 1.4em)) / 3);
+  }
+}
+
+@media screen and (max-width: 380px) {
+  footer #why_us .item {
+    width: -webkit-calc((100% - (2 * 1.4em)) / 2);
+    width: -moz-calc((100% - (2 * 1.4em)) / 2);
+    width: calc((100% - (2 * 1.4em)) / 2);
+  }
 }
 /*# sourceMappingURL=footer.css.map */

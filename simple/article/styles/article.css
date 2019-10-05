@@ -705,4 +705,181 @@ main aside #popular a .content p {
 main aside #popular a:hover .img {
   background-size: 120% 120%;
 }
+
+@media screen and (max-width: 1000px) {
+  main {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+       -moz-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+            align-content: flex-start;
+  }
+  main .wrapper {
+    width: 100%;
+  }
+  main #article, main #comments {
+    width: 100%;
+    height: auto;
+  }
+  main aside {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 2em;
+  }
+  main aside #latest {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+       -moz-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+            align-content: flex-start;
+  }
+  main aside #latest .article {
+    width: -webkit-calc((100% - (3 * 1em)) / 3);
+    width: -moz-calc((100% - (3 * 1em)) / 3);
+    width: calc((100% - (3 * 1em)) / 3);
+    height: 8em;
+    margin: 0.5em;
+  }
+  main aside #popular {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+       -moz-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+            align-content: flex-start;
+    margin-top: 1em;
+  }
+  main aside #popular a {
+    width: 100%;
+    height: 11em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-align-content: "";
+        -ms-flex-line-pack: "";
+            align-content: "";
+    margin-top: 0.5em;
+  }
+  main aside #popular a .img {
+    width: 11em;
+    height: 100%;
+  }
+  main aside #popular a .content h4 {
+    font-size: 0.8em;
+  }
+  main aside #popular a .content p {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  main aside #latest .article {
+    width: -webkit-calc((100% - (2 * 1em)) / 2);
+    width: -moz-calc((100% - (2 * 1em)) / 2);
+    width: calc((100% - (2 * 1em)) / 2);
+    height: 10em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main {
+    font-size: 13px;
+  }
+  main aside #latest .article {
+    width: -webkit-calc((100% - (2 * 1em)) / 2);
+    width: -moz-calc((100% - (2 * 1em)) / 2);
+    width: calc((100% - (2 * 1em)) / 2);
+    height: 10em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  main aside #latest .article {
+    width: 100%;
+    height: 12em;
+  }
+}
 /*# sourceMappingURL=article.css.map */

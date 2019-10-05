@@ -26,8 +26,8 @@
             padding: 0 $dist1 ;
             overflow: hidden;
             margin: $dist1 0 ;
-            border-right: 1.2px solid lighten($greyColor2,20%) ;
-            &:first-child{border-right: none; }
+            // border-right: 1.2px solid lighten($greyColor2,20%) ;
+            // &:first-child{border-right: none; }
             display: flex ;
             @include flex(column,flex-start,center,nowrap,"") ;
             p{
@@ -53,8 +53,8 @@
             p.send{background-color: $greenColor2 ;}
         }
         .info.special{
-            border-right: 1.2px solid lighten($greyColor2,20%) ;
-            border-left: 1.2px solid lighten($greyColor2,20%) ;
+            // border-right: 1.2px solid lighten($greyColor2,20%) ;
+            // border-left: 1.2px solid lighten($greyColor2,20%) ;
             p{
                 &:nth-child(1){
                     font-size: $font-m - .1em ;
@@ -113,7 +113,6 @@
                         margin-right: $dist2 ;
                     }
                     &:nth-child(3){
-                        flex-shrink: 0 ;
                         width: 12em ;
                         margin-right: $dist3 ;
                     }
@@ -217,5 +216,73 @@
                 }
             }
         }
+    }
+}
+@media screen and (max-width:1000px){
+    #generalInfo{
+        font-size: 16px ;
+    }
+}
+@media screen and (max-width:800px){
+    #generalInfo{
+        width: 95% ;
+        .infos{
+            .info{
+                width: calc(100% / 3) ;
+            }
+        }
+    }
+}
+@media screen and (max-width:550px){
+    #generalInfo{
+        font-size: 13px ;
+    }
+}
+@media screen and (max-width:430px){
+    #generalInfo{
+        .infos{
+            .info{
+                width: calc(100% / 2) ;
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    #details{
+        font-size: 16px ;
+        table{
+            thead,tbody{
+                tr{
+                    th,td{
+                        font-size: 13px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:800px){
+    #details{
+        width: 95% ;
+        
+    }
+}
+@media screen and (max-width:650px){
+    #details{
+        font-size: 13px ;
+        table{
+            thead,tbody{
+                tr{
+                    th,td{
+                        font-size: 10px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:430px){
+    #details{
+       
     }
 }

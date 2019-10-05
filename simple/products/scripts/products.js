@@ -15,10 +15,10 @@ ellipses.forEach(ellipse => {
 //set width of each product 
 //-----------------------------------------------------------
 //-----------------------------------------------------------
-let getStyle = (elm,prop) => window.getComputedStyle(elm,null).getPropertyValue(prop) ;
+//let getStyle = (elm,prop) => window.getComputedStyle(elm,null).getPropertyValue(prop) ;
 let productsWrapper = document.querySelector('#products') ;
 let products = productsWrapper.querySelectorAll('.product') ;
-setColNum() ;
+//setColNum() ;
 function setColNum(){
     let colNum = null ;
     if(window.innerWidth>1500) colNum = 5 ;
@@ -48,6 +48,6 @@ function setFlexWidth(container,child,colNum,children){
     //childWidth = 
     children.forEach(child => child.style.width = `${childWidth}px`)
 }
-window.addEventListener('resize',e=>{
-    setColNum() ;
-})
+// window.addEventListener('resize',e=>{
+//     setColNum() ;
+// })

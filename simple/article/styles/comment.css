@@ -890,4 +890,71 @@
   opacity: 1;
   visibility: visible;
 }
+
+@media screen and (max-width: 900px) {
+  #adminApprove {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #adminApprove {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #comments form#userComment {
+    width: 100%;
+  }
+  #comments form#userComment .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+       -moz-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-align-content: "";
+        -ms-flex-line-pack: "";
+            align-content: "";
+  }
+  #comments form#userComment .row .inputWrapper {
+    width: 80%;
+  }
+  #comments form#userComment .row .inputWrapper input {
+    width: 100%;
+  }
+  #comments form#userComment .row .inputWrapper:nth-child(2) {
+    margin-right: 0;
+    margin-top: 2em;
+  }
+  #comments form#userComment .inputWrapper.textarea {
+    width: 80%;
+    margin-top: 1em;
+    margin-right: 0;
+  }
+  #comments form#userComment .inputWrapper.textarea textarea {
+    width: 100%;
+  }
+  #comments .comment form.reply .inputWrapper.textarea {
+    width: 100%;
+  }
+  #comments .comment form.reply .inputWrapper.textarea textarea {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=comment.css.map */

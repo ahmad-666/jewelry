@@ -54,4 +54,22 @@ body {
   color: #86878e;
   line-height: 2em;
 }
+
+@media screen and (max-width: 900px) {
+  #name_design {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #name_design {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #name_design {
+    font-size: 13px;
+  }
+}
 /*# sourceMappingURL=name-design.css.map */

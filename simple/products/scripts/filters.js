@@ -1,3 +1,4 @@
+//import util from '../../utilities/utilities.js' ;
 //import wNumb from 'wnumb' ;
 //import noUiSlider from 'nouislider' ;
 //price ranger
@@ -100,9 +101,9 @@ ranger.noUiSlider.on('update',()=>{
 //collapse/expand animation
 //----------------------------------------------------
 //----------------------------------------------------
-let filtersWrapper1 = document.querySelector('#filters') ;
-let filtersContents = filtersWrapper1.querySelectorAll('.filter:not(#price) .content') ;
-let arrows = filtersWrapper1.querySelectorAll('.filter .title i') ;
+//let filtersWrapper = document.querySelector('#filters') ;
+let filtersContents = filtersWrapper.querySelectorAll('.filter:not(#price) .content') ;
+let arrows = filtersWrapper.querySelectorAll('.filter .title i') ;
 let contentsHeights = [] ;
 filtersContents.forEach(content => {
     contentsHeights.push(content.scrollHeight) ;
@@ -127,7 +128,7 @@ arrows.forEach((arrow,i) => {
 //checkboxes
 //----------------------------------------------------
 //----------------------------------------------------
-let mainCategories = filtersWrapper1.querySelectorAll('.filter .title .main_category') ;
+let mainCategories = filtersWrapper.querySelectorAll('.filter .title .main_category') ;
 mainCategories.forEach(mainCategory => {
     mainCategory.addEventListener('change',mainCategoryHandler) ;
 });
@@ -144,7 +145,7 @@ function mainCategoryHandler(e){
         })
     }
 }
-let subCategories = filtersWrapper1.querySelectorAll('.filter .content .sub_category') ;
+let subCategories = filtersWrapper.querySelectorAll('.filter .content .sub_category') ;
 subCategories.forEach(subCategory => {
     subCategory.addEventListener('change',subCategoryHandler) ;
 })
@@ -157,5 +158,29 @@ function subCategoryHandler(e){
     })
     if(noSubCategory) mainCategory.checked = false ;
     else mainCategory.checked = true ;
-
+}
+let mobileFilter = document.querySelector('#openFilter') ;
+let mobileSort = document.querySelector('#openSort') ;
+let sortWrapper = document.querySelector('#order') ;
+filterOpenCheck();
+window.addEventListener('resize',filterOpenCheck) ;
+function filterOpenCheck(e){
+    if(window.innerWidth<=750) {
+        mobileFilter.addEventListener('click',openFilter) ;
+        mobileSort.addEventListener('click',openSort) ;
+    }
+    else {
+        mobileFilter.removeEventListener('click',openFilter) ;
+        mobileSort.removeEventListener('click',openSort) ;
+    }
+}
+function openFilter(e){
+    e.stopPropagation();  
+    filtersWrapper.classList.toggle('show') ;
+    docHandler(filtersWrapper,[sortWrapper]) ;
+}
+function openSort(e){
+    e.stopPropagation();  
+    sortWrapper.classList.toggle('show') ;
+    docHandler(sortWrapper,[filtersWrapper]) ;
 }
