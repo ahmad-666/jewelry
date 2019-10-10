@@ -1,0 +1,162 @@
+@import '../../variables.scss' ;
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+#reports{
+    @include containerStyle ;
+    width: 35em ;
+    height: auto;
+    display: flex ;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    img,h4,.input_wrapper,textarea,button[type="submit"]{margin: $dist1 0 ;}
+    img{
+        width: 10em ;
+        height: 10em;
+        border-radius: 50% ;
+        margin-top: 0 ;
+    }
+    h4{
+        font-size: $font-l ;
+        font-weight: 700 ;
+        color: $darkColor ;
+    }
+    p{
+        font-size: $font-m ;
+        color: $greyColor2 ;
+    }
+    .input_wrapper{
+        width: 60% ;
+        height: 2.5em;
+        position: relative ;
+        input{
+            width: 100% ;
+            height: 100%;
+            border-radius: $dist3 ;
+            color: $darkColor ;
+            font-size: $font-m ;
+            padding: $dist1 ;
+            border: 1px solid lighten($greyColor2,20%) ;
+            &::placeholder{
+                font-size: $font-m ;
+                color: $greyColor2 ;
+            }
+        }
+        input.error{border: 2px solid lighten($redColor2,2%) ;}
+    }
+    textarea{
+        width: 80% ;
+        height: 15em;
+        color: $darkColor ;
+        font-size: $font-m ;
+        border-radius: $dist2 ;
+        // border-radius: $dist3 ;
+        padding: $dist1 ;
+        line-height: $dist3 ;
+        border: 1px solid lighten($greyColor2,20%) ;
+        &::placeholder{
+            font-size: $font-m ;
+            color: $greyColor2 ;
+        }
+    }
+    textarea.error{border: 2px solid lighten($redColor2,2%) ;}
+    button[type="submit"]{
+        width: auto ;
+        height: auto;
+        border-radius: $dist3 ;
+        color: black ;
+        background-color: $primaryColor ;
+        padding: $dist1 $dist3 + .2em ;
+        font-size: $font-m ;
+        cursor: pointer;
+    }
+}
+#socials{
+    width: 60% ;
+    height: auto;
+    margin: $dist3 auto 0 auto ;
+    display: flex ;
+    @include flex(row,flex-start,flex-start,wrap,flex-start) ;
+    .social{
+        width: calc((60vw - (4 * 2.5em)) / 4) ;
+        height: auto;
+        margin: $dist2 ;
+        display: flex ;
+        @include flex(column,flex-start,center,nowrap,"") ;
+        i{
+            width: 2em ;
+            height: 2em;
+            border-radius: $dist1 ;
+            color: $whiteColor2 ;
+            font-size: $font-xl ;
+            text-align: center ;
+            line-height: 2em ;
+        }
+        i.fa-phone{background-color: lighten($greyColor2,20%);}
+        i.fa-mobile-alt{background-color: lighten($greyColor2,5%);}
+        i.fa-envelope{background-color: lighten($purpleColor3,15%);}
+        i.fa-telegram-plane{background-color: lighten($blueColor2,28%) ;}
+        i.fa-instagram{background-color: lighten($redColor2,5%) ;}
+        i.fa-whatsapp{background-color: lighten($greenColor2,5%) ;}
+        i.fa-linkedin-in{background-color: lighten($blueColor2,28%) ;}
+        i.fa-facebook-f{background-color: lighten($blueColor2,28%) ; ;} 
+        p{
+            font-size: $font-m ;
+            color: black ;
+            margin-top: $dist1 ;
+        }
+    }
+}
+@media screen and (max-width:1100px){
+    #socials{
+        width: 80% ;
+        .social{
+            width: calc((80vw - (4 * 2.5em)) / 4) ;      
+        }
+    }
+}
+@media screen and (max-width:950px){
+    #socials{
+        width: 80% ;
+        .social{
+            width: calc((80vw - (3 * 2.5em)) / 3) ;      
+        }
+    }
+}
+@media screen and (max-width:750px){
+    #socials{
+        width: 100% ;
+        .social{
+            width: calc((100% - (3 * 1.5em)) / 3) ;     
+            margin: $dist1 ; 
+        }
+    }
+}
+@media screen and (max-width:550px){
+    #socials{
+        width: 100% ;
+        .social{
+            width: calc((100% - (2 * 1.5em)) / 2) ;     
+            margin: $dist1 ; 
+        }
+    }
+}
+@media screen and (max-width:330px){
+    #socials{
+        width: 100% ;
+        .social{
+            width: 100% ;     
+            margin: $dist1 ; 
+        }
+    }
+}
+
+@media screen and (max-width:900px){
+    #reports{font-size: 16px;}
+}
+
+@media screen and (max-width:600px){
+    #reports{font-size: 13px;}
+}
+@media screen and (max-width:500px){
+    #reports{width: 90% ;}
+}
+
