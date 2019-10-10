@@ -427,7 +427,7 @@ header a.logo .text p:last-child {
 }
 
 header a.logo img {
-  width: 6em;
+  width: 4em;
   height: 3em;
   margin-right: 0.5em;
 }
@@ -478,9 +478,15 @@ header a.logo img {
     width: 90%;
   }
   header a.logo img {
-    width: 4em;
-    height: 3em;
+    width: 2.5em;
+    height: 2.5em;
     margin-right: 0.5em;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  header a.logo {
+    font-size: 11px;
   }
 }
 /*# sourceMappingURL=header.css.map */

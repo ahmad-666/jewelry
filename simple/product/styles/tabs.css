@@ -274,7 +274,7 @@ body {
   height: 100%;
   font-size: 0.8em;
   color: #86878e;
-  padding: 0 8em;
+  padding: 0;
 }
 
 #tabs .content .tab_content#more_info .wrapper {

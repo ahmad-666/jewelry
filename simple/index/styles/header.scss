@@ -170,7 +170,7 @@ header{
             }
         }
         img{
-            width: 6em ;
+            width: 4em ;
             height: 3em;
             margin-right: $dist1 ;
         }
@@ -211,10 +211,18 @@ header{
         }
         a.logo{
             img{
-                width: 4em ;
-                height: 3em;
+                width: 2.5em ;
+                height: 2.5em;
                 margin-right: $dist1 ;
             }
+        }
+    }
+}
+@media screen and (max-width:330px){
+    header{
+        
+        a.logo{
+            font-size: 11px;
         }
     }
 }

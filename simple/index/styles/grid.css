@@ -58,7 +58,7 @@
 
 #grid .col .box {
   background: url("") center center no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   position: relative;
   overflow: hidden;
 }

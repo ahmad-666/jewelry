@@ -22,7 +22,7 @@
         overflow: hidden;
 
         .box {
-            @include bg("", center center, no-repeat, 100% 100%);
+            @include bg("", center center, no-repeat, cover);
             position: relative;
             overflow: hidden;
 
