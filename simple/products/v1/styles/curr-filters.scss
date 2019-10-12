@@ -71,15 +71,8 @@
 @media screen and (max-width:750px){
     .wrapper{
         #filters_wrapper{
-            #curr_filters{
-                .title{
-                    h4{
-                        font-size: $font-l ;
-                    }
-                }
-            }
+           width: 100% ;
         }
-    }
     
-
+    }
 }

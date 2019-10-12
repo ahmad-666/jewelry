@@ -570,280 +570,284 @@
                 <div class="currs"></div>
             </div>
             <form id="filters" name="filters" method="GET" action="#!" enctype="text/plain">
-                <div class="filter" id="price">
-                    <div class="title">
-                        <input type="hidden" id="min_price" name="min_price">
-                        <input type="hidden" id="max_price" name="max_price">
-                        <h4>قیمت</h4>
+                <div id="mobileFixer">
+                    <div class="filter" id="price">
+                        <div class="title">
+                            <input type="hidden" id="min_price" name="min_price">
+                            <input type="hidden" id="max_price" name="max_price">
+                            <h4>قیمت</h4>
+                            <!-- <i class="fas fa-angle-down"></i>                    -->
+                        </div>
+                        <div class="content">
+                            <div id="range"></div>
+                            <p></p>
+                        </div>
                     </div>
-                    <div class="content">
-                        <div id="range"></div>
-                        <p></p>
+                    <div class="filter" id="bracelet">
+                        <div class="title">
+                            <label for="bracelet_all">
+                                <input type="checkbox" class="main_category" id="bracelet_all" name="bracelet_all"
+                                    value="bracelet_all">
+                                <span class="rect"></span>
+                                <p>دستبند</p>
+                            </label>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="content">
+                            <label for="bracelet_1">
+                                <input type="checkbox" class="sub_category" id="bracelet_1" name="bracelet_1"
+                                    value="bracelet_1">
+                                <span class="rect"></span>
+                                <p>دستبند 1</p>
+                            </label>
+                            <label for="bracelet_2">
+                                <input type="checkbox" class="sub_category" id="bracelet_2" name="bracelet_2"
+                                    value="bracelet_2">
+                                <span class="rect"></span>
+                                <p>دستبند 2</p>
+                            </label>
+                            <label for="bracelet_3">
+                                <input type="checkbox" class="sub_category" id="bracelet_3" name="bracelet_3"
+                                    value="bracelet_3">
+                                <span class="rect"></span>
+                                <p>دستبند 3</p>
+                            </label>
+                            <label for="bracelet_4">
+                                <input type="checkbox" class="sub_category" id="bracelet_4" name="bracelet_4"
+                                    value="bracelet_4">
+                                <span class="rect"></span>
+                                <p>دستبند 4</p>
+                            </label>
+                            <label for="bracelet_5">
+                                <input type="checkbox" class="sub_category" id="bracelet_5" name="bracelet_5"
+                                    value="bracelet_5">
+                                <span class="rect"></span>
+                                <p>دستبند 5</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter" id="necklace">
+                        <div class="title">
+                            <label for="necklace_all">
+                                <input type="checkbox" class="main_category" id="necklace_all" name="necklace_all"
+                                    value="necklace_all">
+                                <span class="rect"></span>
+                                <p>گردنبند ها</p>
+                            </label>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="content">
+                            <label for="necklace_1">
+                                <input type="checkbox" class="sub_category" class="sub_category" id="necklace_1"
+                                    name="necklace_1" value="necklace_1">
+                                <span class="rect"></span>
+                                <p>گردنبند 1</p>
+                            </label>
+                            <label for="necklace_2">
+                                <input type="checkbox" class="sub_category" id="necklace_2" name="necklace_2"
+                                    value="necklace_2">
+                                <span class="rect"></span>
+                                <p>گردنبند 2</p>
+                            </label>
+                            <label for="necklace_3">
+                                <input type="checkbox" class="sub_category" id="necklace_3" name="necklace_3"
+                                    value="necklace_3">
+                                <span class="rect"></span>
+                                <p>گردنبند 3</p>
+                            </label>
+                            <label for="necklace_4">
+                                <input type="checkbox" class="sub_category" id="necklace_4" name="necklace_4"
+                                    value="necklace_4">
+                                <span class="rect"></span>
+                                <p>گردنبند 4</p>
+                            </label>
+                            <label for="necklace_5">
+                                <input type="checkbox" class="sub_category" id="necklace_5" name="necklace_5"
+                                    value="necklace_5">
+                                <span class="rect"></span>
+                                <p>گردنبند 5</p>
+                            </label>
+    
+                        </div>
+                    </div>
+                    <div class="filter" id="necklace">
+                        <div class="title">
+                            <label for="necklace_all">
+                                <input type="checkbox" class="main_category" id="necklace_all" name="necklace_all"
+                                    value="necklace_all">
+                                <span class="rect"></span>
+                                <p>گردنبند ها</p>
+                            </label>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="content">
+                            <label for="necklace_1">
+                                <input type="checkbox" class="sub_category" class="sub_category" id="necklace_1"
+                                    name="necklace_1" value="necklace_1">
+                                <span class="rect"></span>
+                                <p>گردنبند 1</p>
+                            </label>
+                            <label for="necklace_2">
+                                <input type="checkbox" class="sub_category" id="necklace_2" name="necklace_2"
+                                    value="necklace_2">
+                                <span class="rect"></span>
+                                <p>گردنبند 2</p>
+                            </label>
+                            <label for="necklace_3">
+                                <input type="checkbox" class="sub_category" id="necklace_3" name="necklace_3"
+                                    value="necklace_3">
+                                <span class="rect"></span>
+                                <p>گردنبند 3</p>
+                            </label>
+                            <label for="necklace_4">
+                                <input type="checkbox" class="sub_category" id="necklace_4" name="necklace_4"
+                                    value="necklace_4">
+                                <span class="rect"></span>
+                                <p>گردنبند 4</p>
+                            </label>
+                            <label for="necklace_5">
+                                <input type="checkbox" class="sub_category" id="necklace_5" name="necklace_5"
+                                    value="necklace_5">
+                                <span class="rect"></span>
+                                <p>گردنبند 5</p>
+                            </label>
+    
+                        </div>
+                    </div>
+                    <div class="filter" id="necklace">
+                        <div class="title">
+                            <label for="necklace_all">
+                                <input type="checkbox" class="main_category" id="necklace_all" name="necklace_all"
+                                    value="necklace_all">
+                                <span class="rect"></span>
+                                <p>گردنبند ها</p>
+                            </label>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="content">
+                            <label for="necklace_1">
+                                <input type="checkbox" class="sub_category" class="sub_category" id="necklace_1"
+                                    name="necklace_1" value="necklace_1">
+                                <span class="rect"></span>
+                                <p>گردنبند 1</p>
+                            </label>
+                            <label for="necklace_2">
+                                <input type="checkbox" class="sub_category" id="necklace_2" name="necklace_2"
+                                    value="necklace_2">
+                                <span class="rect"></span>
+                                <p>گردنبند 2</p>
+                            </label>
+                            <label for="necklace_3">
+                                <input type="checkbox" class="sub_category" id="necklace_3" name="necklace_3"
+                                    value="necklace_3">
+                                <span class="rect"></span>
+                                <p>گردنبند 3</p>
+                            </label>
+                            <label for="necklace_4">
+                                <input type="checkbox" class="sub_category" id="necklace_4" name="necklace_4"
+                                    value="necklace_4">
+                                <span class="rect"></span>
+                                <p>گردنبند 4</p>
+                            </label>
+                            <label for="necklace_5">
+                                <input type="checkbox" class="sub_category" id="necklace_5" name="necklace_5"
+                                    value="necklace_5">
+                                <span class="rect"></span>
+                                <p>گردنبند 5</p>
+                            </label>
+    
+                        </div>
+                    </div>
+                    <div class="filter" id="necklace">
+                        <div class="title">
+                            <label for="necklace_all">
+                                <input type="checkbox" class="main_category" id="necklace_all" name="necklace_all"
+                                    value="necklace_all">
+                                <span class="rect"></span>
+                                <p>گردنبند ها</p>
+                            </label>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="content">
+                            <label for="necklace_1">
+                                <input type="checkbox" class="sub_category" class="sub_category" id="necklace_1"
+                                    name="necklace_1" value="necklace_1">
+                                <span class="rect"></span>
+                                <p>گردنبند 1</p>
+                            </label>
+                            <label for="necklace_2">
+                                <input type="checkbox" class="sub_category" id="necklace_2" name="necklace_2"
+                                    value="necklace_2">
+                                <span class="rect"></span>
+                                <p>گردنبند 2</p>
+                            </label>
+                            <label for="necklace_3">
+                                <input type="checkbox" class="sub_category" id="necklace_3" name="necklace_3"
+                                    value="necklace_3">
+                                <span class="rect"></span>
+                                <p>گردنبند 3</p>
+                            </label>
+                            <label for="necklace_4">
+                                <input type="checkbox" class="sub_category" id="necklace_4" name="necklace_4"
+                                    value="necklace_4">
+                                <span class="rect"></span>
+                                <p>گردنبند 4</p>
+                            </label>
+                            <label for="necklace_5">
+                                <input type="checkbox" class="sub_category" id="necklace_5" name="necklace_5"
+                                    value="necklace_5">
+                                <span class="rect"></span>
+                                <p>گردنبند 5</p>
+                            </label>
+    
+                        </div>
+                    </div>
+                    <div class="filter" id="necklace">
+                        <div class="title">
+                            <label for="necklace_all">
+                                <input type="checkbox" class="main_category" id="necklace_all" name="necklace_all"
+                                    value="necklace_all">
+                                <span class="rect"></span>
+                                <p>گردنبند ها</p>
+                            </label>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="content">
+                            <label for="necklace_1">
+                                <input type="checkbox" class="sub_category" class="sub_category" id="necklace_1"
+                                    name="necklace_1" value="necklace_1">
+                                <span class="rect"></span>
+                                <p>گردنبند 1</p>
+                            </label>
+                            <label for="necklace_2">
+                                <input type="checkbox" class="sub_category" id="necklace_2" name="necklace_2"
+                                    value="necklace_2">
+                                <span class="rect"></span>
+                                <p>گردنبند 2</p>
+                            </label>
+                            <label for="necklace_3">
+                                <input type="checkbox" class="sub_category" id="necklace_3" name="necklace_3"
+                                    value="necklace_3">
+                                <span class="rect"></span>
+                                <p>گردنبند 3</p>
+                            </label>
+                            <label for="necklace_4">
+                                <input type="checkbox" class="sub_category" id="necklace_4" name="necklace_4"
+                                    value="necklace_4">
+                                <span class="rect"></span>
+                                <p>گردنبند 4</p>
+                            </label>
+                            <label for="necklace_5">
+                                <input type="checkbox" class="sub_category" id="necklace_5" name="necklace_5"
+                                    value="necklace_5">
+                                <span class="rect"></span>
+                                <p>گردنبند 5</p>
+                            </label>
+    
+                        </div>
                     </div>
                 </div>
-                <div class="filter" id="bracelet">
-                    <div class="title">
-                        <label for="bracelet_all">
-                            <input type="checkbox" class="main_category" id="bracelet_all" name="bracelet_all"
-                                value="bracelet_all">
-                            <span class="rect"></span>
-                            <p>دستبند</p>
-                        </label>
-                        <i class="fas fa-angle-down"></i>
-                    </div>
-                    <div class="content">
-                        <label for="bracelet_1">
-                            <input type="checkbox" class="sub_category" id="bracelet_1" name="bracelet_1"
-                                value="bracelet_1">
-                            <span class="rect"></span>
-                            <p>دستبند 1</p>
-                        </label>
-                        <label for="bracelet_2">
-                            <input type="checkbox" class="sub_category" id="bracelet_2" name="bracelet_2"
-                                value="bracelet_2">
-                            <span class="rect"></span>
-                            <p>دستبند 2</p>
-                        </label>
-                        <label for="bracelet_3">
-                            <input type="checkbox" class="sub_category" id="bracelet_3" name="bracelet_3"
-                                value="bracelet_3">
-                            <span class="rect"></span>
-                            <p>دستبند 3</p>
-                        </label>
-                        <label for="bracelet_4">
-                            <input type="checkbox" class="sub_category" id="bracelet_4" name="bracelet_4"
-                                value="bracelet_4">
-                            <span class="rect"></span>
-                            <p>دستبند 4</p>
-                        </label>
-                        <label for="bracelet_5">
-                            <input type="checkbox" class="sub_category" id="bracelet_5" name="bracelet_5"
-                                value="bracelet_5">
-                            <span class="rect"></span>
-                            <p>دستبند 5</p>
-                        </label>
-                    </div>
-                </div>
-                <div class="filter" id="necklace">
-                    <div class="title">
-                        <label for="necklace_all">
-                            <input type="checkbox" class="main_category" id="necklace_all" name="necklace_all"
-                                value="necklace_all">
-                            <span class="rect"></span>
-                            <p>گردنبند ها</p>
-                        </label>
-                        <i class="fas fa-angle-down"></i>
-                    </div>
-                    <div class="content">
-                        <label for="necklace_1">
-                            <input type="checkbox" class="sub_category" class="sub_category" id="necklace_1"
-                                name="necklace_1" value="necklace_1">
-                            <span class="rect"></span>
-                            <p>گردنبند 1</p>
-                        </label>
-                        <label for="necklace_2">
-                            <input type="checkbox" class="sub_category" id="necklace_2" name="necklace_2"
-                                value="necklace_2">
-                            <span class="rect"></span>
-                            <p>گردنبند 2</p>
-                        </label>
-                        <label for="necklace_3">
-                            <input type="checkbox" class="sub_category" id="necklace_3" name="necklace_3"
-                                value="necklace_3">
-                            <span class="rect"></span>
-                            <p>گردنبند 3</p>
-                        </label>
-                        <label for="necklace_4">
-                            <input type="checkbox" class="sub_category" id="necklace_4" name="necklace_4"
-                                value="necklace_4">
-                            <span class="rect"></span>
-                            <p>گردنبند 4</p>
-                        </label>
-                        <label for="necklace_5">
-                            <input type="checkbox" class="sub_category" id="necklace_5" name="necklace_5"
-                                value="necklace_5">
-                            <span class="rect"></span>
-                            <p>گردنبند 5</p>
-                        </label>
-
-                    </div>
-                </div>
-                <div class="filter" id="necklace">
-                    <div class="title">
-                        <label for="necklace_all">
-                            <input type="checkbox" class="main_category" id="necklace_all" name="necklace_all"
-                                value="necklace_all">
-                            <span class="rect"></span>
-                            <p>گردنبند ها</p>
-                        </label>
-                        <i class="fas fa-angle-down"></i>
-                    </div>
-                    <div class="content">
-                        <label for="necklace_1">
-                            <input type="checkbox" class="sub_category" class="sub_category" id="necklace_1"
-                                name="necklace_1" value="necklace_1">
-                            <span class="rect"></span>
-                            <p>گردنبند 1</p>
-                        </label>
-                        <label for="necklace_2">
-                            <input type="checkbox" class="sub_category" id="necklace_2" name="necklace_2"
-                                value="necklace_2">
-                            <span class="rect"></span>
-                            <p>گردنبند 2</p>
-                        </label>
-                        <label for="necklace_3">
-                            <input type="checkbox" class="sub_category" id="necklace_3" name="necklace_3"
-                                value="necklace_3">
-                            <span class="rect"></span>
-                            <p>گردنبند 3</p>
-                        </label>
-                        <label for="necklace_4">
-                            <input type="checkbox" class="sub_category" id="necklace_4" name="necklace_4"
-                                value="necklace_4">
-                            <span class="rect"></span>
-                            <p>گردنبند 4</p>
-                        </label>
-                        <label for="necklace_5">
-                            <input type="checkbox" class="sub_category" id="necklace_5" name="necklace_5"
-                                value="necklace_5">
-                            <span class="rect"></span>
-                            <p>گردنبند 5</p>
-                        </label>
-
-                    </div>
-                </div>
-                <div class="filter" id="necklace">
-                    <div class="title">
-                        <label for="necklace_all">
-                            <input type="checkbox" class="main_category" id="necklace_all" name="necklace_all"
-                                value="necklace_all">
-                            <span class="rect"></span>
-                            <p>گردنبند ها</p>
-                        </label>
-                        <i class="fas fa-angle-down"></i>
-                    </div>
-                    <div class="content">
-                        <label for="necklace_1">
-                            <input type="checkbox" class="sub_category" class="sub_category" id="necklace_1"
-                                name="necklace_1" value="necklace_1">
-                            <span class="rect"></span>
-                            <p>گردنبند 1</p>
-                        </label>
-                        <label for="necklace_2">
-                            <input type="checkbox" class="sub_category" id="necklace_2" name="necklace_2"
-                                value="necklace_2">
-                            <span class="rect"></span>
-                            <p>گردنبند 2</p>
-                        </label>
-                        <label for="necklace_3">
-                            <input type="checkbox" class="sub_category" id="necklace_3" name="necklace_3"
-                                value="necklace_3">
-                            <span class="rect"></span>
-                            <p>گردنبند 3</p>
-                        </label>
-                        <label for="necklace_4">
-                            <input type="checkbox" class="sub_category" id="necklace_4" name="necklace_4"
-                                value="necklace_4">
-                            <span class="rect"></span>
-                            <p>گردنبند 4</p>
-                        </label>
-                        <label for="necklace_5">
-                            <input type="checkbox" class="sub_category" id="necklace_5" name="necklace_5"
-                                value="necklace_5">
-                            <span class="rect"></span>
-                            <p>گردنبند 5</p>
-                        </label>
-
-                    </div>
-                </div>
-                <div class="filter" id="necklace">
-                    <div class="title">
-                        <label for="necklace_all">
-                            <input type="checkbox" class="main_category" id="necklace_all" name="necklace_all"
-                                value="necklace_all">
-                            <span class="rect"></span>
-                            <p>گردنبند ها</p>
-                        </label>
-                        <i class="fas fa-angle-down"></i>
-                    </div>
-                    <div class="content">
-                        <label for="necklace_1">
-                            <input type="checkbox" class="sub_category" class="sub_category" id="necklace_1"
-                                name="necklace_1" value="necklace_1">
-                            <span class="rect"></span>
-                            <p>گردنبند 1</p>
-                        </label>
-                        <label for="necklace_2">
-                            <input type="checkbox" class="sub_category" id="necklace_2" name="necklace_2"
-                                value="necklace_2">
-                            <span class="rect"></span>
-                            <p>گردنبند 2</p>
-                        </label>
-                        <label for="necklace_3">
-                            <input type="checkbox" class="sub_category" id="necklace_3" name="necklace_3"
-                                value="necklace_3">
-                            <span class="rect"></span>
-                            <p>گردنبند 3</p>
-                        </label>
-                        <label for="necklace_4">
-                            <input type="checkbox" class="sub_category" id="necklace_4" name="necklace_4"
-                                value="necklace_4">
-                            <span class="rect"></span>
-                            <p>گردنبند 4</p>
-                        </label>
-                        <label for="necklace_5">
-                            <input type="checkbox" class="sub_category" id="necklace_5" name="necklace_5"
-                                value="necklace_5">
-                            <span class="rect"></span>
-                            <p>گردنبند 5</p>
-                        </label>
-
-                    </div>
-                </div>
-                <div class="filter" id="necklace">
-                    <div class="title">
-                        <label for="necklace_all">
-                            <input type="checkbox" class="main_category" id="necklace_all" name="necklace_all"
-                                value="necklace_all">
-                            <span class="rect"></span>
-                            <p>گردنبند ها</p>
-                        </label>
-                        <i class="fas fa-angle-down"></i>
-                    </div>
-                    <div class="content">
-                        <label for="necklace_1">
-                            <input type="checkbox" class="sub_category" class="sub_category" id="necklace_1"
-                                name="necklace_1" value="necklace_1">
-                            <span class="rect"></span>
-                            <p>گردنبند 1</p>
-                        </label>
-                        <label for="necklace_2">
-                            <input type="checkbox" class="sub_category" id="necklace_2" name="necklace_2"
-                                value="necklace_2">
-                            <span class="rect"></span>
-                            <p>گردنبند 2</p>
-                        </label>
-                        <label for="necklace_3">
-                            <input type="checkbox" class="sub_category" id="necklace_3" name="necklace_3"
-                                value="necklace_3">
-                            <span class="rect"></span>
-                            <p>گردنبند 3</p>
-                        </label>
-                        <label for="necklace_4">
-                            <input type="checkbox" class="sub_category" id="necklace_4" name="necklace_4"
-                                value="necklace_4">
-                            <span class="rect"></span>
-                            <p>گردنبند 4</p>
-                        </label>
-                        <label for="necklace_5">
-                            <input type="checkbox" class="sub_category" id="necklace_5" name="necklace_5"
-                                value="necklace_5">
-                            <span class="rect"></span>
-                            <p>گردنبند 5</p>
-                        </label>
-
-                    </div>
-                </div>                
+                
             </form>
         </div>
         <div id="products_wrapper">
@@ -1030,7 +1034,7 @@
             </div>
         </div>
     </div>
-    <!-- <div id="mobileFilter">
+    <div id="mobileFilter">
         <div id="openFilter">
             <i class="fas fa-filter"></i>
             <p>فیلترها</p>
@@ -1039,7 +1043,7 @@
             <i class="fas fa-sort-amount-up"></i>
             <p>مرتب سازی</p>
         </div>
-    </div> -->
+    </div>
     <footer>
         <div id="why_us">
             <div class="item">

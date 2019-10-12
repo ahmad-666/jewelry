@@ -159,28 +159,28 @@ function subCategoryHandler(e){
     if(noSubCategory) mainCategory.checked = false ;
     else mainCategory.checked = true ;
 }
-// let mobileFilter = document.querySelector('#openFilter') ;
-// let mobileSort = document.querySelector('#openSort') ;
-// let sortWrapper = document.querySelector('#order') ;
-// filterOpenCheck();
-// window.addEventListener('resize',filterOpenCheck) ;
-// function filterOpenCheck(e){
-//     if(window.innerWidth<=750) {
-//         mobileFilter.addEventListener('click',openFilter) ;
-//         mobileSort.addEventListener('click',openSort) ;
-//     }
-//     else {
-//         mobileFilter.removeEventListener('click',openFilter) ;
-//         mobileSort.removeEventListener('click',openSort) ;
-//     }
-// }
-// function openFilter(e){
-//     e.stopPropagation();  
-//     filtersWrapper.classList.toggle('show') ;
-//     docHandler(filtersWrapper,[sortWrapper]) ;
-// }
-// function openSort(e){
-//     e.stopPropagation();  
-//     sortWrapper.classList.toggle('show') ;
-//     docHandler(sortWrapper,[filtersWrapper]) ;
-// }
+let mobileFilter = document.querySelector('#openFilter') ;
+let mobileSort = document.querySelector('#openSort') ;
+let sortWrapper = document.querySelector('#order') ;
+filterOpenCheck();
+window.addEventListener('resize',filterOpenCheck) ;
+function filterOpenCheck(e){
+    if(window.innerWidth<=750) {
+        mobileFilter.addEventListener('click',openFilter) ;
+        mobileSort.addEventListener('click',openSort) ;
+    }
+    else {
+        mobileFilter.removeEventListener('click',openFilter) ;
+        mobileSort.removeEventListener('click',openSort) ;
+    }
+}
+function openFilter(e){
+    e.stopPropagation();  
+    filtersWrapper.classList.toggle('show') ;
+    docHandler(filtersWrapper,[sortWrapper]) ;
+}
+function openSort(e){
+    e.stopPropagation();  
+    sortWrapper.classList.toggle('show') ;
+    docHandler(sortWrapper,[filtersWrapper]) ;
+}

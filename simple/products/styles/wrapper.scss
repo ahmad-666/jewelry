@@ -25,38 +25,38 @@ body{
         margin-right: $dist2 ;
     }
 }
-#mobileFilter{
-    display: none ;
-    position: fixed ;
-    bottom: 0; 
-    right: 0;
-    width: 100% ;
-    height: auto;
-    @include flex(row,space-around,center,nowrap,"") ;
-    background-color: white ;
-    box-shadow: 0 -.2em .5em -.1em $shadowColor ;
-    z-index: 12;
-    div{
-        width: 50% ;
-        height: 100%;
-        display: flex ;
-        @include flex(column,flex-start,center,nowrap,"") ;
-        cursor: pointer;
-        &:first-child{
-            border-left: .15em solid $primaryColor ;
-        }
-        i{
-            font-size: $font-xl ;
-            color: $primaryColor ;
-            margin-top: .3em ;
-        }
-        p{
-            color: $primaryColor ;
-            font-size: $font-m ;
-            margin-bottom: .3em ;
-        }
-    }
-}
+// #mobileFilter{
+//     display: none ;
+//     position: fixed ;
+//     bottom: 0; 
+//     right: 0;
+//     width: 100% ;
+//     height: auto;
+//     @include flex(row,space-around,center,nowrap,"") ;
+//     background-color: white ;
+//     box-shadow: 0 -.2em .5em -.1em $shadowColor ;
+//     z-index: 12;
+//     div{
+//         width: 50% ;
+//         height: 100%;
+//         display: flex ;
+//         @include flex(column,flex-start,center,nowrap,"") ;
+//         cursor: pointer;
+//         &:first-child{
+//             border-left: .15em solid $primaryColor ;
+//         }
+//         i{
+//             font-size: $font-xl ;
+//             color: $primaryColor ;
+//             margin-top: .3em ;
+//         }
+//         p{
+//             color: $primaryColor ;
+//             font-size: $font-m ;
+//             margin-bottom: .3em ;
+//         }
+//     }
+// }
 @media screen and (max-width:1000px){
     .wrapper{
         font-size: 16px ;
@@ -67,20 +67,45 @@ body{
         width: 95% ;
         @include flex(column,flex-start,center,nowrap,"") ;
     }
-    #mobileFilter{
-        display: flex ;
+    .wrapper{
+        width: 95% ;
+        @include flex(column,flex-start,center,nowrap,"") ;
+        #filters_wrapper{
+            width: 100% ;
+            @include flex(column,flex-start,center,nowrap,"") ;
+            #curr_filters{
+                width: 100% ;
+            }
+            #filters{      
+                width: 100% ;
+            }
+        }
+        #products_wrapper{
+            width: 100% ;
+            @include flex(column,flex-start,center,nowrap,"") ;
+            #order{
+                width: 100% ;
+                margin-top: $dist2 ;
+            }
+            #products{
+                width: 100% ;
+            }
+        }
     }
+    // #mobileFilter{
+    //     display: flex ;
+    // }
 }
 @media screen and (max-width:600px){
-    #mobileFilter{
-        font-size: 16px ;
-    }
+    // #mobileFilter{
+    //     font-size: 16px ;
+    // }
     .wrapper{
         font-size: 13px ;
     }
 }
 @media screen and (max-width:400px){
-    #mobileFilter{
-        font-size: 13px ;
-    }
+    // #mobileFilter{
+    //     font-size: 13px ;
+    // }
 }
