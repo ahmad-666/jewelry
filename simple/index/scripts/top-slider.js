@@ -16,7 +16,7 @@ function TopSlider(elm){//with fade effect
     })
     this.autoTimer = 4000 ;
     this.clearAutoSlider = null ;
-    this.autoSlider(this.autoTimer) ;
+    //this.autoSlider(this.autoTimer) ;
 }
 TopSlider.prototype.autoSlider = function(time){
     this.clearAutoSlider = setInterval(()=>{

@@ -7,7 +7,7 @@ nav {
   position: relative;
 }
 
-nav ul {
+nav > ul {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -41,7 +41,7 @@ nav ul {
   position: relative;
 }
 
-nav ul li {
+nav > ul li {
   width: auto;
   height: 100%;
   display: -webkit-box;
@@ -76,7 +76,7 @@ nav ul li {
   margin: 0 1em;
 }
 
-nav ul li p {
+nav > ul li p {
   font-size: 0.8em;
   color: #fbfbfb;
   -webkit-transition: all .3s ease-in-out;
@@ -84,7 +84,7 @@ nav ul li p {
   transition: all .3s ease-in-out;
 }
 
-nav ul li i {
+nav > ul li i {
   font-size: 1em;
   color: #fbfbfb;
   -webkit-transform: translate(-0.3em, 15%);
@@ -93,7 +93,7 @@ nav ul li i {
           transform: translate(-0.3em, 15%);
 }
 
-nav ul li .products {
+nav > ul li .products {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all .15s ease-in-out;
@@ -146,17 +146,17 @@ nav ul li .products {
   z-index: 6;
 }
 
-nav ul li .products img,
-nav ul li .products .cols {
+nav > ul li .products img,
+nav > ul li .products .cols {
   margin: 0 0.5em;
 }
 
-nav ul li .products img {
+nav > ul li .products img {
   width: 15em;
   height: 15em;
 }
 
-nav ul li .products .cols {
+nav > ul li .products .cols {
   width: auto;
   height: auto;
   display: -webkit-box;
@@ -189,7 +189,7 @@ nav ul li .products .cols {
           align-content: "";
 }
 
-nav ul li .products .cols .col {
+nav > ul li .products .cols .col {
   width: auto;
   height: auto;
   display: -webkit-box;
@@ -223,11 +223,11 @@ nav ul li .products .cols .col {
   margin: 0 1em;
 }
 
-nav ul li .products .cols .col:first-child {
+nav > ul li .products .cols .col:first-child {
   margin-right: 0;
 }
 
-nav ul li .products .cols .col a {
+nav > ul li .products .cols .col a {
   width: auto;
   height: 2.5em;
   line-height: 2.5em;
@@ -261,7 +261,7 @@ nav ul li .products .cols .col a {
           align-content: "";
 }
 
-nav ul li .products .cols .col a i {
+nav > ul li .products .cols .col a i {
   font-size: 0.8em;
   color: #86878e;
   -webkit-transition: all .3s ease-in-out;
@@ -273,7 +273,7 @@ nav ul li .products .cols .col a i {
           transform: translateY(25%);
 }
 
-nav ul li .products .cols .col a p {
+nav > ul li .products .cols .col a p {
   font-size: 0.8em;
   color: #86878e;
   -webkit-transform: translateX(-0.3em);
@@ -285,13 +285,13 @@ nav ul li .products .cols .col a p {
   transition: all .3s ease-in-out;
 }
 
-nav ul li .products .cols .col a:hover p,
-nav ul li .products .cols .col a:hover i {
+nav > ul li .products .cols .col a:hover p,
+nav > ul li .products .cols .col a:hover i {
   font-weight: 700;
   color: #45454c;
 }
 
-nav ul li:hover .products {
+nav > ul li:hover .products {
   opacity: 1;
   visibility: visible;
 }
@@ -303,12 +303,9 @@ nav #mobileMenu {
   padding-left: 1em;
 }
 
-nav #mobileMenu:hover ul {
-  visibility: visible;
-  opacity: 1;
-}
-
 nav #mobileMenu .fa-bars {
+  height: 100%;
+  padding: 0 1em 0 1em;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -321,13 +318,18 @@ nav #mobileMenu .fa-bars {
   color: white;
 }
 
+nav #mobileMenu .fa-bars::before {
+  position: relative;
+  top: 25%;
+}
+
 nav #mobileMenu ul {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all .3s linear;
   -moz-transition: all .3s linear;
   transition: all .3s linear;
-  width: 9em;
+  width: 7em;
   height: auto;
   position: absolute;
   right: 0;
@@ -416,20 +418,15 @@ nav #mobileMenu ul li .fa-angle-left {
   font-size: 1em;
 }
 
-nav #mobileMenu ul li:hover .menu {
-  visibility: visible;
-  opacity: 1;
-}
-
 nav #mobileMenu ul li .menu {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all .3s linear;
   -moz-transition: all .3s linear;
   transition: all .3s linear;
-  width: -webkit-calc(100vw - 12em - 3em);
-  width: -moz-calc(100vw - 12em - 3em);
-  width: calc(100vw - 12em - 3em);
+  width: -webkit-calc(100vw - 7em - 1em);
+  width: -moz-calc(100vw - 7em - 1em);
+  width: calc(100vw - 7em - 1em);
   height: auto;
   padding: 0.5em;
   display: -webkit-box;
@@ -530,7 +527,7 @@ nav #mobileMenu ul li .menu .items .col {
   -webkit-align-content: "";
       -ms-flex-line-pack: "";
           align-content: "";
-  margin: 1em 2em;
+  margin: 1em;
 }
 
 nav #mobileMenu ul li .menu .items .col .item {
@@ -590,6 +587,16 @@ nav #mobileMenu ul li .menu img {
   margin: 1em auto 0 auto;
 }
 
+nav #mobileMenu ul li .menu.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+nav #mobileMenu ul.show {
+  visibility: visible;
+  opacity: 1;
+}
+
 @media screen and (max-width: 950px) {
   nav {
     font-size: 16px;
@@ -597,7 +604,10 @@ nav #mobileMenu ul li .menu img {
 }
 
 @media screen and (max-width: 750px) {
-  nav ul {
+  nav {
+    padding: 0;
+  }
+  nav > ul {
     display: none;
   }
   nav #mobileMenu {
